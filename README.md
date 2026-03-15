@@ -1,7 +1,7 @@
-# Geometry Dash for the Nintendo Wii
-This is a WIP port of the popular mobile game Geometry Dash by RobTop for the Nintendo Wii.
+# Geometry Dash for Playstation 3
+This is a WIP port in HD of the popular mobile game Geometry Dash by RobTop for PS3.
 
-Port made by AleFunky.\
+Wii Port made by AleFunky.\ PS3 adaptation made by SteckLegacy 
 Geometry Dash and its respective resources are by RobTop Games.
 
 ## Screenshots
@@ -10,18 +10,13 @@ Geometry Dash and its respective resources are by RobTop Games.
 <img width="636" height="382" alt="imagen" src="https://github.com/user-attachments/assets/4b49a1ca-0e59-43be-9ccc-ac88049bd638" />
 
 ## Current features
-* Ability to load levels from the SD card/USB.
 * Gameplay up to version 2.0.
 
 ## Download
-Please keep in mind this game is in active development and stuff might change or break.
-
-For instructions on how to setup the game, or how to add custom levels, you can find instructions [here](https://github.com/AleFunky/wiidash/wiki).
-
-* Download build: [Click here](https://nightly.link/AleFunky/wiidash/workflows/main/main/wiidash.zip)
+nothing at the moment.
 
 # Discord
-You can come to our Discord server and get help (or talk if you want): [Discord](https://discord.gg/Yh6JrS7eSU)
+Coming soon
 
 ## Decompilations and recreations that helped make this as accurate as possible
 [GDClone](https://github.com/opstic/gdclone) by opstic\
