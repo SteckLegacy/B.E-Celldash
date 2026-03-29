@@ -1,6 +1,10 @@
 #pragma once
-#include <mxml.h>
 #include "player.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
     float x, y;
     float sx, sy;
@@ -91,3 +95,7 @@ void playRobotAnimation(Player *player,
 void parsePlist(const char* filename, AnimationLibrary* lib);
 Animation* getAnimation(AnimationLibrary* lib, const char* name);
 GRRLIB_texImg *get_frame(FramesDefinition definition, int layer_num, float time, float *scale_out, bool *flip_x);
+
+#ifdef __cplusplus
+}
+#endif

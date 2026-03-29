@@ -1,5 +1,3 @@
-#include <mxml.h>
-
 #include <string.h>
 #include <ctype.h>
 #include <grrlib.h>
@@ -9,6 +7,7 @@
 #include <math.h>
 #include "game.h"
 #include "object_includes.h"
+#include <pugixml.hpp>
 
 void extractAnimName(const char* frameName, char* outAnimName) {
     strcpy(outAnimName, frameName);
@@ -37,64 +36,49 @@ Animation* getOrCreateAnimation(AnimationLibrary* lib, const char* animName) {
 }
 
 void parsePlist(const char* filename, AnimationLibrary* lib) {
-    FILE* fp = fopen(filename, "r");
-    if (!fp) {
-        output_log("Failed to open %s\n", filename);
+    pugi::xml_document doc;
+    pugi::xml_parse_result result = doc.load_file(filename);
+    if (!result) {
+        output_log("Failed to open or parse %s: %s\n", filename, result.description());
         return;
     }
-    mxml_node_t* tree = mxmlLoadFile(NULL, fp, MXML_OPAQUE_CALLBACK);
-    fclose(fp);
-    if (!tree) return;
 
     // Top-level <dict>
-    mxml_node_t* rootDict = mxmlFindElement(tree, tree, "dict", NULL, NULL, MXML_DESCEND_FIRST);
+    pugi::xml_node rootDict = doc.child("plist").child("dict");
     if (!rootDict) {
-        output_log("No top-level <dict> found\n");
-        mxmlDelete(tree);
+        output_log("No top-level <dict> found in %s\n", filename);
         return;
     }
 
     // Find <key>animationContainer</key> inside that dict
-    mxml_node_t* animKey = NULL;
-    for (mxml_node_t* node = mxmlFindElement(rootDict, rootDict, "key", NULL, NULL, MXML_DESCEND_FIRST);
-         node != NULL;
-         node = mxmlFindElement(node, rootDict, "key", NULL, NULL, MXML_NO_DESCEND)) {
-        
-        const char* keyText = mxmlGetOpaque(node);
-        if (keyText && strcmp(keyText, "animationContainer") == 0) {
+    pugi::xml_node animKey;
+    for (pugi::xml_node node = rootDict.child("key"); node; node = node.next_sibling("key")) {
+        if (strcmp(node.child_value(), "animationContainer") == 0) {
             animKey = node;
             break;
         }
     }
 
     if (!animKey) {
-        output_log("No animationContainer key found\n");
-        mxmlDelete(tree);
+        output_log("No animationContainer key found in %s\n", filename);
         return;
     }
 
-
     // Get the dict that follows the animationContainer key
-    mxml_node_t* animDict = mxmlGetNextSibling(animKey);
-    while (animDict && mxmlGetType(animDict) != MXML_ELEMENT) {
-        animDict = mxmlGetNextSibling(animDict);
+    pugi::xml_node animDict = animKey.next_sibling();
+    while (animDict && strcmp(animDict.name(), "dict") != 0) {
+        animDict = animDict.next_sibling();
     }
 
-    if (!animDict || strcmp(mxmlGetElement(animDict), "dict") != 0) {
-        output_log("No dict found after animationContainer key\n");
-        mxmlDelete(tree);
+    if (!animDict) {
+        output_log("No dict found after animationContainer key in %s\n", filename);
         return;
     }
 
     // Loop over all frame <key> elements
-    for (mxml_node_t* frameKey = mxmlFindElement(animDict, animDict, "key", NULL, NULL, MXML_DESCEND);
-         frameKey;
-         frameKey = mxmlFindElement(frameKey, animDict, "key", NULL, NULL, MXML_NO_DESCEND)) {
-
-        const char* frameName = mxmlGetOpaque(frameKey);
-        if (!frameName) continue;
-
-        //output_log("Processing frame: %s\n", frameName);  // Debug print
+    for (pugi::xml_node frameKey = animDict.child("key"); frameKey; frameKey = frameKey.next_sibling("key")) {
+        const char* frameName = frameKey.child_value();
+        if (!frameName || !*frameName) continue;
 
         char animName[32];
         extractAnimName(frameName, animName);
@@ -104,33 +88,28 @@ void parsePlist(const char* filename, AnimationLibrary* lib) {
         frame->partCount = 0;
 
         // Get the dict containing sprite data
-        mxml_node_t* frameDict = mxmlGetNextSibling(frameKey);
-        while (frameDict && mxmlGetType(frameDict) != MXML_ELEMENT) {
-            frameDict = mxmlGetNextSibling(frameDict);
+        pugi::xml_node frameDict = frameKey.next_sibling();
+        while (frameDict && strcmp(frameDict.name(), "dict") != 0) {
+            frameDict = frameDict.next_sibling();
         }
         
-        if (!frameDict || strcmp(mxmlGetElement(frameDict), "dict") != 0) {
+        if (!frameDict) {
             output_log("No dict found for frame %s\n", frameName);
             continue;
         }
 
         // Process each sprite
-        for (mxml_node_t* spriteKey = mxmlFindElement(frameDict, frameDict, "key", NULL, NULL, MXML_DESCEND_FIRST);
-             spriteKey;
-             spriteKey = mxmlFindElement(spriteKey, frameDict, "key", NULL, NULL, MXML_NO_DESCEND)) {
-
-            const char* spriteKeyText = mxmlGetOpaque(spriteKey);
-            if (!spriteKeyText) continue;
-
-            //output_log("  Processing sprite: %s\n", spriteKeyText);  // Debug print
+        for (pugi::xml_node spriteKey = frameDict.child("key"); spriteKey; spriteKey = spriteKey.next_sibling("key")) {
+            const char* spriteKeyText = spriteKey.child_value();
+            if (!spriteKeyText || !*spriteKeyText) continue;
 
             // Get sprite dict
-            mxml_node_t* spriteDict = mxmlGetNextSibling(spriteKey);
-            while (spriteDict && mxmlGetType(spriteDict) != MXML_ELEMENT) {
-                spriteDict = mxmlGetNextSibling(spriteDict);
+            pugi::xml_node spriteDict = spriteKey.next_sibling();
+            while (spriteDict && strcmp(spriteDict.name(), "dict") != 0) {
+                spriteDict = spriteDict.next_sibling();
             }
 
-            if (!spriteDict || strcmp(mxmlGetElement(spriteDict), "dict") != 0) continue;
+            if (!spriteDict) continue;
 
             SpritePart* part = &frame->parts[frame->partCount++];
             
@@ -139,25 +118,22 @@ void parsePlist(const char* filename, AnimationLibrary* lib) {
             part->sx = 1.0f;
             part->sy = 1.0f;
             part->rotation = 0.0f;
-            // Process sprite properties
-            for (mxml_node_t* propKey = mxmlFindElement(spriteDict, spriteDict, "key", NULL, NULL, MXML_DESCEND_FIRST);
-                 propKey;
-                 propKey = mxmlFindElement(propKey, spriteDict, "key", NULL, NULL, MXML_NO_DESCEND)) {
 
-                const char* keyText = mxmlGetOpaque(propKey);
-                if (!keyText) continue;
+            // Process sprite properties
+            for (pugi::xml_node propKey = spriteDict.child("key"); propKey; propKey = propKey.next_sibling("key")) {
+                const char* keyText = propKey.child_value();
+                if (!keyText || !*keyText) continue;
 
                 // Get value node
-                mxml_node_t* valNode = mxmlGetNextSibling(propKey);
-                while (valNode && mxmlGetType(valNode) != MXML_ELEMENT) {
-                    valNode = mxmlGetNextSibling(valNode);
+                pugi::xml_node valNode = propKey.next_sibling();
+                // Find next element node (mxml skips non-elements, pugixml next_sibling() can return text nodes etc if they exist)
+                while (valNode && valNode.type() != pugi::node_element) {
+                    valNode = valNode.next_sibling();
                 }
                 if (!valNode) continue;
 
-                const char* valText = mxmlGetOpaque(valNode);
+                const char* valText = valNode.child_value();
                 if (!valText) continue;
-
-                //output_log("    Property: %s = %s\n", keyText, valText);  // Debug print
 
                 if (strcmp(keyText, "position") == 0) {
                     // Skip leading whitespace
@@ -183,16 +159,9 @@ void parsePlist(const char* filename, AnimationLibrary* lib) {
                     part->rotation = atof(valText);
                 }
             }
-
-            //output_log("  Loaded sprite: pos(%.2f,%.2f) scale(%.2f,%.2f) rot=%.2f z=%d\n",
-            //       part->x, part->y, part->sx, part->sy, part->rotation, part->z);
         }
     }
-
-    mxmlDelete(tree);
 }
-
-
 
 Animation* getAnimation(AnimationLibrary* lib, const char* name) {
     for (int i = 0; i < lib->animCount; i++) {
