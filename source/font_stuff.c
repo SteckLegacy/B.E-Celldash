@@ -1,19 +1,20 @@
+#include "psgl_graphics.h"
 #include "font_stuff.h"
 
-const unsigned char *font_text[] = {
-    bigFont_png,
-    gjFont01_png,
-    gjFont02_png,
-    gjFont03_png,
-    gjFont04_png,
-    gjFont05_png,
-    gjFont06_png,
-    gjFont07_png,
-    gjFont08_png,
-    gjFont09_png,
-    gjFont10_png,
-    gjFont11_png,
-    gjFont12_png,
+const FontAsset font_assets[] = {
+    {bigFont_png, bigFont_png_size},
+    {gjFont01_png, gjFont01_png_size},
+    {gjFont02_png, gjFont02_png_size},
+    {gjFont03_png, gjFont03_png_size},
+    {gjFont04_png, gjFont04_png_size},
+    {gjFont05_png, gjFont05_png_size},
+    {gjFont06_png, gjFont06_png_size},
+    {gjFont07_png, gjFont07_png_size},
+    {gjFont08_png, gjFont08_png_size},
+    {gjFont09_png, gjFont09_png_size},
+    {gjFont10_png, gjFont10_png_size},
+    {gjFont11_png, gjFont11_png_size},
+    {gjFont12_png, gjFont12_png_size},
 };
 
 struct charset *font_charsets[] = {

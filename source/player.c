@@ -5,6 +5,7 @@
 #include <wiiuse/wpad.h>
 #include <math.h>
 #include "math.h"
+#include "ps3_audio.h"
 #include "object_includes.h"
 #include <unistd.h>
 #include <stdio.h>
@@ -20,27 +21,27 @@
 
 #include "easing.h"
 
-GRRLIB_texImg *icon_l1;
-GRRLIB_texImg *icon_l2;
-GRRLIB_texImg *ship_l1;
-GRRLIB_texImg *ship_l2;
-GRRLIB_texImg *ball_l1;
-GRRLIB_texImg *ball_l2;
-GRRLIB_texImg *ufo_l1;
-GRRLIB_texImg *ufo_l2;
-GRRLIB_texImg *ufo_dome;
-GRRLIB_texImg *wave_l1;
-GRRLIB_texImg *wave_l2;
-GRRLIB_texImg *robot_1_l1;
-GRRLIB_texImg *robot_1_l2;
-GRRLIB_texImg *robot_2_l1;
-GRRLIB_texImg *robot_2_l2;
-GRRLIB_texImg *robot_3_l1;
-GRRLIB_texImg *robot_3_l2;
-GRRLIB_texImg *robot_4_l1;
-GRRLIB_texImg *robot_4_l2;
+PSGL_texImg *icon_l1;
+PSGL_texImg *icon_l2;
+PSGL_texImg *ship_l1;
+PSGL_texImg *ship_l2;
+PSGL_texImg *ball_l1;
+PSGL_texImg *ball_l2;
+PSGL_texImg *ufo_l1;
+PSGL_texImg *ufo_l2;
+PSGL_texImg *ufo_dome;
+PSGL_texImg *wave_l1;
+PSGL_texImg *wave_l2;
+PSGL_texImg *robot_1_l1;
+PSGL_texImg *robot_1_l2;
+PSGL_texImg *robot_2_l1;
+PSGL_texImg *robot_2_l2;
+PSGL_texImg *robot_3_l1;
+PSGL_texImg *robot_3_l2;
+PSGL_texImg *robot_4_l1;
+PSGL_texImg *robot_4_l2;
 
-GRRLIB_texImg *trail_tex;
+PSGL_texImg *trail_tex;
 
 MotionTrail trail;
 MotionTrail trail_p1;
@@ -765,7 +766,7 @@ void robot_gamemode(Player *player) {
 void run_camera() {
     Player *player = &state.player;
 
-    float calc_x = ((player->x - state.camera_x) * SCALE) - widthAdjust;
+    float calc_x = ((player->x - state.camera_x) * SCALE) + widthAdjust;
 
     float playable_height = state.ceiling_y - state.ground_y;
     float calc_height = 0;
@@ -1310,33 +1311,33 @@ void handle_death() {
         }
     }
 
-    MP3Player_Volume(0);
-    PlayOgg(explode_11_ogg, explode_11_ogg_size, 0, OGG_ONE_TIME);
+    PS3Audio_SetMusicVolume(0);
+    PS3Audio_PlaySFX(explode_11_ogg, explode_11_ogg_size);
 }
 
 void load_icons() {
-    icon_l1 = GRRLIB_LoadTexturePNG(player_01_001_png);
-    icon_l2 = GRRLIB_LoadTexturePNG(player_01_2_001_png);
-    ship_l1 = GRRLIB_LoadTexturePNG(ship_01_001_png);
-    ship_l2 = GRRLIB_LoadTexturePNG(ship_01_2_001_png);
-    ball_l1 = GRRLIB_LoadTexturePNG(player_ball_01_001_png);
-    ball_l2 = GRRLIB_LoadTexturePNG(player_ball_01_2_001_png);
-    ufo_l1 = GRRLIB_LoadTexturePNG(bird_01_001_png);
-    ufo_l2 = GRRLIB_LoadTexturePNG(bird_01_2_001_png);
-    ufo_dome = GRRLIB_LoadTexturePNG(bird_01_3_001_png);
-    wave_l1 = GRRLIB_LoadTexturePNG(dart_01_001_png);
-    wave_l2 = GRRLIB_LoadTexturePNG(dart_01_2_001_png);
+    icon_l1 = PSGL_LoadTexturePNG(player_01_001_png, player_01_001_png_size);
+    icon_l2 = PSGL_LoadTexturePNG(player_01_2_001_png, player_01_2_001_png_size);
+    ship_l1 = PSGL_LoadTexturePNG(ship_01_001_png, ship_01_001_png_size);
+    ship_l2 = PSGL_LoadTexturePNG(ship_01_2_001_png, ship_01_2_001_png_size);
+    ball_l1 = PSGL_LoadTexturePNG(player_ball_01_001_png, player_ball_01_001_png_size);
+    ball_l2 = PSGL_LoadTexturePNG(player_ball_01_2_001_png, player_ball_01_2_001_png_size);
+    ufo_l1 = PSGL_LoadTexturePNG(bird_01_001_png, bird_01_001_png_size);
+    ufo_l2 = PSGL_LoadTexturePNG(bird_01_2_001_png, bird_01_2_001_png_size);
+    ufo_dome = PSGL_LoadTexturePNG(bird_01_3_001_png, bird_01_3_001_png_size);
+    wave_l1 = PSGL_LoadTexturePNG(dart_01_001_png, dart_01_001_png_size);
+    wave_l2 = PSGL_LoadTexturePNG(dart_01_2_001_png, dart_01_2_001_png_size);
     
-    robot_1_l1 = GRRLIB_LoadTexturePNG(robot_01_01_001_png);
-    robot_1_l2 = GRRLIB_LoadTexturePNG(robot_01_01_2_001_png);
-    robot_2_l1 = GRRLIB_LoadTexturePNG(robot_01_02_001_png);
-    robot_2_l2 = GRRLIB_LoadTexturePNG(robot_01_02_2_001_png);
-    robot_3_l1 = GRRLIB_LoadTexturePNG(robot_01_03_001_png);
-    robot_3_l2 = GRRLIB_LoadTexturePNG(robot_01_03_2_001_png);
-    robot_4_l1 = GRRLIB_LoadTexturePNG(robot_01_04_001_png);
-    robot_4_l2 = GRRLIB_LoadTexturePNG(robot_01_04_2_001_png);
+    robot_1_l1 = PSGL_LoadTexturePNG(robot_01_01_001_png, robot_01_01_001_png_size);
+    robot_1_l2 = PSGL_LoadTexturePNG(robot_01_01_2_001_png, robot_01_01_2_001_png_size);
+    robot_2_l1 = PSGL_LoadTexturePNG(robot_01_02_001_png, robot_01_02_001_png_size);
+    robot_2_l2 = PSGL_LoadTexturePNG(robot_01_02_2_001_png, robot_01_02_2_001_png_size);
+    robot_3_l1 = PSGL_LoadTexturePNG(robot_01_03_001_png, robot_01_03_001_png_size);
+    robot_3_l2 = PSGL_LoadTexturePNG(robot_01_03_2_001_png, robot_01_03_2_001_png_size);
+    robot_4_l1 = PSGL_LoadTexturePNG(robot_01_04_001_png, robot_01_04_001_png_size);
+    robot_4_l2 = PSGL_LoadTexturePNG(robot_01_04_2_001_png, robot_01_04_2_001_png_size);
 
-    trail_tex = GRRLIB_LoadTexturePNG(trail_png);
+    trail_tex = PSGL_LoadTexturePNG(trail_png, trail_png_size);
 
     p1.r = 0;
     p1.g = 255;
@@ -1348,33 +1349,33 @@ void load_icons() {
 }
 
 void unload_icons() {
-    GRRLIB_FreeTexture(icon_l1);
-    GRRLIB_FreeTexture(icon_l2);
-    GRRLIB_FreeTexture(ship_l1);
-    GRRLIB_FreeTexture(ship_l2);
-    GRRLIB_FreeTexture(ball_l1);
-    GRRLIB_FreeTexture(ball_l2);
-    GRRLIB_FreeTexture(ufo_l1);
-    GRRLIB_FreeTexture(ufo_l2);
-    GRRLIB_FreeTexture(ufo_dome);
-    GRRLIB_FreeTexture(wave_l1);
-    GRRLIB_FreeTexture(wave_l2);
-    GRRLIB_FreeTexture(robot_1_l1);
-    GRRLIB_FreeTexture(robot_1_l2);
-    GRRLIB_FreeTexture(robot_2_l1);
-    GRRLIB_FreeTexture(robot_2_l2);
-    GRRLIB_FreeTexture(robot_3_l1);
-    GRRLIB_FreeTexture(robot_3_l2);
-    GRRLIB_FreeTexture(robot_4_l1);
-    GRRLIB_FreeTexture(robot_4_l2);
-    GRRLIB_FreeTexture(trail_tex);
+    PSGL_FreeTexture(icon_l1);
+    PSGL_FreeTexture(icon_l2);
+    PSGL_FreeTexture(ship_l1);
+    PSGL_FreeTexture(ship_l2);
+    PSGL_FreeTexture(ball_l1);
+    PSGL_FreeTexture(ball_l2);
+    PSGL_FreeTexture(ufo_l1);
+    PSGL_FreeTexture(ufo_l2);
+    PSGL_FreeTexture(ufo_dome);
+    PSGL_FreeTexture(wave_l1);
+    PSGL_FreeTexture(wave_l2);
+    PSGL_FreeTexture(robot_1_l1);
+    PSGL_FreeTexture(robot_1_l2);
+    PSGL_FreeTexture(robot_2_l1);
+    PSGL_FreeTexture(robot_2_l2);
+    PSGL_FreeTexture(robot_3_l1);
+    PSGL_FreeTexture(robot_3_l2);
+    PSGL_FreeTexture(robot_4_l1);
+    PSGL_FreeTexture(robot_4_l2);
+    PSGL_FreeTexture(trail_tex);
 }
 
 void draw_ship(Player *player, float calc_x, float calc_y) {
-    GRRLIB_SetHandle(icon_l1, icon_l1->w / 2, icon_l1->h / 2);
-    GRRLIB_SetHandle(icon_l2, icon_l2->w / 2, icon_l2->h / 2);
-    GRRLIB_SetHandle(ship_l1, ship_l1->w / 2, ship_l1->h / 2);
-    GRRLIB_SetHandle(ship_l2, ship_l2->w / 2, ship_l2->h / 2);
+    PSGL_SetHandle(icon_l1, icon_l1->w / 2, icon_l1->h / 2);
+    PSGL_SetHandle(icon_l2, icon_l2->w / 2, icon_l2->h / 2);
+    PSGL_SetHandle(ship_l1, ship_l1->w / 2, ship_l1->h / 2);
+    PSGL_SetHandle(ship_l2, ship_l2->w / 2, ship_l2->h / 2);
     
     float scale = ((player->mini) ? 0.6f : 1.f) * screen_factor_y;
 
@@ -1449,11 +1450,11 @@ void draw_ship(Player *player, float calc_x, float calc_y) {
 }
 
 void draw_ufo(Player *player, float calc_x, float calc_y) {
-    GRRLIB_SetHandle(icon_l1,  icon_l1->w / 2,  icon_l1->h / 2);
-    GRRLIB_SetHandle(icon_l2,  icon_l2->w / 2,  icon_l2->h / 2);
-    GRRLIB_SetHandle(ufo_l1,   ufo_l1->w / 2,   ufo_l1->h / 2); 
-    GRRLIB_SetHandle(ufo_l2,   ufo_l2->w / 2,   ufo_l2->h / 2); 
-    GRRLIB_SetHandle(ufo_dome, ufo_dome->w / 2, ufo_dome->h / 2); 
+    PSGL_SetHandle(icon_l1,  icon_l1->w / 2,  icon_l1->h / 2);
+    PSGL_SetHandle(icon_l2,  icon_l2->w / 2,  icon_l2->h / 2);
+    PSGL_SetHandle(ufo_l1,   ufo_l1->w / 2,   ufo_l1->h / 2);
+    PSGL_SetHandle(ufo_l2,   ufo_l2->w / 2,   ufo_l2->h / 2);
+    PSGL_SetHandle(ufo_dome, ufo_dome->w / 2, ufo_dome->h / 2);
     
     float scale = ((player->mini) ? 0.6f : 1.f) * screen_factor_y;
 
@@ -1560,10 +1561,10 @@ char *robot_animations_names[ROBOT_ANIMATIONS_COUNT] = {
 };
 
 void draw_player(Player *player) {
-    float calc_x = ((player->x - state.camera_x) * SCALE) - widthAdjust;
+    float calc_x = ((player->x - state.camera_x) * SCALE) + widthAdjust;
     float calc_y = screenHeight - ((player->y - state.camera_y) * SCALE);
     
-    GRRLIB_SetBlend(GRRLIB_BLEND_ADD);
+    PSGL_SetBlend(BLEND_ADD);
 
     MotionTrail_Update(&trail, dt);
     MotionTrail_UpdateWaveTrail(&wave_trail, dt);
@@ -1576,14 +1577,14 @@ void draw_player(Player *player) {
     GX_SetTevOp  (GX_TEVSTAGE0, GX_MODULATE);
     GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
 
-    GRRLIB_SetBlend(GRRLIB_BLEND_ALPHA);
+    PSGL_SetBlend(BLEND_ALPHA);
 
     float scale = (player->mini) ? 0.6f : 1.f;
 
     switch (player->gamemode) {
         case GAMEMODE_CUBE:
-            GRRLIB_SetHandle(icon_l1, 30, 30);
-            GRRLIB_SetHandle(icon_l2, 30, 30);
+            PSGL_SetHandle(icon_l1, 30, 30);
+            PSGL_SetHandle(icon_l2, 30, 30);
             
             set_texture(icon_l1);
             custom_drawImg(
@@ -1609,8 +1610,8 @@ void draw_player(Player *player) {
             draw_ship(player, calc_x - 8 * state.mirror_mult, calc_y);
             break;
         case GAMEMODE_BALL:
-            GRRLIB_SetHandle(ball_l1, 36, 36);
-            GRRLIB_SetHandle(ball_l2, 36, 36);
+            PSGL_SetHandle(ball_l1, 36, 36);
+            PSGL_SetHandle(ball_l2, 36, 36);
             set_texture(ball_l1);
             custom_drawImg(
                 get_mirror_x(calc_x, state.mirror_factor) + 6 - (36), calc_y + 6 - (36),
@@ -1635,8 +1636,8 @@ void draw_player(Player *player) {
             draw_ufo(player, calc_x - 8 * state.mirror_mult, calc_y);
             break;
         case GAMEMODE_WAVE:
-            GRRLIB_SetHandle(wave_l1, wave_l1->w / 2, wave_l1->h / 2);
-            GRRLIB_SetHandle(wave_l2, wave_l2->w / 2, wave_l2->h / 2);
+            PSGL_SetHandle(wave_l1, wave_l1->w / 2, wave_l1->h / 2);
+            PSGL_SetHandle(wave_l2, wave_l2->w / 2, wave_l2->h / 2);
             set_texture(wave_l1);
             custom_drawImg(
                 get_mirror_x(calc_x, state.mirror_factor) + 6 - (wave_l1->w / 2), calc_y + 6 - (wave_l1->h / 2),
@@ -1670,7 +1671,7 @@ void draw_player(Player *player) {
     set_texture(prev_tex);
 }
 
-GRRLIB_texImg *get_p1_trail_tex() {
+PSGL_texImg *get_p1_trail_tex() {
     switch (state.player.gamemode) {
         case GAMEMODE_CUBE:
             return icon_l1;
@@ -2284,9 +2285,9 @@ void snap_player_to_slope(GameObject *obj, Player *player) {
 
 float calc_x_on_screen(float val) {
     if (state.mirror_factor >= 0.5f) {
-        return screenWidth - (((val - state.camera_x) * SCALE) - widthAdjust) + 6;
+        return screenWidth - (((val - state.camera_x) * SCALE) + widthAdjust) - 6;
     } else {
-        return ((val - state.camera_x) * SCALE) - widthAdjust + 6;
+        return ((val - state.camera_x) * SCALE) + widthAdjust + 6;
     }
 }
 float calc_y_on_screen(float val) {

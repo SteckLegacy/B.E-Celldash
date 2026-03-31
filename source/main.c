@@ -1,21 +1,16 @@
-#include <grrlib.h>
+#include "psgl_graphics.h"
 
 #include <stdlib.h>
-#include <wiiuse/wpad.h>
 #include <math.h>
 
-#include <asndlib.h>
 #include "objects.h"
 #include <stdio.h>
-#include <ogc/lwp_watchdog.h>
-#include <ogc/lwp.h>
-#include <ogc/lwp_mutex.h>
 
 #include <unistd.h>
+#include <cell/pad.h>
 
 #include "main.h"
 #include "game.h"
-
 #include "custom_mp3player.h"
 #include "oggplayer.h"
 
@@ -34,9 +29,6 @@
 
 #include "animation.h"
 
-#include <fat.h>
-
-#include <system.h>
 
 // Declare Static Functions
 static void ExitGame(void);
@@ -55,9 +47,9 @@ float fps = 0;
 
 GameState state;
 
-GRRLIB_texImg *font = NULL;
-GRRLIB_texImg *cursor = NULL;
-GRRLIB_texImg *big_font_text = NULL;
+PSGL_texImg *font = NULL;
+PSGL_texImg *cursor = NULL;
+PSGL_texImg *big_font_text = NULL;
 
 int frame_counter = 0;
 int old_frame_counter = 0;
@@ -134,59 +126,59 @@ void draw_game() {
         t0 = gettime();
 
         // Render FPS
-        char fpsText[64];
-        snprintf(fpsText, sizeof(fpsText), "FPS: %.2f Steps: %d Objs: %d Layers: %d", fps, frame_counter - old_frame_counter, level_info.object_count, layersArrayList->count);
-        draw_text(big_font, big_font_text, 20, 20, 0.25, fpsText);  // White tex
+        // char fpsText[64];
+        // snprintf(fpsText, sizeof(fpsText), "FPS: %.2f Steps: %d Objs: %d Layers: %d", fps, frame_counter - old_frame_counter, level_info.object_count, layersArrayList->count);
+        // draw_text(big_font, big_font_text, 20, 20, 0.25, fpsText);  // White tex
         
-        char layerText[64];
-        snprintf(layerText, sizeof(layerText), "Drawn layers: %d", layersDrawn);
-        draw_text(big_font, big_font_text, 20, 50, 0.25, layerText);
-        old_frame_counter = frame_counter;
+        // char layerText[64];
+        // snprintf(layerText, sizeof(layerText), "Drawn layers: %d", layersDrawn);
+        // draw_text(big_font, big_font_text, 20, 50, 0.25, layerText);
+        // old_frame_counter = frame_counter;
         
-        char player_x[64];
-        snprintf(player_x, sizeof(player_x), "X: %.2f VX: %.2f", state.player.x, state.player.vel_x);
-        draw_text(big_font, big_font_text, 20, 80, 0.25, player_x);
+        // char player_x[64];
+        // snprintf(player_x, sizeof(player_x), "X: %.2f VX: %.2f", state.player.x, state.player.vel_x);
+        // draw_text(big_font, big_font_text, 20, 80, 0.25, player_x);
 
-        char player_y[64];
-        snprintf(player_y, sizeof(player_y), "Y: %.2f VY: %.2f", state.player.y, state.player.vel_y);
-        draw_text(big_font, big_font_text, 20, 110, 0.25, player_y);
+        // char player_y[64];
+        // snprintf(player_y, sizeof(player_y), "Y: %.2f VY: %.2f", state.player.y, state.player.vel_y);
+        // draw_text(big_font, big_font_text, 20, 110, 0.25, player_y);
         
-        char obj_layer[64];
-        snprintf(obj_layer, sizeof(obj_layer), "GFX: %.2f ms (Pl: %.2f Pt: %.2f, St: %.2f, D: %.2f)", obj_layer_time, player_draw_time, obj_particles_time, layer_sorting, draw_time);
-        draw_text(big_font, big_font_text, 20, 140, 0.25, obj_layer);
+        // char obj_layer[64];
+        // snprintf(obj_layer, sizeof(obj_layer), "GFX: %.2f ms (Pl: %.2f Pt: %.2f, St: %.2f, D: %.2f)", obj_layer_time, player_draw_time, obj_particles_time, layer_sorting, draw_time);
+        // draw_text(big_font, big_font_text, 20, 140, 0.25, obj_layer);
         
-        char physics[128];
-        snprintf(physics, sizeof(physics), "Physics: %.2f ms (P: %.2f Obj: %.2f E: %.2f)", physics_time, player_time, triggers_time, particles_time);
-        draw_text(big_font, big_font_text, 20, 170, 0.25, physics);
+        // char physics[128];
+        // snprintf(physics, sizeof(physics), "Physics: %.2f ms (P: %.2f Obj: %.2f E: %.2f)", physics_time, player_time, triggers_time, particles_time);
+        // draw_text(big_font, big_font_text, 20, 170, 0.25, physics);
         
-        char objects[128];
-        snprintf(objects, sizeof(objects), "Obj: Move %d", number_of_moving_objects);
-        draw_text(big_font, big_font_text, 20, 200, 0.25, objects);
+        // char objects[128];
+        // snprintf(objects, sizeof(objects), "Obj: Move %d", number_of_moving_objects);
+        // draw_text(big_font, big_font_text, 20, 200, 0.25, objects);
 
-        char collision[128];
-        snprintf(collision, sizeof(collision), "Collision: %.2f ms (Checks: %d Succeded: %d)", collision_time, number_of_collisions_checks, number_of_collisions);
-        draw_text(big_font, big_font_text, 20, 230, 0.25, collision);
+        // char collision[128];
+        // snprintf(collision, sizeof(collision), "Collision: %.2f ms (Checks: %d Succeded: %d)", collision_time, number_of_collisions_checks, number_of_collisions);
+        // draw_text(big_font, big_font_text, 20, 230, 0.25, collision);
 
-        t1 = gettime();
-        float text = ticks_to_microsecs(t1 - t0) / 1000.f;
+        // t1 = gettime();
+        // float text = ticks_to_microsecs(t1 - t0) / 1000.f;
         
-        char text_ms[64];
-        snprintf(text_ms, sizeof(text_ms), "Text: %.2f ms", text);
-        draw_text(big_font, big_font_text, 20, 260, 0.25, text_ms);
+        // char text_ms[64];
+        // snprintf(text_ms, sizeof(text_ms), "Text: %.2f ms", text);
+        // draw_text(big_font, big_font_text, 20, 260, 0.25, text_ms);
 
-        u64 last_frame = gettime();
-        float cpu_time = ticks_to_microsecs(last_frame - start_frame) / 1000.f;
+        // u64 last_frame = gettime();
+        // float cpu_time = ticks_to_microsecs(last_frame - start_frame) / 1000.f;
         
-        char cpu_usage[64];
-        snprintf(cpu_usage, sizeof(cpu_usage), "CPU: %.2f%%%% Free MEM1: %d Free MEM2: %d", (cpu_time / 16.666666) * 100, SYS_GetArena1Hi() - SYS_GetArena1Lo(), SYS_GetArena2Hi() - SYS_GetArena2Lo());
-        draw_text(big_font, big_font_text, 20, 400, 0.25, cpu_usage);
+        // char cpu_usage[64];
+        // snprintf(cpu_usage, sizeof(cpu_usage), "CPU: %.2f%%%% Free MEM1: %d Free MEM2: %d", (cpu_time / 16.666666) * 100, SYS_GetArena1Hi() - SYS_GetArena1Lo(), SYS_GetArena2Hi() - SYS_GetArena2Lo());
+        // draw_text(big_font, big_font_text, 20, 400, 0.25, cpu_usage);
     }
     
     draw_time = 0;
     obj_particles_time = 0;
 
     if (state.paused) {
-        GRRLIB_FillScreen(RGBA(0, 0, 0, 127));
+        PSGL_FillScreen(RGBA(0, 0, 0, 127));
         textOffset = (get_text_length(big_font, 0.5, "PAUSED")) / 2;
         draw_text(big_font, big_font_text, screenWidth / 2 - textOffset, screenHeight / 2 - 15, 0.5, "PAUSED");
         update_ir_cursor();
@@ -204,38 +196,50 @@ void update_input() {
 }
 
 void update_external_input(KeyInput *input) {
-    WPAD_ScanPads();
-    PAD_ScanPads();
+    CellPadData padData;
+    if (cellPadGetData(0, &padData) == CELL_PAD_OK && padData.len > 0) {
+        uint16_t buttons = (padData.button[CELL_PAD_BTN_OFFSET_DIGITAL1] << 8) | padData.button[CELL_PAD_BTN_OFFSET_DIGITAL2];
 
-    input->pressedA = ((WPAD_ButtonsDown(WPAD_CHAN_0) & WPAD_BUTTON_A) | (PAD_ButtonsDown(PAD_CHAN0) & PAD_BUTTON_A)) > 0;
-    input->holdA =    ((WPAD_ButtonsHeld(WPAD_CHAN_0) & WPAD_BUTTON_A) | (PAD_ButtonsHeld(PAD_CHAN0) & PAD_BUTTON_A)) > 0;
+        static uint16_t prevButtons = 0;
+        uint16_t pressed = buttons & ~prevButtons;
 
-    input->pressedB = ((WPAD_ButtonsDown(WPAD_CHAN_0) & WPAD_BUTTON_B) | (PAD_ButtonsDown(PAD_CHAN0) & PAD_BUTTON_B)) > 0;
-    input->holdB =    ((WPAD_ButtonsHeld(WPAD_CHAN_0) & WPAD_BUTTON_B) | (PAD_ButtonsHeld(PAD_CHAN0) & PAD_BUTTON_B)) > 0;
+        input->pressedA = (pressed & CELL_PAD_CTRL_CROSS) > 0;
+        input->holdA    = (buttons & CELL_PAD_CTRL_CROSS) > 0;
 
-    input->pressedHome = ((WPAD_ButtonsDown(WPAD_CHAN_0) & WPAD_BUTTON_HOME) | (PAD_ButtonsDown(PAD_CHAN0) & PAD_BUTTON_MENU)) > 0;
-    
-    input->pressed1orX = ((WPAD_ButtonsDown(WPAD_CHAN_0) & WPAD_BUTTON_1) | (PAD_ButtonsDown(PAD_CHAN0) & PAD_BUTTON_X)) > 0;
-    input->hold1orX =    ((WPAD_ButtonsHeld(WPAD_CHAN_0) & WPAD_BUTTON_1) | (PAD_ButtonsHeld(PAD_CHAN0) & PAD_BUTTON_X)) > 0;
+        input->pressedB = (pressed & CELL_PAD_CTRL_CIRCLE) > 0;
+        input->holdB    = (buttons & CELL_PAD_CTRL_CIRCLE) > 0;
 
-    input->pressed2orY = ((WPAD_ButtonsDown(WPAD_CHAN_0) & WPAD_BUTTON_2) | (PAD_ButtonsDown(PAD_CHAN0) & PAD_BUTTON_Y)) > 0;
-    input->hold2orY =    ((WPAD_ButtonsHeld(WPAD_CHAN_0) & WPAD_BUTTON_2) | (PAD_ButtonsHeld(PAD_CHAN0) & PAD_BUTTON_Y)) > 0;
-    
-    input->pressedPlusOrL = ((WPAD_ButtonsDown(WPAD_CHAN_0) & WPAD_BUTTON_PLUS) | (PAD_ButtonsDown(PAD_CHAN0) & PAD_TRIGGER_L)) > 0;
-    input->holdPlusOrL =    ((WPAD_ButtonsHeld(WPAD_CHAN_0) & WPAD_BUTTON_PLUS) | (PAD_ButtonsHeld(PAD_CHAN0) & PAD_TRIGGER_L)) > 0;
+        input->pressedHome = (pressed & CELL_PAD_CTRL_START) > 0;
 
-    input->pressedMinusOrR = ((WPAD_ButtonsDown(WPAD_CHAN_0) & WPAD_BUTTON_MINUS) | (PAD_ButtonsDown(PAD_CHAN0) & PAD_TRIGGER_R)) > 0;
-    input->holdMinusOrR =    ((WPAD_ButtonsHeld(WPAD_CHAN_0) & WPAD_BUTTON_MINUS) | (PAD_ButtonsHeld(PAD_CHAN0) & PAD_TRIGGER_R)) > 0;
+        input->pressed1orX = (pressed & CELL_PAD_CTRL_SQUARE) > 0;
+        input->hold1orX    = (buttons & CELL_PAD_CTRL_SQUARE) > 0;
 
-    unsigned int const wpad_dir_mask = WPAD_BUTTON_UP | WPAD_BUTTON_DOWN | WPAD_BUTTON_RIGHT | WPAD_BUTTON_LEFT; 
-    unsigned int const pad_dir_mask =  PAD_BUTTON_UP  | PAD_BUTTON_DOWN  | PAD_BUTTON_RIGHT  | PAD_BUTTON_LEFT; 
+        input->pressed2orY = (pressed & CELL_PAD_CTRL_TRIANGLE) > 0;
+        input->hold2orY    = (buttons & CELL_PAD_CTRL_TRIANGLE) > 0;
 
-    input->pressedDir = (WPAD_ButtonsDown(WPAD_CHAN_0) & wpad_dir_mask) | (PAD_ButtonsDown(PAD_CHAN0) & pad_dir_mask);
-    input->holdDir =    (WPAD_ButtonsHeld(WPAD_CHAN_0) & wpad_dir_mask) | (PAD_ButtonsHeld(PAD_CHAN0) & pad_dir_mask);
+        input->pressedPlusOrL = (pressed & CELL_PAD_CTRL_L1) > 0;
+        input->holdPlusOrL    = (buttons & CELL_PAD_CTRL_L1) > 0;
 
-    input->pressedJump = input->pressedA || input->pressed2orY || input->pressedB;
-    input->holdJump = input->holdA || input->hold2orY || input->holdB;
+        input->pressedMinusOrR = (pressed & CELL_PAD_CTRL_R1) > 0;
+        input->holdMinusOrR    = (buttons & CELL_PAD_CTRL_R1) > 0;
 
+        input->pressedDir = 0;
+        if (pressed & CELL_PAD_CTRL_UP)    input->pressedDir |= INPUT_UP;
+        if (pressed & CELL_PAD_CTRL_DOWN)  input->pressedDir |= INPUT_DOWN;
+        if (pressed & CELL_PAD_CTRL_LEFT)  input->pressedDir |= INPUT_LEFT;
+        if (pressed & CELL_PAD_CTRL_RIGHT) input->pressedDir |= INPUT_RIGHT;
+
+        input->holdDir = 0;
+        if (buttons & CELL_PAD_CTRL_UP)    input->holdDir |= INPUT_UP;
+        if (buttons & CELL_PAD_CTRL_DOWN)  input->holdDir |= INPUT_DOWN;
+        if (buttons & CELL_PAD_CTRL_LEFT)  input->holdDir |= INPUT_LEFT;
+        if (buttons & CELL_PAD_CTRL_RIGHT) input->holdDir |= INPUT_RIGHT;
+
+        input->pressedJump = input->pressedA || input->pressed2orY || input->pressedB;
+        input->holdJump    = input->holdA || input->hold2orY || input->holdB;
+
+        prevButtons = buttons;
+    }
 }
 
 void set_launch_dir(const char* path) {
@@ -252,93 +256,13 @@ void set_launch_dir(const char* path) {
 }
 
 void update_ir_cursor() {
-    WPADData* data = WPAD_Data(0);
-    if (is_dolphin()) {
-        ir_x = data->ir.x;
-        ir_y = data->ir.y;
-    } else {
-        ir_x = data->ir.sx;
-        ir_y = data->ir.sy;
-    }
-    ir_angle = data->ir.angle;
-    ir_is_valid = data->ir.smooth_valid;
-    float converted_angle = ir_angle * (M_PI / 180.0);
-    cursor_rotated_point_x = (ir_x * cosf(converted_angle) - ir_y * sinf(converted_angle));
-    cursor_rotated_point_y = (ir_x * sinf(converted_angle) + ir_y * cosf(converted_angle));
+    // Stub for PS3 cursor
 }
 
 void draw_ir_cursor() {
     if (ir_is_valid) {
-        GRRLIB_DrawImg(ir_x, ir_y, cursor, ir_angle,1,1,RGBA(255,255,255,255)); // draw cursor
+        PSGL_DrawImg(ir_x, ir_y, cursor, ir_angle,1,1,RGBA(255,255,255,255)); // draw cursor
     }
-}
-static ssize_t __uart_write(const char *buffer,size_t len)
-{
-	u32 cmd,ret;
-
-	if(EXI_Lock(EXI_CHANNEL_0,EXI_DEVICE_1,NULL)==0) return 0;
-	if(EXI_Select(EXI_CHANNEL_0,EXI_DEVICE_1,EXI_SPEED8MHZ)==0) {
-		EXI_Unlock(EXI_CHANNEL_0);
-		return len;
-	}
-
-	ret = 0;
-	cmd = 0xa0010000;
-	if(EXI_Imm(EXI_CHANNEL_0,&cmd,4,EXI_WRITE,NULL)==0) ret |= 0x01;
-	if(EXI_Sync(EXI_CHANNEL_0)==0) ret |= 0x02;
-	if(EXI_ImmEx(EXI_CHANNEL_0,(void *)buffer,len,EXI_WRITE)==0) ret |= 0x04;
-	if(EXI_Deselect(EXI_CHANNEL_0)==0) ret |= 0x08;
-	if(EXI_Unlock(EXI_CHANNEL_0)==0) ret |= 0x10;
-
-	return len;
-}
-
-#define __outsz 256
-
-static ssize_t __uart_stdio_write(struct _reent *r, void *fd, const char *ptr, size_t len)
-{
-	// translate \n and \r\n to \r for Dolphin handling
-	char *p = (char*)ptr;
-	char *buf = (char*)ptr;
-	size_t send_len = len;
-
-	for(size_t i = 0; i <= send_len; i++)
-	{
-		char ch = *p++;
-		//skip the one of the 2 win newline bytes
-		if(ch=='\r' && *p == '\n')
-		{
-			send_len--;
-			continue;
-		}
-
-		//newline should be converted to carriage return
-		if (ch=='\n') 
-			ch = '\r';
-
-		*buf++ = ch;
-	}
-	
-	__uart_write(ptr, send_len);
-
-	return len;
-}
-static const devoptab_t dotab_uart = {
-	.name    = "uart",
-	.write_r = __uart_stdio_write,
-};
-
-void SYS_STDIO_Report(bool use_stdout)
-{
-	fflush(stderr);
-	devoptab_list[STD_ERR] = &dotab_uart;
-	setvbuf(stderr, NULL, _IONBF, 0);
-	if(use_stdout)
-	{
-		fflush(stdout);
-		devoptab_list[STD_OUT] = &dotab_uart;
-		setvbuf(stdout, NULL, _IONBF, 0);
-	}
 }
 
 int main(int argc, char **argv) {
@@ -346,49 +270,50 @@ int main(int argc, char **argv) {
         set_launch_dir(argv[0]);
     }
 
-    if (!fatInitDefault()) {
-		output_log("fatInitDefault failure\n");
-	}
+    // Fat filesystem is not needed on PS3 like this
+    // if (!fatInitDefault()) {
+	//	output_log("fatInitDefault failure\n");
+	// }
 
-    SYS_STDIO_Report(true);
-    // Init GRRLIB & WiiUse
-    output_log("grrlib status %d, is dolphin %d\n", GRRLIB_Init(), is_dolphin());
+    // SYS_STDIO_Report(true);
     
-    WPAD_Init();
-    PAD_Init();
-    WPAD_SetIdleTimeout( 60 * 10 );
-    WPAD_SetDataFormat( WPAD_CHAN_0, WPAD_FMT_BTNS_ACC_IR );
+    // PS3 Initialization
+    cellPadInit(1);
+
+    int width = 1280; // Defaulting to 720p for now
+    int height = 720;
+
+    // PS3 SDK would normally provide the resolution here
+    PSGL_Init(width, height);
 
     srand(time(NULL));
 
     // Initialise the audio subsystem
-	ASND_Init();
-    MP3Player_Init();
+    PS3Audio_Init();
     
-    SetVolumeOgg(255);
+    // SetVolumeOgg(255);
     load_spritesheet();
 
     // Set resolution based on mode
-    screenWidth  = GRRLIB_Settings.width;   // Framebuffer width (typically 640)
-    screenHeight = GRRLIB_Settings.height; // EFB height (usually 480 or 576)
+    screenWidth  = PSGL_Settings.internalWidth;
+    screenHeight = PSGL_Settings.internalHeight;
 
-    widthAdjust = (screenWidth - 640) / 2.f;
+    // For 720p (1280x720), a centered 4:3 area would be 960x720.
+    // widthAdjust = (1280 - 960) / 2 = 160.
+    // The game was originally 640x480. 720 / 480 = 1.5. 640 * 1.5 = 960.
+    widthAdjust = (screenWidth - (screenHeight * 4.0f / 3.0f)) / 2.0f;
 
     screen_factor_x = (float) screenWidth / 640;
     screen_factor_y = (float) screenHeight / 480;
 
-    output_log("xfb[0]=%p xfb[1]=%p\n", xfb[0], xfb[1]);
+    // startTime = gettime();
 
-    output_log("%d, %d mode %d\n", screenWidth, screenHeight, rmode->viTVMode);
-
-    startTime = gettime();    
-
-    cursor = GRRLIB_LoadTexturePNG(cursor_png);
-    GRRLIB_SetHandle(cursor, 14, 22);
-    big_font_text = GRRLIB_LoadTexturePNG(bigFont_png);
+    cursor = PSGL_LoadTexturePNG(cursor_png, cursor_png_size);
+    PSGL_SetHandle(cursor, 14, 22);
+    big_font_text = PSGL_LoadTexturePNG(bigFont_png, bigFont_png_size);
 
     // hopefully this fixes the ir position
-    WPAD_SetVRes(WPAD_CHAN_0,screenWidth,screenHeight);
+    // WPAD_SetVRes(WPAD_CHAN_0,screenWidth,screenHeight);
     
     char robot_plist_path[278];
     
@@ -401,7 +326,7 @@ int main(int argc, char **argv) {
                robot_animations.animations[i].name,
                robot_animations.animations[i].frameCount);
     }
-    WPAD_SetDataFormat(WPAD_CHAN_ALL, WPAD_FMT_BTNS_ACC_IR);
+    // WPAD_SetDataFormat(WPAD_CHAN_ALL, WPAD_FMT_BTNS_ACC_IR);
 
     full_init_variables();
     while(1) {
@@ -415,7 +340,7 @@ int main(int argc, char **argv) {
         }
     }
 Exit:
-	MP3Player_Stop();
+    PS3Audio_StopMusic();
     ExitGame();
     return 0;
 }
@@ -426,7 +351,7 @@ static void ensure_log_file(void) {
     if (log_file) return;  // already open
 
     // Initialize SD/USB filesystem
-    if (!fatInitDefault()) return;
+    // if (!fatInitDefault()) return;
 
     char log_filename[278];
     snprintf(log_filename, sizeof(log_filename), "%s/%s", launch_dir, "output.txt");
@@ -473,8 +398,11 @@ static void ExitGame(void) {
 
     close_log_file();
 
-    // Deinitialize GRRLIB & Video
-    GRRLIB_Exit();
+    // Deinitialize Audio
+    PS3Audio_Exit();
+
+    // Deinitialize PSGL
+    PSGL_Exit();
 
     // Exit application
     exit(0);
@@ -482,7 +410,7 @@ static void ExitGame(void) {
 
 #define SPR_ECID_U        924
 bool is_dolphin() {        
-    return (mfspr(SPR_ECID_U) == 0x0d96e200);
+    return false;
 }
 
 unsigned long allocation = 0;

@@ -1,6 +1,6 @@
 #include <string.h>
 #include <ctype.h>
-#include <grrlib.h>
+#include "psgl_graphics.h"
 #include "animation.h"
 #include "player.h"
 #include "main.h"
@@ -229,7 +229,7 @@ void playObjAnimation(GameObject *obj, AnimationDefinition definition, float tim
         float rotated_x = (part_x * cosRot - part_y * sinRot) * obj->scale_x;
         float rotated_y = (part_x * sinRot + part_y * cosRot) * obj->scale_y;
 
-        float calc_x = ((*soa_x(obj) + rotated_x - state.camera_x) * SCALE) - widthAdjust;
+        float calc_x = ((*soa_x(obj) + rotated_x - state.camera_x) * SCALE) + widthAdjust;
         float calc_y = screenHeight - ((*soa_y(obj) + rotated_y - state.camera_y) * SCALE);
 
         float rotation = interpolatedPart.rotation;
@@ -238,7 +238,7 @@ void playObjAnimation(GameObject *obj, AnimationDefinition definition, float tim
         float final_rotation = (rotation + obj->rotation) * state.mirror_mult;
         
         // Put layer
-        GRRLIB_texImg *tex = part.texture;
+        PSGL_texImg *tex = part.texture;
         u8 color_type = part.color_channel_type;
         
         int col_channel = part.default_col_channel;
@@ -259,9 +259,9 @@ void playObjAnimation(GameObject *obj, AnimationDefinition definition, float tim
 
         int blending;
         if (channels[col_channel].blending) {
-            blending = GRRLIB_BLEND_ADD;
+            blending = BLEND_ADD;
         } else {
-            blending = GRRLIB_BLEND_ALPHA;
+            blending = BLEND_ALPHA;
         }
 
         int opacity = get_fade_value(calc_x, screenWidth);
@@ -270,7 +270,7 @@ void playObjAnimation(GameObject *obj, AnimationDefinition definition, float tim
         u32 color = get_layer_color(obj, color_type, col_channel, opacity, part.default_col_channel);
 
         // If it is invisible because of blending, skip
-        if ((blending == GRRLIB_BLEND_ADD && !(color & ~0xff)) || opacity == 0) continue;
+        if ((blending == BLEND_ADD && !(color & ~0xff)) || opacity == 0) continue;
 
         int fade_x = 0;
         int fade_y = 0;
@@ -292,7 +292,7 @@ void playObjAnimation(GameObject *obj, AnimationDefinition definition, float tim
         
         if (tex) {
             set_texture(tex); 
-            GRRLIB_SetBlend(blending);
+            PSGL_SetBlend(blending);
             custom_drawImg(
                 /* X        */ get_mirror_x(calc_x, state.mirror_factor) + 6 - (tex->w) / 2 + fade_x,
                 /* Y        */ calc_y + 6 - (tex->h) / 2 + fade_y,
@@ -315,7 +315,7 @@ void playRobotAnimation(Player *player,
                         float blendFactor) 
 {
     // Animation textures
-    GRRLIB_texImg *robot_textures[] = {
+    PSGL_texImg *robot_textures[] = {
         robot_3_l2, robot_3_l1,
         robot_2_l2, robot_2_l1,
         robot_4_l2, robot_4_l1,
@@ -381,17 +381,17 @@ void playRobotAnimation(Player *player,
         float rotated_x = (finalPart.x * cosRot - part_y * sinRot) * scale;
         float rotated_y = (finalPart.x * sinRot + part_y * cosRot) * scale;
 
-        float calc_x = ((player->x + rotated_x - state.camera_x) * SCALE) - widthAdjust;
+        float calc_x = ((player->x + rotated_x - state.camera_x) * SCALE) + widthAdjust;
         float calc_y = screenHeight - ((player->y + rotated_y - state.camera_y) * SCALE);
 
         float final_rotation = (finalPart.rotation + rotation) * state.mirror_mult;
 
-        GRRLIB_texImg *tex;
+        PSGL_texImg *tex;
 
         // First part
         tex = robot_textures[i * 2];
         set_texture(tex); 
-        GRRLIB_SetHandle(tex, tex->w / 2, tex->h / 2);
+        PSGL_SetHandle(tex, tex->w / 2, tex->h / 2);
         custom_drawImg(get_mirror_x(calc_x, state.mirror_factor) + 6 - (tex->w) / 2, 
                        calc_y + 6 - (tex->h) / 2, 
                        tex, 
@@ -403,7 +403,7 @@ void playRobotAnimation(Player *player,
         // Second part
         tex = robot_textures[i * 2 + 1];
         set_texture(tex); 
-        GRRLIB_SetHandle(tex, tex->w / 2, tex->h / 2);
+        PSGL_SetHandle(tex, tex->w / 2, tex->h / 2);
         custom_drawImg(get_mirror_x(calc_x, state.mirror_factor) + 6 - (tex->w) / 2, 
                        calc_y + 6 - (tex->h) / 2, 
                        tex, 
@@ -414,7 +414,7 @@ void playRobotAnimation(Player *player,
     }
 }
 
-GRRLIB_texImg *get_frame(FramesDefinition definition, int layer_num, float time, float *scale_out, bool *flip_x) {
+PSGL_texImg *get_frame(FramesDefinition definition, int layer_num, float time, float *scale_out, bool *flip_x) {
     float frameTime = time * definition.fps;
     int currentFrame = (int)frameTime % definition.frame_count;
 
@@ -433,131 +433,136 @@ GRRLIB_texImg *get_frame(FramesDefinition definition, int layer_num, float time,
     return NULL;
 }
 
-const uint8_t *fire_1_layers[] = {
-    Fire_03_2_looped_001_png,
-    Fire_03_looped_001_png,
-    
-    Fire_03_2_looped_002_png,
-    Fire_03_looped_002_png,
+typedef struct {
+    const uint8_t* data;
+    size_t size;
+} AssetData;
 
-    Fire_03_2_looped_003_png,
-    Fire_03_looped_003_png,
+const AssetData fire_1_layers[] = {
+    {Fire_03_2_looped_001_png, Fire_03_2_looped_001_png_size},
+    {Fire_03_looped_001_png, Fire_03_looped_001_png_size},
     
-    Fire_03_2_looped_004_png,
-    Fire_03_looped_004_png,
+    {Fire_03_2_looped_002_png, Fire_03_2_looped_002_png_size},
+    {Fire_03_looped_002_png, Fire_03_looped_002_png_size},
 
-    Fire_03_2_looped_005_png,
-    Fire_03_looped_005_png,
+    {Fire_03_2_looped_003_png, Fire_03_2_looped_003_png_size},
+    {Fire_03_looped_003_png, Fire_03_looped_003_png_size},
     
-    Fire_03_2_looped_006_png,
-    Fire_03_looped_006_png,
+    {Fire_03_2_looped_004_png, Fire_03_2_looped_004_png_size},
+    {Fire_03_looped_004_png, Fire_03_looped_004_png_size},
+
+    {Fire_03_2_looped_005_png, Fire_03_2_looped_005_png_size},
+    {Fire_03_looped_005_png, Fire_03_looped_005_png_size},
     
-    Fire_03_2_looped_007_png,
-    Fire_03_looped_007_png,
+    {Fire_03_2_looped_006_png, Fire_03_2_looped_006_png_size},
+    {Fire_03_looped_006_png, Fire_03_looped_006_png_size},
     
-    Fire_03_2_looped_008_png,
-    Fire_03_looped_008_png,
+    {Fire_03_2_looped_007_png, Fire_03_2_looped_007_png_size},
+    {Fire_03_looped_007_png, Fire_03_looped_007_png_size},
     
-    Fire_03_2_looped_009_png,
-    Fire_03_looped_009_png,
+    {Fire_03_2_looped_008_png, Fire_03_2_looped_008_png_size},
+    {Fire_03_looped_008_png, Fire_03_looped_008_png_size},
+    
+    {Fire_03_2_looped_009_png, Fire_03_2_looped_009_png_size},
+    {Fire_03_looped_009_png, Fire_03_looped_009_png_size},
 };
 
-const uint8_t *fire_2_layers[] = {
-    Fire_04_2_looped_001_png,
-    Fire_04_looped_001_png,
+const AssetData fire_2_layers[] = {
+    {Fire_04_2_looped_001_png, Fire_04_2_looped_001_png_size},
+    {Fire_04_looped_001_png, Fire_04_looped_001_png_size},
     
-    Fire_04_2_looped_002_png,
-    Fire_04_looped_002_png,
+    {Fire_04_2_looped_002_png, Fire_04_2_looped_002_png_size},
+    {Fire_04_looped_002_png, Fire_04_looped_002_png_size},
 
-    Fire_04_2_looped_003_png,
-    Fire_04_looped_003_png,
+    {Fire_04_2_looped_003_png, Fire_04_2_looped_003_png_size},
+    {Fire_04_looped_003_png, Fire_04_looped_003_png_size},
     
-    Fire_04_2_looped_004_png,
-    Fire_04_looped_004_png,
+    {Fire_04_2_looped_004_png, Fire_04_2_looped_004_png_size},
+    {Fire_04_looped_004_png, Fire_04_looped_004_png_size},
 
-    Fire_04_2_looped_005_png,
-    Fire_04_looped_005_png,
+    {Fire_04_2_looped_005_png, Fire_04_2_looped_005_png_size},
+    {Fire_04_looped_005_png, Fire_04_looped_005_png_size},
     
-    Fire_04_2_looped_006_png,
-    Fire_04_looped_006_png,
+    {Fire_04_2_looped_006_png, Fire_04_2_looped_006_png_size},
+    {Fire_04_looped_006_png, Fire_04_looped_006_png_size},
     
-    Fire_04_2_looped_007_png,
-    Fire_04_looped_007_png,
+    {Fire_04_2_looped_007_png, Fire_04_2_looped_007_png_size},
+    {Fire_04_looped_007_png, Fire_04_looped_007_png_size},
     
-    Fire_04_2_looped_008_png,
-    Fire_04_looped_008_png,
+    {Fire_04_2_looped_008_png, Fire_04_2_looped_008_png_size},
+    {Fire_04_looped_008_png, Fire_04_looped_008_png_size},
     
-    Fire_04_2_looped_009_png,
-    Fire_04_looped_009_png,
+    {Fire_04_2_looped_009_png, Fire_04_2_looped_009_png_size},
+    {Fire_04_looped_009_png, Fire_04_looped_009_png_size},
     
-    Fire_04_2_looped_010_png,
-    Fire_04_looped_010_png,
+    {Fire_04_2_looped_010_png, Fire_04_2_looped_010_png_size},
+    {Fire_04_looped_010_png, Fire_04_looped_010_png_size},
 
-    Fire_04_2_looped_011_png,
-    Fire_04_looped_011_png,
+    {Fire_04_2_looped_011_png, Fire_04_2_looped_011_png_size},
+    {Fire_04_looped_011_png, Fire_04_looped_011_png_size},
 };
 
-const uint8_t *fire_3_layers[] = {
-    Fire_01_2_looped_001_png,
-    Fire_01_looped_001_png,
+const AssetData fire_3_layers[] = {
+    {Fire_01_2_looped_001_png, Fire_01_2_looped_001_png_size},
+    {Fire_01_looped_001_png, Fire_01_looped_001_png_size},
     
-    Fire_01_2_looped_002_png,
-    Fire_01_looped_002_png,
+    {Fire_01_2_looped_002_png, Fire_01_2_looped_002_png_size},
+    {Fire_01_looped_002_png, Fire_01_looped_002_png_size},
 
-    Fire_01_2_looped_003_png,
-    Fire_01_looped_003_png,
+    {Fire_01_2_looped_003_png, Fire_01_2_looped_003_png_size},
+    {Fire_01_looped_003_png, Fire_01_looped_003_png_size},
     
-    Fire_01_2_looped_004_png,
-    Fire_01_looped_004_png,
+    {Fire_01_2_looped_004_png, Fire_01_2_looped_004_png_size},
+    {Fire_01_looped_004_png, Fire_01_looped_004_png_size},
 
-    Fire_01_2_looped_005_png,
-    Fire_01_looped_005_png,
+    {Fire_01_2_looped_005_png, Fire_01_2_looped_005_png_size},
+    {Fire_01_looped_005_png, Fire_01_looped_005_png_size},
     
-    Fire_01_2_looped_006_png,
-    Fire_01_looped_006_png,
+    {Fire_01_2_looped_006_png, Fire_01_2_looped_006_png_size},
+    {Fire_01_looped_006_png, Fire_01_looped_006_png_size},
     
-    Fire_01_2_looped_007_png,
-    Fire_01_looped_007_png,
+    {Fire_01_2_looped_007_png, Fire_01_2_looped_007_png_size},
+    {Fire_01_looped_007_png, Fire_01_looped_007_png_size},
     
-    Fire_01_2_looped_008_png,
-    Fire_01_looped_008_png,
+    {Fire_01_2_looped_008_png, Fire_01_2_looped_008_png_size},
+    {Fire_01_looped_008_png, Fire_01_looped_008_png_size},
     
-    Fire_01_2_looped_009_png,
-    Fire_01_looped_009_png,
+    {Fire_01_2_looped_009_png, Fire_01_2_looped_009_png_size},
+    {Fire_01_looped_009_png, Fire_01_looped_009_png_size},
 };
 
-const uint8_t *fire_4_layers[] = {
-    Fire_02_2_looped_001_png,
-    Fire_02_looped_001_png,
+const AssetData fire_4_layers[] = {
+    {Fire_02_2_looped_001_png, Fire_02_2_looped_001_png_size},
+    {Fire_02_looped_001_png, Fire_02_looped_001_png_size},
     
-    Fire_02_2_looped_002_png,
-    Fire_02_looped_002_png,
+    {Fire_02_2_looped_002_png, Fire_02_2_looped_002_png_size},
+    {Fire_02_looped_002_png, Fire_02_looped_002_png_size},
 
-    Fire_02_2_looped_003_png,
-    Fire_02_looped_003_png,
+    {Fire_02_2_looped_003_png, Fire_02_2_looped_003_png_size},
+    {Fire_02_looped_003_png, Fire_02_looped_003_png_size},
     
-    Fire_02_2_looped_004_png,
-    Fire_02_looped_004_png,
+    {Fire_02_2_looped_004_png, Fire_02_2_looped_004_png_size},
+    {Fire_02_looped_004_png, Fire_02_looped_004_png_size},
 
-    Fire_02_2_looped_005_png,
-    Fire_02_looped_005_png,
+    {Fire_02_2_looped_005_png, Fire_02_2_looped_005_png_size},
+    {Fire_02_looped_005_png, Fire_02_looped_005_png_size},
     
-    Fire_02_2_looped_006_png,
-    Fire_02_looped_006_png,
+    {Fire_02_2_looped_006_png, Fire_02_2_looped_006_png_size},
+    {Fire_02_looped_006_png, Fire_02_looped_006_png_size},
     
-    Fire_02_2_looped_007_png,
-    Fire_02_looped_007_png,
+    {Fire_02_2_looped_007_png, Fire_02_2_looped_007_png_size},
+    {Fire_02_looped_007_png, Fire_02_looped_007_png_size},
     
-    Fire_02_2_looped_008_png,
-    Fire_02_looped_008_png,
+    {Fire_02_2_looped_008_png, Fire_02_2_looped_008_png_size},
+    {Fire_02_looped_008_png, Fire_02_looped_008_png_size},
     
-    Fire_02_2_looped_009_png,
-    Fire_02_looped_009_png,
+    {Fire_02_2_looped_009_png, Fire_02_2_looped_009_png_size},
+    {Fire_02_looped_009_png, Fire_02_looped_009_png_size},
 };
 
-GRRLIB_texImg *load_png(const u8 *data) {
-    GRRLIB_texImg *tex = GRRLIB_LoadTexturePNG(data);
-    GRRLIB_SetHandle(tex, tex->w / 2, tex->h / 2);
+PSGL_texImg *load_png(const u8 *data, size_t size) {
+    PSGL_texImg *tex = PSGL_LoadTexturePNG(data, size);
+    PSGL_SetHandle(tex, tex->w / 2, tex->h / 2);
     return tex;
 }
 
@@ -568,12 +573,12 @@ FramesDefinition prepare_fire_1_animation() {
         Frame frame = { 0 };
 
         FrameLayer layer1;
-        layer1.texture = load_png(fire_1_layers[i]);
+        layer1.texture = load_png(fire_1_layers[i].data, fire_1_layers[i].size);
         layer1.layer_num = 0;
         layer1.scale = 2;
         
         FrameLayer layer2;
-        layer2.texture = load_png(fire_1_layers[i + 1]);
+        layer2.texture = load_png(fire_1_layers[i + 1].data, fire_1_layers[i + 1].size);
         layer2.layer_num = 1;
         layer2.scale = 1;
         
@@ -598,12 +603,12 @@ FramesDefinition prepare_fire_2_animation() {
         Frame frame = { 0 };
 
         FrameLayer layer1;
-        layer1.texture = load_png(fire_2_layers[i]);
+        layer1.texture = load_png(fire_2_layers[i].data, fire_2_layers[i].size);
         layer1.layer_num = 0;
         layer1.scale = 2;
         
         FrameLayer layer2;
-        layer2.texture = load_png(fire_2_layers[i + 1]);
+        layer2.texture = load_png(fire_2_layers[i + 1].data, fire_2_layers[i + 1].size);
         layer2.layer_num = 1;
         layer2.scale = 1;
         
@@ -627,12 +632,12 @@ FramesDefinition prepare_fire_3_animation() {
         Frame frame = { 0 };
 
         FrameLayer layer1;
-        layer1.texture = load_png(fire_3_layers[i]);
+        layer1.texture = load_png(fire_3_layers[i].data, fire_3_layers[i].size);
         layer1.layer_num = 0;
         layer1.scale = 2;
         
         FrameLayer layer2;
-        layer2.texture = load_png(fire_3_layers[i + 1]);
+        layer2.texture = load_png(fire_3_layers[i + 1].data, fire_3_layers[i + 1].size);
         layer2.layer_num = 1;
         layer2.scale = 1;
         
@@ -656,12 +661,12 @@ FramesDefinition prepare_fire_4_animation() {
         Frame frame = { 0 };
 
         FrameLayer layer1;
-        layer1.texture = load_png(fire_4_layers[i]);
+        layer1.texture = load_png(fire_4_layers[i].data, fire_4_layers[i].size);
         layer1.layer_num = 0;
         layer1.scale = 2;
         
         FrameLayer layer2;
-        layer2.texture = load_png(fire_4_layers[i + 1]);
+        layer2.texture = load_png(fire_4_layers[i + 1].data, fire_4_layers[i + 1].size);
         layer2.layer_num = 1;
         layer2.scale = 1;
         
@@ -678,44 +683,44 @@ FramesDefinition prepare_fire_4_animation() {
     return animation;
 }
 
-const uint8_t *water_1_layers[] = {
-    d_animWave_01_001_png,
-    d_animWave_01_002_png,
-    d_animWave_01_003_png,
-    d_animWave_01_004_png,
-    d_animWave_01_005_png,
-    d_animWave_01_006_png,
-    d_animWave_01_007_png,
-    d_animWave_01_008_png,
-    d_animWave_01_009_png,
-    d_animWave_01_008_png,
-    d_animWave_01_007_png,
+const AssetData water_1_layers[] = {
+    {d_animWave_01_001_png, d_animWave_01_001_png_size},
+    {d_animWave_01_002_png, d_animWave_01_002_png_size},
+    {d_animWave_01_003_png, d_animWave_01_003_png_size},
+    {d_animWave_01_004_png, d_animWave_01_004_png_size},
+    {d_animWave_01_005_png, d_animWave_01_005_png_size},
+    {d_animWave_01_006_png, d_animWave_01_006_png_size},
+    {d_animWave_01_007_png, d_animWave_01_007_png_size},
+    {d_animWave_01_008_png, d_animWave_01_008_png_size},
+    {d_animWave_01_009_png, d_animWave_01_009_png_size},
+    {d_animWave_01_008_png, d_animWave_01_008_png_size},
+    {d_animWave_01_007_png, d_animWave_01_007_png_size},
 };
 
-const uint8_t *water_2_layers[] = {
-    d_animWave_02_001_png,
-    d_animWave_02_002_png,
-    d_animWave_02_003_png,
-    d_animWave_02_004_png,
-    d_animWave_02_005_png,
-    d_animWave_02_006_png,
-    d_animWave_02_005_png,
-    d_animWave_02_004_png,
-    d_animWave_02_003_png,
-    d_animWave_02_002_png,
+const AssetData water_2_layers[] = {
+    {d_animWave_02_001_png, d_animWave_02_001_png_size},
+    {d_animWave_02_002_png, d_animWave_02_002_png_size},
+    {d_animWave_02_003_png, d_animWave_02_003_png_size},
+    {d_animWave_02_004_png, d_animWave_02_004_png_size},
+    {d_animWave_02_005_png, d_animWave_02_005_png_size},
+    {d_animWave_02_006_png, d_animWave_02_006_png_size},
+    {d_animWave_02_005_png, d_animWave_02_005_png_size},
+    {d_animWave_02_004_png, d_animWave_02_004_png_size},
+    {d_animWave_02_003_png, d_animWave_02_003_png_size},
+    {d_animWave_02_002_png, d_animWave_02_002_png_size},
 };
 
-const uint8_t *water_3_layers[] = {
-    d_animWave_03_001_png,
-    d_animWave_03_002_png,
-    d_animWave_03_003_png,
-    d_animWave_03_004_png,
-    d_animWave_03_005_png,
-    d_animWave_03_006_png,
-    d_animWave_03_005_png,
-    d_animWave_03_004_png,
-    d_animWave_03_003_png,
-    d_animWave_03_002_png,
+const AssetData water_3_layers[] = {
+    {d_animWave_03_001_png, d_animWave_03_001_png_size},
+    {d_animWave_03_002_png, d_animWave_03_002_png_size},
+    {d_animWave_03_003_png, d_animWave_03_003_png_size},
+    {d_animWave_03_004_png, d_animWave_03_004_png_size},
+    {d_animWave_03_005_png, d_animWave_03_005_png_size},
+    {d_animWave_03_006_png, d_animWave_03_006_png_size},
+    {d_animWave_03_005_png, d_animWave_03_005_png_size},
+    {d_animWave_03_004_png, d_animWave_03_004_png_size},
+    {d_animWave_03_003_png, d_animWave_03_003_png_size},
+    {d_animWave_03_002_png, d_animWave_03_002_png_size},
 };
 
 FramesDefinition prepare_water_1_animation() {
@@ -725,7 +730,7 @@ FramesDefinition prepare_water_1_animation() {
         Frame frame = { 0 };
 
         FrameLayer layer1;
-        layer1.texture = load_png(water_1_layers[i]);
+        layer1.texture = load_png(water_1_layers[i].data, water_1_layers[i].size);
         layer1.layer_num = 0;
         layer1.scale = 1;
         layer1.flip_x = i > 8;
@@ -749,7 +754,7 @@ FramesDefinition prepare_water_2_animation() {
         Frame frame = { 0 };
 
         FrameLayer layer1;
-        layer1.texture = load_png(water_2_layers[i]);
+        layer1.texture = load_png(water_2_layers[i].data, water_2_layers[i].size);
         layer1.layer_num = 0;
         layer1.scale = 1;
         layer1.flip_x = i > 5;
@@ -773,7 +778,7 @@ FramesDefinition prepare_water_3_animation() {
         Frame frame = { 0 };
 
         FrameLayer layer1;
-        layer1.texture = load_png(water_3_layers[i]);
+        layer1.texture = load_png(water_3_layers[i].data, water_3_layers[i].size);
         layer1.layer_num = 0;
         layer1.scale = 1;
         layer1.flip_x = i > 5;
@@ -790,47 +795,47 @@ FramesDefinition prepare_water_3_animation() {
     return animation;
 }
 
-const uint8_t *loading_1_layers[] = {
-    d_animLoading_01_color_001_png,
-    d_animLoading_01_001_png,
+const AssetData loading_1_layers[] = {
+    {d_animLoading_01_color_001_png, d_animLoading_01_color_001_png_size},
+    {d_animLoading_01_001_png, d_animLoading_01_001_png_size},
     
-    d_animLoading_01_color_002_png,
-    d_animLoading_01_002_png,
+    {d_animLoading_01_color_002_png, d_animLoading_01_color_002_png_size},
+    {d_animLoading_01_002_png, d_animLoading_01_002_png_size},
     
-    d_animLoading_01_color_003_png,
-    d_animLoading_01_003_png,
+    {d_animLoading_01_color_003_png, d_animLoading_01_color_003_png_size},
+    {d_animLoading_01_003_png, d_animLoading_01_003_png_size},
     
-    d_animLoading_01_color_004_png,
-    d_animLoading_01_004_png,
+    {d_animLoading_01_color_004_png, d_animLoading_01_color_004_png_size},
+    {d_animLoading_01_004_png, d_animLoading_01_004_png_size},
     
-    d_animLoading_01_color_005_png,
-    d_animLoading_01_005_png,
+    {d_animLoading_01_color_005_png, d_animLoading_01_color_005_png_size},
+    {d_animLoading_01_005_png, d_animLoading_01_005_png_size},
     
-    d_animLoading_01_color_006_png,
-    d_animLoading_01_006_png,
+    {d_animLoading_01_color_006_png, d_animLoading_01_color_006_png_size},
+    {d_animLoading_01_006_png, d_animLoading_01_006_png_size},
 };
 
-const uint8_t *loading_2_layers[] = {
-    d_animLoading_02_color_001_png,
-    d_animLoading_02_001_png,
+const AssetData loading_2_layers[] = {
+    {d_animLoading_02_color_001_png, d_animLoading_02_color_001_png_size},
+    {d_animLoading_02_001_png, d_animLoading_02_001_png_size},
     
-    d_animLoading_02_color_002_png,
-    d_animLoading_02_002_png,
+    {d_animLoading_02_color_002_png, d_animLoading_02_color_002_png_size},
+    {d_animLoading_02_002_png, d_animLoading_02_002_png_size},
     
-    d_animLoading_02_color_003_png,
-    d_animLoading_02_003_png,
+    {d_animLoading_02_color_003_png, d_animLoading_02_color_003_png_size},
+    {d_animLoading_02_003_png, d_animLoading_02_003_png_size},
     
-    d_animLoading_02_color_004_png,
-    d_animLoading_02_004_png,
+    {d_animLoading_02_color_004_png, d_animLoading_02_color_004_png_size},
+    {d_animLoading_02_004_png, d_animLoading_02_004_png_size},
     
-    d_animLoading_02_color_005_png,
-    d_animLoading_02_005_png,
+    {d_animLoading_02_color_005_png, d_animLoading_02_color_005_png_size},
+    {d_animLoading_02_005_png, d_animLoading_02_005_png_size},
     
-    d_animLoading_02_color_006_png,
-    d_animLoading_02_006_png,
+    {d_animLoading_02_color_006_png, d_animLoading_02_color_006_png_size},
+    {d_animLoading_02_006_png, d_animLoading_02_006_png_size},
     
-    d_animLoading_02_color_007_png,
-    d_animLoading_02_007_png,
+    {d_animLoading_02_color_007_png, d_animLoading_02_color_007_png_size},
+    {d_animLoading_02_007_png, d_animLoading_02_007_png_size},
 };
 
 FramesDefinition prepare_loading_1_animation() {
@@ -840,12 +845,12 @@ FramesDefinition prepare_loading_1_animation() {
         Frame frame = { 0 };
 
         FrameLayer layer1;
-        layer1.texture = load_png(loading_1_layers[i]);
+        layer1.texture = load_png(loading_1_layers[i].data, loading_1_layers[i].size);
         layer1.layer_num = 0;
         layer1.scale = 1;
         
         FrameLayer layer2;
-        layer2.texture = load_png(loading_1_layers[i + 1]);
+        layer2.texture = load_png(loading_1_layers[i + 1].data, loading_1_layers[i + 1].size);
         layer2.layer_num = 1;
         layer2.scale = 1;
         
@@ -869,12 +874,12 @@ FramesDefinition prepare_loading_2_animation() {
         Frame frame = { 0 };
 
         FrameLayer layer1;
-        layer1.texture = load_png(loading_2_layers[i]);
+        layer1.texture = load_png(loading_2_layers[i].data, loading_2_layers[i].size);
         layer1.layer_num = 0;
         layer1.scale = 1;
         
         FrameLayer layer2;
-        layer2.texture = load_png(loading_2_layers[i + 1]);
+        layer2.texture = load_png(loading_2_layers[i + 1].data, loading_2_layers[i + 1].size);
         layer2.layer_num = 1;
         layer2.scale = 1;
         
@@ -906,35 +911,35 @@ AnimationDefinition prepare_monster_1_animation() {
     animation.anim = getAnimation(&monster_1_library, "GJBeast01_bite");
 
     AnimationPart part1;
-    part1.texture = load_png(GJBeast01_01_glow_001_png);
+    part1.texture = load_png(GJBeast01_01_glow_001_png, GJBeast01_01_glow_001_png_size);
     part1.color_channel_type = COLOR_GLOW;
     part1.default_col_channel = LBG_NO_LERP;
     part1.part_id = 1;
     animation.parts[part_index++] = part1;
     
     AnimationPart part2;
-    part2.texture = load_png(GJBeast01_02_glow_001_png);
+    part2.texture = load_png(GJBeast01_02_glow_001_png, GJBeast01_02_glow_001_png_size);
     part2.color_channel_type = COLOR_GLOW;
     part2.default_col_channel = LBG_NO_LERP;
     part2.part_id = 0;
     animation.parts[part_index++] = part2;
 
     AnimationPart part3;
-    part3.texture = load_png(GJBeast01_01_001_png);
+    part3.texture = load_png(GJBeast01_01_001_png, GJBeast01_01_001_png_size);
     part3.color_channel_type = COLOR_MAIN;
     part3.default_col_channel = BLACK;
     part3.part_id = 1;
     animation.parts[part_index++] = part3;
 
     AnimationPart part4;
-    part4.texture = load_png(GJBeast01_03_001_png);
+    part4.texture = load_png(GJBeast01_03_001_png, GJBeast01_03_001_png_size);
     part4.color_channel_type = COLOR_DETAIL;
     part4.default_col_channel = WHITE;
     part4.part_id = 1;
     animation.parts[part_index++] = part4;
 
     AnimationPart part5;
-    part5.texture = load_png(GJBeast01_02_001_png);
+    part5.texture = load_png(GJBeast01_02_001_png, GJBeast01_02_001_png_size);
     part5.color_channel_type = COLOR_MAIN;
     part5.default_col_channel = BLACK;
     part5.part_id = 0;
@@ -959,21 +964,21 @@ AnimationDefinition prepare_monster_2_animation() {
     animation.anim = getAnimation(&monster_2_library, "GJBeast02_idle01");
 
     AnimationPart part1;
-    part1.texture = load_png(GJBeast02_01_glow_001_png);
+    part1.texture = load_png(GJBeast02_01_glow_001_png, GJBeast02_01_glow_001_png_size);
     part1.color_channel_type = COLOR_GLOW;
     part1.default_col_channel = LBG_NO_LERP;
     part1.part_id = 0;
     animation.parts[part_index++] = part1;
     
     AnimationPart part2;
-    part2.texture = load_png(GJBeast02_01_001_png);
+    part2.texture = load_png(GJBeast02_01_001_png, GJBeast02_01_001_png_size);
     part2.color_channel_type = COLOR_MAIN;
     part2.default_col_channel = BLACK;
     part2.part_id = 0;
     animation.parts[part_index++] = part2;
 
     AnimationPart part3;
-    part3.texture = load_png(GJBeast02_02_001_png);
+    part3.texture = load_png(GJBeast02_02_001_png, GJBeast02_02_001_png_size);
     part3.color_channel_type = COLOR_DETAIL;
     part3.default_col_channel = WHITE;
     part3.part_id = 1;
@@ -997,21 +1002,21 @@ AnimationDefinition prepare_monster_3_animation() {
     animation.anim = getAnimation(&monster_3_library, "GJBeast03_idle01");
 
     AnimationPart part1;
-    part1.texture = load_png(GJBeast03_01_glow_001_png);
+    part1.texture = load_png(GJBeast03_01_glow_001_png, GJBeast03_01_glow_001_png_size);
     part1.color_channel_type = COLOR_GLOW;
     part1.default_col_channel = LBG_NO_LERP;
     part1.part_id = 0;
     animation.parts[part_index++] = part1;
     
     AnimationPart part2;
-    part2.texture = load_png(GJBeast03_01_001_png);
+    part2.texture = load_png(GJBeast03_01_001_png, GJBeast03_01_001_png_size);
     part2.color_channel_type = COLOR_MAIN;
     part2.default_col_channel = BLACK;
     part2.part_id = 0;
     animation.parts[part_index++] = part2;
 
     AnimationPart part3;
-    part3.texture = load_png(GJBeast03_02_001_png);
+    part3.texture = load_png(GJBeast03_02_001_png, GJBeast03_02_001_png_size);
     part3.color_channel_type = COLOR_DETAIL;
     part3.default_col_channel = WHITE;
     part3.part_id = 1;
@@ -1036,13 +1041,13 @@ AnimationDefinition prepare_black_sludge_animation() {
     animation.anim = getAnimation(&black_sludge_library, "BlackSludge_loop");
 
     AnimationPart part1;
-    part1.texture = load_png(dA_blackSludge_01_001_png);
+    part1.texture = load_png(dA_blackSludge_01_001_png, dA_blackSludge_01_001_png_size);
     part1.color_channel_type = COLOR_DETAIL;
     part1.default_col_channel = BLACK;
     part1.part_id = 0;
     animation.parts[part_index++] = part1;
 
-    GRRLIB_texImg *triangle_tex = load_png(dA_blackSludge_02_001_png);
+    PSGL_texImg *triangle_tex = load_png(dA_blackSludge_02_001_png, dA_blackSludge_02_001_png_size);
 
     AnimationPart part2;
     part2.texture = triangle_tex;
@@ -1070,7 +1075,7 @@ void unload_animation_definition(AnimationDefinition def) {
         AnimationPart *part = &def.parts[i];
 
         if (part->texture) {
-            GRRLIB_FreeTexture(part->texture);
+            PSGL_FreeTexture(part->texture);
             part->texture = NULL;
         }
     }
@@ -1083,7 +1088,7 @@ void unload_frame_definition(FramesDefinition def) {
         for (int j = 0; j < frame->layer_count; j++) {
             FrameLayer *layer = &frame->layers[j];
             if (layer->texture) {
-                GRRLIB_FreeTexture(layer->texture);
+                PSGL_FreeTexture(layer->texture);
                 layer->texture = NULL;
             }
         }

@@ -3,9 +3,7 @@
 #ifndef MOTION_TRAIL_H
 #define MOTION_TRAIL_H
 
-#include <gccore.h>
-#include <grrlib.h>
-
+#include "psgl_graphics.h"
 #include "objects.h"
 
 #define MAX_TRAIL_POINTS 128
@@ -38,7 +36,7 @@ typedef struct {
     Vec2 positionR;
     Color displayedColor;
 
-    GRRLIB_texImg *texture;
+    PSGL_texImg *texture;
 
     float pointState[MAX_TRAIL_POINTS];
     Vec2 pointVertexes[MAX_TRAIL_POINTS];
@@ -62,7 +60,7 @@ extern MotionTrail wave_trail_p1;
 extern MotionTrail wave_trail_p2;
 
 
-void MotionTrail_Init(MotionTrail* trail, float fade, float minSeg, float stroke, bool waveTrail, Color color, GRRLIB_texImg *tex);
+void MotionTrail_Init(MotionTrail* trail, float fade, float minSeg, float stroke, bool waveTrail, Color color, PSGL_texImg *tex);
 void MotionTrail_UpdateWaveTrail(MotionTrail *trail, float delta);
 void MotionTrail_Update(MotionTrail* trail, float delta);
 void MotionTrail_ResumeStroke(MotionTrail* trail);

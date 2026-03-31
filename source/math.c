@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <float.h>
 
+#include "psgl_graphics.h"
 #include "math.h"
 #include "objects.h"
 #include "game.h"
@@ -216,82 +217,18 @@ float ease_out(float current, float target, float smoothing) {
     return current + (target - current) * smoothing;
 }
 
-static guVector axis = (guVector){0.0f, 0.0f, 1.0f};
+// Custom PSGL functions for maximum performance (so it can be batched)
 
-
-// Custom GRRLIB functions for maximum performance (so it can be batched)
-
-void set_texture(const GRRLIB_texImg *tex) {
-    
-    if (tex == NULL || tex->data == NULL)
+void set_texture(const PSGL_texImg *tex) {
+    if (tex == NULL)
         return;
 
-    GXTexObj  texObj;
-    GX_InitTexObj(&texObj, tex->data, tex->w, tex->h,
-                  tex->format, GX_CLAMP, GX_CLAMP, GX_FALSE);
-
-    if (GRRLIB_Settings.antialias == false) {
-        GX_InitTexObjLOD(&texObj, GX_NEAR, GX_NEAR,
-                         0.0f, 0.0f, 0.0f, 0, 0, GX_ANISO_1);
-    }
-
-    GX_LoadTexObj(&texObj,      GX_TEXMAP0);
+    glBindTexture(GL_TEXTURE_2D, tex->textureID);
+    prev_tex = (PSGL_texImg *)tex;
 }
 
-void  custom_drawImg (const f32 xpos, const f32 ypos, const GRRLIB_texImg *tex, const f32 degrees, const f32 scaleX, const f32 scaleY, const u32 color) {
-    Mtx       m, m1, m2, mv;
-
-    guMtxIdentity  (m1);
-    guMtxScaleApply(m1, m1, scaleX, scaleY, 1.0f);
-    guMtxRotAxisDeg(m2, &axis, degrees);
-    guMtxConcat    (m2, m1, m);
-
-    const f32 width  = tex->w * 0.5f;
-    const f32 height = tex->h * 0.5f;
-
-    guMtxTransApply(m, m,
-        xpos +width  +tex->handlex
-            -tex->offsetx +( scaleX *(-tex->handley *sin(-DegToRad(degrees))
-                                      -tex->handlex *cos(-DegToRad(degrees))) ),
-        ypos +height +tex->handley
-            -tex->offsety +( scaleY *(-tex->handley *cos(-DegToRad(degrees))
-                                      +tex->handlex *sin(-DegToRad(degrees))) ),
-        0);
-    guMtxConcat(GXmodelView2D, m, mv);
-
-    GX_LoadPosMtxImm(mv, GX_PNMTX0);
-    GX_Begin(GX_QUADS, GX_VTXFMT0, 4);
-        GX_Position3f32(-width, -height, 0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(0, 0);
-
-        GX_Position3f32(width, -height, 0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(1, 0);
-
-        GX_Position3f32(width, height, 0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(1, 1);
-
-        GX_Position3f32(-width, height, 0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(0, 1);
-    GX_End();
-}
-
-void  custom_gxengine (const guVector v[], const u32 color[], const u16 n,
-                       const u8 fmt, const float lineWidth) {
-    // Set line width if using line primitives
-    if (fmt == GX_LINESTRIP || fmt == GX_LINES) {
-        GX_SetLineWidth(lineWidth * 8, fmt);
-    }
-    
-    GX_Begin(fmt, GX_VTXFMT0, n);
-    for (u16 i = 0; i < n; i++) {
-        GX_Position3f32(v[i].x, v[i].y, v[i].z);
-        GX_Color1u32(color[i]);
-    }
-    GX_End();
+void  custom_drawImg (const f32 xpos, const f32 ypos, const PSGL_texImg *tex, const f32 degrees, const f32 scaleX, const f32 scaleY, const u32 color) {
+    PSGL_DrawImg(xpos, ypos, (PSGL_texImg*)tex, degrees, scaleX, scaleY, color);
 }
 
 void custom_ellipse(const float x, const float y, const float radiusX,
@@ -299,34 +236,30 @@ void custom_ellipse(const float x, const float y, const float radiusX,
                     const float lineWidth) {
     int segments = (int)(MAX(radiusX, radiusY) * 0.75f); // tweak factor for smoothness
     segments = CLAMP(segments, 12, 256);                 // minimum and maximum
-    guVector v[segments + 1];  // +1 to close the loop
-    u32 ncolor[segments + 1];
 
-    for (int i = 0; i < segments; i++) {
-        float angle = i * 2 * M_PI / segments;
-        v[i].x = cosf(angle) * radiusX + x;
-        v[i].y = sinf(angle) * radiusY + y;
-        v[i].z = 0;
-        ncolor[i] = color;
-        
-        if (!filled) {
-            Vec2D dir = { x - v[i].x, y - v[i].y };
-            dir = normalize(dir);
-            
-            v[i].x += dir.x * (lineWidth - 1);
-            v[i].y += dir.y * (lineWidth - 1);
-        }
-    }
+    glDisable(GL_TEXTURE_2D);
+    float r = R(color) / 255.0f;
+    float g = G(color) / 255.0f;
+    float b = B(color) / 255.0f;
+    float a = A(color) / 255.0f;
+    glColor4f(r, g, b, a);
 
-    // Close the loop for line mode
-    v[segments] = v[0];
-    ncolor[segments] = color;
-    
-    if (filled == false) {
-        custom_gxengine(v, ncolor, segments + 1, GX_LINESTRIP, lineWidth);
+    if (filled) {
+        glBegin(GL_TRIANGLE_FAN);
+        glVertex2f(x, y);
     } else {
-        custom_gxengine(v, ncolor, segments, GX_TRIANGLEFAN, 0);
+        glLineWidth(lineWidth);
+        glBegin(GL_LINE_STRIP);
     }
+
+    for (int i = 0; i <= segments; i++) {
+        float angle = i * 2 * M_PI / segments;
+        float px = cosf(angle) * radiusX + x;
+        float py = sinf(angle) * radiusY + y;
+        glVertex2f(px, py);
+    }
+    glEnd();
+    glEnable(GL_TEXTURE_2D);
 }
 
 void  custom_circle (const f32 x, const f32 y, const f32 radius,
@@ -339,195 +272,85 @@ void  custom_circunference (const f32 x, const f32 y, const f32 radius,
     custom_ellipse(x, y, radius, radius, color, FALSE, lineWidth);
 }
 
-void  custom_drawPart (const f32 xpos, const f32 ypos, const f32 partx, const f32 party, const f32 partw, const f32 parth, const GRRLIB_texImg *tex, const f32 degrees, const f32 scaleX, const f32 scaleY, const u32 color) {
-    Mtx       m, m1, m2, mv;
+void  custom_drawPart (const f32 xpos, const f32 ypos, const f32 partx, const f32 party, const f32 partw, const f32 parth, const PSGL_texImg *tex, const f32 degrees, const f32 scaleX, const f32 scaleY, const u32 color) {
+    if (!tex) return;
 
-    if (tex == NULL || tex->data == NULL)
-        return;
+    glPushMatrix();
+    glTranslatef(xpos, ypos, 0);
+    if (degrees != 0) glRotatef(degrees, 0, 0, 1);
+    glScalef(scaleX, scaleY, 1);
 
-    // The 0.001f/x is the frame correction formula by spiffen
-    const f32 s1 = (partx / tex->w) + (0.001f / tex->w);
-    const f32 s2 = ((partx + partw) / tex->w) - (0.001f / tex->w);
-    const f32 t1 = (party / tex->h) + (0.001f / tex->h);
-    const f32 t2 = ((party + parth) / tex->h) - (0.001f / tex->h);
+    glBindTexture(GL_TEXTURE_2D, tex->textureID);
 
-    const f32 width  = partw * 0.5f;
-    const f32 height = parth * 0.5f;
+    float r = R(color) / 255.0f;
+    float g = G(color) / 255.0f;
+    float b = B(color) / 255.0f;
+    float a = A(color) / 255.0f;
+    glColor4f(r, g, b, a);
 
-    guMtxIdentity  (m1);
-    guMtxScaleApply(m1, m1, scaleX, scaleY, 1.0f);
-    guMtxRotAxisDeg(m2, &axis, degrees);
-    guMtxConcat    (m2, m1, m);
+    const f32 texWidth  = tex->w;
+    const f32 texHeight = tex->h;
+    const f32 s1 = partx / texWidth;
+    const f32 s2 = (partx + partw) / texWidth;
+    const f32 t1 = party / texHeight;
+    const f32 t2 = (party + parth) / texHeight;
 
-    guMtxTransApply(m, m,
-        xpos +width  +tex->handlex
-            -tex->offsetx +( scaleX *(-tex->handley *sin(-DegToRad(degrees))
-                                      -tex->handlex *cos(-DegToRad(degrees))) ),
-        ypos +height +tex->handley
-            -tex->offsety +( scaleY *(-tex->handley *cos(-DegToRad(degrees))
-                                      +tex->handlex *sin(-DegToRad(degrees))) ),
-        0);
+    glBegin(GL_QUADS);
+    glTexCoord2f(s1, t1); glVertex2f(0, 0);
+    glTexCoord2f(s2, t1); glVertex2f(partw, 0);
+    glTexCoord2f(s2, t2); glVertex2f(partw, parth);
+    glTexCoord2f(s1, t2); glVertex2f(0, parth);
+    glEnd();
 
-    guMtxConcat(GXmodelView2D, m, mv);
-
-    GX_LoadPosMtxImm(mv, GX_PNMTX0);
-    GX_Begin(GX_QUADS, GX_VTXFMT0, 4);
-        GX_Position3f32(-width, -height, 0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(s1, t1);
-
-        GX_Position3f32(width, -height,  0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(s2, t1);
-
-        GX_Position3f32(width, height,  0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(s2, t2);
-
-        GX_Position3f32(-width, height,  0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(s1, t2);
-    GX_End();
-    GX_LoadPosMtxImm(GXmodelView2D, GX_PNMTX0);
+    glPopMatrix();
 }
 
 void  custom_rectangle (const f32 x,      const f32 y,
                         const f32 width,  const f32 height,
                         const u32 color, const bool filled) {
-    const f32 x2 = x + width;
-    const f32 y2 = y + height;
+    glDisable(GL_TEXTURE_2D);
+    float r = R(color) / 255.0f;
+    float g = G(color) / 255.0f;
+    float b = B(color) / 255.0f;
+    float a = A(color) / 255.0f;
+    glColor4f(r, g, b, a);
 
-    if (filled == true) {
-        GX_Begin(GX_QUADS, GX_VTXFMT0, 4);
-            GX_Position3f32(x, y, 0.0f);
-            GX_Color1u32(color);
-            GX_Position3f32(x2, y, 0.0f);
-            GX_Color1u32(color);
-            GX_Position3f32(x2, y2, 0.0f);
-            GX_Color1u32(color);
-            GX_Position3f32(x, y2, 0.0f);
-            GX_Color1u32(color);
-        GX_End();
+    if (filled) {
+        glBegin(GL_QUADS);
+        glVertex2f(x, y);
+        glVertex2f(x + width, y);
+        glVertex2f(x + width, y + height);
+        glVertex2f(x, y + height);
+        glEnd();
+    } else {
+        glBegin(GL_LINE_STRIP);
+        glVertex2f(x, y);
+        glVertex2f(x + width, y);
+        glVertex2f(x + width, y + height);
+        glVertex2f(x, y + height);
+        glVertex2f(x, y);
+        glEnd();
     }
-    else {
-        GX_Begin(GX_LINESTRIP, GX_VTXFMT0, 5);
-            GX_Position3f32(x, y, 0.0f);
-            GX_Color1u32(color);
-            GX_Position3f32(x2, y, 0.0f);
-            GX_Color1u32(color);
-            GX_Position3f32(x2, y2, 0.0f);
-            GX_Color1u32(color);
-            GX_Position3f32(x, y2, 0.0f);
-            GX_Color1u32(color);
-            GX_Position3f32(x, y, 0.0f);
-            GX_Color1u32(color);
-        GX_End();
-    }
+    glEnable(GL_TEXTURE_2D);
 }
 
 void custom_rounded_rectangle(float x, float y,
                               float width, float height,
                               float radius,
                               u32 color) {
-    // Clamp radius
-    if (radius > width * 0.5f) radius = width * 0.5f;
-    if (radius > height * 0.5f) radius = height * 0.5f;
-
-    const int cornerSegments = 8; // number of points per corner
-    guVector v[cornerSegments + 2]; // +1 for corner center, +1 for closing the fan
-    u32 ncolor[cornerSegments + 2];
-
-    float cornerCentersX[4] = { x + radius, x + width - radius, x + width - radius, x + radius };
-    float cornerCentersY[4] = { y + radius, y + radius, y + height - radius, y + height - radius };
-    float startAngles[4]   = { M_PI, -M_PI/2, 0, M_PI/2 }; // TL, TR, BR, BL
-
-    for (int corner = 0; corner < 4; corner++) {
-        guVector center = { cornerCentersX[corner], cornerCentersY[corner], 0.0f };
-        for (int i = 0; i <= cornerSegments; i++) {
-            float t = (float)i / cornerSegments;
-            float angle = startAngles[corner] + t * (M_PI/2);
-            v[i].x = cosf(angle) * radius + center.x;
-            v[i].y = sinf(angle) * radius + center.y;
-            v[i].z = 0.0f;
-            ncolor[i] = color;
-        }
-
-        // Draw triangle fan for this corner
-        v[cornerSegments + 1] = center; // corner center at the end
-        ncolor[cornerSegments + 1] = color;
-
-        GX_Begin(GX_TRIANGLEFAN, GX_VTXFMT0, cornerSegments + 2);
-        for (int k = 0; k <= cornerSegments + 1; k++) {
-            GX_Position3f32(v[k].x, v[k].y, v[k].z);
-            GX_Color1u32(ncolor[k]);
-        }
-        GX_End();
-    }
-
-    float left   = x;
-    float right  = x + width;
-    float top    = y;
-    float bottom = y + height;
-
-    // Top edge
-    GX_Begin(GX_QUADS, GX_VTXFMT0, 4);
-        GX_Position3f32(left + radius, top, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(right - radius, top, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(right - radius, top + radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(left + radius, top + radius, 0.0f);
-        GX_Color1u32(color);
-    GX_End();
-
-    // Bottom edge
-    GX_Begin(GX_QUADS, GX_VTXFMT0, 4);
-        GX_Position3f32(left + radius, bottom - radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(right - radius, bottom - radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(right - radius, bottom, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(left + radius, bottom, 0.0f);
-        GX_Color1u32(color);
-    GX_End();
-
-    // Left edge
-    GX_Begin(GX_QUADS, GX_VTXFMT0, 4);
-        GX_Position3f32(left, top + radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(left + radius, top + radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(left + radius, bottom - radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(left, bottom - radius, 0.0f);
-        GX_Color1u32(color);
-    GX_End();
-
-    // Right edge
-    GX_Begin(GX_QUADS, GX_VTXFMT0, 4);
-        GX_Position3f32(right - radius, top + radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(right, top + radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(right, bottom - radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(right - radius, bottom - radius, 0.0f);
-        GX_Color1u32(color);
-    GX_End();
-
+    // Drawn as 3 rectangles and 4 circles for corners
     // Center rectangle
-    GX_Begin(GX_QUADS, GX_VTXFMT0, 4);
-        GX_Position3f32(left + radius, top + radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(right - radius, top + radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(right - radius, bottom - radius, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(left + radius, bottom - radius, 0.0f);
-        GX_Color1u32(color);
-    GX_End();
+    custom_rectangle(x + radius, y, width - 2 * radius, height, color, true);
+    // Left rectangle
+    custom_rectangle(x, y + radius, radius, height - 2 * radius, color, true);
+    // Right rectangle
+    custom_rectangle(x + width - radius, y + radius, radius, height - 2 * radius, color, true);
+
+    // Corners
+    custom_circle(x + radius, y + radius, radius, color);
+    custom_circle(x + width - radius, y + radius, radius, color);
+    custom_circle(x + radius, y + height - radius, radius, color);
+    custom_circle(x + width - radius, y + height - radius, radius, color);
 }
 
 float normalize_angle(float angle) {
@@ -550,54 +373,33 @@ float ip1_ceilf(float x) {
 
 void custom_line (const f32 x1, const f32 y1,
                    const f32 x2, const f32 y2, const u32 color) {
-    GX_Begin(GX_LINES, GX_VTXFMT0, 2);
-        GX_Position3f32(x1, y1, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(x2, y2, 0.0f);
-        GX_Color1u32(color);
-    GX_End();
+    glDisable(GL_TEXTURE_2D);
+    float r = R(color) / 255.0f;
+    float g = G(color) / 255.0f;
+    float b = B(color) / 255.0f;
+    float a = A(color) / 255.0f;
+    glColor4f(r, g, b, a);
+
+    glBegin(GL_LINES);
+    glVertex2f(x1, y1);
+    glVertex2f(x2, y2);
+    glEnd();
+    glEnable(GL_TEXTURE_2D);
 }
 void draw_thick_line(const float x1, const float y1, const float x2, const float y2, const float thickness, const u32 color) {
-    float dx = x2 - x1;
-    float dy = y2 - y1;
-    float length = sqrtf(dx * dx + dy * dy);
+    glDisable(GL_TEXTURE_2D);
+    glLineWidth(thickness);
+    float r = R(color) / 255.0f;
+    float g = G(color) / 255.0f;
+    float b = B(color) / 255.0f;
+    float a = A(color) / 255.0f;
+    glColor4f(r, g, b, a);
 
-    // Normalize perpendicular vector
-    float px = -dy / length;
-    float py =  dx / length;
-
-    // Half-width offset
-    float hw = thickness / 2.0f;
-
-    // Four points of the quad
-    float x1a = x1 + px * hw;
-    float y1a = y1 + py * hw;
-    float x1b = x1 - px * hw;
-    float y1b = y1 - py * hw;
-
-    float x2a = x2 + px * hw;
-    float y2a = y2 + py * hw;
-    float x2b = x2 - px * hw;
-    float y2b = y2 - py * hw;
-
-    // Draw as two triangles (quad)
-    GX_Begin(GX_TRIANGLES, GX_VTXFMT0, 6);
-
-    GX_Position3f32(x1a, y1a, 0.0f);
-    GX_Color1u32(color);
-    GX_Position3f32(x2a, y2a, 0.0f);
-    GX_Color1u32(color);
-    GX_Position3f32(x2b, y2b, 0.0f);
-    GX_Color1u32(color);
-
-    GX_Position3f32(x2b, y2b, 0.0f);
-    GX_Color1u32(color);
-    GX_Position3f32(x1b, y1b, 0.0f);
-    GX_Color1u32(color);
-    GX_Position3f32(x1a, y1a, 0.0f);
-    GX_Color1u32(color);
-
-    GX_End();
+    glBegin(GL_LINES);
+    glVertex2f(x1, y1);
+    glVertex2f(x2, y2);
+    glEnd();
+    glEnable(GL_TEXTURE_2D);
 }
 
 // Returns true if vertices are counter-clockwise
@@ -653,23 +455,20 @@ void draw_hitbox_line_inward(Vec2D rect[4],
     float x2b = x2 + ox;
     float y2b = y2 + oy;
 
-    GX_Begin(GX_TRIANGLES, GX_VTXFMT0, 6);
+    glDisable(GL_TEXTURE_2D);
+    float r = R(color) / 255.0f;
+    float g = G(color) / 255.0f;
+    float b = B(color) / 255.0f;
+    float a = A(color) / 255.0f;
+    glColor4f(r, g, b, a);
 
-    GX_Position3f32(x1a, y1a, 0.0f);
-    GX_Color1u32(color);
-    GX_Position3f32(x2a, y2a, 0.0f);
-    GX_Color1u32(color);
-    GX_Position3f32(x2b, y2b, 0.0f);
-    GX_Color1u32(color);
-
-    GX_Position3f32(x2b, y2b, 0.0f);
-    GX_Color1u32(color);
-    GX_Position3f32(x1b, y1b, 0.0f);
-    GX_Color1u32(color);
-    GX_Position3f32(x1a, y1a, 0.0f);
-    GX_Color1u32(color);
-
-    GX_End();
+    glBegin(GL_QUADS);
+    glVertex2f(x1a, y1a);
+    glVertex2f(x2a, y2a);
+    glVertex2f(x2b, y2b);
+    glVertex2f(x1b, y1b);
+    glEnd();
+    glEnable(GL_TEXTURE_2D);
 }
 
 void compute_mitered_offsets(Vec2D *poly, Vec2D *offsets, int n, float thickness, bool ccw) {
@@ -705,75 +504,66 @@ void draw_polygon_inward_mitered(Vec2D *poly, int n, float thickness, u32 color)
     Vec2D offsets[n];
     compute_mitered_offsets(poly, offsets, n, thickness, ccw);
 
+    glDisable(GL_TEXTURE_2D);
+    float r = R(color) / 255.0f;
+    float g = G(color) / 255.0f;
+    float b = B(color) / 255.0f;
+    float a = A(color) / 255.0f;
+    glColor4f(r, g, b, a);
+
+    glBegin(GL_TRIANGLES);
     for (int i = 0; i < n; i++) {
         int j = (i + 1) % n;
 
-        GX_Begin(GX_TRIANGLES, GX_VTXFMT0, 6);
-
         // Original vertices
-        GX_Position3f32(poly[i].x, poly[i].y, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(poly[j].x, poly[j].y, 0.0f);
-        GX_Color1u32(color);
+        glVertex2f(poly[i].x, poly[i].y);
+        glVertex2f(poly[j].x, poly[j].y);
+        glVertex2f(offsets[j].x, offsets[j].y);
 
-        // Offset vertices (inward)
-        GX_Position3f32(offsets[j].x, offsets[j].y, 0.0f);
-        GX_Color1u32(color);
-
-        GX_Position3f32(offsets[j].x, offsets[j].y, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(offsets[i].x, offsets[i].y, 0.0f);
-        GX_Color1u32(color);
-        GX_Position3f32(poly[i].x, poly[i].y, 0.0f);
-        GX_Color1u32(color);
-
-        GX_End();
+        glVertex2f(offsets[j].x, offsets[j].y);
+        glVertex2f(offsets[i].x, offsets[i].y);
+        glVertex2f(poly[i].x, poly[i].y);
     }
+    glEnd();
+    glEnable(GL_TEXTURE_2D);
 }
 
 float opacity = 0;
 
 void draw_fade() {
-    GRRLIB_FillScreen(RGBA(0,0,0, (int) opacity));
-    GRRLIB_Render();
+    PSGL_FillScreen(RGBA(0,0,0, (int) opacity));
+    Render();
 }
 
 
 void fade_out() {
-    GRRLIB_texImg *framebuffer = GRRLIB_CreateEmptyTextureFmt(rmode->fbWidth, rmode->efbHeight, GX_TF_RGBA8);
-    GRRLIB_Screen2Texture(0, 0, framebuffer, FALSE);
+    // In PSGL we could use glReadPixels to implement framebuffer fade,
+    // but for now we'll just fade to black.
 
-    u64 prevTicks = gettime();
+    u64 prevTicks = 0; // gettime();
     while (opacity < 255) {
-        start_frame = gettime();
-        float frameTime = ticks_to_secs_float(start_frame - prevTicks);
+        // start_frame = gettime();
+        float frameTime = 1.0f/60.0f; // ticks_to_secs_float(start_frame - prevTicks);
         dt = frameTime;
-        prevTicks = start_frame;
+        // prevTicks = start_frame;
 
         opacity += FADE_SPEED * dt;
         if (opacity > 255) opacity = 255;
-        GRRLIB_DrawImg(0, 0, framebuffer, 0, 1 * screen_factor_x, 1, 0xffffffff);
         draw_fade();
     }
-    GRRLIB_FreeTexture(framebuffer);
 }
 
 void fade_in() {
-    GRRLIB_texImg *framebuffer = GRRLIB_CreateEmptyTextureFmt(rmode->fbWidth, rmode->efbHeight, GX_TF_RGBA8);
-    GRRLIB_Screen2Texture(0, 0, framebuffer, FALSE);
-
-    u64 prevTicks = gettime();
+    u64 prevTicks = 0; // gettime();
     while (opacity > 0) {
-        start_frame = gettime();
-        float frameTime = ticks_to_secs_float(start_frame - prevTicks);
+        // start_frame = gettime();
+        float frameTime = 1.0f/60.0f; // ticks_to_secs_float(start_frame - prevTicks);
         dt = frameTime;
-        prevTicks = start_frame;
+        // prevTicks = start_frame;
         opacity -= FADE_SPEED * dt;
         if (opacity < 0) opacity = 0;
-        GRRLIB_DrawImg(0, 0, framebuffer, 0, 1 * screen_factor_x, 1, 0xffffffff);
         draw_fade();
     }
-    GRRLIB_FreeTexture(framebuffer);
 }
 
 void fade_in_level() {
@@ -829,77 +619,37 @@ void wait_initial_time() {
     }
 }
 
-void  draw_glyph (const f32 xpos, const f32 ypos, const f32 partx, const f32 party, const f32 partw, const f32 parth, const GRRLIB_texImg *tex, const f32 degrees, const f32 scaleX, const f32 scaleY, const u32 color) {
-    GXTexObj  texObj;
-    Mtx       m, m1, m2, mv;
+void  draw_glyph (const f32 xpos, const f32 ypos, const f32 partx, const f32 party, const f32 partw, const f32 parth, const PSGL_texImg *tex, const f32 degrees, const f32 scaleX, const f32 scaleY, const u32 color) {
+    if (!tex) return;
 
-    if (tex == NULL || tex->data == NULL)
-        return;
+    glPushMatrix();
+    glTranslatef(xpos, ypos, 0);
+    if (degrees != 0) glRotatef(degrees, 0, 0, 1);
+    glScalef(scaleX, scaleY, 1);
 
-    // The 0.001f/x is the frame correction formula by spiffen
-    const f32 s1 = (partx / tex->w) + (0.001f / tex->w);
-    const f32 s2 = ((partx + partw) / tex->w) - (0.001f / tex->w);
-    const f32 t1 = (party / tex->h) + (0.001f / tex->h);
-    const f32 t2 = ((party + parth) / tex->h) - (0.001f / tex->h);
+    glBindTexture(GL_TEXTURE_2D, tex->textureID);
 
-    GX_InitTexObj(&texObj, tex->data,
-                  tex->w, tex->h,
-                  tex->format, GX_CLAMP, GX_CLAMP, GX_FALSE);
+    float r = R(color) / 255.0f;
+    float g = G(color) / 255.0f;
+    float b = B(color) / 255.0f;
+    float a = A(color) / 255.0f;
+    glColor4f(r, g, b, a);
 
-    if (GRRLIB_Settings.antialias == false) {
-        GX_InitTexObjLOD(&texObj, GX_NEAR, GX_NEAR,
-                         0.0f, 0.0f, 0.0f, 0, 0, GX_ANISO_1);
-        GX_SetCopyFilter(GX_FALSE, rmode->sample_pattern, GX_FALSE, rmode->vfilter);
-    }
-    else {
-        GX_SetCopyFilter(rmode->aa, rmode->sample_pattern, GX_TRUE, rmode->vfilter);
-    }
+    const f32 texWidth  = tex->w;
+    const f32 texHeight = tex->h;
+    const f32 s1 = partx / texWidth;
+    const f32 s2 = (partx + partw) / texWidth;
+    const f32 t1 = party / texHeight;
+    const f32 t2 = (party + parth) / texHeight;
 
-    GX_LoadTexObj(&texObj,      GX_TEXMAP0);
-    GX_SetTevOp  (GX_TEVSTAGE0, GX_MODULATE);
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
+    glBegin(GL_QUADS);
+    glTexCoord2f(s1, t1); glVertex2f(0, 0);
+    glTexCoord2f(s2, t1); glVertex2f(partw, 0);
+    glTexCoord2f(s2, t2); glVertex2f(partw, parth);
+    glTexCoord2f(s1, t2); glVertex2f(0, parth);
+    glEnd();
 
-    const f32 width  = partw * 0.5f;
-    const f32 height = parth * 0.5f;
-
-    guMtxIdentity  (m1);
-    guMtxScaleApply(m1, m1, scaleX, scaleY, 1.0f);
-    guMtxRotAxisDeg(m2, &axis, degrees);
-    guMtxConcat    (m2, m1, m);
-
-    guMtxTransApply(m, m,
-        xpos +width*scaleX  +tex->handlex
-            -tex->offsetx +( scaleX *(-tex->handley *sin(-DegToRad(degrees))
-                                      -tex->handlex *cos(-DegToRad(degrees))) ),
-        ypos +height*scaleY +tex->handley
-            -tex->offsety +( scaleY *(-tex->handley *cos(-DegToRad(degrees))
-                                      +tex->handlex *sin(-DegToRad(degrees))) ),
-        0);
-
-    guMtxConcat(GXmodelView2D, m, mv);
-
-    GX_LoadPosMtxImm(mv, GX_PNMTX0);
-    GX_Begin(GX_QUADS, GX_VTXFMT0, 4);
-        GX_Position3f32(-width, -height, 0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(s1, t1);
-
-        GX_Position3f32(width, -height,  0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(s2, t1);
-
-        GX_Position3f32(width, height,  0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(s2, t2);
-
-        GX_Position3f32(-width, height,  0.0f);
-        GX_Color1u32   (color);
-        GX_TexCoord2f32(s1, t2);
-    GX_End();
-    GX_LoadPosMtxImm(GXmodelView2D, GX_PNMTX0);
-
-    GX_SetTevOp  (GX_TEVSTAGE0, GX_PASSCLR);
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
+    glPopMatrix();
 }
 
 struct glyph *get_glyph(struct charset font, char character) {
@@ -945,11 +695,11 @@ float get_text_length(struct charset font, const float zoom, const char *text, .
     return text_length;
 }
 
-void draw_text(struct charset font, GRRLIB_texImg *tex, const float x, const float y, const float zoom, const char *text, ...) {
-    if (!text || !tex || !tex->data) {
+void draw_text(struct charset font, PSGL_texImg *tex, const float x, const float y, const float zoom, const char *text, ...) {
+    if (!text || !tex) {
         return;
     }
-    GRRLIB_SetHandle(tex, tex->w / 2, tex->h / 2);
+    PSGL_SetHandle(tex, tex->w / 2, tex->h / 2);
 
     char tmp[1024];
 
@@ -978,12 +728,12 @@ void draw_text(struct charset font, GRRLIB_texImg *tex, const float x, const flo
     }
 }
 
-void draw_rotated_text(struct charset font, GRRLIB_texImg *tex, const float x, const float y, const float rotation, const float zoom_x, const float zoom_y, const u32 color, const char *text, ...) {
-    if (!text || !tex || !tex->data) {
+void draw_rotated_text(struct charset font, PSGL_texImg *tex, const float x, const float y, const float rotation, const float zoom_x, const float zoom_y, const u32 color, const char *text, ...) {
+    if (!text || !tex) {
         return;
     }
     
-    GRRLIB_SetHandle(tex, tex->w / 2, tex->h / 2);
+    PSGL_SetHandle(tex, tex->w / 2, tex->h / 2);
 
     char tmp[1024];
 
@@ -1031,8 +781,8 @@ void draw_rotated_text(struct charset font, GRRLIB_texImg *tex, const float x, c
         }
     }
     
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
-    GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
+    // GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
+    // GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
 }
 
 Color HSV_combine(Color color, HSV hsv) {

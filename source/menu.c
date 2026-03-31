@@ -1,5 +1,5 @@
 #include "main.h"
-#include <grrlib.h>
+#include "psgl_graphics.h"
 #include <stdlib.h>
 #include <wiiuse/wpad.h>
 
@@ -25,13 +25,13 @@
 
 #include "easing.h"
 
-GRRLIB_texImg *menu_top_bar;
-GRRLIB_texImg *menu_corner_squares;
-GRRLIB_texImg *menu_arrow;
-GRRLIB_texImg *gradient_texture;
+PSGL_texImg *menu_top_bar;
+PSGL_texImg *menu_corner_squares;
+PSGL_texImg *menu_arrow;
+PSGL_texImg *gradient_texture;
 // add ground
-GRRLIB_texImg *menu_ground;
-GRRLIB_texImg *ground_line_texture;
+PSGL_texImg *menu_ground;
+PSGL_texImg *ground_line_texture;
 
 int main_levels();
 int sdcard_levels();
@@ -60,7 +60,7 @@ typedef struct{
     int width;
     int height;
     bool show;
-    GRRLIB_texImg *texture;
+    PSGL_texImg *texture;
     void (*func)();
     bool flip_x;
     bool flip_y;
@@ -70,7 +70,7 @@ typedef struct{
 buttons button_list[MAX_BUTTONS];
 int button_count = 0;
 
-int create_button(int x, int y, int width, int height, bool show, GRRLIB_texImg *worknowplease, void (*func)(), bool flip_x, bool flip_y){
+int create_button(int x, int y, int width, int height, bool show, PSGL_texImg *worknowplease, void (*func)(), bool flip_x, bool flip_y){
     if (button_count > MAX_BUTTONS) {return -1;}
     button_list[button_count].x = x;
     button_list[button_count].y = y;
@@ -143,7 +143,7 @@ const int default_level_difficulty[LEVEL_NUM] = {
 };
 
 #define FACES_COUNT 7
-GRRLIB_texImg *difficulty_faces[FACES_COUNT] = {};
+PSGL_texImg *difficulty_faces[FACES_COUNT] = {};
 
 int prev_lvl;
 float anim_test = 0.0f;
@@ -172,11 +172,11 @@ void menu_go_right(){
 
 void start_level(){
     gameRoutine = ROUTINE_GAME;
-    MP3Player_Stop();
-    PlayOgg(playSound_01_ogg, playSound_01_ogg_size, 0, OGG_ONE_TIME);
+    PS3Audio_StopMusic();
+    PS3Audio_PlaySFX(playSound_01_ogg, playSound_01_ogg_size);
     for (int i = 0; i < 90; i++) {
         update_input();
-        VIDEO_WaitVSync();
+        // VIDEO_WaitVSync();
     }
     int code = load_level((char *) levels[level_id].data_ptr, FALSE);
     if (!code) {
@@ -191,7 +191,7 @@ void game_folder_not_found() {
     while (1) {
         update_input();
 
-        GRRLIB_FillScreen(RGBA(0, 127, 255, 255));
+        PSGL_FillScreen(RGBA(0, 127, 255, 255));
 
         
         draw_text(big_font, big_font_text, 0, 20, 0.5, "Couldn't find the game folder.");
@@ -205,7 +205,7 @@ void game_folder_not_found() {
             break;
         }
 
-        GRRLIB_Render();
+        Render();
     }
 }
 
@@ -345,22 +345,22 @@ int menu_loop() {
 
     button_count = 0;
 
-    menu_top_bar = GRRLIB_LoadTexturePNG(top_bar_png);
-    menu_corner_squares = GRRLIB_LoadTexturePNG(corner_squares_png);
-    menu_arrow = GRRLIB_LoadTexturePNG(arrow_png);
-    gradient_texture = GRRLIB_LoadTexturePNG(gradient_png);
-    ground_line_texture = GRRLIB_LoadTexturePNG(ground_line_png);
-    menu_ground = GRRLIB_LoadTexturePNG(g_01_png); //groundgroundgroundgourng
+    menu_top_bar = PSGL_LoadTexturePNG(top_bar_png, top_bar_png_size);
+    menu_corner_squares = PSGL_LoadTexturePNG(corner_squares_png, corner_squares_png_size);
+    menu_arrow = PSGL_LoadTexturePNG(arrow_png, arrow_png_size);
+    gradient_texture = PSGL_LoadTexturePNG(gradient_png, gradient_png_size);
+    ground_line_texture = PSGL_LoadTexturePNG(ground_line_png, ground_line_png_size);
+    menu_ground = PSGL_LoadTexturePNG(g_01_png, g_01_png_size); //groundgroundgroundgourng
     
 
     //difficultty faces
-    difficulty_faces[0] = GRRLIB_LoadTexturePNG(easy_png);
-    difficulty_faces[1] = GRRLIB_LoadTexturePNG(normal_png);
-    difficulty_faces[2] = GRRLIB_LoadTexturePNG(hard_png);
-    difficulty_faces[3] = GRRLIB_LoadTexturePNG(harder_png);
-    difficulty_faces[4] = GRRLIB_LoadTexturePNG(insane_png);
-    difficulty_faces[5] = GRRLIB_LoadTexturePNG(demon_png);
-    difficulty_faces[6] = GRRLIB_LoadTexturePNG(auto_png);
+    difficulty_faces[0] = PSGL_LoadTexturePNG(easy_png, easy_png_size);
+    difficulty_faces[1] = PSGL_LoadTexturePNG(normal_png, normal_png_size);
+    difficulty_faces[2] = PSGL_LoadTexturePNG(hard_png, hard_png_size);
+    difficulty_faces[3] = PSGL_LoadTexturePNG(harder_png, harder_png_size);
+    difficulty_faces[4] = PSGL_LoadTexturePNG(insane_png, insane_png_size);
+    difficulty_faces[5] = PSGL_LoadTexturePNG(demon_png, demon_png_size);
+    difficulty_faces[6] = PSGL_LoadTexturePNG(auto_png, auto_png_size);
 
     create_main_menu_buttons();
 
@@ -377,12 +377,16 @@ int menu_loop() {
         dt = frameTime;
 
         update_input();
-        if (!MP3Player_IsPlaying() && menuLoop) {
-            MP3Player_PlayBuffer(menuLoop, size, NULL);
-            MP3Player_Volume(255);
+        if (!PS3Audio_IsMusicPlaying() && menuLoop) {
+            PS3Audio_PlayMusic(menuLoop, size);
+            PS3Audio_SetMusicVolume(255);
         }
         
         if (state.input.pressed1orX) {
+            static bool shaderToggle = false;
+            shaderToggle = !shaderToggle;
+            PSGL_EnableShaderInMenu(shaderToggle);
+
             draw_menu();
             fade_out();
             level_id = 0;
@@ -426,17 +430,17 @@ int menu_loop() {
             break;
         }
 
-        GRRLIB_Render();
+        Render();
     }
 
-    GRRLIB_FreeTexture(menu_arrow);
-    GRRLIB_FreeTexture(menu_corner_squares);
-    GRRLIB_FreeTexture(menu_top_bar);
-    GRRLIB_FreeTexture(gradient_texture);
-    GRRLIB_FreeTexture(ground_line_texture);
-    GRRLIB_FreeTexture(menu_ground);
+    PSGL_FreeTexture(menu_arrow);
+    PSGL_FreeTexture(menu_corner_squares);
+    PSGL_FreeTexture(menu_top_bar);
+    PSGL_FreeTexture(gradient_texture);
+    PSGL_FreeTexture(ground_line_texture);
+    PSGL_FreeTexture(menu_ground);
     for (int i = 0; i < FACES_COUNT; i++){
-        GRRLIB_FreeTexture(difficulty_faces[i]);
+        PSGL_FreeTexture(difficulty_faces[i]);
     }
     if (menuLoop) free(menuLoop);
     
@@ -446,7 +450,7 @@ int menu_loop() {
         draw_text(big_font, big_font_text, screenWidth - textOffset - 30 * 2, screenHeight - 30, 0.5, "Loading...");
     }
 
-    GRRLIB_Render();
+    Render();
     return exit_code;
 }
 
@@ -473,7 +477,7 @@ void refresh_sdcard_levels() {
 }
 
 int sdcard_levels() {
-    GRRLIB_FillScreen(RGBA(0, 127, 0, 255));
+    PSGL_FillScreen(RGBA(0, 127, 0, 255));
             
     draw_text(big_font, big_font_text, 0, 400, 0.5, "Press 1 to switch to main levels.");
     
@@ -523,11 +527,11 @@ int sdcard_levels() {
             } else {
                 // Start level
                 gameRoutine = ROUTINE_GAME;
-                MP3Player_Stop();
-                PlayOgg(playSound_01_ogg, playSound_01_ogg_size, 0, OGG_ONE_TIME);
+                PS3Audio_StopMusic();
+                PS3Audio_PlaySFX(playSound_01_ogg, playSound_01_ogg_size);
                 for (int i = 0; i < 90; i++) {
                     update_input();
-                    VIDEO_WaitVSync();
+                    // VIDEO_WaitVSync();
                 }
                 
                 char *level = read_file(sd_level_paths[level_id].name, &outsize);
@@ -554,23 +558,23 @@ int sdcard_levels() {
 
 int main_levels() {
     if (level_id < NUM_LVL_COLORS) {
-        GRRLIB_FillScreen(default_lvl_colors[level_id]);
+        PSGL_FillScreen(default_lvl_colors[level_id]);
     } else {
-        GRRLIB_FillScreen(RGBA(0, 127, 255, 255));
+        PSGL_FillScreen(RGBA(0, 127, 255, 255));
     }
     
-    GRRLIB_DrawImg(0,0,gradient_texture,0,screenWidth/256.f,screenHeight/256.f,RGBA(255,255,255,127));//bg gradient
+    PSGL_DrawImg(0,0,gradient_texture,0,screenWidth/256.f,screenHeight/256.f,RGBA(255,255,255,127));//bg gradient
     for (int i = 0; i < screenWidth; i += 192){
         if (level_id < NUM_LVL_COLORS) {
-            GRRLIB_DrawImg(i,screenHeight-64,menu_ground,0,1.5,1.5,default_lvl_colors[level_id]);//add ground
+            PSGL_DrawImg(i,screenHeight-64,menu_ground,0,1.5,1.5,default_lvl_colors[level_id]);//add ground
         } else {
-            GRRLIB_DrawImg(i,screenHeight-64,menu_ground,0,1.5,1.5,RGBA(0, 127, 255, 255));//add ground 2: electric boogaloo
+            PSGL_DrawImg(i,screenHeight-64,menu_ground,0,1.5,1.5,RGBA(0, 127, 255, 255));//add ground 2: electric boogaloo
         }
     }
-    GRRLIB_DrawImg(screenWidth/2 - 444 * (screen_factor_x * 0.5),screenHeight-64,ground_line_texture,0,screen_factor_x * 0.5,0.75,RGBA(255,255,255,255));//ground line
-    GRRLIB_DrawImg(screenWidth/2 - 306 * 0.75,-1,menu_top_bar,0,0.75,0.75,RGBA(255,255,255,255));//the bar at the top
-    GRRLIB_DrawImg(0, screenHeight - 143 * 0.75,menu_corner_squares,0,0.75,0.75,RGBA(255,255,255,255));//corner thing left
-    GRRLIB_DrawImg(screenWidth, screenHeight - 143 * 0.75,menu_corner_squares,0,-0.75,0.75,RGBA(255,255,255,255));//corner thing right
+    PSGL_DrawImg(screenWidth/2 - 444 * (screen_factor_x * 0.5),screenHeight-64,ground_line_texture,0,screen_factor_x * 0.5,0.75,RGBA(255,255,255,255));//ground line
+    PSGL_DrawImg(screenWidth/2 - 306 * 0.75,-1,menu_top_bar,0,0.75,0.75,RGBA(255,255,255,255));//the bar at the top
+    PSGL_DrawImg(0, screenHeight - 143 * 0.75,menu_corner_squares,0,0.75,0.75,RGBA(255,255,255,255));//corner thing left
+    PSGL_DrawImg(screenWidth, screenHeight - 143 * 0.75,menu_corner_squares,0,-0.75,0.75,RGBA(255,255,255,255));//corner thing right
           
     draw_text(big_font, big_font_text, 0, 400, 0.5, "Press 1 to switch to custom levels.");
     
@@ -580,18 +584,18 @@ int main_levels() {
         custom_rounded_rectangle(easeValue(ELASTIC_OUT, ((screenWidth) / 2 - 250)+target_pos, (screenWidth) / 2 - 250, anim_test, ANIM_DURATION, ANIM_PERIOD), 100, 500, 160, 10, RGBA(0, 0, 0, 127));
         int textOffset = (get_text_length(big_font, 0.5, levels[level_id].level_name) - 70) / 2;
         draw_text(big_font, big_font_text, easeValue(ELASTIC_OUT, (screenWidth/2 - textOffset)+target_pos, screenWidth/2 - textOffset, anim_test, ANIM_DURATION, ANIM_PERIOD), 160, 0.5, levels[level_id].level_name);
-        GRRLIB_DrawImg(easeValue(ELASTIC_OUT, (screenWidth/2 - textOffset-70)+target_pos, screenWidth/2 - textOffset-70, anim_test, ANIM_DURATION, ANIM_PERIOD),150,difficulty_faces[default_level_difficulty[level_id]],0,0.75,0.75,RGBA(255,255,255,255));
+        PSGL_DrawImg(easeValue(ELASTIC_OUT, (screenWidth/2 - textOffset-70)+target_pos, screenWidth/2 - textOffset-70, anim_test, ANIM_DURATION, ANIM_PERIOD),150,difficulty_faces[default_level_difficulty[level_id]],0,0.75,0.75,RGBA(255,255,255,255));
         //previous level
         custom_rounded_rectangle(easeValue(ELASTIC_OUT, (screenWidth) / 2 - 250, ((screenWidth) / 2 - 250)+target_pos*-1, anim_test, ANIM_DURATION, ANIM_PERIOD), 100, 500, 160, 10, RGBA(0, 0, 0, 127));
         textOffset = (get_text_length(big_font, 0.5, levels[prev_lvl].level_name) - 70) / 2;
         draw_text(big_font, big_font_text, easeValue(ELASTIC_OUT, screenWidth/2 - textOffset, (screenWidth/2 - textOffset)+target_pos*-1, anim_test, ANIM_DURATION, ANIM_PERIOD), 160, 0.5, levels[prev_lvl].level_name);
-        GRRLIB_DrawImg(easeValue(ELASTIC_OUT, screenWidth/2 - textOffset-70, (screenWidth/2 - textOffset-70)+target_pos*-1, anim_test, ANIM_DURATION, ANIM_PERIOD),150,difficulty_faces[default_level_difficulty[prev_lvl]],0,0.75,0.75,RGBA(255,255,255,255));
+        PSGL_DrawImg(easeValue(ELASTIC_OUT, screenWidth/2 - textOffset-70, (screenWidth/2 - textOffset-70)+target_pos*-1, anim_test, ANIM_DURATION, ANIM_PERIOD),150,difficulty_faces[default_level_difficulty[prev_lvl]],0,0.75,0.75,RGBA(255,255,255,255));
     }else{
         //current level
         custom_rounded_rectangle((screenWidth) / 2 - 250, 100, 500, 160, 10, RGBA(0, 0, 0, 127));
         int textOffset = (get_text_length(big_font, 0.5, levels[level_id].level_name) - 70) / 2;
         draw_text(big_font, big_font_text, screenWidth/2 - textOffset, 160, 0.5, levels[level_id].level_name);
-        GRRLIB_DrawImg(screenWidth/2 - textOffset-70,150,difficulty_faces[default_level_difficulty[level_id]],0,0.75,0.75,RGBA(255,255,255,255));
+        PSGL_DrawImg(screenWidth/2 - textOffset-70,150,difficulty_faces[default_level_difficulty[level_id]],0,0.75,0.75,RGBA(255,255,255,255));
     }
 
     //the circles at the bottom of the screen
@@ -606,9 +610,9 @@ int main_levels() {
     for(int i = 0; i < button_count; i++) {
         if (button_list[i].show){
             if (button_list[i].flip_x){
-                GRRLIB_DrawImg(button_list[i].x + button_list[i].width, button_list[i].y, button_list[i].texture,0,-1,1, RGBA(255, 255, 255, 255));
+                PSGL_DrawImg(button_list[i].x + button_list[i].width, button_list[i].y, button_list[i].texture,0,-1,1, RGBA(255, 255, 255, 255));
             }else{
-                GRRLIB_DrawImg(button_list[i].x, button_list[i].y, button_list[i].texture,0,1,1, RGBA(255, 255, 255, 255));
+                PSGL_DrawImg(button_list[i].x, button_list[i].y, button_list[i].texture,0,1,1, RGBA(255, 255, 255, 255));
             }
             
         }
@@ -647,8 +651,10 @@ int main_levels() {
     if (state.input.pressedA) {
         // ale is no longer going to kill me
         for (int i = 0; i < button_count; i++){
-            if (GRRLIB_PtInRect(button_list[i].x,button_list[i].y,button_list[i].width,button_list[i].height,cursor_rotated_point_x,cursor_rotated_point_y)){
-            button_list[i].func();
+            // PSGL_PtInRect can be implemented or replaced
+            if (cursor_rotated_point_x >= button_list[i].x && cursor_rotated_point_x <= button_list[i].x + button_list[i].width &&
+                cursor_rotated_point_y >= button_list[i].y && cursor_rotated_point_y <= button_list[i].y + button_list[i].height){
+                button_list[i].func();
             }
         }
     }
@@ -666,4 +672,11 @@ void create_main_menu_buttons() {
     create_button((screenWidth) / 2 - 200, 100, 400, 160,false,menu_arrow,start_level,false,false); //main play button
     create_button(5,200,56,120,true,menu_arrow,menu_go_left,false,false); //left arrow
     create_button((screenWidth) - 61,200,56,120,true,menu_arrow,menu_go_right,true,false); //right arrow
+}
+
+void PSGL_EnableShaderInMenu(bool enable) {
+    PSGL_EnableShader(enable);
+    if (enable) {
+        PSGL_LoadCgShader("Custom_Shaders/invert");
+    }
 }

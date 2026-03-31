@@ -94,7 +94,7 @@ const struct ObjectLayer secret_coin_layer[] = {
         .col_channel = WHITE,
         .color_type = COLOR_UNMOD,
         .zlayer_offset = 0,
-        .texture = secretCoin_01_001_png
+        .texture = secretCoin_01_001_png, .texture_size = secretCoin_01_001_png_size
     },
     {
         .x_offset = 0,
@@ -102,7 +102,7 @@ const struct ObjectLayer secret_coin_layer[] = {
         .col_channel = WHITE,
         .color_type = COLOR_UNMOD,
         .zlayer_offset = 0,
-        .texture = secretCoin_01_002_png
+        .texture = secretCoin_01_002_png, .texture_size = secretCoin_01_002_png_size
     },
     {
         .x_offset = 0,
@@ -110,7 +110,7 @@ const struct ObjectLayer secret_coin_layer[] = {
         .col_channel = WHITE,
         .color_type = COLOR_UNMOD,
         .zlayer_offset = 0,
-        .texture = secretCoin_01_003_png
+        .texture = secretCoin_01_003_png, .texture_size = secretCoin_01_003_png_size
     },
     {
         .x_offset = 0,
@@ -118,7 +118,7 @@ const struct ObjectLayer secret_coin_layer[] = {
         .col_channel = WHITE,
         .color_type = COLOR_UNMOD,
         .zlayer_offset = 0,
-        .texture = secretCoin_01_004_png
+        .texture = secretCoin_01_004_png, .texture_size = secretCoin_01_004_png_size
     }
 };
 
@@ -129,7 +129,7 @@ const struct ObjectLayer user_coin_layer[] = {
         .col_channel = WHITE,
         .color_type = COLOR_UNMOD,
         .zlayer_offset = 0,
-        .texture = secretCoin_2_01_001_png
+        .texture = secretCoin_2_01_001_png, .texture_size = secretCoin_2_01_001_png_size
     },
     {
         .x_offset = 0,
@@ -137,7 +137,7 @@ const struct ObjectLayer user_coin_layer[] = {
         .col_channel = WHITE,
         .color_type = COLOR_UNMOD,
         .zlayer_offset = 0,
-        .texture = secretCoin_2_01_002_png
+        .texture = secretCoin_2_01_002_png, .texture_size = secretCoin_2_01_002_png_size
     },
     {
         .x_offset = 0,
@@ -145,7 +145,7 @@ const struct ObjectLayer user_coin_layer[] = {
         .col_channel = WHITE,
         .color_type = COLOR_UNMOD,
         .zlayer_offset = 0,
-        .texture = secretCoin_2_01_003_png
+        .texture = secretCoin_2_01_003_png, .texture_size = secretCoin_2_01_003_png_size
     },
     {
         .x_offset = 0,
@@ -153,7 +153,7 @@ const struct ObjectLayer user_coin_layer[] = {
         .col_channel = WHITE,
         .color_type = COLOR_UNMOD,
         .zlayer_offset = 0,
-        .texture = secretCoin_2_01_004_png
+        .texture = secretCoin_2_01_004_png, .texture_size = secretCoin_2_01_004_png_size
     }
 };
 
@@ -166,14 +166,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_01_001_png
+                .texture = square_01_001_png, .texture_size = square_01_001_png_size
             }
         },
         .hitbox = {
@@ -193,14 +193,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_02_001_png
+                .texture = square_02_001_png, .texture_size = square_02_001_png_size
             }
         },
         .hitbox = {
@@ -220,14 +220,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_png
+                .texture = square_03_glow_001_png, .texture_size = square_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_03_001_png
+                .texture = square_03_001_png, .texture_size = square_03_001_png_size
             }
         },
         .hitbox = {
@@ -247,14 +247,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_001_png
+                .texture = square_04_glow_001_png, .texture_size = square_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_04_001_png
+                .texture = square_04_001_png, .texture_size = square_04_001_png_size
             }
         },
         .hitbox = {
@@ -274,7 +274,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_05_001_png
+                .texture = square_05_001_png, .texture_size = square_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -290,14 +290,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_png
+                .texture = square_06_glow_001_png, .texture_size = square_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_06_001_png
+                .texture = square_06_001_png, .texture_size = square_06_001_png_size
             }
         },
         .hitbox = {
@@ -317,14 +317,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_png
+                .texture = square_07_glow_001_png, .texture_size = square_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_07_001_png
+                .texture = square_07_001_png, .texture_size = square_07_001_png_size
             }
         },
         .hitbox = {
@@ -344,14 +344,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = spike_01_glow_001_png
+                .texture = spike_01_glow_001_png, .texture_size = spike_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = spike_01_001_png
+                .texture = spike_01_001_png, .texture_size = spike_01_001_png_size
             }
         },
         .hitbox = {
@@ -372,7 +372,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_01_001_png
+                .texture = pit_01_001_png, .texture_size = pit_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -380,7 +380,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_02_001_png
+                .texture = pit_02_001_png, .texture_size = pit_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -388,7 +388,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_03_001_png
+                .texture = pit_03_001_png, .texture_size = pit_03_001_png_size
             }
         },
         .hitbox = {
@@ -409,7 +409,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_01_back_001_png
+                .texture = portal_01_back_001_png, .texture_size = portal_01_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -417,7 +417,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_01_front_001_png
+                .texture = portal_01_front_001_png, .texture_size = portal_01_front_001_png_size
             }
         },
         .hitbox = gravity_portal_hitbox,
@@ -434,7 +434,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_02_back_001_png
+                .texture = portal_02_back_001_png, .texture_size = portal_02_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -442,7 +442,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_02_front_001_png
+                .texture = portal_02_front_001_png, .texture_size = portal_02_front_001_png_size
             }
         },
         .hitbox = gravity_portal_hitbox,
@@ -459,7 +459,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_03_back_001_png
+                .texture = portal_03_back_001_png, .texture_size = portal_03_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -467,7 +467,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_03_front_001_png
+                .texture = portal_03_front_001_png, .texture_size = portal_03_front_001_png_size
             }
         },
         .hitbox = gamemode_portal_hitbox,
@@ -484,7 +484,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_04_back_001_png
+                .texture = portal_04_back_001_png, .texture_size = portal_04_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -492,7 +492,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_04_front_001_png
+                .texture = portal_04_front_001_png, .texture_size = portal_04_front_001_png_size
             }
         },
         .hitbox = gamemode_portal_hitbox,
@@ -510,7 +510,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = rod_01_001_png
+                .texture = rod_01_001_png, .texture_size = rod_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -518,7 +518,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 3,
                 .color_type = COLOR_DETAIL,
-                .texture = rod_ball_01_001_png
+                .texture = rod_ball_01_001_png, .texture_size = rod_ball_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -526,7 +526,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 3,
                 .color_type = COLOR_DETAIL,
-                .texture = rod_ball_02_001_png
+                .texture = rod_ball_02_001_png, .texture_size = rod_ball_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -534,7 +534,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 3,
                 .color_type = COLOR_DETAIL,
-                .texture = rod_ball_03_001_png
+                .texture = rod_ball_03_001_png, .texture_size = rod_ball_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -551,7 +551,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = rod_02_001_png
+                .texture = rod_02_001_png, .texture_size = rod_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -559,7 +559,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 3,
                 .color_type = COLOR_DETAIL,
-                .texture = rod_ball_01_001_png
+                .texture = rod_ball_01_001_png, .texture_size = rod_ball_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -567,7 +567,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 3,
                 .color_type = COLOR_DETAIL,
-                .texture = rod_ball_02_001_png
+                .texture = rod_ball_02_001_png, .texture_size = rod_ball_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -575,7 +575,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 3,
                 .color_type = COLOR_DETAIL,
-                .texture = rod_ball_03_001_png
+                .texture = rod_ball_03_001_png, .texture_size = rod_ball_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -592,7 +592,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = rod_03_001_png
+                .texture = rod_03_001_png, .texture_size = rod_03_001_png_size
             },
             {
                 .x_offset = 0,
@@ -600,7 +600,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 3,
                 .color_type = COLOR_DETAIL,
-                .texture = rod_ball_01_001_png
+                .texture = rod_ball_01_001_png, .texture_size = rod_ball_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -608,7 +608,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 3,
                 .color_type = COLOR_DETAIL,
-                .texture = rod_ball_02_001_png
+                .texture = rod_ball_02_001_png, .texture_size = rod_ball_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -616,7 +616,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 3,
                 .color_type = COLOR_DETAIL,
-                .texture = rod_ball_03_001_png
+                .texture = rod_ball_03_001_png, .texture_size = rod_ball_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -633,7 +633,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikes_01_001_png
+                .texture = d_spikes_01_001_png, .texture_size = d_spikes_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -650,7 +650,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikes_02_001_png
+                .texture = d_spikes_02_001_png, .texture_size = d_spikes_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -667,7 +667,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikes_03_001_png
+                .texture = d_spikes_03_001_png, .texture_size = d_spikes_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -684,7 +684,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikes_04_001_png
+                .texture = d_spikes_04_001_png, .texture_size = d_spikes_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -714,7 +714,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = bump_01_001_png
+                .texture = bump_01_001_png, .texture_size = bump_01_001_png_size
             }
         },
         .hitbox = {
@@ -735,7 +735,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = ring_01_001_png
+                .texture = ring_01_001_png, .texture_size = ring_01_001_png_size
             }
         },
         .hitbox = {
@@ -757,14 +757,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = spike_02_glow_001_png
+                .texture = spike_02_glow_001_png, .texture_size = spike_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = spike_02_001_png
+                .texture = spike_02_001_png, .texture_size = spike_02_001_png_size
             }
         },
         .hitbox = {
@@ -784,7 +784,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_01_glow_001_png
+                .texture = square_h_01_glow_001_png, .texture_size = square_h_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -792,14 +792,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank_01_color_001_png
+                .texture = plank_01_color_001_png, .texture_size = plank_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank_01_001_png
+                .texture = plank_01_001_png, .texture_size = plank_01_001_png_size
             }
         },
         .hitbox = {
@@ -820,7 +820,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = chain_01_001_png
+                .texture = chain_01_001_png, .texture_size = chain_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -840,7 +840,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_05_back_001_png
+                .texture = portal_05_back_001_png, .texture_size = portal_05_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -848,7 +848,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_05_front_001_png
+                .texture = portal_05_front_001_png, .texture_size = portal_05_front_001_png_size
             }
         },
         .hitbox = mirror_portal_hitbox,
@@ -865,7 +865,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_06_back_001_png
+                .texture = portal_06_back_001_png, .texture_size = portal_06_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -873,7 +873,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_06_front_001_png
+                .texture = portal_06_front_001_png, .texture_size = portal_06_front_001_png_size
             }
         },
         .hitbox = mirror_portal_hitbox,
@@ -890,7 +890,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_07_back_001_png
+                .texture = portal_07_back_001_png, .texture_size = portal_07_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -898,7 +898,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_07_front_001_png
+                .texture = portal_07_front_001_png, .texture_size = portal_07_front_001_png_size
             }
         },
         .hitbox = gamemode_portal_hitbox,
@@ -915,7 +915,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cloud_01_001_png
+                .texture = d_cloud_01_001_png, .texture_size = d_cloud_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -932,7 +932,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cloud_02_001_png
+                .texture = d_cloud_02_001_png, .texture_size = d_cloud_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -949,7 +949,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_ball_01_001_png
+                .texture = d_ball_01_001_png, .texture_size = d_ball_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -966,7 +966,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_ball_02_001_png
+                .texture = d_ball_02_001_png, .texture_size = d_ball_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -983,7 +983,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_ball_03_001_png
+                .texture = d_ball_03_001_png, .texture_size = d_ball_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -1000,7 +1000,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_ball_04_001_png
+                .texture = d_ball_04_001_png, .texture_size = d_ball_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -1017,7 +1017,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_ball_05_001_png
+                .texture = d_ball_05_001_png, .texture_size = d_ball_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -1039,7 +1039,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_ball_06_001_png
+                .texture = d_ball_06_001_png, .texture_size = d_ball_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -1056,7 +1056,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_04_001_png
+                .texture = pit_04_001_png, .texture_size = pit_04_001_png_size
             }
         },
         .hitbox = {
@@ -1076,7 +1076,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 10,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1084,14 +1084,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_b_01_001_png
+                .texture = square_b_01_001_png, .texture_size = square_b_01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 10,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_001_png
+                .texture = blockOutline_02_001_png, .texture_size = blockOutline_02_001_png_size
             }
         },
         .hitbox = {
@@ -1112,14 +1112,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_b_02_001_png
+                .texture = square_b_02_001_png, .texture_size = square_b_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_03_001_png
+                .texture = blockOutline_03_001_png, .texture_size = blockOutline_03_001_png_size
             }
         },
         .hitbox = {
@@ -1140,14 +1140,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_b_03_001_png
+                .texture = square_b_03_001_png, .texture_size = square_b_03_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_06_001_png
+                .texture = blockOutline_06_001_png, .texture_size = blockOutline_06_001_png_size
             }
         },
         .hitbox = {
@@ -1167,7 +1167,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 10,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1175,14 +1175,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_b_04_001_png
+                .texture = square_b_04_001_png, .texture_size = square_b_04_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 10,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_001_png
+                .texture = blockOutline_02_001_png, .texture_size = blockOutline_02_001_png_size
             }
         },
         .hitbox = {
@@ -1202,7 +1202,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 10,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1210,14 +1210,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_b_05_001_png
+                .texture = square_b_05_001_png, .texture_size = square_b_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 10,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_001_png
+                .texture = blockOutline_02_001_png, .texture_size = blockOutline_02_001_png_size
             }
         },
         .hitbox = {
@@ -1238,7 +1238,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = gravbump_01_001_png
+                .texture = gravbump_01_001_png, .texture_size = gravbump_01_001_png_size
             }
         },
         .hitbox = {
@@ -1258,7 +1258,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 10,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1266,14 +1266,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_b_06_001_png
+                .texture = square_b_06_001_png, .texture_size = square_b_06_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 10,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_001_png
+                .texture = blockOutline_02_001_png, .texture_size = blockOutline_02_001_png_size
             }
         },
         .hitbox = {
@@ -1293,7 +1293,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1301,14 +1301,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_c_05_001_png
+                .texture = square_c_05_001_png, .texture_size = square_c_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_01_001_png
+                .texture = blockOutline_01_001_png, .texture_size = blockOutline_01_001_png_size
             }
         },
         .hitbox = {
@@ -1328,7 +1328,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1336,14 +1336,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_c_05_001_png
+                .texture = square_c_05_001_png, .texture_size = square_c_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_001_png
+                .texture = blockOutline_02_001_png, .texture_size = blockOutline_02_001_png_size
             }
         },
         .hitbox = {
@@ -1363,7 +1363,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_png
+                .texture = square_03_glow_001_png, .texture_size = square_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1371,14 +1371,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_c_05_001_png
+                .texture = square_c_05_001_png, .texture_size = square_c_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_03_001_png
+                .texture = blockOutline_03_001_png, .texture_size = blockOutline_03_001_png_size
             }
         },
         .hitbox = {
@@ -1398,7 +1398,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_001_png
+                .texture = square_04_glow_001_png, .texture_size = square_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1406,14 +1406,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_c_05_001_png
+                .texture = square_c_05_001_png, .texture_size = square_c_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_06_001_png
+                .texture = blockOutline_06_001_png, .texture_size = blockOutline_06_001_png_size
             }
         },
         .hitbox = {
@@ -1433,7 +1433,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_c_05_001_png
+                .texture = square_c_05_001_png, .texture_size = square_c_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -1449,7 +1449,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_png
+                .texture = square_06_glow_001_png, .texture_size = square_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1457,14 +1457,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_c_05_001_png
+                .texture = square_c_05_001_png, .texture_size = square_c_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_04_001_png
+                .texture = blockOutline_04_001_png, .texture_size = blockOutline_04_001_png_size
             }
         },
         .hitbox = {
@@ -1484,7 +1484,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_png
+                .texture = square_07_glow_001_png, .texture_size = square_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1492,14 +1492,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_c_05_001_png
+                .texture = square_c_05_001_png, .texture_size = square_c_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_05b_001_png
+                .texture = blockOutline_05b_001_png, .texture_size = blockOutline_05b_001_png_size
             }
         },
         .hitbox = {
@@ -1519,7 +1519,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_alt_png
+                .texture = square_01_glow_001_alt_png, .texture_size = square_01_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -1527,14 +1527,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_d_05_001_png
+                .texture = square_d_05_001_png, .texture_size = square_d_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_01_001_alt_png
+                .texture = blockOutline_01_001_alt_png, .texture_size = blockOutline_01_001_alt_png_size
             }
         },
         .hitbox = {
@@ -1554,7 +1554,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_alt_png
+                .texture = square_02_glow_001_alt_png, .texture_size = square_02_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -1562,14 +1562,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_d_05_001_png
+                .texture = square_d_05_001_png, .texture_size = square_d_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_001_alt_png
+                .texture = blockOutline_02_001_alt_png, .texture_size = blockOutline_02_001_alt_png_size
             }
         },
         .hitbox = {
@@ -1589,7 +1589,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_alt_png
+                .texture = square_03_glow_001_alt_png, .texture_size = square_03_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -1597,14 +1597,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_d_05_001_png
+                .texture = square_d_05_001_png, .texture_size = square_d_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_03_001_alt_png
+                .texture = blockOutline_03_001_alt_png, .texture_size = blockOutline_03_001_alt_png_size
             }
         },
         .hitbox = {
@@ -1625,7 +1625,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_d_05_001_png
+                .texture = square_d_05_001_png, .texture_size = square_d_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -1641,7 +1641,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_alt_png
+                .texture = square_06_glow_001_alt_png, .texture_size = square_06_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -1649,14 +1649,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_d_05_001_png
+                .texture = square_d_05_001_png, .texture_size = square_d_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_04_001_alt_png
+                .texture = blockOutline_04_001_alt_png, .texture_size = blockOutline_04_001_alt_png_size
             }
         },
         .hitbox = {
@@ -1676,7 +1676,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_alt_png
+                .texture = square_07_glow_001_alt_png, .texture_size = square_07_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -1684,14 +1684,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_d_05_001_png
+                .texture = square_d_05_001_png, .texture_size = square_d_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_05b_001_alt_png
+                .texture = blockOutline_05b_001_alt_png, .texture_size = blockOutline_05b_001_alt_png_size
             }
         },
         .hitbox = {
@@ -1711,14 +1711,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_08_001_png
+                .texture = square_08_001_png, .texture_size = square_08_001_png_size
             }
         },
         .hitbox = {
@@ -1739,7 +1739,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = gravring_01_001_png
+                .texture = gravring_01_001_png, .texture_size = gravring_01_001_png_size
             }
         },
         .hitbox = {
@@ -1760,7 +1760,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cogwheel_01_001_png
+                .texture = d_cogwheel_01_001_png, .texture_size = d_cogwheel_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -1778,7 +1778,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cogwheel_02_001_png
+                .texture = d_cogwheel_02_001_png, .texture_size = d_cogwheel_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -1796,7 +1796,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cogwheel_03_001_png
+                .texture = d_cogwheel_03_001_png, .texture_size = d_cogwheel_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -1814,7 +1814,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = sawblade_01_001_png
+                .texture = sawblade_01_001_png, .texture_size = sawblade_01_001_png_size
             }
         },
         .hitbox = {
@@ -1836,7 +1836,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = sawblade_02_001_png
+                .texture = sawblade_02_001_png, .texture_size = sawblade_02_001_png_size
             }
         },
         .hitbox = {
@@ -1857,7 +1857,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1865,14 +1865,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_01_001_png
+                .texture = blockOutline_01_001_png, .texture_size = blockOutline_01_001_png_size
             }
         },
         .hitbox = {
@@ -1892,7 +1892,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1900,14 +1900,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_001_png
+                .texture = blockOutline_02_001_png, .texture_size = blockOutline_02_001_png_size
             }
         },
         .hitbox = {
@@ -1927,7 +1927,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_png
+                .texture = square_03_glow_001_png, .texture_size = square_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1935,14 +1935,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_03_001_png
+                .texture = blockOutline_03_001_png, .texture_size = blockOutline_03_001_png_size
             }
         },
         .hitbox = {
@@ -1962,7 +1962,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_001_png
+                .texture = square_04_glow_001_png, .texture_size = square_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -1970,14 +1970,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_06_001_png
+                .texture = blockOutline_06_001_png, .texture_size = blockOutline_06_001_png_size
             }
         },
         .hitbox = {
@@ -1998,7 +1998,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             }
         },
         .hitbox = {
@@ -2018,7 +2018,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_png
+                .texture = square_06_glow_001_png, .texture_size = square_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -2026,14 +2026,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_04_001_png
+                .texture = blockOutline_04_001_png, .texture_size = blockOutline_04_001_png_size
             }
         },
         .hitbox = {
@@ -2053,7 +2053,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_png
+                .texture = square_07_glow_001_png, .texture_size = square_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -2061,14 +2061,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_05b_001_png
+                .texture = blockOutline_05b_001_png, .texture_size = blockOutline_05b_001_png_size
             }
         },
         .hitbox = {
@@ -2089,7 +2089,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cogwheel_04_001_png
+                .texture = d_cogwheel_04_001_png, .texture_size = d_cogwheel_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2107,7 +2107,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = sawblade_03_001_png
+                .texture = sawblade_03_001_png, .texture_size = sawblade_03_001_png_size
             }
         },
         .hitbox = {
@@ -2129,7 +2129,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_08_back_001_png
+                .texture = portal_08_back_001_png, .texture_size = portal_08_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -2137,7 +2137,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_08_front_001_png
+                .texture = portal_08_front_001_png, .texture_size = portal_08_front_001_png_size
             }
         },
         .hitbox = size_portal_hitbox,
@@ -2155,7 +2155,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_09_back_001_png
+                .texture = portal_09_back_001_png, .texture_size = portal_09_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -2163,7 +2163,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_09_front_001_png
+                .texture = portal_09_front_001_png, .texture_size = portal_09_front_001_png_size
             }
         },
         .hitbox = size_portal_hitbox,
@@ -2180,14 +2180,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = spike_03_glow_001_png
+                .texture = spike_03_glow_001_png, .texture_size = spike_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = spike_03_001_png
+                .texture = spike_03_001_png, .texture_size = spike_03_001_png_size
             }
         },
         .hitbox = {
@@ -2210,7 +2210,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_02_chain_01_001_png
+                .texture = d_02_chain_01_001_png, .texture_size = d_02_chain_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2227,7 +2227,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_02_chain_02_001_png
+                .texture = d_02_chain_02_001_png, .texture_size = d_02_chain_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2246,7 +2246,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_chain_02_001_png
+                .texture = d_chain_02_001_png, .texture_size = d_chain_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2263,7 +2263,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_10_back_001_png
+                .texture = portal_10_back_001_png, .texture_size = portal_10_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -2271,7 +2271,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_10_front_001_png
+                .texture = portal_10_front_001_png, .texture_size = portal_10_front_001_png_size
             }
         },
         .hitbox = gamemode_portal_hitbox,
@@ -2289,7 +2289,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_brick_01_001_png
+                .texture = d_brick_01_001_png, .texture_size = d_brick_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2306,7 +2306,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_brick_02_001_png
+                .texture = d_brick_02_001_png, .texture_size = d_brick_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2323,7 +2323,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_brick_03_001_png
+                .texture = d_brick_03_001_png, .texture_size = d_brick_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2339,14 +2339,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_f_01_001_png
+                .texture = square_f_01_001_png, .texture_size = square_f_01_001_png_size
             }
         },
         .hitbox = {
@@ -2366,14 +2366,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_f_02_001_png
+                .texture = square_f_02_001_png, .texture_size = square_f_02_001_png_size
             }
         },
         .hitbox = {
@@ -2393,14 +2393,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_png
+                .texture = square_03_glow_001_png, .texture_size = square_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_f_03_001_png
+                .texture = square_f_03_001_png, .texture_size = square_f_03_001_png_size
             }
         },
         .hitbox = {
@@ -2420,7 +2420,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_001_png
+                .texture = square_04_glow_001_png, .texture_size = square_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -2428,14 +2428,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_f_05_001_png
+                .texture = square_f_05_001_png, .texture_size = square_f_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_06_001_png
+                .texture = blockOutline_06_001_png, .texture_size = blockOutline_06_001_png_size
             }
         },
         .hitbox = {
@@ -2456,7 +2456,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_f_05_001_png
+                .texture = square_f_05_001_png, .texture_size = square_f_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2472,14 +2472,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_png
+                .texture = square_06_glow_001_png, .texture_size = square_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_f_06_001_png
+                .texture = square_f_06_001_png, .texture_size = square_f_06_001_png_size
             }
         },
         .hitbox = {
@@ -2499,14 +2499,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_png
+                .texture = square_07_glow_001_png, .texture_size = square_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_f_07_001_png
+                .texture = square_f_07_001_png, .texture_size = square_f_07_001_png_size
             }
         },
         .hitbox = {
@@ -2527,7 +2527,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_01_001_png
+                .texture = d_thorn_01_001_png, .texture_size = d_thorn_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2544,7 +2544,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_02_001_png
+                .texture = d_thorn_02_001_png, .texture_size = d_thorn_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2561,7 +2561,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_03_001_png
+                .texture = d_thorn_03_001_png, .texture_size = d_thorn_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2578,7 +2578,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_04_001_png
+                .texture = d_thorn_04_001_png, .texture_size = d_thorn_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2595,7 +2595,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_05_001_png
+                .texture = d_thorn_05_001_png, .texture_size = d_thorn_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2612,7 +2612,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_06_001_png
+                .texture = d_thorn_06_001_png, .texture_size = d_thorn_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2629,7 +2629,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cloud_04_001_png
+                .texture = d_cloud_04_001_png, .texture_size = d_cloud_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2646,7 +2646,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cloud_03_001_png
+                .texture = d_cloud_03_001_png, .texture_size = d_cloud_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2663,7 +2663,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cloud_05_001_png
+                .texture = d_cloud_05_001_png, .texture_size = d_cloud_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2680,7 +2680,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_arrow_01_001_png
+                .texture = d_arrow_01_001_png, .texture_size = d_arrow_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2697,7 +2697,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_exmark_01_001_png
+                .texture = d_exmark_01_001_png, .texture_size = d_exmark_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2714,7 +2714,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_art_01_001_png
+                .texture = d_art_01_001_png, .texture_size = d_art_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2731,7 +2731,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_b_01_001_png
+                .texture = pit_b_01_001_png, .texture_size = pit_b_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -2739,7 +2739,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_b_02_001_png
+                .texture = pit_b_02_001_png, .texture_size = pit_b_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -2747,7 +2747,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_b_03_001_png
+                .texture = pit_b_03_001_png, .texture_size = pit_b_03_001_png_size
             },
             {
                 .x_offset = 0,
@@ -2755,7 +2755,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_b_04_001_png
+                .texture = pit_b_04_001_png, .texture_size = pit_b_04_001_png_size
             }
         },
         .hitbox = {
@@ -2776,7 +2776,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_qmark_01_001_png
+                .texture = d_qmark_01_001_png, .texture_size = d_qmark_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2793,7 +2793,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_wheel_01_001_png
+                .texture = d_wheel_01_001_png, .texture_size = d_wheel_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2811,7 +2811,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_wheel_02_001_png
+                .texture = d_wheel_02_001_png, .texture_size = d_wheel_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2829,7 +2829,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_wheel_03_001_png
+                .texture = d_wheel_03_001_png, .texture_size = d_wheel_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -2847,7 +2847,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = bump_03_001_png
+                .texture = bump_03_001_png, .texture_size = bump_03_001_png_size
             }
         },
         .hitbox = {
@@ -2868,7 +2868,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = ring_03_001_png
+                .texture = ring_03_001_png, .texture_size = ring_03_001_png_size
             }
         },
         .hitbox = {
@@ -2889,7 +2889,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = secretCoin_01_001_png
+                .texture = secretCoin_01_001_png, .texture_size = secretCoin_01_001_png_size
             }
         },
         .hitbox = {
@@ -2909,14 +2909,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = brick_02_glow_001_png
+                .texture = brick_02_glow_001_png, .texture_size = brick_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = brick_02_001_png
+                .texture = brick_02_001_png, .texture_size = brick_02_001_png_size
             }
         },
         .hitbox = {
@@ -2936,14 +2936,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = invis_spike_01_glow_001_png
+                .texture = invis_spike_01_glow_001_png, .texture_size = invis_spike_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = invis_spike_01_001_png
+                .texture = invis_spike_01_001_png, .texture_size = invis_spike_01_001_png_size
             }
         },
         .hitbox = {
@@ -2964,14 +2964,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = invis_spike_03_glow_001_png
+                .texture = invis_spike_03_glow_001_png, .texture_size = invis_spike_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = invis_spike_03_001_png
+                .texture = invis_spike_03_001_png, .texture_size = invis_spike_03_001_png_size
             }
         },
         .hitbox = {
@@ -2992,14 +2992,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = invis_square_01_glow_001_png
+                .texture = invis_square_01_glow_001_png, .texture_size = invis_square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = invis_square_01_001_png
+                .texture = invis_square_01_001_png, .texture_size = invis_square_01_001_png_size
             }
         },
         .hitbox = {
@@ -3020,14 +3020,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = invis_plank_01_glow_001_png
+                .texture = invis_plank_01_glow_001_png, .texture_size = invis_plank_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = invis_plank_01_001_png
+                .texture = invis_plank_01_001_png, .texture_size = invis_plank_01_001_png_size
             }
         },
         .hitbox = {
@@ -3049,7 +3049,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_ball_07_001_png
+                .texture = d_ball_07_001_png, .texture_size = d_ball_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3066,7 +3066,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_ball_08_001_png
+                .texture = d_ball_08_001_png, .texture_size = d_ball_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3083,7 +3083,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cross_01_001_png
+                .texture = d_cross_01_001_png, .texture_size = d_cross_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3100,7 +3100,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikeart_01_001_png
+                .texture = d_spikeart_01_001_png, .texture_size = d_spikeart_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3117,7 +3117,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikeart_02_001_png
+                .texture = d_spikeart_02_001_png, .texture_size = d_spikeart_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3134,7 +3134,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikeart_03_001_png
+                .texture = d_spikeart_03_001_png, .texture_size = d_spikeart_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3151,7 +3151,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikewheel_01_001_png
+                .texture = d_spikewheel_01_001_png, .texture_size = d_spikewheel_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3169,7 +3169,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikewheel_02_001_png
+                .texture = d_spikewheel_02_001_png, .texture_size = d_spikewheel_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3186,7 +3186,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = P1,
                 .zlayer_offset = 0,
-                .texture = d_spikewheel_03_001_png
+                .texture = d_spikewheel_03_001_png, .texture_size = d_spikewheel_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3204,7 +3204,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_wave_01_001_png
+                .texture = d_wave_01_001_png, .texture_size = d_wave_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3221,7 +3221,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_wave_02_001_png
+                .texture = d_wave_02_001_png, .texture_size = d_wave_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3238,7 +3238,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_wave_03_001_png
+                .texture = d_wave_03_001_png, .texture_size = d_wave_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3254,21 +3254,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_05_001_png
+                .texture = square_g_05_001_png, .texture_size = square_g_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_01_001_png
+                .texture = blockOutline_01_001_png, .texture_size = blockOutline_01_001_png_size
             }
         },
         .hitbox = {
@@ -3288,21 +3288,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_05_001_png
+                .texture = square_g_05_001_png, .texture_size = square_g_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_001_png
+                .texture = blockOutline_02_001_png, .texture_size = blockOutline_02_001_png_size
             }
         },
         .hitbox = {
@@ -3322,21 +3322,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_png
+                .texture = square_03_glow_001_png, .texture_size = square_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_03_001_png
+                .texture = square_g_03_001_png, .texture_size = square_g_03_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_03_001_png
+                .texture = blockOutline_03_001_png, .texture_size = blockOutline_03_001_png_size
             }
         },
         .hitbox = {
@@ -3356,21 +3356,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_001_png
+                .texture = square_04_glow_001_png, .texture_size = square_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_04_001_png
+                .texture = square_g_04_001_png, .texture_size = square_g_04_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_06_001_png
+                .texture = blockOutline_06_001_png, .texture_size = blockOutline_06_001_png_size
             }
         },
         .hitbox = {
@@ -3390,7 +3390,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_05_001_png
+                .texture = square_g_05_001_png, .texture_size = square_g_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3406,21 +3406,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_png
+                .texture = square_06_glow_001_png, .texture_size = square_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_06_001_png
+                .texture = square_g_06_001_png, .texture_size = square_g_06_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_04_001_png
+                .texture = blockOutline_04_001_png, .texture_size = blockOutline_04_001_png_size
             }
         },
         .hitbox = {
@@ -3440,21 +3440,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_png
+                .texture = square_07_glow_001_png, .texture_size = square_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_07_001_png
+                .texture = square_g_07_001_png, .texture_size = square_g_07_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_05b_001_png
+                .texture = blockOutline_05b_001_png, .texture_size = blockOutline_05b_001_png_size
             }
         },
         .hitbox = {
@@ -3474,21 +3474,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_002_png
+                .texture = square_04_glow_002_png, .texture_size = square_04_glow_002_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_08_001_png
+                .texture = square_g_08_001_png, .texture_size = square_g_08_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_06_002_png
+                .texture = blockOutline_06_002_png, .texture_size = blockOutline_06_002_png_size
             }
         },
         .hitbox = {
@@ -3508,21 +3508,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_09_001_png
+                .texture = square_g_09_001_png, .texture_size = square_g_09_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_01_001_png
+                .texture = blockOutline_01_001_png, .texture_size = blockOutline_01_001_png_size
             }
         },
         .hitbox = {
@@ -3542,21 +3542,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_10_001_png
+                .texture = square_g_10_001_png, .texture_size = square_g_10_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_01_001_png
+                .texture = blockOutline_01_001_png, .texture_size = blockOutline_01_001_png_size
             }
         },
         .hitbox = {
@@ -3576,14 +3576,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_02_glow_001_png
+                .texture = square_h_02_glow_001_png, .texture_size = square_h_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_h_01_001_png
+                .texture = square_h_01_001_png, .texture_size = square_h_01_001_png_size
             }
         },
         .hitbox = {
@@ -3603,14 +3603,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_02_glow_001_png
+                .texture = square_h_02_glow_001_png, .texture_size = square_h_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_h_02_001_png
+                .texture = square_h_02_001_png, .texture_size = square_h_02_001_png_size
             }
         },
         .hitbox = {
@@ -3630,14 +3630,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_02_glow_001_png
+                .texture = square_h_02_glow_001_png, .texture_size = square_h_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_h_03_001_png
+                .texture = square_h_03_001_png, .texture_size = square_h_03_001_png_size
             }
         },
         .hitbox = {
@@ -3657,14 +3657,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_04_glow_001_png
+                .texture = square_h_04_glow_001_png, .texture_size = square_h_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_h_04_001_png
+                .texture = square_h_04_001_png, .texture_size = square_h_04_001_png_size
             }
         },
         .hitbox = {
@@ -3684,14 +3684,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_05_glow_001_png
+                .texture = square_h_05_glow_001_png, .texture_size = square_h_05_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_h_05_001_png
+                .texture = square_h_05_001_png, .texture_size = square_h_05_001_png_size
             }
         },
         .hitbox = {
@@ -3711,14 +3711,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_h_06_001_png
+                .texture = square_h_06_001_png, .texture_size = square_h_06_001_png_size
             }
         },
         .hitbox = {
@@ -3738,14 +3738,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_07_glow_001_png
+                .texture = square_h_07_glow_001_png, .texture_size = square_h_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_h_07_001_png
+                .texture = square_h_07_001_png, .texture_size = square_h_07_001_png_size
             }
         },
         .hitbox = {
@@ -3765,14 +3765,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = iceSpike_01_glow_001_png
+                .texture = iceSpike_01_glow_001_png, .texture_size = iceSpike_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = iceSpike_01_001_png
+                .texture = iceSpike_01_001_png, .texture_size = iceSpike_01_001_png_size
             }
         },
         .hitbox = {
@@ -3792,14 +3792,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = iceSpike_02_glow_001_png
+                .texture = iceSpike_02_glow_001_png, .texture_size = iceSpike_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = iceSpike_02_001_png
+                .texture = iceSpike_02_001_png, .texture_size = iceSpike_02_001_png_size
             }
         },
         .hitbox = {
@@ -3819,14 +3819,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = iceSpike_03_glow_001_png
+                .texture = iceSpike_03_glow_001_png, .texture_size = iceSpike_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = iceSpike_03_001_png
+                .texture = iceSpike_03_001_png, .texture_size = iceSpike_03_001_png_size
             }
         },
         .hitbox = {
@@ -3847,7 +3847,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cartwheel_01_001_png
+                .texture = d_cartwheel_01_001_png, .texture_size = d_cartwheel_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3865,7 +3865,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cartwheel_02_001_png
+                .texture = d_cartwheel_02_001_png, .texture_size = d_cartwheel_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3883,7 +3883,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_cartwheel_03_001_png
+                .texture = d_cartwheel_03_001_png, .texture_size = d_cartwheel_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -3900,14 +3900,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = blade_b_01_glow_001_png
+                .texture = blade_b_01_glow_001_png, .texture_size = blade_b_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blade_b_01_001_png
+                .texture = blade_b_01_001_png, .texture_size = blade_b_01_001_png_size
             }
         },
         .hitbox = {
@@ -3928,14 +3928,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = blade_b_02_glow_001_png
+                .texture = blade_b_02_glow_001_png, .texture_size = blade_b_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blade_b_02_001_png
+                .texture = blade_b_02_001_png, .texture_size = blade_b_02_001_png_size
             }
         },
         .hitbox = {
@@ -3956,14 +3956,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = blade_b_03_glow_001_png
+                .texture = blade_b_03_glow_001_png, .texture_size = blade_b_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blade_b_03_001_png
+                .texture = blade_b_03_001_png, .texture_size = blade_b_03_001_png_size
             }
         },
         .hitbox = {
@@ -3984,14 +3984,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = blade_01_glow_001_png
+                .texture = blade_01_glow_001_png, .texture_size = blade_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blade_01_001_png
+                .texture = blade_01_001_png, .texture_size = blade_01_001_png_size
             }
         },
         .hitbox = {
@@ -4012,14 +4012,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = blade_02_glow_001_png
+                .texture = blade_02_glow_001_png, .texture_size = blade_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blade_02_001_png
+                .texture = blade_02_001_png, .texture_size = blade_02_001_png_size
             }
         },
         .hitbox = {
@@ -4040,14 +4040,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = blade_03_glow_001_png
+                .texture = blade_03_glow_001_png, .texture_size = blade_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blade_03_001_png
+                .texture = blade_03_001_png, .texture_size = blade_03_001_png_size
             }
         },
         .hitbox = {
@@ -4070,7 +4070,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_art_02_001_png
+                .texture = d_art_02_001_png, .texture_size = d_art_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -4087,7 +4087,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = fakeSpike_01_001_png
+                .texture = fakeSpike_01_001_png, .texture_size = fakeSpike_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -4103,14 +4103,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_02_glow_001_png
+                .texture = square_h_02_glow_001_png, .texture_size = square_h_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_h_08_001_png
+                .texture = square_h_08_001_png, .texture_size = square_h_08_001_png_size
             }
         },
         .hitbox = {
@@ -4130,7 +4130,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_11_001_png
+                .texture = square_g_11_001_png, .texture_size = square_g_11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -4146,14 +4146,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_09_glow_001_png
+                .texture = square_h_09_glow_001_png, .texture_size = square_h_09_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_h_09_001_png
+                .texture = square_h_09_001_png, .texture_size = square_h_09_001_png_size
             }
         },
         .hitbox = {
@@ -4173,7 +4173,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_small_glow_001_png
+                .texture = square_01_small_glow_001_png, .texture_size = square_01_small_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4181,14 +4181,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_01_small_color_001_png
+                .texture = square_01_small_color_001_png, .texture_size = square_01_small_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_01_small_001_png
+                .texture = square_01_small_001_png, .texture_size = square_01_small_001_png_size
             }
         },
         .hitbox = {
@@ -4208,7 +4208,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = plank_01_small_glow_001_png
+                .texture = plank_01_small_glow_001_png, .texture_size = plank_01_small_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4216,14 +4216,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank_01_small_color_001_png
+                .texture = plank_01_small_color_001_png, .texture_size = plank_01_small_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank_01_small_001_png
+                .texture = plank_01_small_001_png, .texture_size = plank_01_small_001_png_size
             }
         },
         .hitbox = {
@@ -4243,14 +4243,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_10_glow_001_png
+                .texture = square_h_10_glow_001_png, .texture_size = square_h_10_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_h_10_001_png
+                .texture = square_h_10_001_png, .texture_size = square_h_10_001_png_size
             }
         },
         .hitbox = {
@@ -4271,7 +4271,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = fakeSpike_02_001_png
+                .texture = fakeSpike_02_001_png, .texture_size = fakeSpike_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -4288,7 +4288,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = fakeSpike_03_001_png
+                .texture = fakeSpike_03_001_png, .texture_size = fakeSpike_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -4304,7 +4304,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = -1,
-                .texture = boost_01_glow_001_png
+                .texture = boost_01_glow_001_png, .texture_size = boost_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4312,7 +4312,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = boost_01_001_png
+                .texture = boost_01_001_png, .texture_size = boost_01_001_png_size
             },
         },
         .hitbox = {
@@ -4332,7 +4332,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = -1,
-                .texture = boost_02_glow_001_png
+                .texture = boost_02_glow_001_png, .texture_size = boost_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4340,7 +4340,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = boost_02_001_png
+                .texture = boost_02_001_png, .texture_size = boost_02_001_png_size
             },
         },
         .hitbox = {
@@ -4360,7 +4360,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = -1,
-                .texture = boost_03_glow_001_png
+                .texture = boost_03_glow_001_png, .texture_size = boost_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4368,7 +4368,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = boost_03_001_png
+                .texture = boost_03_001_png, .texture_size = boost_03_001_png_size
             },
         },
         .hitbox = {
@@ -4388,7 +4388,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = -1,
-                .texture = boost_04_glow_001_png
+                .texture = boost_04_glow_001_png, .texture_size = boost_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4396,7 +4396,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = boost_04_001_png
+                .texture = boost_04_001_png, .texture_size = boost_04_001_png_size
             },
         },
         .hitbox = {
@@ -4416,14 +4416,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = invis_plank_01_small_glow_001_png
+                .texture = invis_plank_01_small_glow_001_png, .texture_size = invis_plank_01_small_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = invis_plank_01_small_001_png
+                .texture = invis_plank_01_small_001_png, .texture_size = invis_plank_01_small_001_png_size
             }
         },
         .hitbox = {
@@ -4444,14 +4444,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = invis_spike_02_glow_001_png
+                .texture = invis_spike_02_glow_001_png, .texture_size = invis_spike_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = invis_spike_02_001_png
+                .texture = invis_spike_02_001_png, .texture_size = invis_spike_02_001_png_size
             }
         },
         .hitbox = {
@@ -4472,14 +4472,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = invis_square_01_small_glow_001_png
+                .texture = invis_square_01_small_glow_001_png, .texture_size = invis_square_01_small_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = invis_square_01_small_001_png
+                .texture = invis_square_01_small_001_png, .texture_size = invis_square_01_small_001_png_size
             }
         },
         .hitbox = {
@@ -4500,7 +4500,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4508,14 +4508,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_01_001_png
+                .texture = blockOutline_01_001_png, .texture_size = blockOutline_01_001_png_size
             }
         },
         .hitbox = {
@@ -4535,7 +4535,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4543,14 +4543,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_001_png
+                .texture = blockOutline_02_001_png, .texture_size = blockOutline_02_001_png_size
             }
         },
         .hitbox = {
@@ -4570,7 +4570,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_png
+                .texture = square_03_glow_001_png, .texture_size = square_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4578,14 +4578,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_03_001_png
+                .texture = blockOutline_03_001_png, .texture_size = blockOutline_03_001_png_size
             }
         },
         .hitbox = {
@@ -4605,7 +4605,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_001_png
+                .texture = square_04_glow_001_png, .texture_size = square_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4613,14 +4613,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_06_001_png
+                .texture = blockOutline_06_001_png, .texture_size = blockOutline_06_001_png_size
             }
         },
         .hitbox = {
@@ -4641,7 +4641,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -4657,7 +4657,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_png
+                .texture = square_06_glow_001_png, .texture_size = square_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4665,14 +4665,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_04_001_png
+                .texture = blockOutline_04_001_png, .texture_size = blockOutline_04_001_png_size
             }
         },
         .hitbox = {
@@ -4692,7 +4692,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_png
+                .texture = square_07_glow_001_png, .texture_size = square_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4700,14 +4700,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_01_02_color_001_png
+                .texture = lightsquare_01_02_color_001_png, .texture_size = lightsquare_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_05b_001_png
+                .texture = blockOutline_05b_001_png, .texture_size = blockOutline_05b_001_png_size
             }
         },
         .hitbox = {
@@ -4728,7 +4728,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_01_glow_001_png
+                .texture = square_h_01_glow_001_png, .texture_size = square_h_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4736,14 +4736,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = colorPlank_01_color_001_png
+                .texture = colorPlank_01_color_001_png, .texture_size = colorPlank_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank_01_001_png
+                .texture = plank_01_001_png, .texture_size = plank_01_001_png_size
             }
         },
         .hitbox = {
@@ -4763,7 +4763,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = spike_01_glow_001_png
+                .texture = spike_01_glow_001_png, .texture_size = spike_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4771,14 +4771,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = colorSpike_01_color_001_png
+                .texture = colorSpike_01_color_001_png, .texture_size = colorSpike_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = colorSpike_01_001_png
+                .texture = colorSpike_01_001_png, .texture_size = colorSpike_01_001_png_size
             }
         },
         .hitbox = {
@@ -4798,7 +4798,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = spike_02_glow_001_png
+                .texture = spike_02_glow_001_png, .texture_size = spike_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4806,14 +4806,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = colorSpike_02_color_001_png
+                .texture = colorSpike_02_color_001_png, .texture_size = colorSpike_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = colorSpike_02_001_png
+                .texture = colorSpike_02_001_png, .texture_size = colorSpike_02_001_png_size
             }
         },
         .hitbox = {
@@ -4833,7 +4833,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = spike_03_glow_001_png
+                .texture = spike_03_glow_001_png, .texture_size = spike_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4841,14 +4841,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = colorSpike_03_color_001_png
+                .texture = colorSpike_03_color_001_png, .texture_size = colorSpike_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = colorSpike_03_001_png
+                .texture = colorSpike_03_001_png, .texture_size = colorSpike_03_001_png_size
             }
         },
         .hitbox = {
@@ -4868,7 +4868,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = plank_01_small_glow_001_png
+                .texture = plank_01_small_glow_001_png, .texture_size = plank_01_small_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4876,14 +4876,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = colorPlank_01_small_color_001_png
+                .texture = colorPlank_01_small_color_001_png, .texture_size = colorPlank_01_small_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = colorPlank_01_small_001_png
+                .texture = colorPlank_01_small_001_png, .texture_size = colorPlank_01_small_001_png_size
             }
         },
         .hitbox = {
@@ -4903,7 +4903,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_small_glow_001_png
+                .texture = square_01_small_glow_001_png, .texture_size = square_01_small_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -4911,14 +4911,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = colorSquare_01_small_color_001_png
+                .texture = colorSquare_01_small_color_001_png, .texture_size = colorSquare_01_small_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = colorSquare_01_small_001_png
+                .texture = colorSquare_01_small_001_png, .texture_size = colorSquare_01_small_001_png_size
             }
         },
         .hitbox = {
@@ -4940,7 +4940,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_roundCloud_01_001_png
+                .texture = d_roundCloud_01_001_png, .texture_size = d_roundCloud_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -4958,7 +4958,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_roundCloud_02_001_png
+                .texture = d_roundCloud_02_001_png, .texture_size = d_roundCloud_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -4976,7 +4976,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_roundCloud_03_001_png
+                .texture = d_roundCloud_03_001_png, .texture_size = d_roundCloud_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -4994,7 +4994,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_swirve_01_001_png
+                .texture = d_swirve_01_001_png, .texture_size = d_swirve_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5011,7 +5011,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_swirve_02_001_png
+                .texture = d_swirve_02_001_png, .texture_size = d_swirve_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5028,7 +5028,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_bar_01_001_png
+                .texture = d_bar_01_001_png, .texture_size = d_bar_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5045,7 +5045,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_bar_02_001_png
+                .texture = d_bar_02_001_png, .texture_size = d_bar_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5062,7 +5062,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_bar_03_001_png
+                .texture = d_bar_03_001_png, .texture_size = d_bar_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5079,7 +5079,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_bar_04_001_png
+                .texture = d_bar_04_001_png, .texture_size = d_bar_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5096,7 +5096,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_smallbar_01_001_png
+                .texture = d_smallbar_01_001_png, .texture_size = d_smallbar_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5113,7 +5113,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_smallbar_02_001_png
+                .texture = d_smallbar_02_001_png, .texture_size = d_smallbar_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5130,7 +5130,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_square_03_01_001_png
+                .texture = d_square_03_01_001_png, .texture_size = d_square_03_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5147,7 +5147,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_square_03_02_001_png
+                .texture = d_square_03_02_001_png, .texture_size = d_square_03_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5164,7 +5164,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_square_03_03_001_png
+                .texture = d_square_03_03_001_png, .texture_size = d_square_03_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5181,7 +5181,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_circle_01_001_png
+                .texture = d_circle_01_001_png, .texture_size = d_circle_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5198,7 +5198,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_01_001_png
+                .texture = d_link_01_001_png, .texture_size = d_link_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5215,7 +5215,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_02_001_png
+                .texture = d_link_02_001_png, .texture_size = d_link_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5232,7 +5232,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_03_001_png
+                .texture = d_link_03_001_png, .texture_size = d_link_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5249,7 +5249,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_04_001_png
+                .texture = d_link_04_001_png, .texture_size = d_link_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5266,7 +5266,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_05_001_png
+                .texture = d_link_05_001_png, .texture_size = d_link_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5283,7 +5283,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_bar_07_001_png
+                .texture = d_bar_07_001_png, .texture_size = d_bar_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5300,7 +5300,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_04_02_001_png
+                .texture = pit_04_02_001_png, .texture_size = pit_04_02_001_png_size
             }
         },
         .hitbox = {
@@ -5321,7 +5321,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_04_03_001_png
+                .texture = pit_04_03_001_png, .texture_size = pit_04_03_001_png_size
             }
         },
         .hitbox = {
@@ -5342,7 +5342,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_f_brick01_001_png
+                .texture = square_f_brick01_001_png, .texture_size = square_f_brick01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5359,7 +5359,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = square_f_brick02_001_png
+                .texture = square_f_brick02_001_png, .texture_size = square_f_brick02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5375,7 +5375,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5383,14 +5383,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_02_01_color_001_png
+                .texture = lightsquare_02_01_color_001_png, .texture_size = lightsquare_02_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_01_001_png
+                .texture = lightsquare_02_01_001_png, .texture_size = lightsquare_02_01_001_png_size
             }
         },
         .hitbox = {
@@ -5410,7 +5410,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5418,14 +5418,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_02_02_color_001_png
+                .texture = lightsquare_02_02_color_001_png, .texture_size = lightsquare_02_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_02_001_png
+                .texture = lightsquare_02_02_001_png, .texture_size = lightsquare_02_02_001_png_size
             }
         },
         .hitbox = {
@@ -5445,7 +5445,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_png
+                .texture = square_03_glow_001_png, .texture_size = square_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5453,14 +5453,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_02_03_color_001_png
+                .texture = lightsquare_02_03_color_001_png, .texture_size = lightsquare_02_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_03_001_png
+                .texture = lightsquare_02_03_001_png, .texture_size = lightsquare_02_03_001_png_size
             }
         },
         .hitbox = {
@@ -5480,7 +5480,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_001_png
+                .texture = square_04_glow_001_png, .texture_size = square_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5488,14 +5488,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_02_04_color_001_png
+                .texture = lightsquare_02_04_color_001_png, .texture_size = lightsquare_02_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_04_001_png
+                .texture = lightsquare_02_04_001_png, .texture_size = lightsquare_02_04_001_png_size
             }
         },
         .hitbox = {
@@ -5516,7 +5516,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_02_05_color_001_png
+                .texture = lightsquare_02_05_color_001_png, .texture_size = lightsquare_02_05_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5532,7 +5532,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_png
+                .texture = square_06_glow_001_png, .texture_size = square_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5540,14 +5540,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_02_06_color_001_png
+                .texture = lightsquare_02_06_color_001_png, .texture_size = lightsquare_02_06_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_06_001_png
+                .texture = lightsquare_02_06_001_png, .texture_size = lightsquare_02_06_001_png_size
             }
         },
         .hitbox = {
@@ -5567,7 +5567,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_png
+                .texture = square_07_glow_001_png, .texture_size = square_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5575,14 +5575,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_02_07_color_001_png
+                .texture = lightsquare_02_07_color_001_png, .texture_size = lightsquare_02_07_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_07_001_png
+                .texture = lightsquare_02_07_001_png, .texture_size = lightsquare_02_07_001_png_size
             }
         },
         .hitbox = {
@@ -5602,7 +5602,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_002_png
+                .texture = square_04_glow_002_png, .texture_size = square_04_glow_002_png_size
             },
             {
                 .x_offset = 0,
@@ -5610,14 +5610,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_02_08_color_001_png
+                .texture = lightsquare_02_08_color_001_png, .texture_size = lightsquare_02_08_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_08_001_png
+                .texture = lightsquare_02_08_001_png, .texture_size = lightsquare_02_08_001_png_size
             }
         },
         .hitbox = {
@@ -5637,7 +5637,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5645,14 +5645,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_03_01_color_001_png
+                .texture = lightsquare_03_01_color_001_png, .texture_size = lightsquare_03_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_01_001_png
+                .texture = lightsquare_02_01_001_png, .texture_size = lightsquare_02_01_001_png_size
             }
         },
         .hitbox = {
@@ -5672,7 +5672,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5680,14 +5680,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_03_01_color_001_png
+                .texture = lightsquare_03_01_color_001_png, .texture_size = lightsquare_03_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_02_001_png
+                .texture = lightsquare_02_02_001_png, .texture_size = lightsquare_02_02_001_png_size
             }
         },
         .hitbox = {
@@ -5707,7 +5707,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_png
+                .texture = square_03_glow_001_png, .texture_size = square_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5715,14 +5715,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_03_01_color_001_png
+                .texture = lightsquare_03_01_color_001_png, .texture_size = lightsquare_03_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_03_001_png
+                .texture = lightsquare_02_03_001_png, .texture_size = lightsquare_02_03_001_png_size
             }
         },
         .hitbox = {
@@ -5742,7 +5742,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_001_png
+                .texture = square_04_glow_001_png, .texture_size = square_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5750,14 +5750,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_03_01_color_001_png
+                .texture = lightsquare_03_01_color_001_png, .texture_size = lightsquare_03_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_04_001_png
+                .texture = lightsquare_02_04_001_png, .texture_size = lightsquare_02_04_001_png_size
             }
         },
         .hitbox = {
@@ -5778,7 +5778,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_03_01_color_001_png
+                .texture = lightsquare_03_01_color_001_png, .texture_size = lightsquare_03_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5794,7 +5794,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_png
+                .texture = square_06_glow_001_png, .texture_size = square_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5802,14 +5802,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_03_01_color_001_png
+                .texture = lightsquare_03_01_color_001_png, .texture_size = lightsquare_03_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_06_001_png
+                .texture = lightsquare_02_06_001_png, .texture_size = lightsquare_02_06_001_png_size
             }
         },
         .hitbox = {
@@ -5829,7 +5829,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_png
+                .texture = square_07_glow_001_png, .texture_size = square_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -5837,14 +5837,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_03_01_color_001_png
+                .texture = lightsquare_03_01_color_001_png, .texture_size = lightsquare_03_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_07_001_png
+                .texture = lightsquare_02_07_001_png, .texture_size = lightsquare_02_07_001_png_size
             }
         },
         .hitbox = {
@@ -5865,7 +5865,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_alt_png
+                .texture = square_01_glow_001_alt_png, .texture_size = square_01_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -5873,14 +5873,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_04_05_color_001_png
+                .texture = lightsquare_04_05_color_001_png, .texture_size = lightsquare_04_05_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_01_001_alt_png
+                .texture = blockOutline_01_001_alt_png, .texture_size = blockOutline_01_001_alt_png_size
             }
         },
         .hitbox = {
@@ -5900,7 +5900,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_alt_png
+                .texture = square_02_glow_001_alt_png, .texture_size = square_02_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -5908,14 +5908,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_04_05_color_001_png
+                .texture = lightsquare_04_05_color_001_png, .texture_size = lightsquare_04_05_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_001_alt_png
+                .texture = blockOutline_02_001_alt_png, .texture_size = blockOutline_02_001_alt_png_size
             }
         },
         .hitbox = {
@@ -5935,7 +5935,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_alt_png
+                .texture = square_03_glow_001_alt_png, .texture_size = square_03_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -5943,14 +5943,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_04_05_color_001_png
+                .texture = lightsquare_04_05_color_001_png, .texture_size = lightsquare_04_05_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_03_001_alt_png
+                .texture = blockOutline_03_001_alt_png, .texture_size = blockOutline_03_001_alt_png_size
             }
         },
         .hitbox = {
@@ -5971,7 +5971,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_04_05_color_001_png
+                .texture = lightsquare_04_05_color_001_png, .texture_size = lightsquare_04_05_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -5987,7 +5987,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_alt_png
+                .texture = square_06_glow_001_alt_png, .texture_size = square_06_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -5995,14 +5995,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_04_05_color_001_png
+                .texture = lightsquare_04_05_color_001_png, .texture_size = lightsquare_04_05_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_04_001_alt_png
+                .texture = blockOutline_04_001_alt_png, .texture_size = blockOutline_04_001_alt_png_size
             }
         },
         .hitbox = {
@@ -6022,7 +6022,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_alt_png
+                .texture = square_07_glow_001_alt_png, .texture_size = square_07_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -6030,14 +6030,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_04_05_color_001_png
+                .texture = lightsquare_04_05_color_001_png, .texture_size = lightsquare_04_05_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_05_001_alt_png
+                .texture = blockOutline_05_001_alt_png, .texture_size = blockOutline_05_001_alt_png_size
             }
         },
         .hitbox = {
@@ -6057,7 +6057,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_alt_png
+                .texture = square_01_glow_001_alt_png, .texture_size = square_01_glow_001_alt_png_size
             },
             {
                 .x_offset = 0,
@@ -6065,14 +6065,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_05_01_color_001_png
+                .texture = lightsquare_05_01_color_001_png, .texture_size = lightsquare_05_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_01_001_png
+                .texture = lightsquare_02_01_001_png, .texture_size = lightsquare_02_01_001_png_size
             }
         },
         .hitbox = {
@@ -6092,7 +6092,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_glow_001_png
+                .texture = square_02_glow_001_png, .texture_size = square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6100,14 +6100,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_05_02_color_001_png
+                .texture = lightsquare_05_02_color_001_png, .texture_size = lightsquare_05_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_02_001_png
+                .texture = lightsquare_02_02_001_png, .texture_size = lightsquare_02_02_001_png_size
             }
         },
         .hitbox = {
@@ -6127,7 +6127,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_png
+                .texture = square_03_glow_001_png, .texture_size = square_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6135,14 +6135,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_05_03_color_001_png
+                .texture = lightsquare_05_03_color_001_png, .texture_size = lightsquare_05_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_03_001_png
+                .texture = lightsquare_02_03_001_png, .texture_size = lightsquare_02_03_001_png_size
             }
         },
         .hitbox = {
@@ -6162,7 +6162,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_001_png
+                .texture = square_04_glow_001_png, .texture_size = square_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6170,14 +6170,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_05_04_color_001_png
+                .texture = lightsquare_05_04_color_001_png, .texture_size = lightsquare_05_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_04_001_png
+                .texture = lightsquare_02_04_001_png, .texture_size = lightsquare_02_04_001_png_size
             }
         },
         .hitbox = {
@@ -6198,7 +6198,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_05_05_color_001_png
+                .texture = lightsquare_05_05_color_001_png, .texture_size = lightsquare_05_05_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6214,7 +6214,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_png
+                .texture = square_06_glow_001_png, .texture_size = square_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6222,14 +6222,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_05_06_color_001_png
+                .texture = lightsquare_05_06_color_001_png, .texture_size = lightsquare_05_06_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_06_001_png
+                .texture = lightsquare_02_06_001_png, .texture_size = lightsquare_02_06_001_png_size
             }
         },
         .hitbox = {
@@ -6249,7 +6249,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_png
+                .texture = square_07_glow_001_png, .texture_size = square_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6257,14 +6257,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightsquare_05_07_color_001_png
+                .texture = lightsquare_05_07_color_001_png, .texture_size = lightsquare_05_07_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightsquare_02_07_001_png
+                .texture = lightsquare_02_07_001_png, .texture_size = lightsquare_02_07_001_png_size
             }
         },
         .hitbox = {
@@ -6286,7 +6286,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_square_03_02_001_png
+                .texture = d_square_03_02_001_png, .texture_size = d_square_03_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6303,7 +6303,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_square_03_03_001_png
+                .texture = d_square_03_03_001_png, .texture_size = d_square_03_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6320,7 +6320,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_square_01_001_png
+                .texture = d_square_01_001_png, .texture_size = d_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6337,7 +6337,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_square_02_001_png
+                .texture = d_square_02_001_png, .texture_size = d_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6354,7 +6354,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_square_04_001_png
+                .texture = d_square_04_001_png, .texture_size = d_square_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6371,7 +6371,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_square_05_001_png
+                .texture = d_square_05_001_png, .texture_size = d_square_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6388,7 +6388,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_smallbar_03_001_png
+                .texture = d_smallbar_03_001_png, .texture_size = d_smallbar_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6405,7 +6405,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_smallbar_04_001_png
+                .texture = d_smallbar_04_001_png, .texture_size = d_smallbar_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6422,7 +6422,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_smallbar_05_001_png
+                .texture = d_smallbar_05_001_png, .texture_size = d_smallbar_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6439,7 +6439,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_11_back_001_png
+                .texture = portal_11_back_001_png, .texture_size = portal_11_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6447,7 +6447,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_11_front_001_png
+                .texture = portal_11_front_001_png, .texture_size = portal_11_front_001_png_size
             }
         },
         .hitbox = dual_portal_hitbox,
@@ -6464,7 +6464,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_12_back_001_png
+                .texture = portal_12_back_001_png, .texture_size = portal_12_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6472,7 +6472,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_12_front_001_png
+                .texture = portal_12_front_001_png, .texture_size = portal_12_front_001_png_size
             }
         },
         .hitbox = dual_portal_hitbox,
@@ -6489,21 +6489,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_a_02_001_png
+                .texture = triangle_a_02_001_png, .texture_size = triangle_a_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -6525,21 +6525,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_a_04_001_png
+                .texture = triangle_a_04_001_png, .texture_size = triangle_a_04_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -6562,7 +6562,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6570,14 +6570,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = triangle_b_01_001_png
+                .texture = triangle_b_01_001_png, .texture_size = triangle_b_01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -6598,7 +6598,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6606,14 +6606,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = triangle_b_02_001_png
+                .texture = triangle_b_02_001_png, .texture_size = triangle_b_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -6635,14 +6635,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = triangle_b_square_01_001_png
+                .texture = triangle_b_square_01_001_png, .texture_size = triangle_b_square_01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_07_001_png
+                .texture = blockOutline_07_001_png, .texture_size = blockOutline_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6659,14 +6659,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = triangle_b_square_02_001_png
+                .texture = triangle_b_square_02_001_png, .texture_size = triangle_b_square_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_08_001_png
+                .texture = blockOutline_08_001_png, .texture_size = blockOutline_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -6683,21 +6683,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_c_02_001_png
+                .texture = triangle_c_02_001_png, .texture_size = triangle_c_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -6719,21 +6719,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_c_04_001_png
+                .texture = triangle_c_04_001_png, .texture_size = triangle_c_04_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -6757,21 +6757,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_16_glow_001_png
+                .texture = blockOutline_16_glow_001_png, .texture_size = blockOutline_16_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_d_02_001_png
+                .texture = triangle_d_02_001_png, .texture_size = triangle_d_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_16_001_png
+                .texture = blockOutline_16_001_png, .texture_size = blockOutline_16_001_png_size
             }
         },
         .hitbox = {
@@ -6793,21 +6793,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_17_glow_001_png
+                .texture = blockOutline_17_glow_001_png, .texture_size = blockOutline_17_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_d_04_001_png
+                .texture = triangle_d_04_001_png, .texture_size = triangle_d_04_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_17_001_png
+                .texture = blockOutline_17_001_png, .texture_size = blockOutline_17_001_png_size
             }
         },
         .hitbox = {
@@ -6829,7 +6829,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6837,14 +6837,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_01_02_color_001_png
+                .texture = lighttriangle_01_02_color_001_png, .texture_size = lighttriangle_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -6866,7 +6866,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -6874,14 +6874,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_01_04_color_001_png
+                .texture = lighttriangle_01_04_color_001_png, .texture_size = lighttriangle_01_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -6905,21 +6905,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_f_02_001_png
+                .texture = triangle_f_02_001_png, .texture_size = triangle_f_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -6941,21 +6941,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_f_04_001_png
+                .texture = triangle_f_04_001_png, .texture_size = triangle_f_04_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -6979,21 +6979,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_g_02_001_png
+                .texture = triangle_g_02_001_png, .texture_size = triangle_g_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -7015,21 +7015,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_g_04_001_png
+                .texture = triangle_g_04_001_png, .texture_size = triangle_g_04_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -7050,7 +7050,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_g_square_01_001_png
+                .texture = triangle_g_square_01_001_png, .texture_size = triangle_g_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -7066,7 +7066,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_g_square_02_001_png
+                .texture = triangle_g_square_02_001_png, .texture_size = triangle_g_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -7082,14 +7082,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = triangle_h_01_glow_001_png
+                .texture = triangle_h_01_glow_001_png, .texture_size = triangle_h_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_h_01_001_png
+                .texture = triangle_h_01_001_png, .texture_size = triangle_h_01_001_png_size
             }
         },
         .hitbox = {
@@ -7110,14 +7110,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = triangle_h_02_glow_001_png
+                .texture = triangle_h_02_glow_001_png, .texture_size = triangle_h_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_h_02_001_png
+                .texture = triangle_h_02_001_png, .texture_size = triangle_h_02_001_png_size
             }
         },
         .hitbox = {
@@ -7138,14 +7138,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = triangle_h_square_01_glow_001_png
+                .texture = triangle_h_square_01_glow_001_png, .texture_size = triangle_h_square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_h_square_01_001_png
+                .texture = triangle_h_square_01_001_png, .texture_size = triangle_h_square_01_001_png_size
             }
         },
         .hitbox = {
@@ -7165,14 +7165,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = triangle_h_square_02_glow_001_png
+                .texture = triangle_h_square_02_glow_001_png, .texture_size = triangle_h_square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_h_square_02_001_png
+                .texture = triangle_h_square_02_001_png, .texture_size = triangle_h_square_02_001_png_size
             }
         },
         .hitbox = {
@@ -7193,7 +7193,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7201,14 +7201,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lighttriangle_01_02_color_001_png
+                .texture = lighttriangle_01_02_color_001_png, .texture_size = lighttriangle_01_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -7230,7 +7230,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7238,14 +7238,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lighttriangle_01_04_color_001_png
+                .texture = lighttriangle_01_04_color_001_png, .texture_size = lighttriangle_01_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -7269,7 +7269,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7277,14 +7277,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lighttriangle_02_02_color_001_png
+                .texture = lighttriangle_02_02_color_001_png, .texture_size = lighttriangle_02_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -7306,7 +7306,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7314,14 +7314,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lighttriangle_02_04_color_001_png
+                .texture = lighttriangle_02_04_color_001_png, .texture_size = lighttriangle_02_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -7345,7 +7345,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7353,14 +7353,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lighttriangle_03_02_color_001_png
+                .texture = lighttriangle_03_02_color_001_png, .texture_size = lighttriangle_03_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -7382,7 +7382,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7390,14 +7390,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lighttriangle_03_04_color_001_png
+                .texture = lighttriangle_03_04_color_001_png, .texture_size = lighttriangle_03_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -7421,7 +7421,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_16_glow_001_png
+                .texture = blockOutline_16_glow_001_png, .texture_size = blockOutline_16_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7429,14 +7429,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lighttriangle_04_02_color_001_png
+                .texture = lighttriangle_04_02_color_001_png, .texture_size = lighttriangle_04_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_16_001_png
+                .texture = blockOutline_16_001_png, .texture_size = blockOutline_16_001_png_size
             }
         },
         .hitbox = {
@@ -7458,7 +7458,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_17_glow_001_png
+                .texture = blockOutline_17_glow_001_png, .texture_size = blockOutline_17_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7466,14 +7466,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lighttriangle_04_04_color_001_png
+                .texture = lighttriangle_04_04_color_001_png, .texture_size = lighttriangle_04_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_17_001_png
+                .texture = blockOutline_17_001_png, .texture_size = blockOutline_17_001_png_size
             }
         },
         .hitbox = {
@@ -7495,7 +7495,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7503,14 +7503,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lighttriangle_05_02_color_001_png
+                .texture = lighttriangle_05_02_color_001_png, .texture_size = lighttriangle_05_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -7532,7 +7532,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7540,14 +7540,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lighttriangle_05_04_color_001_png
+                .texture = lighttriangle_05_04_color_001_png, .texture_size = lighttriangle_05_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -7570,7 +7570,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_g_square_03_001_png
+                .texture = triangle_g_square_03_001_png, .texture_size = triangle_g_square_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -7591,7 +7591,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_01_slope_01_001_png
+                .texture = pit_01_slope_01_001_png, .texture_size = pit_01_slope_01_001_png_size
             }
         },
         .hitbox = {
@@ -7613,7 +7613,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_01_slope_02_001_png
+                .texture = pit_01_slope_02_001_png, .texture_size = pit_01_slope_02_001_png_size
             }
         },
         .hitbox = {
@@ -7635,7 +7635,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_01_low_001_png
+                .texture = pit_01_low_001_png, .texture_size = pit_01_low_001_png_size
             }
         },
         .hitbox = {
@@ -7656,7 +7656,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_04_slope_01_001_png
+                .texture = pit_04_slope_01_001_png, .texture_size = pit_04_slope_01_001_png_size
             }
         },
         .hitbox = {
@@ -7678,7 +7678,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_04_slope_02_001_png
+                .texture = pit_04_slope_02_001_png, .texture_size = pit_04_slope_02_001_png_size
             }
         },
         .hitbox = {
@@ -7700,7 +7700,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_04_low_001_png
+                .texture = pit_04_low_001_png, .texture_size = pit_04_low_001_png_size
             }
         },
         .hitbox = {
@@ -7720,7 +7720,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = plank_01_02_glow_001_png
+                .texture = plank_01_02_glow_001_png, .texture_size = plank_01_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7728,14 +7728,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank_01_color_001_png
+                .texture = plank_01_color_001_png, .texture_size = plank_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank_01_02_001_png
+                .texture = plank_01_02_001_png, .texture_size = plank_01_02_001_png_size
             }
         },
         .hitbox = {
@@ -7755,7 +7755,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = plank_01_03_glow_001_png
+                .texture = plank_01_03_glow_001_png, .texture_size = plank_01_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7763,14 +7763,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank_01_color_001_png
+                .texture = plank_01_color_001_png, .texture_size = plank_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank_01_03_001_png
+                .texture = plank_01_03_001_png, .texture_size = plank_01_03_001_png_size
             }
         },
         .hitbox = {
@@ -7790,7 +7790,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = plank_01_slope_01_glow_001_png
+                .texture = plank_01_slope_01_glow_001_png, .texture_size = plank_01_slope_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7798,14 +7798,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank_01_slope_01_color_001_png
+                .texture = plank_01_slope_01_color_001_png, .texture_size = plank_01_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank_01_slope_01_001_png
+                .texture = plank_01_slope_01_001_png, .texture_size = plank_01_slope_01_001_png_size
             }
         },
         .hitbox = {
@@ -7826,7 +7826,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = plank_01_slope_02_glow_001_png
+                .texture = plank_01_slope_02_glow_001_png, .texture_size = plank_01_slope_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7834,14 +7834,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank_01_slope_02_color_001_png
+                .texture = plank_01_slope_02_color_001_png, .texture_size = plank_01_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank_01_slope_02_001_png
+                .texture = plank_01_slope_02_001_png, .texture_size = plank_01_slope_02_001_png_size
             }
         },
         .hitbox = {
@@ -7862,7 +7862,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = plank_01_square_01_glow_001_png
+                .texture = plank_01_square_01_glow_001_png, .texture_size = plank_01_square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7870,14 +7870,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank_01_square_01_color_001_png
+                .texture = plank_01_square_01_color_001_png, .texture_size = plank_01_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank_01_square_01_001_png
+                .texture = plank_01_square_01_001_png, .texture_size = plank_01_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -7894,7 +7894,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = plank_01_square_02_glow_001_png
+                .texture = plank_01_square_02_glow_001_png, .texture_size = plank_01_square_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -7902,14 +7902,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank_01_square_02_color_001_png
+                .texture = plank_01_square_02_color_001_png, .texture_size = plank_01_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank_01_square_02_001_png
+                .texture = plank_01_square_02_001_png, .texture_size = plank_01_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -7927,7 +7927,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_rotatingBall_01_001_png
+                .texture = d_rotatingBall_01_001_png, .texture_size = d_rotatingBall_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -7945,7 +7945,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_rotatingBall_02_001_png
+                .texture = d_rotatingBall_02_001_png, .texture_size = d_rotatingBall_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -7963,7 +7963,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_rotatingBall_03_001_png
+                .texture = d_rotatingBall_03_001_png, .texture_size = d_rotatingBall_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -7981,7 +7981,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_rotatingBall_04_001_png
+                .texture = d_rotatingBall_04_001_png, .texture_size = d_rotatingBall_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8011,14 +8011,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = spike_04_glow_001_png
+                .texture = spike_04_glow_001_png, .texture_size = spike_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = spike_04_001_png
+                .texture = spike_04_001_png, .texture_size = spike_04_001_png_size
             }
         },
         .hitbox = {
@@ -8039,7 +8039,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = fakeSpike_04_001_png
+                .texture = fakeSpike_04_001_png, .texture_size = fakeSpike_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8056,7 +8056,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_geometric_01_001_png
+                .texture = d_geometric_01_001_png, .texture_size = d_geometric_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8074,7 +8074,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_geometric_02_001_png
+                .texture = d_geometric_02_001_png, .texture_size = d_geometric_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8092,7 +8092,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_geometric_03_001_png
+                .texture = d_geometric_03_001_png, .texture_size = d_geometric_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8110,7 +8110,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = darkblade_01_001_png
+                .texture = darkblade_01_001_png, .texture_size = darkblade_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -8118,7 +8118,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = darkblade_01_color_001_png
+                .texture = darkblade_01_color_001_png, .texture_size = darkblade_01_color_001_png_size
             }
         },
         .hitbox = {
@@ -8140,7 +8140,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = darkblade_02_001_png
+                .texture = darkblade_02_001_png, .texture_size = darkblade_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -8148,7 +8148,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = darkblade_02_color_001_png
+                .texture = darkblade_02_color_001_png, .texture_size = darkblade_02_color_001_png_size
             }
         },
         .hitbox = {
@@ -8170,7 +8170,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = darkblade_03_001_png
+                .texture = darkblade_03_001_png, .texture_size = darkblade_03_001_png_size
             },
             {
                 .x_offset = 0,
@@ -8178,7 +8178,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = darkblade_03_color_001_png
+                .texture = darkblade_03_color_001_png, .texture_size = darkblade_03_color_001_png_size
             }
         },
         .hitbox = {
@@ -8205,7 +8205,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_ball_09_001_png
+                .texture = d_ball_09_001_png, .texture_size = d_ball_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8222,7 +8222,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_grass_01_001_png
+                .texture = d_grass_01_001_png, .texture_size = d_grass_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8239,7 +8239,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_grass_01_001_png
+                .texture = d_grass_01_001_png, .texture_size = d_grass_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8256,7 +8256,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_grass_01_001_png
+                .texture = d_grass_01_001_png, .texture_size = d_grass_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8273,14 +8273,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_b_01_color_001_png
+                .texture = d_link_b_01_color_001_png, .texture_size = d_link_b_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = LBG,
                 .zlayer_offset = 0,
-                .texture = d_link_b_01_001_png
+                .texture = d_link_b_01_001_png, .texture_size = d_link_b_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8297,14 +8297,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_b_02_color_001_png
+                .texture = d_link_b_02_color_001_png, .texture_size = d_link_b_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = LBG,
                 .zlayer_offset = 0,
-                .texture = d_link_b_02_001_png
+                .texture = d_link_b_02_001_png, .texture_size = d_link_b_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8321,14 +8321,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_b_03_color_001_png
+                .texture = d_link_b_03_color_001_png, .texture_size = d_link_b_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = LBG,
                 .zlayer_offset = 0,
-                .texture = d_link_b_03_001_png
+                .texture = d_link_b_03_001_png, .texture_size = d_link_b_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8345,14 +8345,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_b_04_color_001_png
+                .texture = d_link_b_04_color_001_png, .texture_size = d_link_b_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = LBG,
                 .zlayer_offset = 0,
-                .texture = d_link_b_04_001_png
+                .texture = d_link_b_04_001_png, .texture_size = d_link_b_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8369,14 +8369,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_b_05_color_001_png
+                .texture = d_link_b_05_color_001_png, .texture_size = d_link_b_05_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = LBG,
                 .zlayer_offset = 0,
-                .texture = d_link_b_05_001_png
+                .texture = d_link_b_05_001_png, .texture_size = d_link_b_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8393,7 +8393,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_grass_01_001_png
+                .texture = d_grass_01_001_png, .texture_size = d_grass_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8414,7 +8414,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikeWave_01_001_png
+                .texture = d_spikeWave_01_001_png, .texture_size = d_spikeWave_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8431,7 +8431,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikeWave_02_001_png
+                .texture = d_spikeWave_02_001_png, .texture_size = d_spikeWave_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8448,7 +8448,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_05_001_png
+                .texture = pit_05_001_png, .texture_size = pit_05_001_png_size
             }
         },
         .hitbox = {
@@ -8469,7 +8469,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_05_02_001_png
+                .texture = pit_05_02_001_png, .texture_size = pit_05_02_001_png_size
             }
         },
         .hitbox = {
@@ -8513,7 +8513,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_06_001_png
+                .texture = pit_06_001_png, .texture_size = pit_06_001_png_size
             }
         },
         .hitbox = {
@@ -8534,7 +8534,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_06_2_001_png
+                .texture = pit_06_2_001_png, .texture_size = pit_06_2_001_png_size
             }
         },
         .hitbox = {
@@ -8555,7 +8555,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_pit06wave_01_001_png
+                .texture = d_pit06wave_01_001_png, .texture_size = d_pit06wave_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8572,7 +8572,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_pit06wave_02_001_png
+                .texture = d_pit06wave_02_001_png, .texture_size = d_pit06wave_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8589,7 +8589,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_pillar_01_001_png
+                .texture = d_pillar_01_001_png, .texture_size = d_pillar_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8606,7 +8606,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_pillar_02_001_png
+                .texture = d_pillar_02_001_png, .texture_size = d_pillar_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8623,7 +8623,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_pillar_03_001_png
+                .texture = d_pillar_03_001_png, .texture_size = d_pillar_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8640,14 +8640,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_c_01_color_001_png
+                .texture = d_link_c_01_color_001_png, .texture_size = d_link_c_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_link_c_01_001_png
+                .texture = d_link_c_01_001_png, .texture_size = d_link_c_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8664,14 +8664,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_c_02_color_001_png
+                .texture = d_link_c_02_color_001_png, .texture_size = d_link_c_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_link_c_02_001_png
+                .texture = d_link_c_02_001_png, .texture_size = d_link_c_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8688,14 +8688,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_c_03_color_001_png
+                .texture = d_link_c_03_color_001_png, .texture_size = d_link_c_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_link_c_03_001_png
+                .texture = d_link_c_03_001_png, .texture_size = d_link_c_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8712,14 +8712,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_c_04_color_001_png
+                .texture = d_link_c_04_color_001_png, .texture_size = d_link_c_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_link_c_04_001_png
+                .texture = d_link_c_04_001_png, .texture_size = d_link_c_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8736,14 +8736,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_link_c_05_color_001_png
+                .texture = d_link_c_05_color_001_png, .texture_size = d_link_c_05_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_link_c_05_001_png
+                .texture = d_link_c_05_001_png, .texture_size = d_link_c_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8759,7 +8759,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = spike_04_glow_001_png
+                .texture = spike_04_glow_001_png, .texture_size = spike_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -8767,14 +8767,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = colorSpike_04_color_001_png
+                .texture = colorSpike_04_color_001_png, .texture_size = colorSpike_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = colorSpike_04_001_png
+                .texture = colorSpike_04_001_png, .texture_size = colorSpike_04_001_png_size
             }
         },
         .hitbox = {
@@ -8794,14 +8794,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 1,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = invis_spike_04_glow_001_png
+                .texture = invis_spike_04_glow_001_png, .texture_size = invis_spike_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = invis_spike_04_001_png
+                .texture = invis_spike_04_001_png, .texture_size = invis_spike_04_001_png_size
             }
         },
         .hitbox = {
@@ -8823,7 +8823,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_arrow_02_001_png
+                .texture = d_arrow_02_001_png, .texture_size = d_arrow_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8840,7 +8840,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_01_001_png
+                .texture = d_thorn_01_001_png, .texture_size = d_thorn_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8857,7 +8857,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_02_001_png
+                .texture = d_thorn_02_001_png, .texture_size = d_thorn_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8874,7 +8874,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_03_001_png
+                .texture = d_thorn_03_001_png, .texture_size = d_thorn_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8891,7 +8891,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_04_001_png
+                .texture = d_thorn_04_001_png, .texture_size = d_thorn_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8908,7 +8908,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_05_001_png
+                .texture = d_thorn_05_001_png, .texture_size = d_thorn_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8925,7 +8925,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_thorn_06_001_png
+                .texture = d_thorn_06_001_png, .texture_size = d_thorn_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -8941,14 +8941,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0.5,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_glow_001_png
+                .texture = square_01_glow_001_png, .texture_size = square_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_01_001_png
+                .texture = blockOutline_01_001_png, .texture_size = blockOutline_01_001_png_size
             }
         },
         .hitbox = {
@@ -8968,14 +8968,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_alt_glow_001_png
+                .texture = square_02_alt_glow_001_png, .texture_size = square_02_alt_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_alt_001_png
+                .texture = blockOutline_02_alt_001_png, .texture_size = blockOutline_02_alt_001_png_size
             }
         },
         .hitbox = {
@@ -8995,14 +8995,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_03_glow_001_png
+                .texture = square_03_glow_001_png, .texture_size = square_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_03_001_png
+                .texture = blockOutline_03_001_png, .texture_size = blockOutline_03_001_png_size
             }
         },
         .hitbox = {
@@ -9022,14 +9022,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_06_glow_001_png
+                .texture = square_06_glow_001_png, .texture_size = square_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_04_001_png
+                .texture = blockOutline_04_001_png, .texture_size = blockOutline_04_001_png_size
             }
         },
         .hitbox = {
@@ -9049,14 +9049,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_07_glow_001_png
+                .texture = square_07_glow_001_png, .texture_size = square_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_05b_001_png
+                .texture = blockOutline_05b_001_png, .texture_size = blockOutline_05b_001_png_size
             }
         },
         .hitbox = {
@@ -9076,14 +9076,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_04_glow_001_png
+                .texture = square_04_glow_001_png, .texture_size = square_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_06_001_png
+                .texture = blockOutline_06_001_png, .texture_size = blockOutline_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9099,14 +9099,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_07_glow_001_png
+                .texture = blockOutline_07_glow_001_png, .texture_size = blockOutline_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_07_001_png
+                .texture = blockOutline_07_001_png, .texture_size = blockOutline_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9122,14 +9122,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_08_glow_001_png
+                .texture = blockOutline_08_glow_001_png, .texture_size = blockOutline_08_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_08_001_png
+                .texture = blockOutline_08_001_png, .texture_size = blockOutline_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9145,14 +9145,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_09_glow_001_png
+                .texture = blockOutline_09_glow_001_png, .texture_size = blockOutline_09_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_09_001_png
+                .texture = blockOutline_09_001_png, .texture_size = blockOutline_09_001_png_size
             }
         },
         .hitbox = {
@@ -9172,7 +9172,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_01_001_png
+                .texture = block001_01_001_png, .texture_size = block001_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9188,7 +9188,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_02_001_png
+                .texture = block001_02_001_png, .texture_size = block001_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9196,7 +9196,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block001_02_color_001_png
+                .texture = block001_02_color_001_png, .texture_size = block001_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9212,7 +9212,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_03_001_png
+                .texture = block001_03_001_png, .texture_size = block001_03_001_png_size
             },
             {
                 .x_offset = 0.5,
@@ -9220,7 +9220,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block001_03_color_001_png
+                .texture = block001_03_color_001_png, .texture_size = block001_03_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9236,7 +9236,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_04_001_png
+                .texture = block001_04_001_png, .texture_size = block001_04_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9244,7 +9244,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block001_04_color_001_png
+                .texture = block001_04_color_001_png, .texture_size = block001_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9260,7 +9260,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_05_001_png
+                .texture = block001_05_001_png, .texture_size = block001_05_001_png_size
             },
             {
                 .x_offset = 0.5,
@@ -9268,7 +9268,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block001_05_color_001_png
+                .texture = block001_05_color_001_png, .texture_size = block001_05_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9284,7 +9284,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_06_001_png
+                .texture = block001_06_001_png, .texture_size = block001_06_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9292,7 +9292,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block001_06_color_001_png
+                .texture = block001_06_color_001_png, .texture_size = block001_06_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9308,7 +9308,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_07_001_png
+                .texture = block001_07_001_png, .texture_size = block001_07_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9316,7 +9316,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block001_07_color_001_png
+                .texture = block001_07_color_001_png, .texture_size = block001_07_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9332,7 +9332,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9340,21 +9340,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block001_slope_01_color_001_png
+                .texture = block001_slope_01_color_001_png, .texture_size = block001_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_slope_01_001_png
+                .texture = block001_slope_01_001_png, .texture_size = block001_slope_01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -9375,7 +9375,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9383,21 +9383,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block001_slope_02_color_001_png
+                .texture = block001_slope_02_color_001_png, .texture_size = block001_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_slope_02_001_png
+                .texture = block001_slope_02_001_png, .texture_size = block001_slope_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -9418,7 +9418,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_01_001_png
+                .texture = block002_01_001_png, .texture_size = block002_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9426,7 +9426,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_01_color_001_png
+                .texture = block002_01_color_001_png, .texture_size = block002_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9442,7 +9442,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_02_001_png
+                .texture = block002_02_001_png, .texture_size = block002_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9450,7 +9450,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_02_color_001_png
+                .texture = block002_02_color_001_png, .texture_size = block002_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9466,7 +9466,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_03_001_png
+                .texture = block002_03_001_png, .texture_size = block002_03_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9474,7 +9474,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_03_color_001_png
+                .texture = block002_03_color_001_png, .texture_size = block002_03_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9490,7 +9490,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_04_001_png
+                .texture = block002_04_001_png, .texture_size = block002_04_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9498,7 +9498,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_04_color_001_png
+                .texture = block002_04_color_001_png, .texture_size = block002_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9514,7 +9514,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_05_001_png
+                .texture = block002_05_001_png, .texture_size = block002_05_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9522,7 +9522,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_05_color_001_png
+                .texture = block002_05_color_001_png, .texture_size = block002_05_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9538,7 +9538,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_06_001_png
+                .texture = block002_06_001_png, .texture_size = block002_06_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9546,7 +9546,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_06_color_001_png
+                .texture = block002_06_color_001_png, .texture_size = block002_06_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9562,7 +9562,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_07_001_png
+                .texture = block002_07_001_png, .texture_size = block002_07_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9570,7 +9570,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_07_color_001_png
+                .texture = block002_07_color_001_png, .texture_size = block002_07_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9586,7 +9586,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9594,21 +9594,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_slope_01_color_001_png
+                .texture = block002_slope_01_color_001_png, .texture_size = block002_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_slope_01_001_png
+                .texture = block002_slope_01_001_png, .texture_size = block002_slope_01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -9629,7 +9629,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -9637,21 +9637,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_slope_02_color_001_png
+                .texture = block002_slope_02_color_001_png, .texture_size = block002_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_slope_02_001_png
+                .texture = block002_slope_02_001_png, .texture_size = block002_slope_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -9673,7 +9673,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_arrow_03_001_png
+                .texture = d_arrow_03_001_png, .texture_size = d_arrow_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9690,7 +9690,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_largeSquare_01_001_png
+                .texture = d_largeSquare_01_001_png, .texture_size = d_largeSquare_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9707,7 +9707,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_largeSquare_01_001_png
+                .texture = d_largeSquare_01_001_png, .texture_size = d_largeSquare_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9724,7 +9724,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_circle_02_001_png
+                .texture = d_circle_02_001_png, .texture_size = d_circle_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9741,7 +9741,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_03_chain_01_001_png
+                .texture = d_03_chain_01_001_png, .texture_size = d_03_chain_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9758,7 +9758,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_03_chain_02_001_png
+                .texture = d_03_chain_02_001_png, .texture_size = d_03_chain_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9775,7 +9775,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_swirve_03_001_png
+                .texture = d_swirve_03_001_png, .texture_size = d_swirve_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9792,7 +9792,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_swirve_04_001_png
+                .texture = d_swirve_04_001_png, .texture_size = d_swirve_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9808,7 +9808,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_09_001_png
+                .texture = square_09_001_png, .texture_size = square_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9825,7 +9825,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_gradient_01_001_png
+                .texture = d_gradient_01_001_png, .texture_size = d_gradient_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9842,7 +9842,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_gradient_02_001_png
+                .texture = d_gradient_02_001_png, .texture_size = d_gradient_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9859,7 +9859,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_gradient_03_001_png
+                .texture = d_gradient_03_001_png, .texture_size = d_gradient_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9877,7 +9877,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = THREEDL,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = persp_outline_01_001_png
+                .texture = persp_outline_01_001_png, .texture_size = persp_outline_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9894,7 +9894,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = THREEDL,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = persp_outline_02_001_png
+                .texture = persp_outline_02_001_png, .texture_size = persp_outline_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9911,7 +9911,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = THREEDL,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = persp_outline_03_001_png
+                .texture = persp_outline_03_001_png, .texture_size = persp_outline_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9928,7 +9928,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = THREEDL,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = persp_outline_04_001_png
+                .texture = persp_outline_04_001_png, .texture_size = persp_outline_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9945,7 +9945,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = THREEDL,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = persp_outline_05_001_png
+                .texture = persp_outline_05_001_png, .texture_size = persp_outline_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9962,7 +9962,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = THREEDL,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = persp_outline_06_001_png
+                .texture = persp_outline_06_001_png, .texture_size = persp_outline_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9979,7 +9979,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = THREEDL,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = persp_outline_07_001_png
+                .texture = persp_outline_07_001_png, .texture_size = persp_outline_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -9996,7 +9996,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = THREEDL,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = persp_outline_08_001_png
+                .texture = persp_outline_08_001_png, .texture_size = persp_outline_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10013,7 +10013,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = THREEDL,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = persp_outline_09_001_png
+                .texture = persp_outline_09_001_png, .texture_size = persp_outline_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10029,7 +10029,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_01_01_png
+                .texture = persp_01_01_png, .texture_size = persp_01_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10045,7 +10045,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_01_02_png
+                .texture = persp_01_02_png, .texture_size = persp_01_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10061,7 +10061,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_01_03_png
+                .texture = persp_01_03_png, .texture_size = persp_01_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10077,7 +10077,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_01_04_png
+                .texture = persp_01_04_png, .texture_size = persp_01_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10093,7 +10093,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_01_05_png
+                .texture = persp_01_05_png, .texture_size = persp_01_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10109,7 +10109,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_01_06_png
+                .texture = persp_01_06_png, .texture_size = persp_01_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10125,7 +10125,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_01_07_png
+                .texture = persp_01_07_png, .texture_size = persp_01_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10141,7 +10141,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_01_08_png
+                .texture = persp_01_08_png, .texture_size = persp_01_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10157,7 +10157,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_01_09_png
+                .texture = persp_01_09_png, .texture_size = persp_01_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10173,7 +10173,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_02_01_png
+                .texture = persp_02_01_png, .texture_size = persp_02_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10189,7 +10189,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_02_02_png
+                .texture = persp_02_02_png, .texture_size = persp_02_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10205,7 +10205,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_02_03_png
+                .texture = persp_02_03_png, .texture_size = persp_02_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10221,7 +10221,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_02_04_png
+                .texture = persp_02_04_png, .texture_size = persp_02_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10237,7 +10237,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_02_05_png
+                .texture = persp_02_05_png, .texture_size = persp_02_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10253,7 +10253,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_02_06_png
+                .texture = persp_02_06_png, .texture_size = persp_02_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10269,7 +10269,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_02_07_png
+                .texture = persp_02_07_png, .texture_size = persp_02_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10285,7 +10285,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_02_08_png
+                .texture = persp_02_08_png, .texture_size = persp_02_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10301,7 +10301,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_02_09_png
+                .texture = persp_02_09_png, .texture_size = persp_02_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10317,7 +10317,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_03_01_png
+                .texture = persp_03_01_png, .texture_size = persp_03_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10333,7 +10333,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_03_02_png
+                .texture = persp_03_02_png, .texture_size = persp_03_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10349,7 +10349,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_03_03_png
+                .texture = persp_03_03_png, .texture_size = persp_03_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10365,7 +10365,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_03_04_png
+                .texture = persp_03_04_png, .texture_size = persp_03_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10381,7 +10381,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_03_05_png
+                .texture = persp_03_05_png, .texture_size = persp_03_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10397,7 +10397,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_03_06_png
+                .texture = persp_03_06_png, .texture_size = persp_03_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10413,7 +10413,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_03_07_png
+                .texture = persp_03_07_png, .texture_size = persp_03_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10429,7 +10429,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_03_08_png
+                .texture = persp_03_08_png, .texture_size = persp_03_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10445,7 +10445,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_03_09_png
+                .texture = persp_03_09_png, .texture_size = persp_03_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10461,7 +10461,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_04_01_png
+                .texture = persp_04_01_png, .texture_size = persp_04_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10477,7 +10477,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_04_02_png
+                .texture = persp_04_02_png, .texture_size = persp_04_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10493,7 +10493,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_04_03_png
+                .texture = persp_04_03_png, .texture_size = persp_04_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10509,7 +10509,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_04_04_png
+                .texture = persp_04_04_png, .texture_size = persp_04_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10525,7 +10525,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_04_05_png
+                .texture = persp_04_05_png, .texture_size = persp_04_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10541,7 +10541,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_04_06_png
+                .texture = persp_04_06_png, .texture_size = persp_04_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10557,7 +10557,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_04_07_png
+                .texture = persp_04_07_png, .texture_size = persp_04_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10573,7 +10573,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_04_08_png
+                .texture = persp_04_08_png, .texture_size = persp_04_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10589,7 +10589,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_04_09_png
+                .texture = persp_04_09_png, .texture_size = persp_04_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10605,7 +10605,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_05_01_png
+                .texture = persp_05_01_png, .texture_size = persp_05_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10621,7 +10621,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_05_02_png
+                .texture = persp_05_02_png, .texture_size = persp_05_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10637,7 +10637,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_05_03_png
+                .texture = persp_05_03_png, .texture_size = persp_05_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10653,7 +10653,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_05_04_png
+                .texture = persp_05_04_png, .texture_size = persp_05_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10669,7 +10669,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_05_05_png
+                .texture = persp_05_05_png, .texture_size = persp_05_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10685,7 +10685,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_05_06_png
+                .texture = persp_05_06_png, .texture_size = persp_05_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10701,7 +10701,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_05_07_png
+                .texture = persp_05_07_png, .texture_size = persp_05_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10717,7 +10717,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_05_08_png
+                .texture = persp_05_08_png, .texture_size = persp_05_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10733,7 +10733,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_05_09_png
+                .texture = persp_05_09_png, .texture_size = persp_05_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10749,7 +10749,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_06_01_png
+                .texture = persp_06_01_png, .texture_size = persp_06_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10765,7 +10765,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_06_02_png
+                .texture = persp_06_02_png, .texture_size = persp_06_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10781,7 +10781,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_06_03_png
+                .texture = persp_06_03_png, .texture_size = persp_06_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10797,7 +10797,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_06_04_png
+                .texture = persp_06_04_png, .texture_size = persp_06_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10813,7 +10813,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_06_05_png
+                .texture = persp_06_05_png, .texture_size = persp_06_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10829,7 +10829,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_06_06_png
+                .texture = persp_06_06_png, .texture_size = persp_06_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10845,7 +10845,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_06_07_png
+                .texture = persp_06_07_png, .texture_size = persp_06_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10861,7 +10861,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_06_08_png
+                .texture = persp_06_08_png, .texture_size = persp_06_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10877,7 +10877,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_06_09_png
+                .texture = persp_06_09_png, .texture_size = persp_06_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10893,7 +10893,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_07_01_png
+                .texture = persp_07_01_png, .texture_size = persp_07_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10909,7 +10909,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_07_02_png
+                .texture = persp_07_02_png, .texture_size = persp_07_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10925,7 +10925,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_07_03_png
+                .texture = persp_07_03_png, .texture_size = persp_07_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10941,7 +10941,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_07_04_png
+                .texture = persp_07_04_png, .texture_size = persp_07_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10957,7 +10957,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_07_05_png
+                .texture = persp_07_05_png, .texture_size = persp_07_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10973,7 +10973,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_07_06_png
+                .texture = persp_07_06_png, .texture_size = persp_07_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -10989,7 +10989,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_07_07_png
+                .texture = persp_07_07_png, .texture_size = persp_07_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11005,7 +11005,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_07_08_png
+                .texture = persp_07_08_png, .texture_size = persp_07_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11021,7 +11021,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_07_09_png
+                .texture = persp_07_09_png, .texture_size = persp_07_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11038,7 +11038,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_08_01_png
+                .texture = persp_08_01_png, .texture_size = persp_08_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11055,7 +11055,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_08_02_png
+                .texture = persp_08_02_png, .texture_size = persp_08_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11072,7 +11072,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_08_03_png
+                .texture = persp_08_03_png, .texture_size = persp_08_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11089,7 +11089,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_08_04_png
+                .texture = persp_08_04_png, .texture_size = persp_08_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11106,7 +11106,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_08_05_png
+                .texture = persp_08_05_png, .texture_size = persp_08_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11123,7 +11123,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_08_06_png
+                .texture = persp_08_06_png, .texture_size = persp_08_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11140,7 +11140,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_08_07_png
+                .texture = persp_08_07_png, .texture_size = persp_08_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11157,7 +11157,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_08_08_png
+                .texture = persp_08_08_png, .texture_size = persp_08_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11174,7 +11174,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_08_09_png
+                .texture = persp_08_09_png, .texture_size = persp_08_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11191,7 +11191,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_09_01_png
+                .texture = persp_09_01_png, .texture_size = persp_09_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11208,7 +11208,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_09_02_png
+                .texture = persp_09_02_png, .texture_size = persp_09_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11225,7 +11225,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_09_03_png
+                .texture = persp_09_03_png, .texture_size = persp_09_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11242,7 +11242,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_09_04_png
+                .texture = persp_09_04_png, .texture_size = persp_09_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11259,7 +11259,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_09_05_png
+                .texture = persp_09_05_png, .texture_size = persp_09_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11276,7 +11276,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_09_06_png
+                .texture = persp_09_06_png, .texture_size = persp_09_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11293,7 +11293,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_09_07_png
+                .texture = persp_09_07_png, .texture_size = persp_09_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11310,7 +11310,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_09_08_png
+                .texture = persp_09_08_png, .texture_size = persp_09_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11327,7 +11327,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_09_09_png
+                .texture = persp_09_09_png, .texture_size = persp_09_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11344,7 +11344,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_10_01_png
+                .texture = persp_10_01_png, .texture_size = persp_10_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11361,7 +11361,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_10_02_png
+                .texture = persp_10_02_png, .texture_size = persp_10_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11378,7 +11378,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_10_03_png
+                .texture = persp_10_03_png, .texture_size = persp_10_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11395,7 +11395,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_10_04_png
+                .texture = persp_10_04_png, .texture_size = persp_10_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11412,7 +11412,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_10_05_png
+                .texture = persp_10_05_png, .texture_size = persp_10_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11429,7 +11429,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_10_06_png
+                .texture = persp_10_06_png, .texture_size = persp_10_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11446,7 +11446,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_10_07_png
+                .texture = persp_10_07_png, .texture_size = persp_10_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11463,7 +11463,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_10_08_png
+                .texture = persp_10_08_png, .texture_size = persp_10_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11480,7 +11480,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_10_09_png
+                .texture = persp_10_09_png, .texture_size = persp_10_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11497,7 +11497,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_11_01_png
+                .texture = persp_11_01_png, .texture_size = persp_11_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11514,7 +11514,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_11_02_png
+                .texture = persp_11_02_png, .texture_size = persp_11_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11531,7 +11531,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_11_03_png
+                .texture = persp_11_03_png, .texture_size = persp_11_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11548,7 +11548,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_11_04_png
+                .texture = persp_11_04_png, .texture_size = persp_11_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11565,7 +11565,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_11_05_png
+                .texture = persp_11_05_png, .texture_size = persp_11_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11582,7 +11582,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_11_06_png
+                .texture = persp_11_06_png, .texture_size = persp_11_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11599,7 +11599,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_11_07_png
+                .texture = persp_11_07_png, .texture_size = persp_11_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11616,7 +11616,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_11_08_png
+                .texture = persp_11_08_png, .texture_size = persp_11_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11633,7 +11633,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_11_09_png
+                .texture = persp_11_09_png, .texture_size = persp_11_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11650,7 +11650,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_12_01_png
+                .texture = persp_12_01_png, .texture_size = persp_12_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11667,7 +11667,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_12_02_png
+                .texture = persp_12_02_png, .texture_size = persp_12_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11684,7 +11684,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_12_03_png
+                .texture = persp_12_03_png, .texture_size = persp_12_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11701,7 +11701,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_12_04_png
+                .texture = persp_12_04_png, .texture_size = persp_12_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11718,7 +11718,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_12_05_png
+                .texture = persp_12_05_png, .texture_size = persp_12_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11735,7 +11735,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_12_06_png
+                .texture = persp_12_06_png, .texture_size = persp_12_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11752,7 +11752,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_12_07_png
+                .texture = persp_12_07_png, .texture_size = persp_12_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11769,7 +11769,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_12_08_png
+                .texture = persp_12_08_png, .texture_size = persp_12_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11786,7 +11786,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_12_09_png
+                .texture = persp_12_09_png, .texture_size = persp_12_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11802,7 +11802,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_13_01_png
+                .texture = persp_13_01_png, .texture_size = persp_13_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11818,7 +11818,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_13_02_png
+                .texture = persp_13_02_png, .texture_size = persp_13_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11834,7 +11834,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_13_03_png
+                .texture = persp_13_03_png, .texture_size = persp_13_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11850,7 +11850,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_13_04_png
+                .texture = persp_13_04_png, .texture_size = persp_13_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11866,7 +11866,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_13_05_png
+                .texture = persp_13_05_png, .texture_size = persp_13_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11882,7 +11882,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_13_06_png
+                .texture = persp_13_06_png, .texture_size = persp_13_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11898,7 +11898,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_13_07_png
+                .texture = persp_13_07_png, .texture_size = persp_13_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11914,7 +11914,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_13_08_png
+                .texture = persp_13_08_png, .texture_size = persp_13_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11930,7 +11930,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_13_09_png
+                .texture = persp_13_09_png, .texture_size = persp_13_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11946,7 +11946,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_14_01_png
+                .texture = persp_14_01_png, .texture_size = persp_14_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11962,7 +11962,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_14_02_png
+                .texture = persp_14_02_png, .texture_size = persp_14_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11978,7 +11978,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_14_03_png
+                .texture = persp_14_03_png, .texture_size = persp_14_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -11994,7 +11994,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_14_04_png
+                .texture = persp_14_04_png, .texture_size = persp_14_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12010,7 +12010,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_14_05_png
+                .texture = persp_14_05_png, .texture_size = persp_14_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12026,7 +12026,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_14_06_png
+                .texture = persp_14_06_png, .texture_size = persp_14_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12042,7 +12042,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_14_07_png
+                .texture = persp_14_07_png, .texture_size = persp_14_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12058,7 +12058,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_14_08_png
+                .texture = persp_14_08_png, .texture_size = persp_14_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12074,7 +12074,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_14_09_png
+                .texture = persp_14_09_png, .texture_size = persp_14_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12090,14 +12090,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part03_001_png
+                .texture = block003_part03_001_png, .texture_size = block003_part03_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part02_002_png
+                .texture = block003_part02_002_png, .texture_size = block003_part02_002_png_size
             },
             {
                 .x_offset = 0,
@@ -12105,7 +12105,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_02_001_png
+                .texture = block003_color_02_001_png, .texture_size = block003_color_02_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -12121,14 +12121,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part04_001_png
+                .texture = block003_part04_001_png, .texture_size = block003_part04_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part02_001_png
+                .texture = block003_part02_001_png, .texture_size = block003_part02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -12136,7 +12136,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_03_001_png
+                .texture = block003_color_03_001_png, .texture_size = block003_color_03_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -12152,7 +12152,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part06_001_png
+                .texture = block003_part06_001_png, .texture_size = block003_part06_001_png_size
             },
             {
                 .x_offset = 0,
@@ -12160,7 +12160,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_04_001_png
+                .texture = block003_color_04_001_png, .texture_size = block003_color_04_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -12176,7 +12176,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part05_001_png
+                .texture = block003_part05_001_png, .texture_size = block003_part05_001_png_size
             },
             {
                 .x_offset = 0,
@@ -12184,7 +12184,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_05_001_png
+                .texture = block003_color_05_001_png, .texture_size = block003_color_05_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -12200,7 +12200,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part03_002_png
+                .texture = block003_part03_002_png, .texture_size = block003_part03_002_png_size
             },
             {
                 .x_offset = 0,
@@ -12208,7 +12208,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_06_001_png
+                .texture = block003_color_06_001_png, .texture_size = block003_color_06_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -12224,21 +12224,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part03_003_png
+                .texture = block003_part03_003_png, .texture_size = block003_part03_003_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part01_001_png
+                .texture = block003_part01_001_png, .texture_size = block003_part01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part02_005_png
+                .texture = block003_part02_005_png, .texture_size = block003_part02_005_png_size
             },
             {
                 .x_offset = 0,
@@ -12246,7 +12246,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_02_002_png
+                .texture = block003_color_02_002_png, .texture_size = block003_color_02_002_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -12262,7 +12262,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part02_004_png
+                .texture = block003_part02_004_png, .texture_size = block003_part02_004_png_size
             },
             {
                 .x_offset = 0,
@@ -12270,7 +12270,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_01_001_png
+                .texture = block003_color_01_001_png, .texture_size = block003_color_01_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -12286,14 +12286,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part01_001_png
+                .texture = block003_part01_001_png, .texture_size = block003_part01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part02_003_png
+                .texture = block003_part02_003_png, .texture_size = block003_part02_003_png_size
             },
             {
                 .x_offset = 0,
@@ -12301,7 +12301,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_01_001_png
+                .texture = block003_color_01_001_png, .texture_size = block003_color_01_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -12317,14 +12317,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part01_002_png
+                .texture = block003_part01_002_png, .texture_size = block003_part01_002_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part02_002_png
+                .texture = block003_part02_002_png, .texture_size = block003_part02_002_png_size
             },
             {
                 .x_offset = 0,
@@ -12332,7 +12332,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_01_001_png
+                .texture = block003_color_01_001_png, .texture_size = block003_color_01_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -12348,7 +12348,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part05_002_png
+                .texture = block003_part05_002_png, .texture_size = block003_part05_002_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -12364,7 +12364,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -12372,21 +12372,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block003_slope_01_color_001_png
+                .texture = block003_slope_01_color_001_png, .texture_size = block003_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_slope_01_001_png
+                .texture = block003_slope_01_001_png, .texture_size = block003_slope_01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -12407,7 +12407,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -12415,21 +12415,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block003_slope_02_color_001_png
+                .texture = block003_slope_02_color_001_png, .texture_size = block003_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_slope_02_001_png
+                .texture = block003_slope_02_001_png, .texture_size = block003_slope_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -12450,7 +12450,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece01_001_png
+                .texture = d_block04_piece01_001_png, .texture_size = d_block04_piece01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12466,7 +12466,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece02_001_png
+                .texture = d_block04_piece02_001_png, .texture_size = d_block04_piece02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12482,7 +12482,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece03_001_png
+                .texture = d_block04_piece03_001_png, .texture_size = d_block04_piece03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12498,7 +12498,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece04_001_png
+                .texture = d_block04_piece04_001_png, .texture_size = d_block04_piece04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12514,7 +12514,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece05_001_png
+                .texture = d_block04_piece05_001_png, .texture_size = d_block04_piece05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12530,7 +12530,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece06_001_png
+                .texture = d_block04_piece06_001_png, .texture_size = d_block04_piece06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12546,7 +12546,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece07_001_png
+                .texture = d_block04_piece07_001_png, .texture_size = d_block04_piece07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12563,7 +12563,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_13_back_001_png
+                .texture = portal_13_back_001_png, .texture_size = portal_13_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -12571,7 +12571,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_13_front_001_png
+                .texture = portal_13_front_001_png, .texture_size = portal_13_front_001_png_size
             }
         },
         .hitbox = gamemode_portal_hitbox,
@@ -12587,14 +12587,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_01_small_glow_001_png
+                .texture = square_01_small_glow_001_png, .texture_size = square_01_small_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_10_001_png
+                .texture = blockOutline_10_001_png, .texture_size = blockOutline_10_001_png_size
             }
         },
         .hitbox = {
@@ -12614,14 +12614,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_h_01_glow_001_png
+                .texture = square_h_01_glow_001_png, .texture_size = square_h_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_11_001_png
+                .texture = blockOutline_11_001_png, .texture_size = blockOutline_11_001_png_size
             }
         },
         .hitbox = {
@@ -12641,14 +12641,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = plank_01_02_glow_001_png
+                .texture = plank_01_02_glow_001_png, .texture_size = plank_01_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_12_001_png
+                .texture = blockOutline_12_001_png, .texture_size = blockOutline_12_001_png_size
             }
         },
         .hitbox = {
@@ -12668,14 +12668,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = plank_01_03_glow_001_png
+                .texture = plank_01_03_glow_001_png, .texture_size = plank_01_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_13_001_png
+                .texture = blockOutline_13_001_png, .texture_size = blockOutline_13_001_png_size
             }
         },
         .hitbox = {
@@ -12695,14 +12695,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -12723,14 +12723,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -12752,7 +12752,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_07_001_png
+                .texture = pit_07_001_png, .texture_size = pit_07_001_png_size
             }
         },
         .hitbox = {
@@ -12773,7 +12773,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = d_pixelArt01_001_002_png
+                .texture = d_pixelArt01_001_002_png, .texture_size = d_pixelArt01_001_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12790,7 +12790,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = d_pixelArt01_002_002_png
+                .texture = d_pixelArt01_002_002_png, .texture_size = d_pixelArt01_002_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12807,7 +12807,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = d_pixelArt01_003_002_png
+                .texture = d_pixelArt01_003_002_png, .texture_size = d_pixelArt01_003_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12824,7 +12824,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = d_pixelArt01_004_002_png
+                .texture = d_pixelArt01_004_002_png, .texture_size = d_pixelArt01_004_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12841,7 +12841,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = d_pixelArt01_005_002_png
+                .texture = d_pixelArt01_005_002_png, .texture_size = d_pixelArt01_005_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -12857,14 +12857,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = invis_triangle_02_glow_001_png
+                .texture = invis_triangle_02_glow_001_png, .texture_size = invis_triangle_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = invis_triangle_02_001_png
+                .texture = invis_triangle_02_001_png, .texture_size = invis_triangle_02_001_png_size
             }
         },
         .hitbox = {
@@ -12886,14 +12886,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = invis_triangle_04_glow_001_png
+                .texture = invis_triangle_04_glow_001_png, .texture_size = invis_triangle_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = invis_triangle_04_001_png
+                .texture = invis_triangle_04_001_png, .texture_size = invis_triangle_04_001_png_size
             }
         },
         .hitbox = {
@@ -12915,7 +12915,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blackCogwheel_01_glow_001_png
+                .texture = blackCogwheel_01_glow_001_png, .texture_size = blackCogwheel_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -12924,14 +12924,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .color_type = COLOR_UNMOD,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = blackCogwheel_01_color_001_png
+                .texture = blackCogwheel_01_color_001_png, .texture_size = blackCogwheel_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blackCogwheel_01_001_png
+                .texture = blackCogwheel_01_001_png, .texture_size = blackCogwheel_01_001_png_size
             }
         },
         .hitbox = {
@@ -12952,7 +12952,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blackCogwheel_02_glow_001_png
+                .texture = blackCogwheel_02_glow_001_png, .texture_size = blackCogwheel_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -12961,14 +12961,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = blackCogwheel_02_color_001_png
+                .texture = blackCogwheel_02_color_001_png, .texture_size = blackCogwheel_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blackCogwheel_02_001_png
+                .texture = blackCogwheel_02_001_png, .texture_size = blackCogwheel_02_001_png_size
             }
         },
         .hitbox = {
@@ -12989,7 +12989,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blackCogwheel_03_glow_001_png
+                .texture = blackCogwheel_03_glow_001_png, .texture_size = blackCogwheel_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -12998,14 +12998,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = blackCogwheel_03_color_001_png
+                .texture = blackCogwheel_03_color_001_png, .texture_size = blackCogwheel_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blackCogwheel_03_001_png
+                .texture = blackCogwheel_03_001_png, .texture_size = blackCogwheel_03_001_png_size
             }
         },
         .hitbox = {
@@ -13026,7 +13026,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = lightBlade_01_glow_001_png
+                .texture = lightBlade_01_glow_001_png, .texture_size = lightBlade_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -13034,14 +13034,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightBlade_01_color_001_png
+                .texture = lightBlade_01_color_001_png, .texture_size = lightBlade_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightBlade_01_001_png
+                .texture = lightBlade_01_001_png, .texture_size = lightBlade_01_001_png_size
             }
         },
         .hitbox = {
@@ -13062,7 +13062,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = lightBlade_02_glow_001_png
+                .texture = lightBlade_02_glow_001_png, .texture_size = lightBlade_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -13070,14 +13070,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightBlade_02_color_001_png
+                .texture = lightBlade_02_color_001_png, .texture_size = lightBlade_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightBlade_02_001_png
+                .texture = lightBlade_02_001_png, .texture_size = lightBlade_02_001_png_size
             }
         },
         .hitbox = {
@@ -13098,7 +13098,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = lightBlade_03_glow_001_png
+                .texture = lightBlade_03_glow_001_png, .texture_size = lightBlade_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
@@ -13106,14 +13106,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = lightBlade_03_color_001_png
+                .texture = lightBlade_03_color_001_png, .texture_size = lightBlade_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = lightBlade_03_001_png
+                .texture = lightBlade_03_001_png, .texture_size = lightBlade_03_001_png_size
             }
         },
         .hitbox = {
@@ -13134,7 +13134,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_a_02_001_png
+                .texture = triangle_a_02_001_png, .texture_size = triangle_a_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13150,7 +13150,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_a_04_001_png
+                .texture = triangle_a_04_001_png, .texture_size = triangle_a_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13166,7 +13166,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_c_02_001_png
+                .texture = triangle_c_02_001_png, .texture_size = triangle_c_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13182,7 +13182,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_c_04_001_png
+                .texture = triangle_c_04_001_png, .texture_size = triangle_c_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13198,7 +13198,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_d_02_001_png
+                .texture = triangle_d_02_001_png, .texture_size = triangle_d_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13214,7 +13214,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_d_04_001_png
+                .texture = triangle_d_04_001_png, .texture_size = triangle_d_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13231,7 +13231,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_01_02_color_001_png
+                .texture = lighttriangle_01_02_color_001_png, .texture_size = lighttriangle_01_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13248,7 +13248,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_01_04_color_001_png
+                .texture = lighttriangle_01_04_color_001_png, .texture_size = lighttriangle_01_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13264,7 +13264,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_f_02_001_png
+                .texture = triangle_f_02_001_png, .texture_size = triangle_f_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13280,7 +13280,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_f_04_001_png
+                .texture = triangle_f_04_001_png, .texture_size = triangle_f_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13296,7 +13296,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_g_02_001_png
+                .texture = triangle_g_02_001_png, .texture_size = triangle_g_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13312,7 +13312,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = triangle_g_04_001_png
+                .texture = triangle_g_04_001_png, .texture_size = triangle_g_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13329,7 +13329,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_01_02_color_001_png
+                .texture = lighttriangle_01_02_color_001_png, .texture_size = lighttriangle_01_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13346,7 +13346,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_01_04_color_001_png
+                .texture = lighttriangle_01_04_color_001_png, .texture_size = lighttriangle_01_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13363,7 +13363,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_02_02_color_001_png
+                .texture = lighttriangle_02_02_color_001_png, .texture_size = lighttriangle_02_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13380,7 +13380,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_02_04_color_001_png
+                .texture = lighttriangle_02_04_color_001_png, .texture_size = lighttriangle_02_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13397,7 +13397,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_03_02_color_001_png
+                .texture = lighttriangle_03_02_color_001_png, .texture_size = lighttriangle_03_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13414,7 +13414,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_03_04_color_001_png
+                .texture = lighttriangle_03_04_color_001_png, .texture_size = lighttriangle_03_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13431,7 +13431,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_04_02_color_001_png
+                .texture = lighttriangle_04_02_color_001_png, .texture_size = lighttriangle_04_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13448,7 +13448,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_04_04_color_001_png
+                .texture = lighttriangle_04_04_color_001_png, .texture_size = lighttriangle_04_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13465,7 +13465,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_05_02_color_001_png
+                .texture = lighttriangle_05_02_color_001_png, .texture_size = lighttriangle_05_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13482,7 +13482,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = lighttriangle_05_04_color_001_png
+                .texture = lighttriangle_05_04_color_001_png, .texture_size = lighttriangle_05_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13499,14 +13499,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block001_slope_01_color_001_png
+                .texture = block001_slope_01_color_001_png, .texture_size = block001_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_slope_01_001_png
+                .texture = block001_slope_01_001_png, .texture_size = block001_slope_01_001_png_size
             }
         },
         .hitbox = {
@@ -13528,14 +13528,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block001_slope_02_color_001_png
+                .texture = block001_slope_02_color_001_png, .texture_size = block001_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block001_slope_02_001_png
+                .texture = block001_slope_02_001_png, .texture_size = block001_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13552,14 +13552,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_slope_01_color_001_png
+                .texture = block002_slope_01_color_001_png, .texture_size = block002_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_slope_01_001_png
+                .texture = block002_slope_01_001_png, .texture_size = block002_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13576,14 +13576,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block002_slope_02_color_001_png
+                .texture = block002_slope_02_color_001_png, .texture_size = block002_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block002_slope_02_001_png
+                .texture = block002_slope_02_001_png, .texture_size = block002_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13600,14 +13600,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block003_slope_01_color_001_png
+                .texture = block003_slope_01_color_001_png, .texture_size = block003_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_slope_01_001_png
+                .texture = block003_slope_01_001_png, .texture_size = block003_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13624,14 +13624,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = block003_slope_02_color_001_png
+                .texture = block003_slope_02_color_001_png, .texture_size = block003_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_slope_02_001_png
+                .texture = block003_slope_02_001_png, .texture_size = block003_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13647,21 +13647,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_01_001_png
+                .texture = block004_slope_01_001_png, .texture_size = block004_slope_01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -13682,21 +13682,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_02_001_png
+                .texture = block004_slope_02_001_png, .texture_size = block004_slope_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -13717,21 +13717,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_01b_001_png
+                .texture = block004_slope_01b_001_png, .texture_size = block004_slope_01b_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -13752,21 +13752,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_02b_001_png
+                .texture = block004_slope_02b_001_png, .texture_size = block004_slope_02b_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -13787,7 +13787,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_01_001_png
+                .texture = block004_slope_01_001_png, .texture_size = block004_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13803,7 +13803,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_02_001_png
+                .texture = block004_slope_02_001_png, .texture_size = block004_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13819,7 +13819,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_01b_001_png
+                .texture = block004_slope_01b_001_png, .texture_size = block004_slope_01b_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13835,7 +13835,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_02b_001_png
+                .texture = block004_slope_02b_001_png, .texture_size = block004_slope_02b_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13854,7 +13854,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = pit_07_shine_001_png
+                .texture = pit_07_shine_001_png, .texture_size = pit_07_shine_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13871,7 +13871,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_07_2_001_png
+                .texture = pit_07_2_001_png, .texture_size = pit_07_2_001_png_size
             }
         },
         .hitbox = {
@@ -13892,7 +13892,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = pit_07_2_shine_001_png
+                .texture = pit_07_2_shine_001_png, .texture_size = pit_07_2_shine_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13908,7 +13908,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece08_001_png
+                .texture = d_block04_piece08_001_png, .texture_size = d_block04_piece08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13924,7 +13924,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece09_001_png
+                .texture = d_block04_piece09_001_png, .texture_size = d_block04_piece09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13940,7 +13940,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece10_001_png
+                .texture = d_block04_piece10_001_png, .texture_size = d_block04_piece10_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13957,7 +13957,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_link_b_01_color_001_png
+                .texture = d_link_b_01_color_001_png, .texture_size = d_link_b_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -13973,21 +13973,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_01c_001_png
+                .texture = block004_slope_01c_001_png, .texture_size = block004_slope_01c_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -14008,21 +14008,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_02c_001_png
+                .texture = block004_slope_02c_001_png, .texture_size = block004_slope_02c_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -14043,21 +14043,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_01d_001_png
+                .texture = block004_slope_01d_001_png, .texture_size = block004_slope_01d_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox = {
@@ -14078,21 +14078,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_02d_001_png
+                .texture = block004_slope_02d_001_png, .texture_size = block004_slope_02d_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox = {
@@ -14113,7 +14113,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_01c_001_png
+                .texture = block004_slope_01c_001_png, .texture_size = block004_slope_01c_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14129,7 +14129,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_02c_001_png
+                .texture = block004_slope_02c_001_png, .texture_size = block004_slope_02c_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14145,7 +14145,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_01d_001_png
+                .texture = block004_slope_01d_001_png, .texture_size = block004_slope_01d_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14161,7 +14161,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block004_slope_02d_001_png
+                .texture = block004_slope_02d_001_png, .texture_size = block004_slope_02d_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14177,7 +14177,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece11_001_png
+                .texture = d_block04_piece11_001_png, .texture_size = d_block04_piece11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14193,7 +14193,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece12_001_png
+                .texture = d_block04_piece12_001_png, .texture_size = d_block04_piece12_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14209,7 +14209,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = d_block04_piece13_001_png
+                .texture = d_block04_piece13_001_png, .texture_size = d_block04_piece13_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14225,7 +14225,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_12_001_png
+                .texture = square_g_12_001_png, .texture_size = square_g_12_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14242,7 +14242,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = d_pixelArt01_006_002_png
+                .texture = d_pixelArt01_006_002_png, .texture_size = d_pixelArt01_006_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14258,14 +14258,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part04_001_png
+                .texture = block003_part04_001_png, .texture_size = block003_part04_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part01_003_png
+                .texture = block003_part01_003_png, .texture_size = block003_part01_003_png_size
             },
             {
                 .x_offset = 0,
@@ -14273,7 +14273,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_03_001_png
+                .texture = block003_color_03_001_png, .texture_size = block003_color_03_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -14289,14 +14289,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = blade_01_glow_001_png
+                .texture = blade_01_glow_001_png, .texture_size = blade_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blade_01_001_png
+                .texture = blade_01_001_png, .texture_size = blade_01_001_png_size
             }
         },
         .hitbox = {
@@ -14318,14 +14318,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = blade_02_glow_001_png
+                .texture = blade_02_glow_001_png, .texture_size = blade_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blade_02_001_png
+                .texture = blade_02_001_png, .texture_size = blade_02_001_png_size
             }
         },
         .hitbox = {
@@ -14347,14 +14347,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = LBG_NO_LERP,
                 .zlayer_offset = 0,
-                .texture = blade_03_glow_001_png
+                .texture = blade_03_glow_001_png, .texture_size = blade_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blade_03_001_png
+                .texture = blade_03_001_png, .texture_size = blade_03_001_png_size
             }
         },
         .hitbox = {
@@ -14382,7 +14382,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_14_back_001_png
+                .texture = portal_14_back_001_png, .texture_size = portal_14_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -14390,7 +14390,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_14_front_001_png
+                .texture = portal_14_front_001_png, .texture_size = portal_14_front_001_png_size
             }
         },
         .hitbox = gamemode_portal_hitbox,
@@ -14407,7 +14407,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_15_back_001_png
+                .texture = portal_15_back_001_png, .texture_size = portal_15_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -14415,7 +14415,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_15_front_001_png
+                .texture = portal_15_front_001_png, .texture_size = portal_15_front_001_png_size
             }
         },
         .hitbox = tp_portal_hitbox,
@@ -14432,7 +14432,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = -1,
-                .texture = portal_16_back_001_png
+                .texture = portal_16_back_001_png, .texture_size = portal_16_back_001_png_size
             },
             {
                 .x_offset = 0,
@@ -14440,7 +14440,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = portal_16_front_001_png
+                .texture = portal_16_front_001_png, .texture_size = portal_16_front_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14458,14 +14458,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_02_color_001_png
+                .texture = block005_02_color_001_png, .texture_size = block005_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_02_001_png
+                .texture = block005_02_001_png, .texture_size = block005_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14482,14 +14482,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_03_color_001_png
+                .texture = block005_03_color_001_png, .texture_size = block005_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_03_001_png
+                .texture = block005_03_001_png, .texture_size = block005_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14506,14 +14506,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_04_color_001_png
+                .texture = block005_04_color_001_png, .texture_size = block005_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_04_001_png
+                .texture = block005_04_001_png, .texture_size = block005_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14529,7 +14529,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_05_001_png
+                .texture = block005_05_001_png, .texture_size = block005_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14546,14 +14546,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_06_color_001_png
+                .texture = block005_06_color_001_png, .texture_size = block005_06_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_06_001_png
+                .texture = block005_06_001_png, .texture_size = block005_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14570,14 +14570,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_07_color_001_png
+                .texture = block005_07_color_001_png, .texture_size = block005_07_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_07_001_png
+                .texture = block005_07_001_png, .texture_size = block005_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14594,14 +14594,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_08_color_001_png
+                .texture = block005_08_color_001_png, .texture_size = block005_08_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_08_001_png
+                .texture = block005_08_001_png, .texture_size = block005_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14618,14 +14618,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_09_color_001_png
+                .texture = block005_09_color_001_png, .texture_size = block005_09_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_09_001_png
+                .texture = block005_09_001_png, .texture_size = block005_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14644,14 +14644,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_01_color_001_png
+                .texture = block005_slope_01_color_001_png, .texture_size = block005_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_01_001_png
+                .texture = block005_slope_01_001_png, .texture_size = block005_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14668,14 +14668,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_02_color_001_png
+                .texture = block005_slope_02_color_001_png, .texture_size = block005_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_02_001_png
+                .texture = block005_slope_02_001_png, .texture_size = block005_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14692,14 +14692,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_01_color_001_png
+                .texture = block005_slope_square_01_color_001_png, .texture_size = block005_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_01_001_png
+                .texture = block005_slope_square_01_001_png, .texture_size = block005_slope_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14716,14 +14716,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_02_color_001_png
+                .texture = block005_slope_square_02_color_001_png, .texture_size = block005_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_02_001_png
+                .texture = block005_slope_square_02_001_png, .texture_size = block005_slope_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14739,7 +14739,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_03_001_png
+                .texture = block005_slope_square_03_001_png, .texture_size = block005_slope_square_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14756,7 +14756,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_spikeWave_03_001_png
+                .texture = d_spikeWave_03_001_png, .texture_size = d_spikeWave_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14773,7 +14773,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_05_03_001_png
+                .texture = pit_05_03_001_png, .texture_size = pit_05_03_001_png_size
             }
         },
         .hitbox = {
@@ -14794,14 +14794,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = plank005_01_color_001_png
+                .texture = plank005_01_color_001_png, .texture_size = plank005_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005_01_001_png
+                .texture = plank005_01_001_png, .texture_size = plank005_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14818,14 +14818,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = plank005_02_color_001_png
+                .texture = plank005_02_color_001_png, .texture_size = plank005_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005_02_001_png
+                .texture = plank005_02_001_png, .texture_size = plank005_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14842,14 +14842,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = plank005_slope_01_color_001_png
+                .texture = plank005_slope_01_color_001_png, .texture_size = plank005_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005_slope_01_001_png
+                .texture = plank005_slope_01_001_png, .texture_size = plank005_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14866,14 +14866,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = plank005_slope_02_color_001_png
+                .texture = plank005_slope_02_color_001_png, .texture_size = plank005_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005_slope_02_001_png
+                .texture = plank005_slope_02_001_png, .texture_size = plank005_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14890,14 +14890,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = plank005_slope_square_01_color_001_png
+                .texture = plank005_slope_square_01_color_001_png, .texture_size = plank005_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005_slope_square_01_001_png
+                .texture = plank005_slope_square_01_001_png, .texture_size = plank005_slope_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14914,14 +14914,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = plank005_slope_square_02_color_001_png
+                .texture = plank005_slope_square_02_color_001_png, .texture_size = plank005_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005_slope_square_02_001_png
+                .texture = plank005_slope_square_02_001_png, .texture_size = plank005_slope_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14937,7 +14937,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005_slope_square_03_001_png
+                .texture = plank005_slope_square_03_001_png, .texture_size = plank005_slope_square_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14955,7 +14955,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_001_png
+                .texture = block007_color_001_001_png, .texture_size = block007_color_001_001_png_size
             },
             {
                 .x_offset = 0,
@@ -14963,7 +14963,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_01_002_png
+                .texture = block007_01_002_png, .texture_size = block007_01_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -14980,7 +14980,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_001_png
+                .texture = block007_color_001_001_png, .texture_size = block007_color_001_001_png_size
             },
             {
                 .x_offset = 0,
@@ -14988,7 +14988,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_01_003_png
+                .texture = block007_01_003_png, .texture_size = block007_01_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15005,7 +15005,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_002_png
+                .texture = block007_color_001_002_png, .texture_size = block007_color_001_002_png_size
             },
             {
                 .x_offset = 0,
@@ -15013,7 +15013,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_02_002_png
+                .texture = block007_02_002_png, .texture_size = block007_02_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15030,7 +15030,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_002_png
+                .texture = block007_color_001_002_png, .texture_size = block007_color_001_002_png_size
             },
             {
                 .x_offset = 0,
@@ -15038,7 +15038,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_02_003_png
+                .texture = block007_02_003_png, .texture_size = block007_02_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15055,7 +15055,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_003_png
+                .texture = block007_color_001_003_png, .texture_size = block007_color_001_003_png_size
             },
             {
                 .x_offset = 0,
@@ -15063,7 +15063,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_03_002_png
+                .texture = block007_03_002_png, .texture_size = block007_03_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15080,7 +15080,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_003_png
+                .texture = block007_color_001_003_png, .texture_size = block007_color_001_003_png_size
             },
             {
                 .x_offset = 0,
@@ -15088,7 +15088,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_03_003_png
+                .texture = block007_03_003_png, .texture_size = block007_03_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15105,7 +15105,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_004_png
+                .texture = block007_color_001_004_png, .texture_size = block007_color_001_004_png_size
             },
             {
                 .x_offset = 0,
@@ -15113,7 +15113,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_04_002_png
+                .texture = block007_04_002_png, .texture_size = block007_04_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15130,7 +15130,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_004_png
+                .texture = block007_color_001_004_png, .texture_size = block007_color_001_004_png_size
             },
             {
                 .x_offset = 0,
@@ -15138,7 +15138,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_04_003_png
+                .texture = block007_04_003_png, .texture_size = block007_04_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15155,7 +15155,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_005_png
+                .texture = block007_color_001_005_png, .texture_size = block007_color_001_005_png_size
             },
             {
                 .x_offset = 0,
@@ -15163,7 +15163,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_05_002_png
+                .texture = block007_05_002_png, .texture_size = block007_05_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15180,7 +15180,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_005_png
+                .texture = block007_color_001_005_png, .texture_size = block007_color_001_005_png_size
             },
             {
                 .x_offset = 0,
@@ -15188,7 +15188,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_05_003_png
+                .texture = block007_05_003_png, .texture_size = block007_05_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15205,7 +15205,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_06_color_001_png
+                .texture = block007_06_color_001_png, .texture_size = block007_06_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15213,7 +15213,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_06_002_png
+                .texture = block007_06_002_png, .texture_size = block007_06_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15230,7 +15230,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_06_color_001_png
+                .texture = block007_06_color_001_png, .texture_size = block007_06_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15238,7 +15238,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_06_003_png
+                .texture = block007_06_003_png, .texture_size = block007_06_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15255,7 +15255,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_07_color_001_png
+                .texture = block007_07_color_001_png, .texture_size = block007_07_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15263,7 +15263,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_07_002_png
+                .texture = block007_07_002_png, .texture_size = block007_07_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15280,7 +15280,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_07_color_001_png
+                .texture = block007_07_color_001_png, .texture_size = block007_07_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15288,7 +15288,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_07_003_png
+                .texture = block007_07_003_png, .texture_size = block007_07_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15305,7 +15305,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_08_color_001_png
+                .texture = block007_08_color_001_png, .texture_size = block007_08_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15313,7 +15313,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_08_002_png
+                .texture = block007_08_002_png, .texture_size = block007_08_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15330,7 +15330,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_08_color_001_png
+                .texture = block007_08_color_001_png, .texture_size = block007_08_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15338,7 +15338,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_08_003_png
+                .texture = block007_08_003_png, .texture_size = block007_08_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15355,7 +15355,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_09_002_png
+                .texture = block007_09_002_png, .texture_size = block007_09_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15372,7 +15372,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_09_003_png
+                .texture = block007_09_003_png, .texture_size = block007_09_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15389,7 +15389,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_001_001_png
+                .texture = block007_bgcolor_001_001_png, .texture_size = block007_bgcolor_001_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15397,7 +15397,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_09_001_png
+                .texture = block007_09_001_png, .texture_size = block007_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15414,7 +15414,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_01_color_001_png
+                .texture = block007_slope_01_color_001_png, .texture_size = block007_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15422,7 +15422,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_slope_01_002_png
+                .texture = block007_slope_01_002_png, .texture_size = block007_slope_01_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15439,7 +15439,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_01_color_001_png
+                .texture = block007_slope_01_color_001_png, .texture_size = block007_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15447,7 +15447,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_slope_01_003_png
+                .texture = block007_slope_01_003_png, .texture_size = block007_slope_01_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15464,7 +15464,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_02_color_001_png
+                .texture = block007_slope_02_color_001_png, .texture_size = block007_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15472,7 +15472,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_slope_02_002_png
+                .texture = block007_slope_02_002_png, .texture_size = block007_slope_02_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15489,7 +15489,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_02_color_001_png
+                .texture = block007_slope_02_color_001_png, .texture_size = block007_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15497,7 +15497,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_slope_02_003_png
+                .texture = block007_slope_02_003_png, .texture_size = block007_slope_02_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15514,7 +15514,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_01_color_001_png
+                .texture = block007_slope_square_01_color_001_png, .texture_size = block007_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15522,7 +15522,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_01_002_png
+                .texture = block007_slope_square_01_002_png, .texture_size = block007_slope_square_01_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15539,7 +15539,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_01_color_001_png
+                .texture = block007_slope_square_01_color_001_png, .texture_size = block007_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15547,7 +15547,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_01_003_png
+                .texture = block007_slope_square_01_003_png, .texture_size = block007_slope_square_01_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15564,7 +15564,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_02_color_001_png
+                .texture = block007_slope_square_02_color_001_png, .texture_size = block007_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15572,7 +15572,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_02_002_png
+                .texture = block007_slope_square_02_002_png, .texture_size = block007_slope_square_02_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15589,7 +15589,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_02_color_001_png
+                .texture = block007_slope_square_02_color_001_png, .texture_size = block007_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15597,7 +15597,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_02_003_png
+                .texture = block007_slope_square_02_003_png, .texture_size = block007_slope_square_02_003_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15615,14 +15615,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_01_color_001_png
+                .texture = block007b_01_color_001_png, .texture_size = block007b_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007b_01_001_png
+                .texture = block007b_01_001_png, .texture_size = block007b_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15639,14 +15639,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_02_color_001_png
+                .texture = block007b_02_color_001_png, .texture_size = block007b_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007b_02_001_png
+                .texture = block007b_02_001_png, .texture_size = block007b_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15663,14 +15663,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_03_color_001_png
+                .texture = block007b_03_color_001_png, .texture_size = block007b_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007b_03_001_png
+                .texture = block007b_03_001_png, .texture_size = block007b_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15687,14 +15687,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_04_color_001_png
+                .texture = block007b_04_color_001_png, .texture_size = block007b_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007b_03_001_png
+                .texture = block007b_03_001_png, .texture_size = block007b_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15711,14 +15711,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_05_color_001_png
+                .texture = block007b_05_color_001_png, .texture_size = block007b_05_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007b_05_001_png
+                .texture = block007b_05_001_png, .texture_size = block007b_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15735,14 +15735,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_06_color_001_png
+                .texture = block007b_06_color_001_png, .texture_size = block007b_06_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007b_06_001_png
+                .texture = block007b_06_001_png, .texture_size = block007b_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15759,14 +15759,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_07_color_001_png
+                .texture = block007b_07_color_001_png, .texture_size = block007b_07_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007b_07_001_png
+                .texture = block007b_07_001_png, .texture_size = block007b_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15783,14 +15783,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_08_color_001_png
+                .texture = block007b_08_color_001_png, .texture_size = block007b_08_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007b_08_001_png
+                .texture = block007b_08_001_png, .texture_size = block007b_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15807,7 +15807,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block008_02_001_png
+                .texture = block008_02_001_png, .texture_size = block008_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15815,7 +15815,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_02_color_001_png
+                .texture = block008_02_color_001_png, .texture_size = block008_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15833,7 +15833,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block008_03_001_png
+                .texture = block008_03_001_png, .texture_size = block008_03_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15841,7 +15841,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_03_color_001_png
+                .texture = block008_03_color_001_png, .texture_size = block008_03_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15857,7 +15857,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block008_04_001_png
+                .texture = block008_04_001_png, .texture_size = block008_04_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15865,7 +15865,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_04_color_001_png
+                .texture = block008_04_color_001_png, .texture_size = block008_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15881,7 +15881,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block008_05_001_png
+                .texture = block008_05_001_png, .texture_size = block008_05_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15889,7 +15889,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_05_color_001_png
+                .texture = block008_05_color_001_png, .texture_size = block008_05_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15905,7 +15905,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block008_06_001_png
+                .texture = block008_06_001_png, .texture_size = block008_06_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15913,7 +15913,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_06_color_001_png
+                .texture = block008_06_color_001_png, .texture_size = block008_06_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15929,7 +15929,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block008_07_001_png
+                .texture = block008_07_001_png, .texture_size = block008_07_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15937,32 +15937,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_07_color_001_png
-            }
-        },
-        .hitbox = no_hitbox,
-        .spritesheet_layer = SHEET_BLOCKS,
-        .def_zlayer = LAYER_B2,
-        .def_zorder = -7,
-        .num_layers = 2,
-    },
-    unknown,
-    {
-        .layers = {
-            {
-                .x_offset = 0,
-                .y_offset = 0,
-                .col_channel = OBJ,
-                .zlayer_offset = 0,
-                .texture = block008_08_001_png
-            },
-            {
-                .x_offset = 0,
-                .y_offset = 0,
-                .col_channel = LIGHTER,
-                .color_type = COLOR_DETAIL,
-                .zlayer_offset = 0,
-                .texture = block008_08_color_001_png
+                .texture = block008_07_color_001_png, .texture_size = block008_07_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -15979,7 +15954,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block008_09_001_png
+                .texture = block008_08_001_png, .texture_size = block008_08_001_png_size
             },
             {
                 .x_offset = 0,
@@ -15987,7 +15962,32 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_09_color_001_png
+                .texture = block008_08_color_001_png, .texture_size = block008_08_color_001_png_size
+            }
+        },
+        .hitbox = no_hitbox,
+        .spritesheet_layer = SHEET_BLOCKS,
+        .def_zlayer = LAYER_B2,
+        .def_zorder = -7,
+        .num_layers = 2,
+    },
+    unknown,
+    {
+        .layers = {
+            {
+                .x_offset = 0,
+                .y_offset = 0,
+                .col_channel = OBJ,
+                .zlayer_offset = 0,
+                .texture = block008_09_001_png, .texture_size = block008_09_001_png_size
+            },
+            {
+                .x_offset = 0,
+                .y_offset = 0,
+                .col_channel = LIGHTER,
+                .color_type = COLOR_DETAIL,
+                .zlayer_offset = 0,
+                .texture = block008_09_color_001_png, .texture_size = block008_09_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16003,7 +16003,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block008_10_001_png
+                .texture = block008_10_001_png, .texture_size = block008_10_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16011,7 +16011,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_10_color_001_png
+                .texture = block008_10_color_001_png, .texture_size = block008_10_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16027,7 +16027,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block008_11_001_png
+                .texture = block008_11_001_png, .texture_size = block008_11_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16035,7 +16035,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_11_color_001_png
+                .texture = block008_11_color_001_png, .texture_size = block008_11_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16057,7 +16057,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_01_001_png
+                .texture = block009_01_001_png, .texture_size = block009_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16065,7 +16065,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_01_color_001_png
+                .texture = block009_01_color_001_png, .texture_size = block009_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16081,7 +16081,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_02_001_png
+                .texture = block009_02_001_png, .texture_size = block009_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16089,7 +16089,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_02_color_001_png
+                .texture = block009_02_color_001_png, .texture_size = block009_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16105,7 +16105,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_03_001_png
+                .texture = block009_03_001_png, .texture_size = block009_03_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16113,7 +16113,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_03_color_001_png
+                .texture = block009_03_color_001_png, .texture_size = block009_03_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16129,7 +16129,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_04_001_png
+                .texture = block009_04_001_png, .texture_size = block009_04_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16137,7 +16137,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_04_color_001_png
+                .texture = block009_04_color_001_png, .texture_size = block009_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16153,7 +16153,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_05_001_png
+                .texture = block009_05_001_png, .texture_size = block009_05_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16161,7 +16161,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_05_color_001_png
+                .texture = block009_05_color_001_png, .texture_size = block009_05_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16177,7 +16177,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_06_001_png
+                .texture = block009_06_001_png, .texture_size = block009_06_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16185,7 +16185,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_06_color_001_png
+                .texture = block009_06_color_001_png, .texture_size = block009_06_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16201,7 +16201,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_part_01_001_png
+                .texture = block009_part_01_001_png, .texture_size = block009_part_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16209,7 +16209,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_part_01_color_001_png
+                .texture = block009_part_01_color_001_png, .texture_size = block009_part_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16225,7 +16225,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_part_02_001_png
+                .texture = block009_part_02_001_png, .texture_size = block009_part_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16233,7 +16233,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_part_02_color_001_png
+                .texture = block009_part_02_color_001_png, .texture_size = block009_part_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16251,7 +16251,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_slope_01_001_png
+                .texture = block009_slope_01_001_png, .texture_size = block009_slope_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16259,7 +16259,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_slope_01_color_001_png
+                .texture = block009_slope_01_color_001_png, .texture_size = block009_slope_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16275,7 +16275,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_slope_02_001_png
+                .texture = block009_slope_02_001_png, .texture_size = block009_slope_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16283,7 +16283,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_slope_02_color_001_png
+                .texture = block009_slope_02_color_001_png, .texture_size = block009_slope_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16301,7 +16301,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_01_001_png
+                .texture = block009b_01_001_png, .texture_size = block009b_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16309,7 +16309,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_01_color_001_png
+                .texture = block009b_01_color_001_png, .texture_size = block009b_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16325,7 +16325,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_02_001_png
+                .texture = block009b_02_001_png, .texture_size = block009b_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16333,7 +16333,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_02_color_001_png
+                .texture = block009b_02_color_001_png, .texture_size = block009b_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16349,7 +16349,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_03_001_png
+                .texture = block009b_03_001_png, .texture_size = block009b_03_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16357,7 +16357,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_03_color_001_png
+                .texture = block009b_03_color_001_png, .texture_size = block009b_03_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16373,7 +16373,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_04_001_png
+                .texture = block009b_04_001_png, .texture_size = block009b_04_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16381,7 +16381,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_04_color_001_png
+                .texture = block009b_04_color_001_png, .texture_size = block009b_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16397,7 +16397,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_05_001_png
+                .texture = block009b_05_001_png, .texture_size = block009b_05_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16405,7 +16405,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_05_color_001_png
+                .texture = block009b_05_color_001_png, .texture_size = block009b_05_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16421,7 +16421,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_06_001_png
+                .texture = block009b_06_001_png, .texture_size = block009b_06_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16429,7 +16429,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_06_color_001_png
+                .texture = block009b_06_color_001_png, .texture_size = block009b_06_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16445,21 +16445,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_glow_001_png
+                .texture = blockOutline_14_glow_001_png, .texture_size = blockOutline_14_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_slope_01_001_png
+                .texture = block009b_slope_01_001_png, .texture_size = block009b_slope_01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_14_001_png
+                .texture = blockOutline_14_001_png, .texture_size = blockOutline_14_001_png_size
             }
         },
         .hitbox ={
@@ -16480,21 +16480,21 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_glow_001_png
+                .texture = blockOutline_15_glow_001_png, .texture_size = blockOutline_15_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_slope_02_001_png
+                .texture = block009b_slope_02_001_png, .texture_size = block009b_slope_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_15_001_png
+                .texture = blockOutline_15_001_png, .texture_size = blockOutline_15_001_png_size
             }
         },
         .hitbox ={
@@ -16515,7 +16515,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_slope_01_001_png
+                .texture = block009b_slope_01_001_png, .texture_size = block009b_slope_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16523,7 +16523,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_slope_01_color_001_png
+                .texture = block009b_slope_01_color_001_png, .texture_size = block009b_slope_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16539,7 +16539,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_slope_02_001_png
+                .texture = block009b_slope_02_001_png, .texture_size = block009b_slope_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16547,7 +16547,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_slope_02_color_001_png
+                .texture = block009b_slope_02_color_001_png, .texture_size = block009b_slope_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16565,7 +16565,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009c_01_001_png
+                .texture = block009c_01_001_png, .texture_size = block009c_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16573,7 +16573,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009c_color_01_001_png
+                .texture = block009c_color_01_001_png, .texture_size = block009c_color_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16589,7 +16589,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009c_02_001_png
+                .texture = block009c_02_001_png, .texture_size = block009c_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16597,7 +16597,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009c_02_color_001_png
+                .texture = block009c_02_color_001_png, .texture_size = block009c_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16614,7 +16614,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009c_04_001_png
+                .texture = block009c_04_001_png, .texture_size = block009c_04_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16622,7 +16622,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009c_04_color_001_png
+                .texture = block009c_04_color_001_png, .texture_size = block009c_04_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16638,7 +16638,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009c_05_001_png
+                .texture = block009c_05_001_png, .texture_size = block009c_05_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16646,7 +16646,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009c_05_color_001_png
+                .texture = block009c_05_color_001_png, .texture_size = block009c_05_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16662,7 +16662,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009c_slope_01_001_png
+                .texture = block009c_slope_01_001_png, .texture_size = block009c_slope_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16670,7 +16670,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009c_slope_01_color_001_png
+                .texture = block009c_slope_01_color_001_png, .texture_size = block009c_slope_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16686,7 +16686,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009c_slope_02_001_png
+                .texture = block009c_slope_02_001_png, .texture_size = block009c_slope_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -16694,7 +16694,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009c_slope_02_color_001_png
+                .texture = block009c_slope_02_color_001_png, .texture_size = block009c_slope_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16714,7 +16714,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 3,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_08_10_png
+                .texture = persp_08_10_png, .texture_size = persp_08_10_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16732,14 +16732,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_10_color_001_png
+                .texture = block005_10_color_001_png, .texture_size = block005_10_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_10_001_png
+                .texture = block005_10_001_png, .texture_size = block005_10_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16756,14 +16756,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_11_color_001_png
+                .texture = block005_11_color_001_png, .texture_size = block005_11_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_11_001_png
+                .texture = block005_11_001_png, .texture_size = block005_11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16779,7 +16779,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_12_001_png
+                .texture = block005_12_001_png, .texture_size = block005_12_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16798,7 +16798,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_grass_05_001_png
+                .texture = d_grass_05_001_png, .texture_size = d_grass_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16815,7 +16815,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_grassArt_01_001_png
+                .texture = d_grassArt_01_001_png, .texture_size = d_grassArt_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16832,7 +16832,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_grassArt_02_001_png
+                .texture = d_grassArt_02_001_png, .texture_size = d_grassArt_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16849,7 +16849,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_grassArt_03_001_png
+                .texture = d_grassArt_03_001_png, .texture_size = d_grassArt_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16866,7 +16866,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_grassArt_04_001_png
+                .texture = d_grassArt_04_001_png, .texture_size = d_grassArt_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16883,7 +16883,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_13_001_png
+                .texture = block005_13_001_png, .texture_size = block005_13_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16901,7 +16901,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_13_001_png // Here goes whatever
+                .texture = block005_13_001_png, .texture_size = block005_13_001_png_size // Here goes whatever
             }
         },
         .hitbox = no_hitbox,
@@ -16919,7 +16919,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_whiteBlock_01_001_png
+                .texture = d_whiteBlock_01_001_png, .texture_size = d_whiteBlock_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16936,7 +16936,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_whiteBlock_02_001_png
+                .texture = d_whiteBlock_02_001_png, .texture_size = d_whiteBlock_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -16981,14 +16981,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = Fire_03_2_looped_001_png
+                .texture = Fire_03_2_looped_001_png, .texture_size = Fire_03_2_looped_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = WHITE,
                 .zlayer_offset = 0,
-                .texture = Fire_03_looped_001_png
+                .texture = Fire_03_looped_001_png, .texture_size = Fire_03_looped_001_png_size
             }
         },
         .frame_animation = TRUE,
@@ -17006,14 +17006,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = Fire_04_2_looped_001_png
+                .texture = Fire_04_2_looped_001_png, .texture_size = Fire_04_2_looped_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = WHITE,
                 .zlayer_offset = 0,
-                .texture = Fire_04_looped_001_png
+                .texture = Fire_04_looped_001_png, .texture_size = Fire_04_looped_001_png_size
             }
         },
         .frame_animation = TRUE,
@@ -17032,14 +17032,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = Fire_01_2_looped_001_png
+                .texture = Fire_01_2_looped_001_png, .texture_size = Fire_01_2_looped_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = WHITE,
                 .zlayer_offset = 0,
-                .texture = Fire_01_looped_001_png
+                .texture = Fire_01_looped_001_png, .texture_size = Fire_01_looped_001_png_size
             }
         },
         .frame_animation = TRUE,
@@ -17057,14 +17057,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = Fire_02_2_looped_001_png
+                .texture = Fire_02_2_looped_001_png, .texture_size = Fire_02_2_looped_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = WHITE,
                 .zlayer_offset = 0,
-                .texture = Fire_02_looped_001_png
+                .texture = Fire_02_looped_001_png, .texture_size = Fire_02_looped_001_png_size
             }
         },
         .frame_animation = TRUE,
@@ -17084,7 +17084,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_rainbow_01_001_png
+                .texture = d_rainbow_01_001_png, .texture_size = d_rainbow_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17101,7 +17101,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_rainbow_02_001_png
+                .texture = d_rainbow_02_001_png, .texture_size = d_rainbow_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17120,7 +17120,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_01_001_png
+                .texture = block010_01_001_png, .texture_size = block010_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17137,7 +17137,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_02_001_png
+                .texture = block010_02_001_png, .texture_size = block010_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17154,7 +17154,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_03_001_png
+                .texture = block010_03_001_png, .texture_size = block010_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17171,7 +17171,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_04_001_png
+                .texture = block010_04_001_png, .texture_size = block010_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17188,7 +17188,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_05_001_png
+                .texture = block010_05_001_png, .texture_size = block010_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17205,7 +17205,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_06_001_png
+                .texture = block010_06_001_png, .texture_size = block010_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17222,7 +17222,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_07_001_png
+                .texture = block010_07_001_png, .texture_size = block010_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17239,7 +17239,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_08_001_png
+                .texture = block010_08_001_png, .texture_size = block010_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17256,7 +17256,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_09_001_png
+                .texture = block010_09_001_png, .texture_size = block010_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17274,7 +17274,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_artCloud_01_001_png
+                .texture = d_artCloud_01_001_png, .texture_size = d_artCloud_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17291,7 +17291,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_artCloud_02_001_png
+                .texture = d_artCloud_02_001_png, .texture_size = d_artCloud_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17308,7 +17308,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_artCloud_03_001_png
+                .texture = d_artCloud_03_001_png, .texture_size = d_artCloud_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17326,7 +17326,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = 1,
                 .zlayer_offset = 0,
-                .texture = d_flower01_01_001_png
+                .texture = d_flower01_01_001_png, .texture_size = d_flower01_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -17334,7 +17334,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_flower01_01_color_001_png
+                .texture = d_flower01_01_color_001_png, .texture_size = d_flower01_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17352,7 +17352,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_grassDetail_01_001_png
+                .texture = d_grassDetail_01_001_png, .texture_size = d_grassDetail_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17369,7 +17369,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_grassDetail_02_001_png
+                .texture = d_grassDetail_02_001_png, .texture_size = d_grassDetail_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17386,7 +17386,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_grassDetail_03_001_png
+                .texture = d_grassDetail_03_001_png, .texture_size = d_grassDetail_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17403,7 +17403,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_15_01_png
+                .texture = persp_15_01_png, .texture_size = persp_15_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17419,7 +17419,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_15_02_png
+                .texture = persp_15_02_png, .texture_size = persp_15_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17435,7 +17435,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_15_03_png
+                .texture = persp_15_03_png, .texture_size = persp_15_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17451,7 +17451,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_15_04_png
+                .texture = persp_15_04_png, .texture_size = persp_15_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17467,7 +17467,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_15_05_png
+                .texture = persp_15_05_png, .texture_size = persp_15_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17483,7 +17483,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_15_06_png
+                .texture = persp_15_06_png, .texture_size = persp_15_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17499,7 +17499,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_15_07_png
+                .texture = persp_15_07_png, .texture_size = persp_15_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17515,7 +17515,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_15_08_png
+                .texture = persp_15_08_png, .texture_size = persp_15_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17531,7 +17531,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_15_09_png
+                .texture = persp_15_09_png, .texture_size = persp_15_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17550,14 +17550,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_02_color_001_png
+                .texture = block005_02_color_001_png, .texture_size = block005_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_02_001_png
+                .texture = block005b_02_001_png, .texture_size = block005b_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17574,14 +17574,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_03_color_001_png
+                .texture = block005_03_color_001_png, .texture_size = block005_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_03_001_png
+                .texture = block005b_03_001_png, .texture_size = block005b_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17598,14 +17598,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_04_color_001_png
+                .texture = block005_04_color_001_png, .texture_size = block005_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_04_001_png
+                .texture = block005b_04_001_png, .texture_size = block005b_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17621,7 +17621,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_05_001_png
+                .texture = block005b_05_001_png, .texture_size = block005b_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17638,14 +17638,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_06_color_001_png
+                .texture = block005_06_color_001_png, .texture_size = block005_06_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_06_001_png
+                .texture = block005b_06_001_png, .texture_size = block005b_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17662,14 +17662,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_07_color_001_png
+                .texture = block005_07_color_001_png, .texture_size = block005_07_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_07_001_png
+                .texture = block005b_07_001_png, .texture_size = block005b_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17686,14 +17686,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_08_color_001_png
+                .texture = block005_08_color_001_png, .texture_size = block005_08_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_08_001_png
+                .texture = block005b_08_001_png, .texture_size = block005b_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17710,14 +17710,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_09_color_001_png
+                .texture = block005_09_color_001_png, .texture_size = block005_09_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_09_001_png
+                .texture = block005b_09_001_png, .texture_size = block005b_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17734,14 +17734,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_01_color_001_png
+                .texture = block005_slope_01_color_001_png, .texture_size = block005_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_01_001_png
+                .texture = block005b_slope_01_001_png, .texture_size = block005b_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17758,14 +17758,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_02_color_001_png
+                .texture = block005_slope_02_color_001_png, .texture_size = block005_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_02_001_png
+                .texture = block005b_slope_02_001_png, .texture_size = block005b_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17784,14 +17784,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_01_color_001_png
+                .texture = block005_slope_square_01_color_001_png, .texture_size = block005_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_square_01_001_png
+                .texture = block005b_slope_square_01_001_png, .texture_size = block005b_slope_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17808,14 +17808,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_02_color_001_png
+                .texture = block005_slope_square_02_color_001_png, .texture_size = block005_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_square_02_001_png
+                .texture = block005b_slope_square_02_001_png, .texture_size = block005b_slope_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17831,7 +17831,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_square_03_001_png
+                .texture = block005b_slope_square_03_001_png, .texture_size = block005b_slope_square_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17849,14 +17849,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = plank005_01_color_001_png
+                .texture = plank005_01_color_001_png, .texture_size = plank005_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005b_01_001_png
+                .texture = plank005b_01_001_png, .texture_size = plank005b_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17873,14 +17873,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = plank005_02_color_001_png
+                .texture = plank005_02_color_001_png, .texture_size = plank005_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005b_02_001_png
+                .texture = plank005b_02_001_png, .texture_size = plank005b_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17898,14 +17898,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_01_color_001_png
+                .texture = block005_slope_01_color_001_png, .texture_size = block005_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005b_slope_01_001_png
+                .texture = plank005b_slope_01_001_png, .texture_size = plank005b_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17922,14 +17922,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_02_color_001_png
+                .texture = block005_slope_02_color_001_png, .texture_size = block005_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005b_slope_02_001_png
+                .texture = plank005b_slope_02_001_png, .texture_size = plank005b_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17946,14 +17946,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_01_color_001_png
+                .texture = block005_slope_square_01_color_001_png, .texture_size = block005_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005b_slope_square_01_001_png
+                .texture = plank005b_slope_square_01_001_png, .texture_size = plank005b_slope_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17970,14 +17970,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_02_color_001_png
+                .texture = block005_slope_square_02_color_001_png, .texture_size = block005_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005b_slope_square_02_001_png
+                .texture = plank005b_slope_square_02_001_png, .texture_size = plank005b_slope_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -17993,7 +17993,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank005b_slope_square_03_001_png
+                .texture = plank005b_slope_square_03_001_png, .texture_size = plank005b_slope_square_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18010,14 +18010,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_10_color_001_png
+                .texture = block005_10_color_001_png, .texture_size = block005_10_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_10_001_png
+                .texture = block005b_10_001_png, .texture_size = block005b_10_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18034,14 +18034,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_11_color_001_png
+                .texture = block005_11_color_001_png, .texture_size = block005_11_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_11_001_png
+                .texture = block005b_11_001_png, .texture_size = block005b_11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18057,7 +18057,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_12_001_png
+                .texture = block005b_12_001_png, .texture_size = block005b_12_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18073,7 +18073,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_13_001_png
+                .texture = block005b_13_001_png, .texture_size = block005b_13_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18092,7 +18092,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_17_01_png
+                .texture = persp_17_01_png, .texture_size = persp_17_01_png_size
             },
             {
                 .x_offset = 0,
@@ -18100,7 +18100,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_17_color_01_png
+                .texture = persp_17_color_01_png, .texture_size = persp_17_color_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18116,7 +18116,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_17_02_png
+                .texture = persp_17_02_png, .texture_size = persp_17_02_png_size
             },
             {
                 .x_offset = 0,
@@ -18124,7 +18124,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_17_color_02_png
+                .texture = persp_17_color_02_png, .texture_size = persp_17_color_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18140,7 +18140,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_17_03_png
+                .texture = persp_17_03_png, .texture_size = persp_17_03_png_size
             },
             {
                 .x_offset = 0,
@@ -18148,7 +18148,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_17_color_03_png
+                .texture = persp_17_color_03_png, .texture_size = persp_17_color_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18164,7 +18164,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_17_04_png
+                .texture = persp_17_04_png, .texture_size = persp_17_04_png_size
             },
             {
                 .x_offset = 0,
@@ -18172,7 +18172,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_17_color_04_png
+                .texture = persp_17_color_04_png, .texture_size = persp_17_color_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18188,7 +18188,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_17_05_png
+                .texture = persp_17_05_png, .texture_size = persp_17_05_png_size
             },
             {
                 .x_offset = 0,
@@ -18196,7 +18196,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_17_color_05_png
+                .texture = persp_17_color_05_png, .texture_size = persp_17_color_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18212,7 +18212,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_17_06_png
+                .texture = persp_17_06_png, .texture_size = persp_17_06_png_size
             },
             {
                 .x_offset = 0,
@@ -18220,7 +18220,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_17_color_06_png
+                .texture = persp_17_color_06_png, .texture_size = persp_17_color_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18236,7 +18236,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_17_07_png
+                .texture = persp_17_07_png, .texture_size = persp_17_07_png_size
             },
             {
                 .x_offset = 0,
@@ -18244,7 +18244,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_17_color_07_png
+                .texture = persp_17_color_07_png, .texture_size = persp_17_color_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18260,7 +18260,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_17_08_png
+                .texture = persp_17_08_png, .texture_size = persp_17_08_png_size
             },
             {
                 .x_offset = 0,
@@ -18268,7 +18268,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_17_color_08_png
+                .texture = persp_17_color_08_png, .texture_size = persp_17_color_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18284,7 +18284,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_17_09_png
+                .texture = persp_17_09_png, .texture_size = persp_17_09_png_size
             },
             {
                 .x_offset = 0,
@@ -18292,7 +18292,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = persp_17_color_09_png
+                .texture = persp_17_color_09_png, .texture_size = persp_17_color_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18310,7 +18310,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_07_3_001_png
+                .texture = pit_07_3_001_png, .texture_size = pit_07_3_001_png_size
             }
         },
         .hitbox = {
@@ -18331,7 +18331,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = pit_07_3_shine_001_png
+                .texture = pit_07_3_shine_001_png, .texture_size = pit_07_3_shine_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18348,7 +18348,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = pit_07_4_001_png
+                .texture = pit_07_4_001_png, .texture_size = pit_07_4_001_png_size
             }
         },
         .hitbox = {
@@ -18369,7 +18369,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = pit_07_4_shine_001_png
+                .texture = pit_07_4_shine_001_png, .texture_size = pit_07_4_shine_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18391,7 +18391,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_ringSeg_01_001_png
+                .texture = d_ringSeg_01_001_png, .texture_size = d_ringSeg_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18409,7 +18409,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_ringSeg_02_001_png
+                .texture = d_ringSeg_02_001_png, .texture_size = d_ringSeg_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18427,7 +18427,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_ringSeg_03_001_png
+                .texture = d_ringSeg_03_001_png, .texture_size = d_ringSeg_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18445,7 +18445,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_ringSeg_04_001_png
+                .texture = d_ringSeg_04_001_png, .texture_size = d_ringSeg_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18463,7 +18463,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = P1,
                 .zlayer_offset = 0,
-                .texture = d_link_d_01_001_png
+                .texture = d_link_d_01_001_png, .texture_size = d_link_d_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -18471,7 +18471,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_link_d_01_color_001_png
+                .texture = d_link_d_01_color_001_png, .texture_size = d_link_d_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18487,7 +18487,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = P1,
                 .zlayer_offset = 0,
-                .texture = d_link_d_02_001_png
+                .texture = d_link_d_02_001_png, .texture_size = d_link_d_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -18495,7 +18495,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_link_d_01_color_001_png
+                .texture = d_link_d_01_color_001_png, .texture_size = d_link_d_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18511,7 +18511,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = P1,
                 .zlayer_offset = 0,
-                .texture = d_link_d_03_001_png
+                .texture = d_link_d_03_001_png, .texture_size = d_link_d_03_001_png_size
             },
             {
                 .x_offset = 0,
@@ -18519,7 +18519,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_link_d_01_color_001_png
+                .texture = d_link_d_01_color_001_png, .texture_size = d_link_d_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18535,7 +18535,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = P1,
                 .zlayer_offset = 0,
-                .texture = d_link_d_04_001_png
+                .texture = d_link_d_04_001_png, .texture_size = d_link_d_04_001_png_size
             },
             {
                 .x_offset = 0,
@@ -18543,7 +18543,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_link_d_01_color_001_png
+                .texture = d_link_d_01_color_001_png, .texture_size = d_link_d_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18559,7 +18559,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = P1,
                 .zlayer_offset = 0,
-                .texture = d_link_d_05_001_png
+                .texture = d_link_d_05_001_png, .texture_size = d_link_d_05_001_png_size
             },
             {
                 .x_offset = 0,
@@ -18567,7 +18567,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P2,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_link_d_01_color_001_png
+                .texture = d_link_d_01_color_001_png, .texture_size = d_link_d_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18587,7 +18587,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_gradient_b_06_001_png
+                .texture = d_gradient_b_06_001_png, .texture_size = d_gradient_b_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18604,7 +18604,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_gradient_b_02_001_png
+                .texture = d_gradient_b_02_001_png, .texture_size = d_gradient_b_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18621,7 +18621,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_gradient_b_03_001_png
+                .texture = d_gradient_b_03_001_png, .texture_size = d_gradient_b_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18639,7 +18639,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_gradient_c_01_001_png
+                .texture = d_gradient_c_01_001_png, .texture_size = d_gradient_c_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18656,7 +18656,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_gradient_c_02_001_png
+                .texture = d_gradient_c_02_001_png, .texture_size = d_gradient_c_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18673,7 +18673,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_gradient_c_03_001_png
+                .texture = d_gradient_c_03_001_png, .texture_size = d_gradient_c_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18691,7 +18691,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_slope_01_001_png
+                .texture = block010_slope_01_001_png, .texture_size = block010_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18708,7 +18708,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_slope_02_001_png
+                .texture = block010_slope_02_001_png, .texture_size = block010_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18725,7 +18725,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_slope_square_01_001_png
+                .texture = block010_slope_square_01_001_png, .texture_size = block010_slope_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18742,7 +18742,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_slope_square_02_001_png
+                .texture = block010_slope_square_02_001_png, .texture_size = block010_slope_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18759,7 +18759,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_slope_square_03_001_png
+                .texture = block010_slope_square_03_001_png, .texture_size = block010_slope_square_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18777,7 +18777,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_flashRing_01_001_png
+                .texture = d_flashRing_01_001_png, .texture_size = d_flashRing_01_001_png_size
             }
         },
         .is_saw = TRUE,
@@ -18795,7 +18795,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_flashRing_02_001_png
+                .texture = d_flashRing_02_001_png, .texture_size = d_flashRing_02_001_png_size
             }
         },
         .is_saw = TRUE,
@@ -18813,7 +18813,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = P1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_flashRing_03_001_png
+                .texture = d_flashRing_03_001_png, .texture_size = d_flashRing_03_001_png_size
             }
         },
         .is_saw = TRUE,
@@ -18831,7 +18831,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = gravJumpRing_01_001_png
+                .texture = gravJumpRing_01_001_png, .texture_size = gravJumpRing_01_001_png_size
             }
         },
         .hitbox = {
@@ -18853,7 +18853,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_16_01_png
+                .texture = persp_16_01_png, .texture_size = persp_16_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18869,7 +18869,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_16_02_png
+                .texture = persp_16_02_png, .texture_size = persp_16_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18885,7 +18885,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_16_03_png
+                .texture = persp_16_03_png, .texture_size = persp_16_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18901,7 +18901,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_16_04_png
+                .texture = persp_16_04_png, .texture_size = persp_16_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18917,7 +18917,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_16_05_png
+                .texture = persp_16_05_png, .texture_size = persp_16_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18933,7 +18933,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_16_06_png
+                .texture = persp_16_06_png, .texture_size = persp_16_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18949,7 +18949,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_16_07_png
+                .texture = persp_16_07_png, .texture_size = persp_16_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18965,7 +18965,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_16_08_png
+                .texture = persp_16_08_png, .texture_size = persp_16_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18981,7 +18981,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_16_09_png
+                .texture = persp_16_09_png, .texture_size = persp_16_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -18999,14 +18999,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_01_color_001_png
+                .texture = block005_slope_01_color_001_png, .texture_size = block005_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_03_001_png
+                .texture = block005_slope_03_001_png, .texture_size = block005_slope_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19023,14 +19023,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_02_color_001_png
+                .texture = block005_slope_02_color_001_png, .texture_size = block005_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_04_001_png
+                .texture = block005_slope_04_001_png, .texture_size = block005_slope_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19047,14 +19047,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_01_color_001_png
+                .texture = block005_slope_square_01_color_001_png, .texture_size = block005_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_04_001_png
+                .texture = block005_slope_square_04_001_png, .texture_size = block005_slope_square_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19071,14 +19071,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_02_color_001_png
+                .texture = block005_slope_square_02_color_001_png, .texture_size = block005_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_05_001_png
+                .texture = block005_slope_square_05_001_png, .texture_size = block005_slope_square_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19096,14 +19096,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_01_color_001_png
+                .texture = block005_slope_01_color_001_png, .texture_size = block005_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_03_001_png
+                .texture = block005b_slope_03_001_png, .texture_size = block005b_slope_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19120,14 +19120,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_02_color_001_png
+                .texture = block005_slope_02_color_001_png, .texture_size = block005_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_04_001_png
+                .texture = block005b_slope_04_001_png, .texture_size = block005b_slope_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19144,14 +19144,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_01_color_001_png
+                .texture = block005_slope_square_01_color_001_png, .texture_size = block005_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_square_04_001_png
+                .texture = block005b_slope_square_04_001_png, .texture_size = block005b_slope_square_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19168,14 +19168,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_02_color_001_png
+                .texture = block005_slope_square_02_color_001_png, .texture_size = block005_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_square_05_001_png
+                .texture = block005b_slope_square_05_001_png, .texture_size = block005b_slope_square_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19192,7 +19192,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_05_001_png
+                .texture = block005_slope_05_001_png, .texture_size = block005_slope_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19208,7 +19208,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_slope_06_001_png
+                .texture = block005_slope_06_001_png, .texture_size = block005_slope_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19225,7 +19225,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_05_001_png
+                .texture = block005b_slope_05_001_png, .texture_size = block005b_slope_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19241,7 +19241,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_slope_06_001_png
+                .texture = block005b_slope_06_001_png, .texture_size = block005b_slope_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19258,7 +19258,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_16_001_png
+                .texture = block005_16_001_png, .texture_size = block005_16_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19274,7 +19274,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_17_001_png
+                .texture = block005_17_001_png, .texture_size = block005_17_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19291,7 +19291,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_16_001_png
+                .texture = block005b_16_001_png, .texture_size = block005b_16_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19307,7 +19307,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_17_001_png
+                .texture = block005b_17_001_png, .texture_size = block005b_17_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19326,7 +19326,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_animWave_01_001_png
+                .texture = d_animWave_01_001_png, .texture_size = d_animWave_01_001_png_size
             }
         },
         .frame_animation = TRUE,
@@ -19344,7 +19344,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_animWave_02_001_png
+                .texture = d_animWave_02_001_png, .texture_size = d_animWave_02_001_png_size
             }
         },
         .frame_animation = TRUE,
@@ -19362,7 +19362,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_animWave_03_001_png
+                .texture = d_animWave_03_001_png, .texture_size = d_animWave_03_001_png_size
             }
         },
         .frame_animation = TRUE,
@@ -19381,14 +19381,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_animLoading_01_color_001_png
+                .texture = d_animLoading_01_color_001_png, .texture_size = d_animLoading_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = 1,
                 .zlayer_offset = 0,
-                .texture = d_animLoading_01_001_png
+                .texture = d_animLoading_01_001_png, .texture_size = d_animLoading_01_001_png_size
             }
         },
         .frame_animation = TRUE,
@@ -19406,14 +19406,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_animLoading_02_color_001_png
+                .texture = d_animLoading_02_color_001_png, .texture_size = d_animLoading_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = 1,
                 .zlayer_offset = 0,
-                .texture = d_animLoading_02_001_png
+                .texture = d_animLoading_02_001_png, .texture_size = d_animLoading_02_001_png_size
             }
         },
         .frame_animation = TRUE,
@@ -19432,7 +19432,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_pickupCircle_01_001_png
+                .texture = d_pickupCircle_01_001_png, .texture_size = d_pickupCircle_01_001_png_size
             }
         },
         .is_saw = TRUE,
@@ -19450,7 +19450,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_pickupCircle_02_001_png
+                .texture = d_pickupCircle_02_001_png, .texture_size = d_pickupCircle_02_001_png_size
             }
         },
         .is_saw = TRUE,
@@ -19468,7 +19468,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_pickupCircle_03_001_png
+                .texture = d_pickupCircle_03_001_png, .texture_size = d_pickupCircle_03_001_png_size
             }
         },
         .is_saw = TRUE,
@@ -19487,7 +19487,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_spiral_01_001_png
+                .texture = d_spiral_01_001_png, .texture_size = d_spiral_01_001_png_size
             }
         },
         .is_saw = TRUE,
@@ -19505,7 +19505,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_spiral_02_001_png
+                .texture = d_spiral_02_001_png, .texture_size = d_spiral_02_001_png_size
             }
         },
         .is_saw = TRUE,
@@ -19523,7 +19523,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_spiral_03_001_png
+                .texture = d_spiral_03_001_png, .texture_size = d_spiral_03_001_png_size
             }
         },
         .is_saw = TRUE,
@@ -19541,7 +19541,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_spiral_04_001_png
+                .texture = d_spiral_04_001_png, .texture_size = d_spiral_04_001_png_size
             }
         },
         .is_saw = TRUE,
@@ -19559,7 +19559,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_07_001_png
+                .texture = block009b_07_001_png, .texture_size = block009b_07_001_png_size
             },
             {
                 .x_offset = 0,
@@ -19567,7 +19567,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_07_color_001_png
+                .texture = block009b_07_color_001_png, .texture_size = block009b_07_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19584,7 +19584,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_18_01_png
+                .texture = persp_18_01_png, .texture_size = persp_18_01_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19600,7 +19600,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_18_02_png
+                .texture = persp_18_02_png, .texture_size = persp_18_02_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19616,7 +19616,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_18_03_png
+                .texture = persp_18_03_png, .texture_size = persp_18_03_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19632,7 +19632,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_18_04_png
+                .texture = persp_18_04_png, .texture_size = persp_18_04_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19648,7 +19648,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_18_05_png
+                .texture = persp_18_05_png, .texture_size = persp_18_05_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19664,7 +19664,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_18_06_png
+                .texture = persp_18_06_png, .texture_size = persp_18_06_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19680,7 +19680,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_18_07_png
+                .texture = persp_18_07_png, .texture_size = persp_18_07_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19696,7 +19696,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_18_08_png
+                .texture = persp_18_08_png, .texture_size = persp_18_08_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19712,7 +19712,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = persp_18_09_png
+                .texture = persp_18_09_png, .texture_size = persp_18_09_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19732,14 +19732,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part03_001_png
+                .texture = block003_part03_001_png, .texture_size = block003_part03_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part01_006_png
+                .texture = block003_part01_006_png, .texture_size = block003_part01_006_png_size
             },
             {
                 .x_offset = 0,
@@ -19747,7 +19747,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_02_001_png
+                .texture = block003_color_02_001_png, .texture_size = block003_color_02_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -19763,7 +19763,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part01_004_png
+                .texture = block003_part01_004_png, .texture_size = block003_part01_004_png_size
             },
             {
                 .x_offset = 0,
@@ -19771,7 +19771,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_01_001_png
+                .texture = block003_color_01_001_png, .texture_size = block003_color_01_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -19787,14 +19787,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part02_006_png
+                .texture = block003_part02_006_png, .texture_size = block003_part02_006_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part01_005_png
+                .texture = block003_part01_005_png, .texture_size = block003_part01_005_png_size
             },
             {
                 .x_offset = 0,
@@ -19802,7 +19802,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_01_001_png
+                .texture = block003_color_01_001_png, .texture_size = block003_color_01_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -19820,7 +19820,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_012_001_png
+                .texture = block007_color_012_001_png, .texture_size = block007_color_012_001_png_size
             },
             {
                 .x_offset = 0,
@@ -19828,7 +19828,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = block007_01_small_002_png
+                .texture = block007_01_small_002_png, .texture_size = block007_01_small_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19845,7 +19845,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_009_001_png
+                .texture = block007_color_009_001_png, .texture_size = block007_color_009_001_png_size
             },
             {
                 .x_offset = 0,
@@ -19853,7 +19853,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank007_01_002_png
+                .texture = plank007_01_002_png, .texture_size = plank007_01_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19870,7 +19870,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_010_001_png
+                .texture = block007_color_010_001_png, .texture_size = block007_color_010_001_png_size
             },
             {
                 .x_offset = 0,
@@ -19878,7 +19878,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank007_02_002_png
+                .texture = plank007_02_002_png, .texture_size = plank007_02_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19895,7 +19895,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_011_001_png
+                .texture = block007_color_011_001_png, .texture_size = block007_color_011_001_png_size
             },
             {
                 .x_offset = 0,
@@ -19903,7 +19903,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = BLACK,
                 .color_type = COLOR_UNMOD,
                 .zlayer_offset = 0,
-                .texture = plank007_03_002_png
+                .texture = plank007_03_002_png, .texture_size = plank007_03_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19921,14 +19921,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_001_png
+                .texture = block007_color_001_001_png, .texture_size = block007_color_001_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_01_001_png
+                .texture = block007_01_001_png, .texture_size = block007_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19945,14 +19945,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_002_png
+                .texture = block007_color_001_002_png, .texture_size = block007_color_001_002_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_02_001_png
+                .texture = block007_02_001_png, .texture_size = block007_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19969,14 +19969,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_003_png
+                .texture = block007_color_001_003_png, .texture_size = block007_color_001_003_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_03_001_png
+                .texture = block007_03_001_png, .texture_size = block007_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -19993,14 +19993,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_004_png
+                .texture = block007_color_001_004_png, .texture_size = block007_color_001_004_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_04_001_png
+                .texture = block007_04_001_png, .texture_size = block007_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20017,14 +20017,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_001_005_png
+                .texture = block007_color_001_005_png, .texture_size = block007_color_001_005_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_05_001_png
+                .texture = block007_05_001_png, .texture_size = block007_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20041,7 +20041,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_06_001_png
+                .texture = block007_06_001_png, .texture_size = block007_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20058,14 +20058,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_07_color_001_png
+                .texture = block007_07_color_001_png, .texture_size = block007_07_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_07_001_png
+                .texture = block007_07_001_png, .texture_size = block007_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20082,14 +20082,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_08_color_001_png
+                .texture = block007_08_color_001_png, .texture_size = block007_08_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_08_001_png
+                .texture = block007_08_001_png, .texture_size = block007_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20105,7 +20105,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_09_001_png
+                .texture = block007_09_001_png, .texture_size = block007_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20123,14 +20123,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_01_color_001_png
+                .texture = block007_slope_01_color_001_png, .texture_size = block007_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_slope_01_001_png
+                .texture = block007_slope_01_001_png, .texture_size = block007_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20147,14 +20147,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_02_color_001_png
+                .texture = block007_slope_02_color_001_png, .texture_size = block007_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_slope_02_001_png
+                .texture = block007_slope_02_001_png, .texture_size = block007_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20171,14 +20171,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_01_color_001_png
+                .texture = block007_slope_square_01_color_001_png, .texture_size = block007_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_01_001_png
+                .texture = block007_slope_square_01_001_png, .texture_size = block007_slope_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20195,14 +20195,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_02_color_001_png
+                .texture = block007_slope_square_02_color_001_png, .texture_size = block007_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_slope_square_02_001_png
+                .texture = block007_slope_square_02_001_png, .texture_size = block007_slope_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20220,14 +20220,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_012_001_png
+                .texture = block007_color_012_001_png, .texture_size = block007_color_012_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_01_small_001_png
+                .texture = block007_01_small_001_png, .texture_size = block007_01_small_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20244,14 +20244,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_009_001_png
+                .texture = block007_color_009_001_png, .texture_size = block007_color_009_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank007_01_001_png
+                .texture = plank007_01_001_png, .texture_size = plank007_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20268,14 +20268,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_010_001_png
+                .texture = block007_color_010_001_png, .texture_size = block007_color_010_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank007_02_001_png
+                .texture = plank007_02_001_png, .texture_size = plank007_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20292,14 +20292,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_color_011_001_png
+                .texture = block007_color_011_001_png, .texture_size = block007_color_011_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = plank007_03_001_png
+                .texture = plank007_03_001_png, .texture_size = plank007_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20317,7 +20317,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_001_001_png
+                .texture = block007_bgcolor_001_001_png, .texture_size = block007_bgcolor_001_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20334,7 +20334,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_002_001_png
+                .texture = block007_bgcolor_002_001_png, .texture_size = block007_bgcolor_002_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20351,7 +20351,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_003_001_png
+                .texture = block007_bgcolor_003_001_png, .texture_size = block007_bgcolor_003_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20368,7 +20368,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_004_001_png
+                .texture = block007_bgcolor_004_001_png, .texture_size = block007_bgcolor_004_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20385,7 +20385,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_005_001_png
+                .texture = block007_bgcolor_005_001_png, .texture_size = block007_bgcolor_005_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20402,7 +20402,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_006_001_png
+                .texture = block007_bgcolor_006_001_png, .texture_size = block007_bgcolor_006_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20419,7 +20419,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_007_001_png
+                .texture = block007_bgcolor_007_001_png, .texture_size = block007_bgcolor_007_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20436,7 +20436,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_008_001_png
+                .texture = block007_bgcolor_008_001_png, .texture_size = block007_bgcolor_008_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20453,7 +20453,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_009_001_png
+                .texture = block007_bgcolor_009_001_png, .texture_size = block007_bgcolor_009_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20470,7 +20470,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_010_001_png
+                .texture = block007_bgcolor_010_001_png, .texture_size = block007_bgcolor_010_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20487,7 +20487,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_011_001_png
+                .texture = block007_bgcolor_011_001_png, .texture_size = block007_bgcolor_011_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20504,7 +20504,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_001_001_png
+                .texture = block007_bgcolor_001_001_png, .texture_size = block007_bgcolor_001_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20521,7 +20521,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007_bgcolor_012_001_png
+                .texture = block007_bgcolor_012_001_png, .texture_size = block007_bgcolor_012_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20539,7 +20539,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_bgcolor_01_001_png
+                .texture = block007b_bgcolor_01_001_png, .texture_size = block007b_bgcolor_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20556,7 +20556,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_bgcolor_02_001_png
+                .texture = block007b_bgcolor_02_001_png, .texture_size = block007b_bgcolor_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20573,7 +20573,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_bgcolor_03_001_png
+                .texture = block007b_bgcolor_03_001_png, .texture_size = block007b_bgcolor_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20590,7 +20590,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_bgcolor_05_001_png
+                .texture = block007b_bgcolor_05_001_png, .texture_size = block007b_bgcolor_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20607,7 +20607,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_bgcolor_06_001_png
+                .texture = block007b_bgcolor_06_001_png, .texture_size = block007b_bgcolor_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20624,7 +20624,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_bgcolor_07_001_png
+                .texture = block007b_bgcolor_07_001_png, .texture_size = block007b_bgcolor_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20641,7 +20641,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block007b_bgcolor_08_001_png
+                .texture = block007b_bgcolor_08_001_png, .texture_size = block007b_bgcolor_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20660,7 +20660,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_01_001_png
+                .texture = block008_topcolor_01_001_png, .texture_size = block008_topcolor_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20679,7 +20679,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_29_001_png
+                .texture = block008_topcolor_29_001_png, .texture_size = block008_topcolor_29_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20696,7 +20696,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_14_001_png
+                .texture = block008_topcolor_14_001_png, .texture_size = block008_topcolor_14_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20713,7 +20713,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_16_001_png
+                .texture = block008_topcolor_16_001_png, .texture_size = block008_topcolor_16_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20730,7 +20730,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_18_001_png
+                .texture = block008_topcolor_18_001_png, .texture_size = block008_topcolor_18_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20747,7 +20747,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_24_001_png
+                .texture = block008_topcolor_24_001_png, .texture_size = block008_topcolor_24_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20764,7 +20764,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_24_002_png
+                .texture = block008_topcolor_24_002_png, .texture_size = block008_topcolor_24_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20786,7 +20786,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_22_001_png
+                .texture = block008_topcolor_22_001_png, .texture_size = block008_topcolor_22_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20803,7 +20803,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_23_001_png
+                .texture = block008_topcolor_23_001_png, .texture_size = block008_topcolor_23_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20820,7 +20820,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_25_001_png
+                .texture = block008_topcolor_25_001_png, .texture_size = block008_topcolor_25_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20837,7 +20837,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_26_001_png
+                .texture = block008_topcolor_26_001_png, .texture_size = block008_topcolor_26_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20854,7 +20854,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_27_001_png
+                .texture = block008_topcolor_27_001_png, .texture_size = block008_topcolor_27_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20871,7 +20871,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_28_001_png
+                .texture = block008_topcolor_28_001_png, .texture_size = block008_topcolor_28_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20888,7 +20888,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_12_001_png
+                .texture = block008_topcolor_12_001_png, .texture_size = block008_topcolor_12_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20905,7 +20905,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_13_001_png
+                .texture = block008_topcolor_13_001_png, .texture_size = block008_topcolor_13_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20922,7 +20922,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_03_001_png
+                .texture = square_g_03_001_png, .texture_size = square_g_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20938,7 +20938,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_04_001_png
+                .texture = square_g_04_001_png, .texture_size = square_g_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20954,7 +20954,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_05_001_png
+                .texture = square_g_05_001_png, .texture_size = square_g_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20970,7 +20970,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_06_001_png
+                .texture = square_g_06_001_png, .texture_size = square_g_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -20986,7 +20986,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_07_001_png
+                .texture = square_g_07_001_png, .texture_size = square_g_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21002,7 +21002,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_08_001_png
+                .texture = square_g_08_001_png, .texture_size = square_g_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21018,7 +21018,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_09_001_png
+                .texture = square_g_09_001_png, .texture_size = square_g_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21034,7 +21034,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_10_001_png
+                .texture = square_g_10_001_png, .texture_size = square_g_10_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21050,7 +21050,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_11_001_png
+                .texture = square_g_11_001_png, .texture_size = square_g_11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21066,7 +21066,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_12_001_png
+                .texture = square_g_12_001_png, .texture_size = square_g_12_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21082,7 +21082,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_13_001_png
+                .texture = square_g_13_001_png, .texture_size = square_g_13_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21098,7 +21098,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_14_001_png
+                .texture = square_g_14_001_png, .texture_size = square_g_14_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21114,7 +21114,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_15_001_png
+                .texture = square_g_15_001_png, .texture_size = square_g_15_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21130,7 +21130,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = square_g_16_001_png
+                .texture = square_g_16_001_png, .texture_size = square_g_16_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21147,14 +21147,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = smallOutline_01_glow_001_png
+                .texture = smallOutline_01_glow_001_png, .texture_size = smallOutline_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = smallOutline_01_001_png
+                .texture = smallOutline_01_001_png, .texture_size = smallOutline_01_001_png_size
             }
         },
         .hitbox = {
@@ -21174,14 +21174,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = smallOutline_02_glow_001_png
+                .texture = smallOutline_02_glow_001_png, .texture_size = smallOutline_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = smallOutline_02_001_png
+                .texture = smallOutline_02_001_png, .texture_size = smallOutline_02_001_png_size
             }
         },
         .hitbox = {
@@ -21201,14 +21201,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = smallOutline_03_glow_001_png
+                .texture = smallOutline_03_glow_001_png, .texture_size = smallOutline_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = smallOutline_03_001_png
+                .texture = smallOutline_03_001_png, .texture_size = smallOutline_03_001_png_size
             }
         },
         .hitbox = {
@@ -21228,14 +21228,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = smallOutline_04_glow_001_png
+                .texture = smallOutline_04_glow_001_png, .texture_size = smallOutline_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = smallOutline_04_001_png
+                .texture = smallOutline_04_001_png, .texture_size = smallOutline_04_001_png_size
             }
         },
         .hitbox = {
@@ -21255,14 +21255,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = smallOutline_05_glow_001_png
+                .texture = smallOutline_05_glow_001_png, .texture_size = smallOutline_05_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = smallOutline_05_001_png
+                .texture = smallOutline_05_001_png, .texture_size = smallOutline_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21279,7 +21279,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_08_001_png
+                .texture = block009b_08_001_png, .texture_size = block009b_08_001_png_size
             },
             {
                 .x_offset = 0,
@@ -21287,7 +21287,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_08_color_001_png
+                .texture = block009b_08_color_001_png, .texture_size = block009b_08_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21303,7 +21303,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_09_001_png
+                .texture = block009b_09_001_png, .texture_size = block009b_09_001_png_size
             },
             {
                 .x_offset = 0,
@@ -21311,7 +21311,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_09_color_001_png
+                .texture = block009b_09_color_001_png, .texture_size = block009b_09_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21327,7 +21327,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009b_10_001_png
+                .texture = block009b_10_001_png, .texture_size = block009b_10_001_png_size
             },
             {
                 .x_offset = 0,
@@ -21335,7 +21335,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009b_10_color_001_png
+                .texture = block009b_10_color_001_png, .texture_size = block009b_10_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21353,14 +21353,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_01_001_png
+                .texture = block006_color_01_001_png, .texture_size = block006_color_01_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_01_001_png
+                .texture = block006_01_001_png, .texture_size = block006_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21377,14 +21377,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_02_001_png
+                .texture = block006_color_02_001_png, .texture_size = block006_color_02_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_02_001_png
+                .texture = block006_02_001_png, .texture_size = block006_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21401,14 +21401,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_03_001_png
+                .texture = block006_color_03_001_png, .texture_size = block006_color_03_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_03_001_png
+                .texture = block006_03_001_png, .texture_size = block006_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21425,14 +21425,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_04_001_png
+                .texture = block006_color_04_001_png, .texture_size = block006_color_04_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_04_001_png
+                .texture = block006_04_001_png, .texture_size = block006_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21449,14 +21449,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_05_001_png
+                .texture = block006_color_05_001_png, .texture_size = block006_color_05_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_05_001_png
+                .texture = block006_05_001_png, .texture_size = block006_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21473,14 +21473,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_06_001_png
+                .texture = block006_color_06_001_png, .texture_size = block006_color_06_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_06_001_png
+                .texture = block006_06_001_png, .texture_size = block006_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21497,14 +21497,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_07_001_png
+                .texture = block006_color_07_001_png, .texture_size = block006_color_07_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block007_01_001_png
+                .texture = block007_01_001_png, .texture_size = block007_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21521,14 +21521,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_08_001_png
+                .texture = block006_color_08_001_png, .texture_size = block006_color_08_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_08_001_png
+                .texture = block006_08_001_png, .texture_size = block006_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21545,14 +21545,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_09_001_png
+                .texture = block006_color_09_001_png, .texture_size = block006_color_09_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_09_001_png
+                .texture = block006_09_001_png, .texture_size = block006_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21569,14 +21569,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_10_001_png
+                .texture = block006_color_10_001_png, .texture_size = block006_color_10_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_10_001_png
+                .texture = block006_10_001_png, .texture_size = block006_10_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21593,14 +21593,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_11_001_png
+                .texture = block006_color_11_001_png, .texture_size = block006_color_11_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_11_001_png
+                .texture = block006_11_001_png, .texture_size = block006_11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21617,14 +21617,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_12_001_png
+                .texture = block006_color_12_001_png, .texture_size = block006_color_12_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_12_001_png
+                .texture = block006_12_001_png, .texture_size = block006_12_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21641,14 +21641,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_13_001_png
+                .texture = block006_color_13_001_png, .texture_size = block006_color_13_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_13_001_png
+                .texture = block006_13_001_png, .texture_size = block006_13_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21665,14 +21665,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_14_001_png
+                .texture = block006_color_14_001_png, .texture_size = block006_color_14_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_14_001_png
+                .texture = block006_14_001_png, .texture_size = block006_14_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21689,14 +21689,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_15_001_png
+                .texture = block006_color_15_001_png, .texture_size = block006_color_15_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_15_001_png
+                .texture = block006_15_001_png, .texture_size = block006_15_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21713,14 +21713,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_16_001_png
+                .texture = block006_color_16_001_png, .texture_size = block006_color_16_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_16_001_png
+                .texture = block006_16_001_png, .texture_size = block006_16_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21737,14 +21737,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_17_001_png
+                .texture = block006_color_17_001_png, .texture_size = block006_color_17_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_17_001_png
+                .texture = block006_17_001_png, .texture_size = block006_17_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21761,14 +21761,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_18_001_png
+                .texture = block006_color_18_001_png, .texture_size = block006_color_18_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_18_001_png
+                .texture = block006_18_001_png, .texture_size = block006_18_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21785,14 +21785,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_19_001_png
+                .texture = block006_color_19_001_png, .texture_size = block006_color_19_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_19_001_png
+                .texture = block006_19_001_png, .texture_size = block006_19_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21809,14 +21809,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_20_001_png
+                .texture = block006_color_20_001_png, .texture_size = block006_color_20_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_20_001_png
+                .texture = block006_20_001_png, .texture_size = block006_20_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21833,14 +21833,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_21_001_png
+                .texture = block006_color_21_001_png, .texture_size = block006_color_21_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_21_001_png
+                .texture = block006_21_001_png, .texture_size = block006_21_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21857,14 +21857,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_22_001_png
+                .texture = block006_color_22_001_png, .texture_size = block006_color_22_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_22_001_png
+                .texture = block006_22_001_png, .texture_size = block006_22_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21881,14 +21881,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_23_001_png
+                .texture = block006_color_23_001_png, .texture_size = block006_color_23_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_23_001_png
+                .texture = block006_23_001_png, .texture_size = block006_23_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21905,14 +21905,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_24_001_png
+                .texture = block006_color_24_001_png, .texture_size = block006_color_24_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_24_001_png
+                .texture = block006_24_001_png, .texture_size = block006_24_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21928,7 +21928,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_25_001_png
+                .texture = block006_25_001_png, .texture_size = block006_25_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21946,14 +21946,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_slope_01_color_001_png
+                .texture = block006_slope_01_color_001_png, .texture_size = block006_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_slope_01_001_png
+                .texture = block006_slope_01_001_png, .texture_size = block006_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21970,14 +21970,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_slope_02_color_001_png
+                .texture = block006_slope_02_color_001_png, .texture_size = block006_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_slope_02_001_png
+                .texture = block006_slope_02_001_png, .texture_size = block006_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -21994,14 +21994,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_slope_square_01_color_001_png
+                .texture = block006_slope_square_01_color_001_png, .texture_size = block006_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_slope_square_01_001_png
+                .texture = block006_slope_square_01_001_png, .texture_size = block006_slope_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22018,14 +22018,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_slope_square_02_color_001_png
+                .texture = block006_slope_square_02_color_001_png, .texture_size = block006_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_slope_square_02_001_png
+                .texture = block006_slope_square_02_001_png, .texture_size = block006_slope_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22042,7 +22042,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_color_01_001_png
+                .texture = block006_color_01_001_png, .texture_size = block006_color_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22058,7 +22058,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_color_02_001_png
+                .texture = block006_color_02_001_png, .texture_size = block006_color_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22074,7 +22074,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_color_03_001_png
+                .texture = block006_color_03_001_png, .texture_size = block006_color_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22090,7 +22090,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_color_07_001_png
+                .texture = block006_color_07_001_png, .texture_size = block006_color_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22106,7 +22106,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_color_05_001_png
+                .texture = block006_color_05_001_png, .texture_size = block006_color_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22122,7 +22122,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_color_09_001_png
+                .texture = block006_color_09_001_png, .texture_size = block006_color_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22138,7 +22138,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_color_13_001_png
+                .texture = block006_color_13_001_png, .texture_size = block006_color_13_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22154,7 +22154,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_slope_01_color_001_png
+                .texture = block006_slope_01_color_001_png, .texture_size = block006_slope_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22170,7 +22170,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_slope_02_color_001_png
+                .texture = block006_slope_02_color_001_png, .texture_size = block006_slope_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22186,7 +22186,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_slope_square_01_color_001_png
+                .texture = block006_slope_square_01_color_001_png, .texture_size = block006_slope_square_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22202,7 +22202,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_slope_square_02_color_001_png
+                .texture = block006_slope_square_02_color_001_png, .texture_size = block006_slope_square_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22219,14 +22219,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_01_glow_001_png
+                .texture = blockOutlineThick_01_glow_001_png, .texture_size = blockOutlineThick_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_01_001_png
+                .texture = blockOutlineThick_01_001_png, .texture_size = blockOutlineThick_01_001_png_size
             }
         },
         .hitbox = {
@@ -22246,14 +22246,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_02_glow_001_png
+                .texture = blockOutlineThick_02_glow_001_png, .texture_size = blockOutlineThick_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_02_001_png
+                .texture = blockOutlineThick_02_001_png, .texture_size = blockOutlineThick_02_001_png_size
             }
         },
         .hitbox = {
@@ -22273,14 +22273,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_03_glow_001_png
+                .texture = blockOutlineThick_03_glow_001_png, .texture_size = blockOutlineThick_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_03_001_png
+                .texture = blockOutlineThick_03_001_png, .texture_size = blockOutlineThick_03_001_png_size
             }
         },
         .hitbox = {
@@ -22300,14 +22300,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_04_glow_001_png
+                .texture = blockOutlineThick_04_glow_001_png, .texture_size = blockOutlineThick_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_04_001_png
+                .texture = blockOutlineThick_04_001_png, .texture_size = blockOutlineThick_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22323,14 +22323,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_05_glow_001_png
+                .texture = blockOutlineThick_05_glow_001_png, .texture_size = blockOutlineThick_05_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_05_001_png
+                .texture = blockOutlineThick_05_001_png, .texture_size = blockOutlineThick_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22346,14 +22346,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_06_glow_001_png
+                .texture = blockOutlineThick_06_glow_001_png, .texture_size = blockOutlineThick_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_06_001_png
+                .texture = blockOutlineThick_06_001_png, .texture_size = blockOutlineThick_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22369,14 +22369,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_07_glow_001_png
+                .texture = blockOutlineThick_07_glow_001_png, .texture_size = blockOutlineThick_07_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_07_001_png
+                .texture = blockOutlineThick_07_001_png, .texture_size = blockOutlineThick_07_001_png_size
             }
         },
         .hitbox = {
@@ -22396,14 +22396,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_08_glow_001_png
+                .texture = blockOutlineThick_08_glow_001_png, .texture_size = blockOutlineThick_08_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_08_001_png
+                .texture = blockOutlineThick_08_001_png, .texture_size = blockOutlineThick_08_001_png_size
             }
         },
         .hitbox = {
@@ -22423,14 +22423,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_09_glow_001_png
+                .texture = blockOutlineThick_09_glow_001_png, .texture_size = blockOutlineThick_09_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_09_001_png
+                .texture = blockOutlineThick_09_001_png, .texture_size = blockOutlineThick_09_001_png_size
             }
         },
         .hitbox = {
@@ -22451,14 +22451,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_01_glow_001_png
+                .texture = blockOutlineThickb_01_glow_001_png, .texture_size = blockOutlineThickb_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_01_001_png
+                .texture = blockOutlineThickb_01_001_png, .texture_size = blockOutlineThickb_01_001_png_size
             }
         },
         .hitbox = {
@@ -22478,14 +22478,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_02_glow_001_png
+                .texture = blockOutlineThickb_02_glow_001_png, .texture_size = blockOutlineThickb_02_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_02_001_png
+                .texture = blockOutlineThickb_02_001_png, .texture_size = blockOutlineThickb_02_001_png_size
             }
         },
         .hitbox = {
@@ -22505,14 +22505,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_03_glow_001_png
+                .texture = blockOutlineThickb_03_glow_001_png, .texture_size = blockOutlineThickb_03_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_03_001_png
+                .texture = blockOutlineThickb_03_001_png, .texture_size = blockOutlineThickb_03_001_png_size
             }
         },
         .hitbox = {
@@ -22532,14 +22532,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_04_glow_001_png
+                .texture = blockOutlineThickb_04_glow_001_png, .texture_size = blockOutlineThickb_04_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_04_001_png
+                .texture = blockOutlineThickb_04_001_png, .texture_size = blockOutlineThickb_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22555,14 +22555,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_05_glow_001_png
+                .texture = blockOutlineThickb_05_glow_001_png, .texture_size = blockOutlineThickb_05_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_05_001_png
+                .texture = blockOutlineThickb_05_001_png, .texture_size = blockOutlineThickb_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22578,14 +22578,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_06_glow_001_png
+                .texture = blockOutlineThickb_06_glow_001_png, .texture_size = blockOutlineThickb_06_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_06_001_png
+                .texture = blockOutlineThickb_06_001_png, .texture_size = blockOutlineThickb_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22601,14 +22601,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_08_glow_001_png
+                .texture = blockOutlineThickb_08_glow_001_png, .texture_size = blockOutlineThickb_08_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_08_001_png
+                .texture = blockOutlineThickb_08_001_png, .texture_size = blockOutlineThickb_08_001_png_size
             }
         },
         .hitbox = {
@@ -22628,14 +22628,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_09_glow_001_png
+                .texture = blockOutlineThickb_09_glow_001_png, .texture_size = blockOutlineThickb_09_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_09_001_png
+                .texture = blockOutlineThickb_09_001_png, .texture_size = blockOutlineThickb_09_001_png_size
             }
         },
         .hitbox = {
@@ -22657,7 +22657,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LBG,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_waveBG_001_png
+                .texture = d_waveBG_001_png, .texture_size = d_waveBG_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22675,7 +22675,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_10_001_png
+                .texture = block010_10_001_png, .texture_size = block010_10_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22692,7 +22692,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_11_001_png
+                .texture = block010_11_001_png, .texture_size = block010_11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22709,7 +22709,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_12_001_png
+                .texture = block010_12_001_png, .texture_size = block010_12_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22726,7 +22726,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_13_001_png
+                .texture = block010_13_001_png, .texture_size = block010_13_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22743,7 +22743,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_14_001_png
+                .texture = block010_14_001_png, .texture_size = block010_14_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22760,7 +22760,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_15_001_png
+                .texture = block010_15_001_png, .texture_size = block010_15_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22777,7 +22777,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_16_001_png
+                .texture = block010_16_001_png, .texture_size = block010_16_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22794,7 +22794,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_17_001_png
+                .texture = block010_17_001_png, .texture_size = block010_17_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22811,7 +22811,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_18_001_png
+                .texture = block010_18_001_png, .texture_size = block010_18_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22828,7 +22828,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_19_001_png
+                .texture = block010_19_001_png, .texture_size = block010_19_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22845,7 +22845,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_20_001_png
+                .texture = block010_20_001_png, .texture_size = block010_20_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22862,7 +22862,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block010_21_001_png
+                .texture = block010_21_001_png, .texture_size = block010_21_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22880,7 +22880,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_02_001_png
+                .texture = block008_topcolor_02_001_png, .texture_size = block008_topcolor_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22897,7 +22897,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_06_001_png
+                .texture = block008_topcolor_06_001_png, .texture_size = block008_topcolor_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22914,7 +22914,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_07_001_png
+                .texture = block008_topcolor_07_001_png, .texture_size = block008_topcolor_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22931,7 +22931,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_08_001_png
+                .texture = block008_topcolor_08_001_png, .texture_size = block008_topcolor_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22948,7 +22948,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_10_001_png
+                .texture = block008_topcolor_10_001_png, .texture_size = block008_topcolor_10_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22965,7 +22965,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block008_topcolor_11_001_png
+                .texture = block008_topcolor_11_001_png, .texture_size = block008_topcolor_11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -22982,7 +22982,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_01_001_png
+                .texture = block009d_01_001_png, .texture_size = block009d_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -22990,7 +22990,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_01_001_png
+                .texture = block009d_color_01_001_png, .texture_size = block009d_color_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23006,7 +23006,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_02_001_png
+                .texture = block009d_02_001_png, .texture_size = block009d_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23014,7 +23014,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_02_001_png
+                .texture = block009d_color_02_001_png, .texture_size = block009d_color_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23030,7 +23030,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_03_001_png
+                .texture = block009d_03_001_png, .texture_size = block009d_03_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23038,7 +23038,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_03_001_png
+                .texture = block009d_color_03_001_png, .texture_size = block009d_color_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23054,7 +23054,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_04_001_png
+                .texture = block009d_04_001_png, .texture_size = block009d_04_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23062,7 +23062,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_04_001_png
+                .texture = block009d_color_04_001_png, .texture_size = block009d_color_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23078,7 +23078,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_05_001_png
+                .texture = block009d_05_001_png, .texture_size = block009d_05_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23086,7 +23086,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_05_001_png
+                .texture = block009d_color_05_001_png, .texture_size = block009d_color_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23102,7 +23102,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_06_001_png
+                .texture = block009d_06_001_png, .texture_size = block009d_06_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23110,7 +23110,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_06_001_png
+                .texture = block009d_color_06_001_png, .texture_size = block009d_color_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23126,7 +23126,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_07_001_png
+                .texture = block009d_07_001_png, .texture_size = block009d_07_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23134,7 +23134,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_07_001_png
+                .texture = block009d_color_07_001_png, .texture_size = block009d_color_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23150,7 +23150,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_08_001_png
+                .texture = block009d_08_001_png, .texture_size = block009d_08_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23158,7 +23158,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_08_001_png
+                .texture = block009d_color_08_001_png, .texture_size = block009d_color_08_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23174,7 +23174,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_09_001_png
+                .texture = block009d_09_001_png, .texture_size = block009d_09_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23182,7 +23182,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_09_001_png
+                .texture = block009d_color_09_001_png, .texture_size = block009d_color_09_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23199,7 +23199,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_slope_01_001_png
+                .texture = block009d_slope_01_001_png, .texture_size = block009d_slope_01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23207,7 +23207,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_slope_01_color_001_png
+                .texture = block009d_slope_01_color_001_png, .texture_size = block009d_slope_01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23223,7 +23223,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_slope_02_001_png
+                .texture = block009d_slope_02_001_png, .texture_size = block009d_slope_02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23231,7 +23231,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_slope_02_color_001_png
+                .texture = block009d_slope_02_color_001_png, .texture_size = block009d_slope_02_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23247,7 +23247,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_slope_01_002_png
+                .texture = block009d_slope_01_002_png, .texture_size = block009d_slope_01_002_png_size
             },
             {
                 .x_offset = 0,
@@ -23255,7 +23255,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_slope_01_color_002_png
+                .texture = block009d_slope_01_color_002_png, .texture_size = block009d_slope_01_color_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23271,7 +23271,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_slope_02_002_png
+                .texture = block009d_slope_02_002_png, .texture_size = block009d_slope_02_002_png_size
             },
             {
                 .x_offset = 0,
@@ -23279,7 +23279,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_slope_02_color_002_png
+                .texture = block009d_slope_02_color_002_png, .texture_size = block009d_slope_02_color_002_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23295,14 +23295,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = square_02_alt_glow_001_png
+                .texture = square_02_alt_glow_001_png, .texture_size = square_02_alt_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutline_02_alt_001_png
+                .texture = blockOutline_02_alt_001_png, .texture_size = blockOutline_02_alt_001_png_size
             }
         },
         .hitbox = {
@@ -23322,14 +23322,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineOuter1_01_glow_001_png
+                .texture = blockOutlineOuter1_01_glow_001_png, .texture_size = blockOutlineOuter1_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineOuter1_01_001_png
+                .texture = blockOutlineOuter1_01_001_png, .texture_size = blockOutlineOuter1_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23345,14 +23345,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_01_glow_001_png
+                .texture = blockOutlineThick_01_glow_001_png, .texture_size = blockOutlineThick_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThick_01_001_png
+                .texture = blockOutlineThick_01_001_png, .texture_size = blockOutlineThick_01_001_png_size
             }
         },
         .hitbox = {
@@ -23372,14 +23372,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineOuter2_01_glow_001_png
+                .texture = blockOutlineOuter2_01_glow_001_png, .texture_size = blockOutlineOuter2_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineOuter2_01_001_png
+                .texture = blockOutlineOuter2_01_001_png, .texture_size = blockOutlineOuter2_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23395,14 +23395,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_01_glow_001_png
+                .texture = blockOutlineThickb_01_glow_001_png, .texture_size = blockOutlineThickb_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineThickb_01_001_png
+                .texture = blockOutlineThickb_01_001_png, .texture_size = blockOutlineThickb_01_001_png_size
             }
         },
         .hitbox = {
@@ -23422,14 +23422,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ_BLENDING,
                 .zlayer_offset = 0,
-                .texture = blockOutlineOuter3_01_glow_001_png
+                .texture = blockOutlineOuter3_01_glow_001_png, .texture_size = blockOutlineOuter3_01_glow_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = blockOutlineOuter3_01_001_png
+                .texture = blockOutlineOuter3_01_001_png, .texture_size = blockOutlineOuter3_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23446,7 +23446,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_07_001_png
+                .texture = block009_07_001_png, .texture_size = block009_07_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23454,7 +23454,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_07_color_001_png
+                .texture = block009_07_color_001_png, .texture_size = block009_07_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23470,7 +23470,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009_08_001_png
+                .texture = block009_08_001_png, .texture_size = block009_08_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23478,7 +23478,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009_08_color_001_png
+                .texture = block009_08_color_001_png, .texture_size = block009_08_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23497,7 +23497,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_gradient_c_04_001_png
+                .texture = d_gradient_c_04_001_png, .texture_size = d_gradient_c_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23514,7 +23514,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_gradient_c_05_001_png
+                .texture = d_gradient_c_05_001_png, .texture_size = d_gradient_c_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23531,7 +23531,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_gradient_b_04_001_png
+                .texture = d_gradient_b_04_001_png, .texture_size = d_gradient_b_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23548,7 +23548,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_gradient_b_05_001_png
+                .texture = d_gradient_b_05_001_png, .texture_size = d_gradient_b_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23565,7 +23565,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_gradient_04_001_png
+                .texture = d_gradient_04_001_png, .texture_size = d_gradient_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23582,7 +23582,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_gradient_05_001_png
+                .texture = d_gradient_05_001_png, .texture_size = d_gradient_05_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23599,7 +23599,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = 1,
                 .zlayer_offset = 0,
-                .texture = d_key01_001_png
+                .texture = d_key01_001_png, .texture_size = d_key01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23607,7 +23607,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = WHITE,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_key01_color_001_png
+                .texture = d_key01_color_001_png, .texture_size = d_key01_color_001_png_size
             }
         },
         .hitbox = {
@@ -23628,7 +23628,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = 1,
                 .zlayer_offset = 0,
-                .texture = d_keyHole01_001_png
+                .texture = d_keyHole01_001_png, .texture_size = d_keyHole01_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23636,7 +23636,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .zlayer_offset = 0,
                 .color_type = COLOR_DETAIL,
-                .texture = d_keyHole01_color_001_png
+                .texture = d_keyHole01_color_001_png, .texture_size = d_keyHole01_color_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23653,7 +23653,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_10_001_png
+                .texture = block009d_10_001_png, .texture_size = block009d_10_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23661,7 +23661,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_01_001_png
+                .texture = block009d_color_01_001_png, .texture_size = block009d_color_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23677,7 +23677,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_11_001_png
+                .texture = block009d_11_001_png, .texture_size = block009d_11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23693,7 +23693,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_12_001_png
+                .texture = block009d_12_001_png, .texture_size = block009d_12_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23701,7 +23701,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_02_001_png
+                .texture = block009d_color_02_001_png, .texture_size = block009d_color_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23717,7 +23717,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_13_001_png
+                .texture = block009d_13_001_png, .texture_size = block009d_13_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23733,7 +23733,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_14_001_png
+                .texture = block009d_14_001_png, .texture_size = block009d_14_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23741,7 +23741,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_14_001_png
+                .texture = block009d_color_14_001_png, .texture_size = block009d_color_14_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23757,7 +23757,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_15_001_png
+                .texture = block009d_15_001_png, .texture_size = block009d_15_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23765,7 +23765,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_07_001_png
+                .texture = block009d_color_07_001_png, .texture_size = block009d_color_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23781,7 +23781,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_16_001_png
+                .texture = block009d_16_001_png, .texture_size = block009d_16_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23789,7 +23789,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_16_001_png
+                .texture = block009d_color_16_001_png, .texture_size = block009d_color_16_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23805,7 +23805,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_17_001_png
+                .texture = block009d_17_001_png, .texture_size = block009d_17_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23813,7 +23813,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_03_001_png
+                .texture = block009d_color_03_001_png, .texture_size = block009d_color_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23829,7 +23829,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_18_001_png
+                .texture = block009d_18_001_png, .texture_size = block009d_18_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23837,7 +23837,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_18_001_png
+                .texture = block009d_color_18_001_png, .texture_size = block009d_color_18_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23853,7 +23853,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_19_001_png
+                .texture = block009d_19_001_png, .texture_size = block009d_19_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23861,7 +23861,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_07_001_png
+                .texture = block009d_color_07_001_png, .texture_size = block009d_color_07_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23877,7 +23877,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_20_001_png
+                .texture = block009d_20_001_png, .texture_size = block009d_20_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23885,7 +23885,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_01_001_png
+                .texture = block009d_color_01_001_png, .texture_size = block009d_color_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23901,7 +23901,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_21_001_png
+                .texture = block009d_21_001_png, .texture_size = block009d_21_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23909,7 +23909,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_21_001_png
+                .texture = block009d_color_21_001_png, .texture_size = block009d_color_21_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23925,7 +23925,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_22_001_png
+                .texture = block009d_22_001_png, .texture_size = block009d_22_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23933,7 +23933,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_03_001_png
+                .texture = block009d_color_03_001_png, .texture_size = block009d_color_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23949,7 +23949,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block009d_23_001_png
+                .texture = block009d_23_001_png, .texture_size = block009d_23_001_png_size
             },
             {
                 .x_offset = 0,
@@ -23957,7 +23957,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = LIGHTER,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block009d_color_23_001_png
+                .texture = block009d_color_23_001_png, .texture_size = block009d_color_23_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23975,7 +23975,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_gradient_06_001_png
+                .texture = d_gradient_06_001_png, .texture_size = d_gradient_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -23992,7 +23992,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_gradient_b_06_001_png
+                .texture = d_gradient_b_06_001_png, .texture_size = d_gradient_b_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24009,7 +24009,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = d_gradient_c_06_001_png
+                .texture = d_gradient_c_06_001_png, .texture_size = d_gradient_c_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24027,14 +24027,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_02b_color_001_png
+                .texture = block005_02b_color_001_png, .texture_size = block005_02b_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_02b_001_png
+                .texture = block005_02b_001_png, .texture_size = block005_02b_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24051,14 +24051,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_04_color_001_png
+                .texture = block005_04_color_001_png, .texture_size = block005_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005_04b_001_png
+                .texture = block005_04b_001_png, .texture_size = block005_04b_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24075,14 +24075,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_02b_color_001_png
+                .texture = block005_02b_color_001_png, .texture_size = block005_02b_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_02b_001_png
+                .texture = block005b_02b_001_png, .texture_size = block005b_02b_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24099,14 +24099,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_04_color_001_png
+                .texture = block005_04_color_001_png, .texture_size = block005_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005b_04b_001_png
+                .texture = block005b_04b_001_png, .texture_size = block005b_04b_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24123,14 +24123,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part01_007_png
+                .texture = block003_part01_007_png, .texture_size = block003_part01_007_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block003_part02_001_png
+                .texture = block003_part02_001_png, .texture_size = block003_part02_001_png_size
             },
             {
                 .x_offset = 0,
@@ -24138,7 +24138,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block003_color_01_001_png
+                .texture = block003_color_01_001_png, .texture_size = block003_color_01_001_png_size
             },
         },
         .hitbox = no_hitbox,
@@ -24156,14 +24156,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_02_color_001_png
+                .texture = block005_02_color_001_png, .texture_size = block005_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_02_001_png
+                .texture = block005c_02_001_png, .texture_size = block005c_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24180,14 +24180,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_03_color_001_png
+                .texture = block005_03_color_001_png, .texture_size = block005_03_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_03_001_png
+                .texture = block005c_03_001_png, .texture_size = block005c_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24204,14 +24204,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_04_color_001_png
+                .texture = block005_04_color_001_png, .texture_size = block005_04_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_04_001_png
+                .texture = block005c_04_001_png, .texture_size = block005c_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24228,14 +24228,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_10_color_001_png
+                .texture = block005_10_color_001_png, .texture_size = block005_10_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_10_001_png
+                .texture = block005c_10_001_png, .texture_size = block005c_10_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24252,14 +24252,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_11_color_001_png
+                .texture = block005_11_color_001_png, .texture_size = block005_11_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_11_001_png
+                .texture = block005c_11_001_png, .texture_size = block005c_11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24276,14 +24276,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_06_color_001_png
+                .texture = block005_06_color_001_png, .texture_size = block005_06_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_06_001_png
+                .texture = block005c_06_001_png, .texture_size = block005c_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24301,14 +24301,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_01_color_001_png
+                .texture = block005_slope_01_color_001_png, .texture_size = block005_slope_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_slope_01_001_png
+                .texture = block005c_slope_01_001_png, .texture_size = block005c_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24325,14 +24325,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_02_color_001_png
+                .texture = block005_slope_02_color_001_png, .texture_size = block005_slope_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_slope_02_001_png
+                .texture = block005c_slope_02_001_png, .texture_size = block005c_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24349,14 +24349,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_01_color_001_png
+                .texture = block005_slope_square_01_color_001_png, .texture_size = block005_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_slope_square_01_001_png
+                .texture = block005c_slope_square_01_001_png, .texture_size = block005c_slope_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24373,14 +24373,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block005_slope_square_02_color_001_png
+                .texture = block005_slope_square_02_color_001_png, .texture_size = block005_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_slope_square_02_001_png
+                .texture = block005c_slope_square_02_001_png, .texture_size = block005c_slope_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24396,7 +24396,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_slope_square_03_001_png
+                .texture = block005c_slope_square_03_001_png, .texture_size = block005c_slope_square_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24413,7 +24413,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_02_001_png
+                .texture = block005c_02_001_png, .texture_size = block005c_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24429,7 +24429,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_03_001_png
+                .texture = block005c_03_001_png, .texture_size = block005c_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24445,7 +24445,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_04_001_png
+                .texture = block005c_04_001_png, .texture_size = block005c_04_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24461,7 +24461,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_10_001_png
+                .texture = block005c_10_001_png, .texture_size = block005c_10_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24477,7 +24477,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_11_001_png
+                .texture = block005c_11_001_png, .texture_size = block005c_11_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24493,7 +24493,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_06_001_png
+                .texture = block005c_06_001_png, .texture_size = block005c_06_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24509,7 +24509,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_slope_01_001_png
+                .texture = block005c_slope_01_001_png, .texture_size = block005c_slope_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24525,7 +24525,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_slope_02_001_png
+                .texture = block005c_slope_02_001_png, .texture_size = block005c_slope_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24541,7 +24541,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_slope_square_01_001_png
+                .texture = block005c_slope_square_01_001_png, .texture_size = block005c_slope_square_01_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24557,7 +24557,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_slope_square_02_001_png
+                .texture = block005c_slope_square_02_001_png, .texture_size = block005c_slope_square_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24573,7 +24573,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block005c_slope_square_03_001_png
+                .texture = block005c_slope_square_03_001_png, .texture_size = block005c_slope_square_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24591,7 +24591,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_25_001_png
+                .texture = block006_25_001_png, .texture_size = block006_25_001_png_size
             },
             {
                 .x_offset = 0,
@@ -24599,7 +24599,7 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_color_02_001_png
+                .texture = block006_color_02_001_png, .texture_size = block006_color_02_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24619,14 +24619,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_slope_square_01_color_001_png
+                .texture = block006_slope_square_01_color_001_png, .texture_size = block006_slope_square_01_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_slope_square_03_001_png
+                .texture = block006_slope_square_03_001_png, .texture_size = block006_slope_square_03_001_png_size
             }
         },
         .hitbox = no_hitbox,
@@ -24643,14 +24643,14 @@ const ObjectDefinition objects[OBJECT_COUNT] = {
                 .col_channel = 1,
                 .color_type = COLOR_DETAIL,
                 .zlayer_offset = 0,
-                .texture = block006_slope_square_02_color_001_png
+                .texture = block006_slope_square_02_color_001_png, .texture_size = block006_slope_square_02_color_001_png_size
             },
             {
                 .x_offset = 0,
                 .y_offset = 0,
                 .col_channel = OBJ,
                 .zlayer_offset = 0,
-                .texture = block006_slope_square_04_001_png
+                .texture = block006_slope_square_04_001_png, .texture_size = block006_slope_square_04_001_png_size
             }
         },
         .hitbox = no_hitbox,

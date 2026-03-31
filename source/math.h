@@ -1,5 +1,5 @@
 #pragma once
-#include <grrlib.h>
+#include "psgl_graphics.h"
 #include "structs.h"
 #include "level_loading.h"
 #include "font_stuff.h"
@@ -46,8 +46,8 @@ float iLerp(float a, float b, float ratio, float dt);
 float iSlerp(float a, float b, float ratio, float dt);
 float ease_out(float current, float target, float smoothing);
 
-void  custom_drawImg (const f32 xpos, const f32 ypos, const GRRLIB_texImg *tex, const f32 degrees, const f32 scaleX, const f32 scaleY, const u32 color);
-void  custom_drawPart (const f32 xpos, const f32 ypos, const f32 partx, const f32 party, const f32 partw, const f32 parth, const GRRLIB_texImg *tex, const f32 degrees, const f32 scaleX, const f32 scaleY, const u32 color);
+void  custom_drawImg (const f32 xpos, const f32 ypos, const PSGL_texImg *tex, const f32 degrees, const f32 scaleX, const f32 scaleY, const u32 color);
+void  custom_drawPart (const f32 xpos, const f32 ypos, const f32 partx, const f32 party, const f32 partw, const f32 parth, const PSGL_texImg *tex, const f32 degrees, const f32 scaleX, const f32 scaleY, const u32 color);
 void  custom_circle (const f32 x, const f32 y, const f32 radius,
                      const u32 color);
 void  custom_circunference (const f32 x, const f32 y, const f32 radius,
@@ -70,7 +70,7 @@ void draw_hitbox_line_inward(Vec2D rect[4],
                              const u32 color);
 void draw_polygon_inward_mitered(Vec2D *poly, int n, float thickness, u32 color);
 
-void set_texture(const GRRLIB_texImg *tex);
+void set_texture(const PSGL_texImg *tex);
 float normalize_angle(float angle);
 float ip1_ceilf(float x);
 
@@ -80,8 +80,8 @@ void fade_in_level();
 void wait_initial_time();
 
 float get_text_length(struct charset font, const float zoom, const char *text, ...);
-void draw_text(struct charset font, GRRLIB_texImg *tex, const float x, const float y, const float zoom, const char *text, ...);
-void draw_rotated_text(struct charset font, GRRLIB_texImg *tex, const float x, const float y, const float rotation, const float zoom_x, const float zoom_y, const u32 color, const char *text, ...) ;
+void draw_text(struct charset font, PSGL_texImg *tex, const float x, const float y, const float zoom, const char *text, ...);
+void draw_rotated_text(struct charset font, PSGL_texImg *tex, const float x, const float y, const float rotation, const float zoom_x, const float zoom_y, const u32 color, const char *text, ...) ;
 
 Color HSV_combine(Color color, HSV hsv);
 bool colors_equal(Color a, Color b);

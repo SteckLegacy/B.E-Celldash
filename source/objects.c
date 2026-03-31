@@ -1,4 +1,4 @@
-#include <grrlib.h>
+#include "psgl_graphics.h"
 #include "objects.h"
 #include "level_loading.h"
 #include "stdio.h"
@@ -41,10 +41,10 @@ FramesDefinition water_3_anim;
 FramesDefinition loading_1_anim;
 FramesDefinition loading_2_anim;
 
-GRRLIB_texImg *prev_tex = NULL;
-int prev_blending = GRRLIB_BLEND_ALPHA;
+PSGL_texImg *prev_tex = NULL;
+int prev_blending = BLEND_ALPHA;
 
-GRRLIB_texImg *current_coin_texture[4];
+PSGL_texImg *current_coin_texture[4];
 
 const int dual_gamemode_heights[GAMEMODE_COUNT] = {
     9,  // Cube
@@ -1011,13 +1011,13 @@ void do_ball_reflection() {
 }
 
 // Prepare Graphics
-GRRLIB_texImg *bg;
-GRRLIB_texImg *ground;
-GRRLIB_texImg *ground_l2;
-GRRLIB_texImg *ground_line;
-GRRLIB_texImg *level_complete_texture;
-GRRLIB_texImg *object_images[OBJECT_COUNT][MAX_OBJECT_LAYERS]; 
-GRRLIB_texImg *level_font;
+PSGL_texImg *bg;
+PSGL_texImg *ground;
+PSGL_texImg *ground_l2;
+PSGL_texImg *ground_line;
+PSGL_texImg *level_complete_texture;
+PSGL_texImg *object_images[OBJECT_COUNT][MAX_OBJECT_LAYERS];
+PSGL_texImg *level_font;
 
 int current_fading_effect = FADE_NONE;
 
@@ -1049,8 +1049,8 @@ int find_existing_previous_texture(int current_object, const unsigned char *text
 
 void load_spritesheet() {
     // Load Textures 
-    ground_line = GRRLIB_LoadTexturePNG(ground_line_png);
-    level_complete_texture = GRRLIB_LoadTexturePNG(levelCompleteText_png);
+    ground_line = PSGL_LoadTexturePNG(ground_line_png, ground_line_png_size);
+    level_complete_texture = PSGL_LoadTexturePNG(levelCompleteText_png, levelCompleteText_png_size);
     monster_1_anim = prepare_monster_1_animation();
     monster_2_anim = prepare_monster_2_animation();
     monster_3_anim = prepare_monster_3_animation();
@@ -1070,12 +1070,12 @@ void load_spritesheet() {
     load_icons();
 }
 
-void load_layer_texture(const u8 *texture, int object, int layer) {
-    GRRLIB_texImg *image = GRRLIB_LoadTexturePNG((const u8 *) texture);
-    if (image == NULL || image->data == NULL) {
+void load_layer_texture(const u8 *texture, size_t size, int object, int layer) {
+    PSGL_texImg *image = PSGL_LoadTexturePNG((const u8 *) texture, size);
+    if (image == NULL) {
         printf("Couldn't load texture of object %d layer %d\n", object, layer);
     } else {
-        GRRLIB_SetHandle(image, (image->w/2), (image->h/2));
+        PSGL_SetHandle(image, (image->w/2), (image->h/2));
         object_images[object][layer] = image;
     }
 }
@@ -1095,7 +1095,7 @@ void load_obj_textures(int object) {
 
         if (existing < 0) {
             output_log("Loading texture of object %d layer %d\n", object, layer);
-            load_layer_texture((const u8 *) texture, object, layer);
+            load_layer_texture((const u8 *) texture, objects[object].layers[layer].texture_size, object, layer);
         } else {
             int object_found = existing / MAX_OBJECT_LAYERS;
             int layer_found = existing % MAX_OBJECT_LAYERS;
@@ -1105,7 +1105,7 @@ void load_obj_textures(int object) {
             } else {
                 const unsigned char *texture = objects[object_found].layers[layer_found].texture;
                 output_log("Loading texture of object %d layer %d\n", object_found, layer_found);
-                load_layer_texture((const u8 *) texture, object_found, layer_found);
+                load_layer_texture((const u8 *) texture, objects[object_found].layers[layer_found].texture_size, object_found, layer_found);
             }
             object_images[object][layer] = object_images[object_found][layer_found];
         }
@@ -1121,7 +1121,7 @@ void unload_obj_textures() {
             int existing = find_existing_previous_texture(object, texture);
             // Dont double free textures
             if (existing < 0) {
-                GRRLIB_FreeTexture(object_images[object][layer]);
+                PSGL_FreeTexture(object_images[object][layer]);
             }
             object_images[object][layer] = NULL;
         }
@@ -1130,8 +1130,8 @@ void unload_obj_textures() {
 
 void unload_spritesheet() {
     // Free all memory used by textures.
-    GRRLIB_FreeTexture(ground_line);
-    GRRLIB_FreeTexture(big_font_text);
+    PSGL_FreeTexture(ground_line);
+    PSGL_FreeTexture(big_font_text);
     
     unload_animation_definition(monster_1_anim);
     unload_animation_definition(black_sludge_anim);
@@ -1183,8 +1183,8 @@ void handle_post_draw_object_particles(GameObject *obj, GDObjectLayer *layer) {
             break;
     }
 
-    if (GRRLIB_Settings.blend != prev_blending) {
-        GRRLIB_SetBlend(prev_blending);
+    if (PSGL_Settings.blend != prev_blending) {
+        PSGL_SetBlend(prev_blending);
     }
 }
 
@@ -1524,7 +1524,7 @@ float get_object_pulse(float amplitude, GameObject *obj) {
     return amplitude;
 }
 
-GRRLIB_texImg *get_randomized_texture(GRRLIB_texImg *image, GameObject *obj, GDObjectLayer *layer) {
+PSGL_texImg *get_randomized_texture(PSGL_texImg *image, GameObject *obj, GDObjectLayer *layer) {
     switch (*soa_id(obj)) {
         case GROUND_SPIKE:
             return object_images[GROUND_SPIKE][obj->random % 3];
@@ -1545,7 +1545,7 @@ GRRLIB_texImg *get_randomized_texture(GRRLIB_texImg *image, GameObject *obj, GDO
     return image;
 }
 
-GRRLIB_texImg *get_coin_particle_texture() {
+PSGL_texImg *get_coin_particle_texture() {
     int index = (frame_counter & 0b110000) >> 4;
     return current_coin_texture[index];
 }
@@ -1553,18 +1553,18 @@ GRRLIB_texImg *get_coin_particle_texture() {
 void load_coin_texture() {
     for (s32 i = 0; i < NUM_COIN_FRAMES; i++) {
         if (level_info.level_is_custom) {
-            current_coin_texture[i] = GRRLIB_LoadTexturePNG(user_coin_layer[i].texture);
+            current_coin_texture[i] = PSGL_LoadTexturePNG(user_coin_layer[i].texture, user_coin_layer[i].texture_size);
         } else {
-            current_coin_texture[i] = GRRLIB_LoadTexturePNG(secret_coin_layer[i].texture);
+            current_coin_texture[i] = PSGL_LoadTexturePNG(secret_coin_layer[i].texture, secret_coin_layer[i].texture_size);
         }
-        GRRLIB_SetHandle(current_coin_texture[i], current_coin_texture[i]->w / 2, current_coin_texture[i]->h / 2);
+        PSGL_SetHandle(current_coin_texture[i], current_coin_texture[i]->w / 2, current_coin_texture[i]->h / 2);
     }
 }
 
 void unload_coin_texture() {
     for (s32 i = 0; i < NUM_COIN_FRAMES; i++) {
         if (current_coin_texture[i]) {
-            GRRLIB_FreeTexture(current_coin_texture[i]);
+            PSGL_FreeTexture(current_coin_texture[i]);
             current_coin_texture[i] = NULL;
         }
     }
@@ -1792,7 +1792,7 @@ u32 get_layer_color(GameObject *obj, int color_type, int col_channel, float opac
     return RGBA(color.r, color.g, color.b, transformed_opacity);
 }
 
-GRRLIB_texImg *get_animated_texture(GameObject *obj, int layer_num, float *scale_out, bool *flip_x) {
+PSGL_texImg *get_animated_texture(GameObject *obj, int layer_num, float *scale_out, bool *flip_x) {
     switch (*soa_id(obj)) {
         case FIRE_1:
             return get_frame(fire1_anim, layer_num, obj->object.animation_timer, scale_out, flip_x);
@@ -1823,7 +1823,7 @@ void put_object_layer(GameObject *obj, float x, float y, GDObjectLayer *layer) {
 
     struct ObjectLayer *objectLayer = layer->layer;
 
-    GRRLIB_texImg *tex = get_randomized_texture(object_images[obj_id][layer_index], obj, layer);
+    PSGL_texImg *tex = get_randomized_texture(object_images[obj_id][layer_index], obj, layer);
     float default_scale = 1;
     bool flip_x = FALSE;
 
@@ -1844,9 +1844,9 @@ void put_object_layer(GameObject *obj, float x, float y, GDObjectLayer *layer) {
 
     int blending;
     if (channels[col_channel].blending || layer->blending) {
-        blending = GRRLIB_BLEND_ADD;
+        blending = BLEND_ADD;
     } else {
-        blending = GRRLIB_BLEND_ALPHA;
+        blending = BLEND_ALPHA;
     }
 
     int opacity = get_opacity(obj, x);
@@ -1859,7 +1859,7 @@ void put_object_layer(GameObject *obj, float x, float y, GDObjectLayer *layer) {
     u32 color = get_layer_color(obj, objectLayer->color_type, col_channel, opacity, objectLayer->col_channel);
 
     // If it is invisible because of blending, skip
-    if ((blending == GRRLIB_BLEND_ADD && !(color & ~0xff)) || opacity == 0) return;
+    if ((blending == BLEND_ADD && !(color & ~0xff)) || opacity == 0) return;
         
     float angle_rad = DegToRad(obj->rotation); // Convert degrees to radians
     float cos_a = cosf(angle_rad);
@@ -1921,7 +1921,7 @@ void put_object_layer(GameObject *obj, float x, float y, GDObjectLayer *layer) {
     
 
     if (blending != prev_blending) {
-        GRRLIB_SetBlend(blending);
+        PSGL_SetBlend(blending);
         prev_blending = blending;
     }
 
@@ -1953,11 +1953,11 @@ void put_object_layer(GameObject *obj, float x, float y, GDObjectLayer *layer) {
 
 void draw_background_image(f32 x, f32 y, bool vflip) {
     for (s32 i = 0; i < BG_DIMENSIONS; i++) {
-        float calc_x = i*BG_CHUNK - widthAdjust;
+        float calc_x = i*BG_CHUNK + widthAdjust;
         for (s32 j = 0; j < BG_DIMENSIONS; j++) {
             float calc_y = j*BG_CHUNK;
             
-            GRRLIB_SetHandle(bg, 512, 512);
+            PSGL_SetHandle(bg, 512, 512);
             custom_drawPart(
                 x + calc_x, 
                 y + (vflip ? (BG_CHUNK * 3) - calc_y : calc_y), 
@@ -1980,7 +1980,7 @@ void draw_background(f32 x, f32 y) {
     int tiles_x = (screenWidth / offset) + 2;
     int tiles_y = (screenHeight / offset) + 2;
 
-    float calc_x = positive_fmod(x, offset) - widthAdjust;
+    float calc_x = positive_fmod(x, offset) + widthAdjust;
     float calc_y = positive_fmod(y, offset);
 
     for (int i = -1; i < tiles_x; i++) {
@@ -2018,19 +2018,19 @@ void draw_end_wall() {
             float offset_y = (level_complete_texture->h / 2) + 50 * screen_factor_y;
 
             float text_scale = easeValue(ELASTIC_OUT, 0, mult, complete_text_elapsed, COMPLETE_TEXT_IN_TIME, 0.6f);
-            GRRLIB_SetHandle(level_complete_texture, level_complete_texture->w / 2, level_complete_texture->h / 2);
-            GRRLIB_DrawImg(screenWidth / 2 - offset_x, screenHeight / 2 - offset_y, level_complete_texture, 0, text_scale, text_scale, 0xffffffff);
+            PSGL_SetHandle(level_complete_texture, level_complete_texture->w / 2, level_complete_texture->h / 2);
+            PSGL_DrawImg(screenWidth / 2 - offset_x, screenHeight / 2 - offset_y, level_complete_texture, 0, text_scale, text_scale, 0xffffffff);
             complete_text_elapsed += dt;
         }
     }
 
-    float calc_x = ((level_info.wall_x - state.camera_x) * SCALE) - widthAdjust;
+    float calc_x = ((level_info.wall_x - state.camera_x) * SCALE) + widthAdjust;
     float calc_y =  positive_fmod(state.camera_y * SCALE, BLOCK_SIZE_PX) + screenHeight;  
     GX_SetTevOp  (GX_TEVSTAGE0, GX_MODULATE);
     GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
     if (level_info.wall_y > 0) {
         for (s32 j = 0; j < objects[CHECKER_EDGE].num_layers; j++) {
-            GRRLIB_texImg *image = object_images[CHECKER_EDGE][j];
+            PSGL_texImg *image = object_images[CHECKER_EDGE][j];
             int width = image->w;
             int height = image->h;
             set_texture(image);
@@ -2047,12 +2047,12 @@ void draw_end_wall() {
                 );
             }
         }
-        GRRLIB_SetBlend(GRRLIB_BLEND_ADD);
+        PSGL_SetBlend(BLEND_ADD);
         
-        calc_x = ((level_info.wall_x - 25 - state.camera_x) * SCALE) - widthAdjust;
+        calc_x = ((level_info.wall_x - 25 - state.camera_x) * SCALE) + widthAdjust;
 
         // Draw glow
-        GRRLIB_texImg *image = object_images[GLOW][0];
+        PSGL_texImg *image = object_images[GLOW][0];
         int width = image->w;
         int height = image->h;
         set_texture(image);
@@ -2067,9 +2067,9 @@ void draw_end_wall() {
             );
         }
     }   
-    GRRLIB_SetBlend(GRRLIB_BLEND_ALPHA);
-    GX_SetTevOp  (GX_TEVSTAGE0, GX_PASSCLR);
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
+    PSGL_SetBlend(BLEND_ALPHA);
+    // GX_SetTevOp  (GX_TEVSTAGE0, GX_PASSCLR);
+    // GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
 }
 
 #define GROUND_SIZE 176 // pixels
@@ -2083,7 +2083,7 @@ void draw_ground(f32 y, bool is_ceiling) {
     float calc_y = screenHeight - ((y - state.camera_y) * SCALE);
 
     for (float i = -GROUND_SIZE; i < screenWidth + GROUND_SIZE; i += GROUND_SIZE) {
-        GRRLIB_DrawImg(
+        PSGL_DrawImg(
             calc_x + i + 6, 
             calc_y + 6,    
             ground,
@@ -2091,7 +2091,7 @@ void draw_ground(f32 y, bool is_ceiling) {
             RGBA(channels[GROUND].color.r, channels[GROUND].color.g, channels[GROUND].color.b, 255) 
         );
         if (ground_l2) {
-            GRRLIB_DrawImg(
+            PSGL_DrawImg(
                 calc_x + i + 6, 
                 calc_y + 6,    
                 ground_l2,
@@ -2103,12 +2103,12 @@ void draw_ground(f32 y, bool is_ceiling) {
 
     // Then draw the line
     if (channels[LINE].blending) {
-        GRRLIB_SetBlend(GRRLIB_BLEND_ADD);
+        PSGL_SetBlend(BLEND_ADD);
     }
 
     int line_width = ground_line->w * screen_factor_x;
     
-    GRRLIB_DrawImg(
+    PSGL_DrawImg(
         (screenWidth / 2) - (line_width / (2 / LINE_SCALE)),
         calc_y + (is_ceiling ? 4 : 6),
         ground_line,
@@ -2117,7 +2117,7 @@ void draw_ground(f32 y, bool is_ceiling) {
     );
     
     if (channels[LINE].blending) {
-        GRRLIB_SetBlend(GRRLIB_BLEND_ALPHA);
+        PSGL_SetBlend(BLEND_ALPHA);
     }
 }
 
@@ -2279,12 +2279,12 @@ static inline void insertion_sort_by_layer(GDLayerSortable **arr, int n) {
 #undef MASK
 
 void draw_all_object_layers() {
-    u64 t0 = gettime();
-    if (GRRLIB_Settings.antialias == false) {
-        GX_SetCopyFilter(GX_FALSE, rmode->sample_pattern, GX_FALSE, rmode->vfilter);
-    } else {
-        GX_SetCopyFilter(rmode->aa, rmode->sample_pattern, GX_TRUE, rmode->vfilter);
-    }
+    u64 t0 = 0; // gettime();
+    // if (PSGL_Settings.antialias == false) {
+    //     GX_SetCopyFilter(GX_FALSE, rmode->sample_pattern, GX_FALSE, rmode->vfilter);
+    // } else {
+    //     GX_SetCopyFilter(rmode->aa, rmode->sample_pattern, GX_TRUE, rmode->vfilter);
+    // }
 
     int cam_sx = (int)((state.camera_x + SCREEN_WIDTH_AREA / 2) / GFX_SECTION_SIZE);
     int cam_sy = (int)((state.camera_y + SCREEN_HEIGHT_AREA / 2) / GFX_SECTION_SIZE);
@@ -2304,7 +2304,7 @@ void draw_all_object_layers() {
             for (int i = 0; i < sec->layer_count; i++) {
                 GameObject *obj = sec->layers[i]->layer->obj;
                 
-                float calc_x = ((*soa_x(obj) - state.camera_x) * SCALE) - widthAdjust;
+                float calc_x = ((*soa_x(obj) - state.camera_x) * SCALE) + widthAdjust;
                 float calc_y = screenHeight - ((*soa_y(obj) - state.camera_y) * SCALE);  
                 
                 int offscreen_area = 90;
@@ -2449,10 +2449,10 @@ void draw_all_object_layers() {
 
             // Restore variables
             set_texture(prev_tex);
-            GRRLIB_SetBlend(prev_blending);
+            PSGL_SetBlend(prev_blending);
         } else if (obj_id < OBJECT_COUNT) {
             u64 t0 = gettime();
-            float calc_x = ((*soa_x(obj) - state.camera_x) * SCALE) - widthAdjust;
+            float calc_x = ((*soa_x(obj) - state.camera_x) * SCALE) + widthAdjust;
             float calc_y = screenHeight - ((*soa_y(obj) - state.camera_y) * SCALE);  
 
             int fade_val = get_fade_value(calc_x, screenWidth);
@@ -2486,7 +2486,7 @@ void draw_all_object_layers() {
             if (is_layer0 && objects[*soa_id(obj)].has_movement) {
                 play_object_animation(obj);
                 set_texture(prev_tex);
-                GRRLIB_SetBlend(prev_blending);
+                PSGL_SetBlend(prev_blending);
             }
             else if (!obj->hide_sprite) put_object_layer(obj, calc_x, calc_y, layer);
             t1 = gettime();
@@ -2502,23 +2502,21 @@ void draw_all_object_layers() {
     draw_particles(SPEEDUP);
     
     prev_tex = NULL;
-    prev_blending = GRRLIB_BLEND_ALPHA;
-    GRRLIB_SetBlend(GRRLIB_BLEND_ALPHA);
+    prev_blending = BLEND_ALPHA;
+    PSGL_SetBlend(BLEND_ALPHA);
 
     float screen_x_max = screenWidth + 90.0f;
     float screen_y_max = screenHeight + 90.0f;
 
     if (state.hitbox_display) { 
-        GX_LoadPosMtxImm(GXmodelView2D, GX_PNMTX0);
-        GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
-        GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
+        glDisable(GL_TEXTURE_2D);
         for (int dx = -width; dx <= width; dx++) {
             for (int dy = -height; dy <= height; dy++) {
                 Section *sec = get_or_create_section(cam_sx + dx, cam_sy + dy);
                 for (int i = 0; i < sec->object_count; i++) {
                     GameObject *obj = sec->objects[i];
                     
-                    float calc_x = ((*soa_x(obj) - state.camera_x) * SCALE) - widthAdjust;
+                    float calc_x = ((*soa_x(obj) - state.camera_x) * SCALE) + widthAdjust;
                     float calc_y = screenHeight - ((*soa_y(obj) - state.camera_y) * SCALE);  
                     if (calc_x > -90 && calc_x < screen_x_max) {        
                         if (calc_y > -90 && calc_y < screen_y_max) {    
@@ -2537,8 +2535,9 @@ void draw_all_object_layers() {
             draw_player_hitbox(&state.player2);
         }
         
-        GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
-        GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
+        // GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
+        // GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
+        glEnable(GL_TEXTURE_2D);
     }
 
     draw_time = ticks_to_microsecs(draw_time) / 1000.f;
@@ -2574,9 +2573,9 @@ void update_beat() {
         beat_pulse = false;
     }
 
-    if (MP3Player_GetAmplitude() < 0.05f) {
-        beat_pulse = false;
-    }
+    // if (PS3Audio_GetAmplitude() < 0.05f) {
+    //     beat_pulse = false;
+    // }
 }
 
 void handle_objects() {

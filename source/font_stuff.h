@@ -1,3 +1,5 @@
+#include "all_assets.h"
+
 // values taken from bigFont-hd.fnt
 struct glyph {
     int id, x, y, width, height, xoffset, yoffset, xadvance;
@@ -8,23 +10,15 @@ struct charset {
     int char_num;
 };
 
-#include "bigFont_png.h"
-#include "gjFont01_png.h"
-#include "gjFont02_png.h"
-#include "gjFont03_png.h"
-#include "gjFont04_png.h"
-#include "gjFont05_png.h"
-#include "gjFont07_png.h"
-#include "gjFont06_png.h"
-#include "gjFont08_png.h"
-#include "gjFont09_png.h"
-#include "gjFont10_png.h"
-#include "gjFont11_png.h"
-#include "gjFont12_png.h"
 
 #define NUM_LEVEL_FONTS 13
 
-extern const unsigned char *font_text[NUM_LEVEL_FONTS];
+typedef struct {
+    const unsigned char *data;
+    size_t size;
+} FontAsset;
+
+extern const FontAsset font_assets[NUM_LEVEL_FONTS];
 extern struct charset *font_charsets[NUM_LEVEL_FONTS];
 
 extern struct glyph big_font_chars[96];

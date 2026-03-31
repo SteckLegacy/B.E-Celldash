@@ -1,0 +1,11 @@
+struct FragmentIn {
+    float2 texcoord : TEXCOORD0;
+    float4 color    : COLOR0;
+};
+
+float4 main(FragmentIn input, uniform sampler2D texture : TEXUNIT0) : COLOR {
+    float4 texColor = tex2D(texture, input.texcoord);
+    float4 finalColor = texColor * input.color;
+    // Invert RGB
+    return float4(1.0 - finalColor.rgb, finalColor.a);
+}

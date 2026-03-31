@@ -2,10 +2,6 @@
 # Clear the implicit built in rules
 #---------------------------------------------------------------------------------
 .SUFFIXES:
-#---------------------------------------------------------------------------------
-ifeq ($(strip $(DEVKITPPC)),)
-$(error "Please set DEVKITPPC in your environment. export DEVKITPPC=<path to>devkitPPC")
-endif
 
 
 #---------------------------------------------------------------------------------
@@ -36,7 +32,7 @@ LDFLAGS	=	-g $(MACHDEP) -Wl,-Map,$(notdir $@).map
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:= $(patsubst %/$(BUILD),%,$(CURDIR))/GRRLIB/GRRLIB/GRRLIB/libgrrlib.a -lpngu -lwiiuse -lfat -lbte -lvorbisidec -lmad -logg -lasnd -logc -lm -lz -lmxml `$(PREFIX)pkg-config freetype2 libpng libjpeg --libs` 
+LIBS	:= -lPSGL -lpsglu -lcg -lcgGL -lpngdec -lpugixml -laudio -lmp3dec -lm -lz
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
@@ -63,10 +59,14 @@ export DEPSDIR	:=	$(CURDIR)/$(BUILD)
 # automatically build a list of object files for our project
 #---------------------------------------------------------------------------------
 CFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
+CFILES		:=	$(filter-out level_loading.c game.c oggplayer.c custom_mp3player.c,$(CFILES))
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
 sFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
 SFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.S)))
 BINFILES	:=	$(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
+
+ASSET_HEADERS := $(addprefix source/,$(addsuffix .h,$(subst .,_,$(BINFILES))))
+ASSET_CFILES  := $(addprefix source/,$(addsuffix .c,$(subst .,_,$(BINFILES))))
 
 #---------------------------------------------------------------------------------
 # use CXX for linking C++ projects, CC for standard C
@@ -77,11 +77,11 @@ else
 	export LD	:=	$(CXX)
 endif
 
-export OFILES_BIN	:=	$(addsuffix .o,$(BINFILES))
+export OFILES_BIN	:=	$(addsuffix .o,$(subst .,_,$(BINFILES)))
 export OFILES_SOURCES := $(CPPFILES:.cpp=.o) $(CFILES:.c=.o) $(sFILES:.s=.o) $(SFILES:.S=.o)
 export OFILES := $(OFILES_BIN) $(OFILES_SOURCES)
 
-export HFILES := $(addsuffix .h,$(subst .,_,$(BINFILES)))
+export HFILES := $(ASSET_HEADERS)
 
 #---------------------------------------------------------------------------------
 # build a list of include paths
@@ -106,16 +106,6 @@ $(BUILD):
 	@echo "*------------------------------------------------------------------------------------------*"
 	@echo
 	@echo "Please install libvorbisidec using (dkp-)pacman -S ppc-libvorbisidec"
-	@echo
-	@echo "*------------------------------------------------------------------------------------------*"
-	@echo
-else ifeq (,$(wildcard $(DEVKITPRO)/portlibs/ppc/include/mxml.h))
-
-$(BUILD):
-	@echo
-	@echo "*------------------------------------------------------------------------------------------*"
-	@echo
-	@echo "Please install mxml using (dkp-)pacman -S ppc-mxml"
 	@echo
 	@echo "*------------------------------------------------------------------------------------------*"
 	@echo
@@ -169,52 +159,88 @@ $(OBJFILE): $(OFILES)
 $(OFILES_SOURCES) : $(HFILES)
 
 #---------------------------------------------------------------------------------
-# This rule links in binary data with the .ogg extension
+# PS3 SNC conversion using the new tool
 #---------------------------------------------------------------------------------
-%.ogg.o	%_ogg.h :	%.ogg
-#---------------------------------------------------------------------------------
-	@echo $(notdir $<)
-	$(bin2o)
+BIN_TO_HEADER := python3 tools/bin_to_header.py
 
-#---------------------------------------------------------------------------------
-# This rule links in binary data with the .mp3 extension
-#---------------------------------------------------------------------------------
-%.mp3.o	%_mp3.h :	%.mp3
-#---------------------------------------------------------------------------------
+%.ogg.h : %.ogg
 	@echo $(notdir $<)
-	$(bin2o)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
 
-#---------------------------------------------------------------------------------
-# This rule links in binary data with the .ttf extension
-#---------------------------------------------------------------------------------
-%.ttf.o %_ttf.h	:	%.ttf
-#---------------------------------------------------------------------------------
+%.mp3.h : %.mp3
 	@echo $(notdir $<)
-	$(bin2o)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
 
-#---------------------------------------------------------------------------------
-# This rule links in binary data with the .gmd extension
-#---------------------------------------------------------------------------------
-%.gmd.o	%_gmd.h :	%.gmd
-#---------------------------------------------------------------------------------
+%.ttf.h	: %.ttf
 	@echo $(notdir $<)
-	$(bin2o)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
 
-#---------------------------------------------------------------------------------
-# This rule links in binary data with the .jpg extension
-#---------------------------------------------------------------------------------
-%.jpg.o	%_jpg.h	:	%.jpg
-#---------------------------------------------------------------------------------
+%.gmd.h : %.gmd
 	@echo $(notdir $<)
-	$(bin2o)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
 
-#---------------------------------------------------------------------------------
-# This rule links in binary data with the .png extension
-#---------------------------------------------------------------------------------
-%.png.o	%_png.h:	%.png
-#---------------------------------------------------------------------------------
+%.jpg.h	: %.jpg
 	@echo $(notdir $<)
-	$(bin2o)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
+
+%.h %.c: %.ogg
+	@echo $(notdir $<)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
+
+%.h %.c: %.mp3
+	@echo $(notdir $<)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
+
+%.h %.c: %.ttf
+	@echo $(notdir $<)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
+
+%.h %.c: %.gmd
+	@echo $(notdir $<)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
+
+%.h %.c: %.jpg
+	@echo $(notdir $<)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
+
+%.h %.c: %.png
+	@echo $(notdir $<)
+	@$(BIN_TO_HEADER) $< $(CURDIR)/source
+
+# Compile the generated C files
+source/%_png.o: source/%_png.c
+	@echo $(notdir $<)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+source/%_gmd.o: source/%_gmd.c
+	@echo $(notdir $<)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+source/%_mp3.o: source/%_mp3.c
+	@echo $(notdir $<)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+source/%_ogg.o: source/%_ogg.c
+	@echo $(notdir $<)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+source/%_ttf.o: source/%_ttf.c
+	@echo $(notdir $<)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+source/%_jpg.o: source/%_jpg.c
+	@echo $(notdir $<)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+source/all_assets.h:
+	@echo "Generating all_assets.h"
+	@python3 tools/generate_all_assets_h.py
+
+$(OFILES_SOURCES) : source/all_assets.h
+
+source/ps3_audio.o: source/ps3_audio.cpp
+	@echo $(notdir $<)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 -include $(DEPENDS)
 

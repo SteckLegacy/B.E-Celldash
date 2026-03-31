@@ -81,7 +81,7 @@ void MotionTrail_Clear(MotionTrail *trail) {
     trail->previousNuPoints = 0;
 }
 
-void MotionTrail_Init(MotionTrail* trail, float fade, float minSeg, float stroke, bool waveTrail, Color color, GRRLIB_texImg *tex) {
+void MotionTrail_Init(MotionTrail* trail, float fade, float minSeg, float stroke, bool waveTrail, Color color, PSGL_texImg *tex) {
     memset(trail, 0, sizeof(MotionTrail));
     trail->texture = tex;  
     trail->maxPoints = MAX_TRAIL_POINTS;
@@ -225,7 +225,7 @@ void MotionTrail_UpdateWaveTrail(MotionTrail* trail, float delta) {
     // Get offscreen points
     for (unsigned int i = 0; i < trail->actualNuPoints; i++) {
         float x = trail->pointVertexes[i].x;
-        float calc_x = ((x - state.camera_x) * SCALE) + 6 * state.mirror_mult - widthAdjust;  
+        float calc_x = ((x - state.camera_x) * SCALE) + 6 * state.mirror_mult + widthAdjust;
 
         if (calc_x < 0) trail->offscreenCount++;
     }
@@ -306,71 +306,54 @@ void MotionTrail_AddWavePoint(MotionTrail* trail) {
 }
 
 void MotionTrail_Draw(MotionTrail* trail) {
-    GX_SetVtxDesc(GX_VA_POS, GX_DIRECT);
-    GX_SetVtxDesc(GX_VA_CLR0, GX_DIRECT);
-    GX_SetVtxDesc(GX_VA_TEX0, GX_DIRECT);
+    if (trail->nuPoints < 2) return;
 
-    GRRLIB_texImg* tex = trail->texture;
+    PSGL_texImg* texImg = trail->texture;
+    if (!texImg) return;
 
-    GXTexObj texObj;
-    GX_InitTexObj(&texObj, tex->data, tex->w, tex->h, tex->format,
-                    GX_CLAMP, GX_CLAMP, GX_FALSE);
-    GX_LoadTexObj(&texObj, GX_TEXMAP0);
-    GX_SetTexCoordGen(GX_TEXCOORD0, GX_TG_MTX2x4, GX_TG_TEX0, GX_IDENTITY);
-    
-    GX_SetTevOp  (GX_TEVSTAGE0, GX_MODULATE);
-    
-    GX_Begin(GX_TRIANGLESTRIP, GX_VTXFMT0, trail->nuPoints * 2);
+    glBindTexture(GL_TEXTURE_2D, texImg->textureID);
+    glBegin(GL_TRIANGLE_STRIP);
     for (int i = 0; i < trail->nuPoints * 2; i++) {
-        
         Vec2 pos = trail->vertices[i];
-        
-        float calc_x = ((pos.x - state.camera_x) * SCALE) + 6 * state.mirror_mult - widthAdjust;  
+        float calc_x = ((pos.x - state.camera_x) * SCALE) + 6 * state.mirror_mult + widthAdjust;
         float calc_y = screenHeight - ((pos.y - state.camera_y) * SCALE) + 6;
-
-        Tex2F tex = trail->texCoords[i];
-        
+        Tex2F tc = trail->texCoords[i];
         u8* color = &trail->colorPointer[i * 4];
-        GX_Position3f32(get_mirror_x(calc_x, state.mirror_factor), calc_y, 0.0f);  // Vertex position (X, Y, Z)
-        GX_Color4u8(color[0], color[1], color[2], color[3]); // Vertex color (R,G,B,A)
-        GX_TexCoord2f32(tex.u, tex.v); // Texture coordinate (U, V)
+
+        glColor4f(color[0]/255.0f, color[1]/255.0f, color[2]/255.0f, color[3]/255.0f);
+        glTexCoord2f(tc.u, tc.v);
+        glVertex2f(get_mirror_x(calc_x, state.mirror_factor), calc_y);
     }
-
-    GX_End();
-
-    GX_SetVtxDesc(GX_VA_TEX0, GX_NONE);
-    GX_SetVtxDesc(GX_VA_POS,  GX_DIRECT);
-    GX_SetVtxDesc(GX_VA_CLR0, GX_DIRECT);
+    glEnd();
 }
 
 void MotionTrail_DrawWaveTrail(MotionTrail *trail) {
-    // Outer wide line
-    GX_SetVtxDesc(GX_VA_POS, GX_DIRECT);
-    GX_SetVtxDesc(GX_VA_CLR0, GX_DIRECT);
-    GX_SetVtxDesc(GX_VA_TEX0, GX_NONE);  // No texture
-    GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
+    if (trail->actualNuPoints < 2) return;
 
-    GX_Begin(GX_TRIANGLESTRIP, GX_VTXFMT0, trail->actualNuPoints * 2);
+    glDisable(GL_TEXTURE_2D);
+    // Outer wide line
+    glBegin(GL_TRIANGLE_STRIP);
     for (int i = 0; i < trail->actualNuPoints * 2; i++) {
         Vec2 pos = trail->vertices[i];
-        float calc_x = ((pos.x - state.camera_x) * SCALE) + 6 * state.mirror_mult - widthAdjust;  
+        float calc_x = ((pos.x - state.camera_x) * SCALE) + 6 * state.mirror_mult + widthAdjust;
         float calc_y = screenHeight - ((pos.y - state.camera_y) * SCALE) + 6;
         u8* color = &trail->colorPointer[i * 4];
 
-        GX_Position3f32(get_mirror_x(calc_x, state.mirror_factor), calc_y, 0.0f);
-        GX_Color4u8(color[0], color[1], color[2], color[3]);
+        glColor4f(color[0]/255.0f, color[1]/255.0f, color[2]/255.0f, color[3]/255.0f);
+        glVertex2f(get_mirror_x(calc_x, state.mirror_factor), calc_y);
     }
-    GX_End();
+    glEnd();
 
     // Center thin line
-    GX_Begin(GX_TRIANGLESTRIP, GX_VTXFMT0, trail->actualNuPoints * 2);
+    glBegin(GL_TRIANGLE_STRIP);
     for (int i = 0; i < trail->actualNuPoints * 2; i++) {
         Vec2 pos = trail->centerVertices[i];
-        float calc_x = ((pos.x - state.camera_x) * SCALE) + 6 * state.mirror_mult - widthAdjust;  
+        float calc_x = ((pos.x - state.camera_x) * SCALE) + 6 * state.mirror_mult + widthAdjust;
         float calc_y = screenHeight - ((pos.y - state.camera_y) * SCALE) + 6;
 
-        GX_Position3f32(get_mirror_x(calc_x, state.mirror_factor), calc_y, 0.0f);
-        GX_Color4u8(165, 165, 165, 255 * trail->opacity);
+        glColor4f(165/255.0f, 165/255.0f, 165/255.0f, trail->opacity);
+        glVertex2f(get_mirror_x(calc_x, state.mirror_factor), calc_y);
     }
-    GX_End();
+    glEnd();
+    glEnable(GL_TEXTURE_2D);
 }

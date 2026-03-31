@@ -1,0 +1,19 @@
+struct VertexIn {
+    float4 position : POSITION;
+    float2 texcoord : TEXCOORD0;
+    float4 color    : COLOR0;
+};
+
+struct VertexOut {
+    float4 position : POSITION;
+    float2 texcoord : TEXCOORD0;
+    float4 color    : COLOR0;
+};
+
+VertexOut main(VertexIn input, uniform float4x4 modelViewProj) {
+    VertexOut output;
+    output.position = mul(modelViewProj, input.position);
+    output.texcoord = input.texcoord;
+    output.color = input.color;
+    return output;
+}

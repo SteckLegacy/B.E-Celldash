@@ -8,6 +8,9 @@
 
 #include "player.h"
 #include "particles.h"
+#include "psgl_graphics.h"
+#include "ps3_audio.h"
+#include "all_assets.h"
 
 
 extern int screenWidth;
@@ -120,10 +123,10 @@ enum GameRoutine {
     ROUTINE_GAME
 };
 
-#define INPUT_UP    PAD_BUTTON_UP
-#define INPUT_DOWN  PAD_BUTTON_DOWN
-#define INPUT_RIGHT PAD_BUTTON_RIGHT
-#define INPUT_LEFT  PAD_BUTTON_LEFT
+#define INPUT_UP    0x01
+#define INPUT_DOWN  0x02
+#define INPUT_RIGHT 0x04
+#define INPUT_LEFT  0x08
 
 #define SDCARD_FOLDER "sd:/apps/wiidash"
 #define RESOURCES_FOLDER "resources"
@@ -131,9 +134,15 @@ enum GameRoutine {
 #define USER_SONGS_FOLDER "user_songs"
 #define USER_LEVELS_FOLDER "user_levels"
 
+#ifndef MIN
 #define MIN(a,b) (((a)<(b))?(a):(b))
+#endif
+#ifndef MAX
 #define MAX(a,b) (((a)>(b))?(a):(b))
+#endif
+#ifndef CLAMP
 #define CLAMP(x, lower, upper) (MIN((upper), MAX((x), (lower))))
+#endif
 
 extern int gameRoutine;
 
@@ -160,9 +169,9 @@ extern int frameCount;
 
 extern GameState state;
 
-extern GRRLIB_texImg *big_font_text;
-extern GRRLIB_texImg *font;
-extern GRRLIB_texImg *cursor;
+extern PSGL_texImg *big_font_text;
+extern PSGL_texImg *font;
+extern PSGL_texImg *cursor;
 
 #include "animation.h"
 

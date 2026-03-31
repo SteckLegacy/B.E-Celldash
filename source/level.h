@@ -3,6 +3,7 @@
 typedef struct {
     char *level_name;
     const unsigned char *data_ptr;
+    size_t data_size;
 } LevelDefinition;
 
 typedef struct {

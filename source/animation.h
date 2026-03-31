@@ -1,4 +1,5 @@
 #pragma once
+#include "psgl_graphics.h"
 #include "player.h"
 
 #ifdef __cplusplus
@@ -28,7 +29,7 @@ typedef struct {
 } AnimationLibrary;
 
 typedef struct {
-    GRRLIB_texImg *texture;
+    PSGL_texImg *texture;
     int default_col_channel;
     u8 color_channel_type;
     u8 part_id;
@@ -44,7 +45,7 @@ typedef struct {
 } AnimationDefinition;
 
 typedef struct {
-    GRRLIB_texImg *texture;
+    PSGL_texImg *texture;
     int layer_num;
     float scale;
     bool flip_x;
@@ -94,7 +95,7 @@ void playRobotAnimation(Player *player,
                                float blendFactor);
 void parsePlist(const char* filename, AnimationLibrary* lib);
 Animation* getAnimation(AnimationLibrary* lib, const char* name);
-GRRLIB_texImg *get_frame(FramesDefinition definition, int layer_num, float time, float *scale_out, bool *flip_x);
+PSGL_texImg *get_frame(FramesDefinition definition, int layer_num, float time, float *scale_out, bool *flip_x);
 
 #ifdef __cplusplus
 }

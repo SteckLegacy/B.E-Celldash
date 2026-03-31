@@ -1,6 +1,6 @@
 #pragma once
 
-#include <grrlib.h>
+#include "psgl_graphics.h"
 #include "player.h"
 #include "math.h"
 #include "level_loading.h"
@@ -1688,6 +1688,7 @@ struct ObjectLayer {
     s32 zlayer_offset;
     s8 color_type;
     const u8 *texture;
+    size_t texture_size;
 };
 
 enum ColorTypes {
@@ -1738,18 +1739,18 @@ extern bool p1_trail;
 extern struct ColorChannel channels[COL_CHANNEL_COUNT];
 extern const ObjectDefinition objects[];
 
-extern GRRLIB_texImg *object_images[OBJECT_COUNT][MAX_OBJECT_LAYERS];
+extern PSGL_texImg *object_images[OBJECT_COUNT][MAX_OBJECT_LAYERS];
 
 extern int layersDrawn;
 
 extern int beat_pulse;
 
-extern GRRLIB_texImg *prev_tex;
+extern PSGL_texImg *prev_tex;
 
-extern GRRLIB_texImg *bg;
-extern GRRLIB_texImg *ground;
-extern GRRLIB_texImg *ground_l2;
-extern GRRLIB_texImg *level_font;
+extern PSGL_texImg *bg;
+extern PSGL_texImg *ground;
+extern PSGL_texImg *ground_l2;
+extern PSGL_texImg *level_font;
 
 extern AnimationDefinition monster_1_anim;
 extern AnimationDefinition monster_2_anim;
@@ -1770,9 +1771,9 @@ int get_fade_value(float x, int right_edge);
 
 void handle_special_hitbox(Player *player, GameObject *obj, ObjectHitbox *hitbox);
 float get_mirror_x(float x, float factor);
-GRRLIB_texImg *get_coin_particle_texture();
+PSGL_texImg *get_coin_particle_texture();
 
-extern GRRLIB_texImg *level_complete_texture;
+extern PSGL_texImg *level_complete_texture;
 extern float complete_text_elapsed;
 
 float get_rotated_x_hitbox(float x_offset, float y_offset, float rotation);

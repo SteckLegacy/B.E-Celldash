@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdbool.h>
-#include <grrlib.h>
+#include "psgl_graphics.h"
 #include "level_loading.h"
 #include "math.h"
 
@@ -150,7 +150,7 @@ extern Color p2;
 
 extern const float player_speeds[SPEED_COUNT];
 
-extern GRRLIB_texImg *trail_tex;
+extern PSGL_texImg *trail_tex;
 
 void anim_player_to_wall(Player *player);
 void handle_death();
@@ -166,7 +166,7 @@ void draw_player(Player *player);
 void handle_mirror_transition();
 void handle_player(Player *player);
 void set_p_velocity(Player *player, float vel);
-GRRLIB_texImg *get_p1_trail_tex();
+PSGL_texImg *get_p1_trail_tex();
 float slope_angle(GameObject *obj, Player *player);
 void slope_collide(GameObject *obj, Player *player);
 void slope_calc(GameObject *obj, Player *player);
@@ -223,11 +223,11 @@ void draw_hitbox_trail(int player);
 bool player_circle_touches_slope(GameObject *obj, Player *player);
 bool is_spike_slope(GameObject *obj);
 
-extern GRRLIB_texImg *robot_1_l1;
-extern GRRLIB_texImg *robot_1_l2;
-extern GRRLIB_texImg *robot_2_l1;
-extern GRRLIB_texImg *robot_2_l2;
-extern GRRLIB_texImg *robot_3_l1;
-extern GRRLIB_texImg *robot_3_l2;
-extern GRRLIB_texImg *robot_4_l1;
-extern GRRLIB_texImg *robot_4_l2;
+extern PSGL_texImg *robot_1_l1;
+extern PSGL_texImg *robot_1_l2;
+extern PSGL_texImg *robot_2_l1;
+extern PSGL_texImg *robot_2_l2;
+extern PSGL_texImg *robot_3_l1;
+extern PSGL_texImg *robot_3_l2;
+extern PSGL_texImg *robot_4_l1;
+extern PSGL_texImg *robot_4_l2;

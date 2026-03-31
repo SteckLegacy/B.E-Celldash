@@ -336,6 +336,10 @@ typedef struct GFXSection {
     struct GFXSection *next; // For chaining in hash map
 } GFXSection;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 bool is_ascii(const unsigned char *data, int len);
 
 extern Section *section_hash[SECTION_HASH_SIZE];
@@ -420,3 +424,7 @@ inline unsigned char* soa_prev_touching_player(GameObject *obj) {
     //if (obj->soa_index < 0 || obj->soa_index >= level_info.object_count) printf("OOB %d\n", obj->soa_index); 
     return &gameObjectSoA.prev_touching_player[obj->soa_index]; 
 }
+
+#ifdef __cplusplus
+}
+#endif

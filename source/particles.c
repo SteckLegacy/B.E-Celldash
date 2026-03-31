@@ -5,9 +5,10 @@
 #include "particles.h"
 #include "math.h"
 #include "game.h"
+#include "psgl_graphics.h"
 #include <stdio.h>
 #include "easing.h"
-GRRLIB_texImg *particleTex = NULL;
+PSGL_texImg *particleTex = NULL;
 
 ParticleTemplate particle_templates[] = {
     [CUBE_DRAG] = {
@@ -895,21 +896,21 @@ void update_particles() {
 }
 
 void draw_particles(int group_id) {
-    GX_LoadPosMtxImm(GXmodelView2D, GX_PNMTX0);
-    GRRLIB_texImg *p1TrailTex = get_p1_trail_tex();
+    // GX_LoadPosMtxImm(GXmodelView2D, GX_PNMTX0);
+    PSGL_texImg *p1TrailTex = get_p1_trail_tex();
 
-    GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
+    // GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
+    // GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
 
     for (int i = 0; i < MAX_PARTICLES; i++) {
         Particle *p = &state.particles[i];
 
         if (p->group_id == group_id && p->active) {
-            float calc_x = ((p->x - state.camera_x) * SCALE) - widthAdjust;
+            float calc_x = ((p->x - state.camera_x) * SCALE) + widthAdjust;
             float calc_y = screenHeight - ((p->y - state.camera_y) * SCALE);
 
             if (p->blending) {
-                GRRLIB_SetBlend(GRRLIB_BLEND_ADD);
+                PSGL_SetBlend(BLEND_ADD);
             }
             switch(p->texture_id) { 
                 case PARTICLE_SQUARE:
@@ -952,8 +953,8 @@ void draw_particles(int group_id) {
                     break;
                 case PARTICLE_P1_TRAIL:
                     set_texture(p1TrailTex);
-                    GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
-                    GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
+                    // GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
+                    // GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
                     custom_drawImg(
                         get_mirror_x(calc_x, state.mirror_factor) + 6 - (p1TrailTex->w/2), calc_y + 6 - (p1TrailTex->h/2),
                         p1TrailTex,
@@ -967,14 +968,14 @@ void draw_particles(int group_id) {
                         )
                     
                     );
-                    GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
-                    GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
+                    // GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
+                    // GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
                     break;
                 case PARTICLE_COIN:
-                    GRRLIB_texImg *coin_tex = get_coin_particle_texture();
+                    PSGL_texImg *coin_tex = get_coin_particle_texture();
                     set_texture(coin_tex);
-                    GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
-                    GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
+                    // GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
+                    // GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
                     custom_drawImg(
                         get_mirror_x(calc_x, state.mirror_factor) + 6 - (coin_tex->w/2), calc_y + 6 - (coin_tex->h/2),
                         coin_tex,
@@ -988,42 +989,42 @@ void draw_particles(int group_id) {
                         )
                     
                     );
-                    GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
-                    GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
+                    // GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
+                    // GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
                     break;
             }
             
-            GRRLIB_SetBlend(GRRLIB_BLEND_ALPHA);
+            PSGL_SetBlend(BLEND_ALPHA);
         }
     }
     set_texture(prev_tex);
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
-    GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
+    // GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
+    // GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
 }
 
 void draw_obj_particles(int group_id, GameObject *parent_obj) {
-    GX_LoadPosMtxImm(GXmodelView2D, GX_PNMTX0);
+    // GX_LoadPosMtxImm(GXmodelView2D, GX_PNMTX0);
     int fade_x = 0;
     int fade_y = 0;
 
     float fade_scale = 1.f;
     
-    float x = ((*soa_x(parent_obj) - state.camera_x) * SCALE) - widthAdjust;
+    float x = ((*soa_x(parent_obj) - state.camera_x) * SCALE) + widthAdjust;
     get_fade_vars(parent_obj, x, &fade_x, &fade_y, &fade_scale);
 
-    GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
+    // GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
+    // GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
     for (int i = 0; i < MAX_PARTICLES; i++) {
         Particle *p = &state.particles[i];
 
         bool condition = (parent_obj == NULL ? TRUE : parent_obj == p->parent_obj);
 
         if (p->group_id == group_id && condition && p->active) {
-            float calc_x = ((p->x - state.camera_x) * SCALE) - widthAdjust;
+            float calc_x = ((p->x - state.camera_x) * SCALE) + widthAdjust;
             float calc_y = screenHeight - ((p->y - state.camera_y) * SCALE);
 
             if (p->blending) {
-                GRRLIB_SetBlend(GRRLIB_BLEND_ADD);
+                PSGL_SetBlend(BLEND_ADD);
             }
 
             switch(p->texture_id) { 
@@ -1065,12 +1066,12 @@ void draw_obj_particles(int group_id, GameObject *parent_obj) {
                     );
                     break;
                 case PARTICLE_KEY:
-                    GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
-                    GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
+                    // GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
+                    // GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
                     int col_channel;
                     u32 color;
 
-                    GRRLIB_texImg *key_tex = object_images[KEY_OBJ][0]; // First layer
+                    PSGL_texImg *key_tex = object_images[KEY_OBJ][0]; // First layer
                     if (!key_tex) break;
 
                     col_channel = parent_obj->object.main_col_channel;
@@ -1097,13 +1098,13 @@ void draw_obj_particles(int group_id, GameObject *parent_obj) {
                         p->scale * state.mirror_mult, p->scale,
                         color
                     );
-                    GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
-                    GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
+                    // GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
+                    // GX_SetVtxDesc(GX_VA_TEX0,   GX_NONE);
                     break;
             }
-            GRRLIB_SetBlend(GRRLIB_BLEND_ALPHA);
+            PSGL_SetBlend(BLEND_ALPHA);
         }
     }
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
-    GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
+    // GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
+    // GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
 }

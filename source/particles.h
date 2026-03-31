@@ -100,8 +100,8 @@ enum ParticleGroupID {
 };
 
 extern ParticleTemplate particle_templates[];
-extern GRRLIB_texImg *particleCircleTex;
-extern GRRLIB_texImg *particleTex;
+extern PSGL_texImg *particleCircleTex;
+extern PSGL_texImg *particleTex;
 
 void spawn_particle(int group_id, float x, float y, GameObject *parent_obj);
 void update_particles();

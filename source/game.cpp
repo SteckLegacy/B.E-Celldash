@@ -1,14 +1,10 @@
-#include <grrlib.h>
-#include <wiiuse/wpad.h>
+#include "psgl_graphics.h"
 
 #include "game.h"
 #include "main.h"
-#include "custom_mp3player.h"
+#include "ps3_audio.h"
 #include "level.h"
 #include "math.h"
-
-#include "oggplayer.h"
-#include "endStart_02_ogg.h"
 #include "trail.h"
 
 #include "stdio.h"
@@ -37,15 +33,14 @@ char *current_song_pointer = NULL;
 int frame_skipped = 0;
 
 int paused_loop() {
-    MP3Player_Pause();
+    // PS3Audio_PauseMusic();
     while (1) {
         start_frame = gettime();
         update_input();
         draw_game();
 
         if (state.input.pressedMinusOrR) {
-            MP3Player_Stop();
-            MP3Player_Volume(0);
+            PS3Audio_StopMusic();
             gameRoutine = ROUTINE_MENU;
             if (current_song_pointer) free(current_song_pointer);
             state.paused = FALSE;
@@ -63,7 +58,7 @@ int paused_loop() {
             break;
         }
 
-        GRRLIB_Render();
+        Render();
     }
     MP3Player_Unpause();
     state.paused = FALSE;
@@ -79,9 +74,9 @@ int game_loop() {
         current_song_pointer = load_song(songs[level_info.song_id].song_name, &size);
     }
 
-    if (current_song_pointer) {
-        MP3Player_PreloadOffset(current_song_pointer, size, level_info.song_offset);
-    }
+    // if (current_song_pointer) {
+    //     PS3Audio_PreloadOffset(current_song_pointer, size, level_info.song_offset);
+    // }
     
     set_camera_x(15 - CAMERA_X_OFFSET);
     draw_game();
@@ -91,7 +86,7 @@ int game_loop() {
     wait_initial_time();
     
     if (current_song_pointer) {
-        MP3Player_PlayBuffer(current_song_pointer, size, NULL);
+        PS3Audio_PlayMusic(current_song_pointer, size);
     }
     
     init_move_triggers();
@@ -120,7 +115,8 @@ int game_loop() {
             u64 start_physics = gettime();
             state.old_player = state.player;
             if (level_info.custom_song_id >= 0) {
-                amplitude = CLAMP(MP3Player_GetAmplitude(), 0.1f, 1.f);
+                // amplitude = CLAMP(PS3Audio_GetAmplitude(), 0.1f, 1.f);
+                amplitude = (beat_pulse ? 1.f : 0.1f);
             } else {
                 amplitude = (beat_pulse ? 1.f : 0.1f);
             }
@@ -211,10 +207,10 @@ int game_loop() {
                 init_variables();
                 reload_level(); 
                 if (current_song_pointer) {
-                    MP3Player_Reset();
-                    MP3Player_SetSeconds(level_info.song_offset);
-                    MP3Player_PlayBuffer(current_song_pointer, size, NULL);
-                    MP3Player_Volume(255);
+                    PS3Audio_StopMusic();
+                    // PS3Audio_SetSeconds(level_info.song_offset);
+                    PS3Audio_PlayMusic(current_song_pointer, size);
+                    PS3Audio_SetMusicVolume(255);
                 }
                 update_input();
                 fixed_dt = TRUE; 
@@ -231,7 +227,7 @@ int game_loop() {
         }
 
         draw_game();
-        GRRLIB_Render();
+        Render();
     }
     fade_out();
 
@@ -287,10 +283,11 @@ void create_ray(float x, float y, float angle, float length, float startWidth, f
 }
 
 void draw_rays() {
-    GX_SetVtxDesc(GX_VA_TEX0, GX_NONE);  // No texture
-    GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
+    // GX_SetVtxDesc(GX_VA_TEX0, GX_NONE);  // No texture
+    // GX_SetTevOp(GX_TEVSTAGE0, GX_PASSCLR);
+    glDisable(GL_TEXTURE_2D);
 
-    GRRLIB_SetBlend(GRRLIB_BLEND_ADD);
+    PSGL_SetBlend(BLEND_ADD);
 
     for (int ray = 0; ray < MAX_RAYS; ray++) {
         if (!end_rays[ray].active) continue;
@@ -350,7 +347,8 @@ void draw_rays() {
             verts[3].x = x - len1;
             verts[3].y = y - w1 * 0.5f;
 
-            GX_Begin(GX_TRIANGLESTRIP, GX_VTXFMT0, 4);
+            // GX_Begin(GX_TRIANGLESTRIP, GX_VTXFMT0, 4);
+            glBegin(GL_TRIANGLE_STRIP);
 
             // Rotate around x and y
             for (int i = 0; i < 4; i++) {
@@ -362,21 +360,29 @@ void draw_rays() {
                 verts[i].y = ny + y;
 
                 float calc_x = ((verts[i].x - state.camera_x) * SCALE) +
-                               6 * state.mirror_mult - widthAdjust;
+                               6 * state.mirror_mult + widthAdjust;
                 float calc_y = screenHeight - ((verts[i].y - state.camera_y) * SCALE) + 6;
 
-                GX_Position3f32(get_mirror_x(calc_x, state.mirror_factor), calc_y, 0.f);
-                GX_Color1u32(color);
+                // GX_Position3f32(get_mirror_x(calc_x, state.mirror_factor), calc_y, 0.f);
+                // GX_Color1u32(color);
+                float r = R(color) / 255.0f;
+                float g = G(color) / 255.0f;
+                float b = B(color) / 255.0f;
+                float a = A(color) / 255.0f;
+                glColor4f(r, g, b, a);
+                glVertex2f(get_mirror_x(calc_x, state.mirror_factor), calc_y);
             }
-            GX_End();
+            // GX_End();
+            glEnd();
         }
 
         end_rays[ray].elapsed += dt;
     }
 
-    GRRLIB_SetBlend(GRRLIB_BLEND_ALPHA);
-    GX_SetVtxDesc(GX_VA_TEX0, GX_DIRECT);
-    GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
+    PSGL_SetBlend(BLEND_ALPHA);
+    // GX_SetVtxDesc(GX_VA_TEX0, GX_DIRECT);
+    // GX_SetTevOp(GX_TEVSTAGE0, GX_MODULATE);
+    glEnable(GL_TEXTURE_2D);
 }
 
 int rays_spawned = 0;
@@ -396,7 +402,7 @@ int handle_wall_cutscene() {
         spawn_particle(END_WALL_COLL_CIRCLE, level_info.wall_x, level_info.wall_y, NULL);
         spawn_particle(END_WALL_COLL_CIRCUNFERENCE, level_info.wall_x, level_info.wall_y, NULL);
         circunferences_spawned++;
-        PlayOgg(endStart_02_ogg, endStart_02_ogg_size, 0, OGG_ONE_TIME);
+        PS3Audio_PlaySFX(endStart_02_ogg, endStart_02_ogg_size);
     } else if (completion_timer <= 0.2 && circunferences_spawned < 5) {
         spawn_particle(END_WALL_COLL_CIRCUNFERENCE, level_info.wall_x, level_info.wall_y, NULL);
         circunferences_spawned++;
@@ -482,7 +488,7 @@ int handle_wall_cutscene() {
 
     if (completion_timer > 5) {
         completion_timer = 0.0f;
-        MP3Player_Stop();
+        PS3Audio_StopMusic();
         complete_text_elapsed = 0.f;
         if (current_song_pointer) free(current_song_pointer);
         gameRoutine = ROUTINE_MENU;

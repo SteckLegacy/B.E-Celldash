@@ -17,6 +17,7 @@
 #include "filesystem.h"
 
 #include "../libraries/color.h"
+#include <pugixml.hpp>
 
 #include "groups.h"
 #include "triggers.h"
@@ -52,49 +53,55 @@
 #include "g_11_02_png.h"
 #include "game.h"
 
+#include "psgl_graphics.h"
 #include <malloc.h>
 
-const unsigned char *backgrounds[] = {
-    bg_01_png,
-    bg_02_png,
-    bg_03_png,
-    bg_04_png,
-    bg_05_png,
-    bg_06_png,
-    bg_07_png,
-    bg_08_png,
-    bg_09_png,
-    bg_10_png,
-    bg_11_png,
-    bg_12_png,
-    bg_13_png,
+typedef struct {
+    const unsigned char *data;
+    size_t size;
+} Asset;
+
+const Asset backgrounds[] = {
+    {bg_01_png, bg_01_png_size},
+    {bg_02_png, bg_02_png_size},
+    {bg_03_png, bg_03_png_size},
+    {bg_04_png, bg_04_png_size},
+    {bg_05_png, bg_05_png_size},
+    {bg_06_png, bg_06_png_size},
+    {bg_07_png, bg_07_png_size},
+    {bg_08_png, bg_08_png_size},
+    {bg_09_png, bg_09_png_size},
+    {bg_10_png, bg_10_png_size},
+    {bg_11_png, bg_11_png_size},
+    {bg_12_png, bg_12_png_size},
+    {bg_13_png, bg_13_png_size},
 };
 
-const unsigned char *grounds[] = {
-    g_01_png,
-    g_02_png,
-    g_03_png,
-    g_04_png,
-    g_05_png,
-    g_06_png,
-    g_07_png,
-    g_08_01_png,
-    g_09_01_png,
-    g_10_01_png,
-    g_11_01_png,
+const Asset grounds[] = {
+    {g_01_png, g_01_png_size},
+    {g_02_png, g_02_png_size},
+    {g_03_png, g_03_png_size},
+    {g_04_png, g_04_png_size},
+    {g_05_png, g_05_png_size},
+    {g_06_png, g_06_png_size},
+    {g_07_png, g_07_png_size},
+    {g_08_01_png, g_08_01_png_size},
+    {g_09_01_png, g_09_01_png_size},
+    {g_10_01_png, g_10_01_png_size},
+    {g_11_01_png, g_11_01_png_size},
 };
-const unsigned char *grounds_l2[] = {
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    g_08_02_png,
-    g_09_02_png,
-    g_10_02_png,
-    g_11_02_png,
+const Asset grounds_l2[] = {
+    {NULL, 0},
+    {NULL, 0},
+    {NULL, 0},
+    {NULL, 0},
+    {NULL, 0},
+    {NULL, 0},
+    {NULL, 0},
+    {g_08_02_png, g_08_02_png_size},
+    {g_09_02_png, g_09_02_png_size},
+    {g_10_02_png, g_10_02_png_size},
+    {g_11_02_png, g_11_02_png_size},
 };
 
 struct LoadedLevelInfo level_info;
@@ -271,53 +278,20 @@ void update_object_section(GameObject *obj, float new_x, float new_y) {
 }
 
 char *extract_gmd_key(const char *data, const char *key, const char *type) {
-    char key_tag[32];
-    snprintf(key_tag, sizeof(key_tag), "<k>%s</k>", key);
-    
-    char *key_pos = strstr(data, key_tag);
-    if (!key_pos) {
-        return NULL;
+    pugi::xml_document doc;
+    pugi::xml_parse_result result = doc.load_string(data);
+    if (!result) return NULL;
+
+    pugi::xml_node dict = doc.child("plist").child("dict");
+    for (pugi::xml_node k = dict.child("key"); k; k = k.next_sibling("key")) {
+        if (strcmp(k.child_value(), key) == 0) {
+            pugi::xml_node val = k.next_sibling();
+            if (val) {
+                return strdup(val.child_value());
+            }
+        }
     }
-
-    // Move past the key tag
-    char *start = key_pos + strlen(key_tag);
-
-    // Skip whitespace (spaces, tabs, newlines, etc.)
-    while (*start && isspace((unsigned char)*start)) {
-        start++;
-    }
-
-    char type_start_tag[16];
-    snprintf(type_start_tag, sizeof(type_start_tag), "<%s>", type);
-
-    // Confirm that the type start tag is here
-    if (strncmp(start, type_start_tag, strlen(type_start_tag)) != 0) {
-        output_log("Expected start tag '%s' not found after key\n", type_start_tag);
-        return NULL;
-    }
-
-    // Move past the type start tag
-    start += strlen(type_start_tag);
-
-    // Find the end tag
-    char type_end_tag[16];
-    snprintf(type_end_tag, sizeof(type_end_tag), "</%s>", type);
-    char *end = strstr(start, type_end_tag);
-    if (!end) {
-        output_log("Could not find end tag '%s'\n", type_end_tag);
-        return NULL;
-    }
-
-    // Allocate and copy value
-    int len = end - start;
-    char *value = malloc(len + 1);
-    if (!value) {
-        output_log("malloc for gmd key %s failed\n", key);
-        return NULL;
-    }
-    strncpy(value, start, len);
-    value[len] = '\0';
-    return value;
+    return NULL;
 }
 
 bool is_ascii(const unsigned char *data, int len) {
@@ -1926,7 +1900,7 @@ void load_level_info(char *data, char *level_string) {
 int load_level(char *data, bool is_custom) {
     level_info.level_is_custom = is_custom;
 
-    printf("Free MEM1: %d Free MEM2: %d\n", SYS_GetArena1Hi() - SYS_GetArena1Lo(), SYS_GetArena2Hi() - SYS_GetArena2Lo());
+    //printf("Free MEM1: %d Free MEM2: %d\n", SYS_GetArena1Hi() - SYS_GetArena1Lo(), SYS_GetArena2Hi() - SYS_GetArena2Lo());
     char *level_string = decompress_level(data);
 
     if (level_string == NULL) {
@@ -1940,12 +1914,13 @@ int load_level(char *data, bool is_custom) {
     if (level_string != data) {
 
         // Get level starting colors
-        char *metaStr = get_metadata_value(level_string, "kS38");
+    char *metaStr = extract_gmd_key(data, "kS38", "s");
         channelCount = parse_color_channels(metaStr, &colorChannels);
+    if (metaStr) free(metaStr);
 
         // Fallback to pre 2.0 color keys
         if (!channelCount) {
-            channelCount = parse_old_channels(level_string, &colorChannels);
+        channelCount = parse_old_channels(data, &colorChannels);
         }
         
         load_level_info(data, level_string);
@@ -1998,21 +1973,22 @@ int load_level(char *data, bool is_custom) {
     level_info.pulsing_type = random_int(0,2);
 
     // Allocate the rest of mem1 so the textures end up in mem2
-    int allocate = SYS_GetArena1Hi() - SYS_GetArena1Lo();
+    // int allocate = SYS_GetArena1Hi() - SYS_GetArena1Lo();
     char *padding = NULL;
-    if (allocate > 0) {
-        padding = malloc(allocate);
-    }
+    // if (allocate > 0) {
+    //     padding = malloc(allocate);
+    // }
 
     // Load level's bg and ground texture
-    bg = GRRLIB_LoadTexturePNG(backgrounds[level_info.background_id]);
-    ground = GRRLIB_LoadTexturePNG(grounds[level_info.ground_id]);
-    if (grounds_l2[level_info.ground_id]) {
-        ground_l2 = GRRLIB_LoadTexturePNG(grounds_l2[level_info.ground_id]);
+    // PS3 SNC Asset injection: Sizes are now available as _size constants
+    bg = PSGL_LoadTexturePNG(backgrounds[level_info.background_id].data, backgrounds[level_info.background_id].size);
+    ground = PSGL_LoadTexturePNG(grounds[level_info.ground_id].data, grounds[level_info.ground_id].size);
+    if (grounds_l2[level_info.ground_id].data) {
+       ground_l2 = PSGL_LoadTexturePNG(grounds_l2[level_info.ground_id].data, grounds_l2[level_info.ground_id].size);
     } else {
         ground_l2 = NULL;
     }
-    level_font = GRRLIB_LoadTexturePNG(font_text[level_info.font_used]);
+    level_font = PSGL_LoadTexturePNG(font_assets[level_info.font_used].data, font_assets[level_info.font_used].size);
 
     if (padding) free(padding);
 
@@ -2059,10 +2035,10 @@ void unload_level() {
 
     clear_groups();
 
-    GRRLIB_FreeTexture(bg);
-    GRRLIB_FreeTexture(ground);
-    if (ground_l2) GRRLIB_FreeTexture(ground_l2);
-    GRRLIB_FreeTexture(level_font);
+    PSGL_FreeTexture(bg);
+    PSGL_FreeTexture(ground);
+    if (ground_l2) PSGL_FreeTexture(ground_l2);
+    PSGL_FreeTexture(level_font);
     channelCount = 0;
     memset(&state.particles, 0, sizeof(state.particles));
     free_sections();
