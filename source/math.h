@@ -11,7 +11,6 @@
 #define FADE_SPEED (255 / FADE_DURATION)
 
 
-extern Mtx                 GXmodelView2D;
 
 Vec2D rotate(Vec2D point, float angle, Vec2D origin);
 float maxf(float a, float b);

@@ -1,13 +1,14 @@
 
-#include <grrlib.h>
+#include "psgl_graphics.h"
+
 typedef struct {
     float x, y;
 } Vec2D;
 
 typedef struct {
     u8 r;
-    u8 b;
     u8 g;
+    u8 b;
 } Color;
 
 typedef struct {

@@ -1569,13 +1569,10 @@ void draw_player(Player *player) {
     MotionTrail_Update(&trail, dt);
     MotionTrail_UpdateWaveTrail(&wave_trail, dt);
     
-    GX_LoadPosMtxImm(GXmodelView2D, GX_PNMTX0);
 
     MotionTrail_Draw(&trail);
     MotionTrail_DrawWaveTrail(&wave_trail);
 
-    GX_SetTevOp  (GX_TEVSTAGE0, GX_MODULATE);
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
 
     PSGL_SetBlend(BLEND_ALPHA);
 

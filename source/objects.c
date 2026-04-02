@@ -1972,8 +1972,6 @@ void draw_background_image(f32 x, f32 y, bool vflip) {
 }
 
 void draw_background(f32 x, f32 y) {
-    GX_SetTevOp  (GX_TEVSTAGE0, GX_MODULATE);
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
     set_texture(bg);
 
     float offset = 1024 * BACKGROUND_SCALE;
@@ -2026,8 +2024,6 @@ void draw_end_wall() {
 
     float calc_x = ((level_info.wall_x - state.camera_x) * SCALE) + widthAdjust;
     float calc_y =  positive_fmod(state.camera_y * SCALE, BLOCK_SIZE_PX) + screenHeight;  
-    GX_SetTevOp  (GX_TEVSTAGE0, GX_MODULATE);
-    GX_SetVtxDesc(GX_VA_TEX0,   GX_DIRECT);
     if (level_info.wall_y > 0) {
         for (s32 j = 0; j < objects[CHECKER_EDGE].num_layers; j++) {
             PSGL_texImg *image = object_images[CHECKER_EDGE][j];
@@ -2545,7 +2541,6 @@ void draw_all_object_layers() {
     
     free(entries);
     
-    GX_LoadPosMtxImm(GXmodelView2D, GX_PNMTX0);
 }
 
 u64 last_beat_time = 0;
