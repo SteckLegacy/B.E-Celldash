@@ -60,7 +60,6 @@ int paused_loop() {
 
         Render();
     }
-    MP3Player_Unpause();
     state.paused = FALSE;
     return FALSE;
 }
