@@ -1312,7 +1312,15 @@ void handle_death() {
     }
 
     PS3Audio_SetMusicVolume(0);
-    PS3Audio_PlaySFX(explode_11_ogg, explode_11_ogg_size);
+
+    size_t sfxSize;
+    char sfxPath[278];
+    snprintf(sfxPath, sizeof(sfxPath), "%s/%s/sfx/explode_11.ogg", launch_dir, RESOURCES_FOLDER);
+    void* sfxData = read_file(sfxPath, &sfxSize);
+    if (sfxData) {
+        PS3Audio_PlaySFX(sfxData, sfxSize);
+        free(sfxData);
+    }
 }
 
 void load_icons() {

@@ -63,7 +63,9 @@ CFILES		:=	$(filter-out level_loading.c game.c oggplayer.c custom_mp3player.c,$(
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
 sFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
 SFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.S)))
+DATA_EXTS   := %.png %.gmd %.ttf %.jpg
 BINFILES	:=	$(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
+BINFILES    :=  $(filter $(DATA_EXTS),$(BINFILES))
 
 ASSET_HEADERS := $(addprefix source/,$(addsuffix .h,$(subst .,_,$(BINFILES))))
 ASSET_CFILES  := $(addprefix source/,$(addsuffix .c,$(subst .,_,$(BINFILES))))
@@ -159,53 +161,13 @@ $(OBJFILE): $(OFILES)
 $(OFILES_SOURCES) : $(HFILES)
 
 #---------------------------------------------------------------------------------
-# PS3 SNC conversion using the new tool
+# PS3 SNC conversion using the automated tool
 #---------------------------------------------------------------------------------
 BIN_TO_HEADER := python3 tools/bin_to_header.py
 
-%.ogg.h : %.ogg
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
-
-%.mp3.h : %.mp3
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
-
-%.ttf.h	: %.ttf
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
-
-%.gmd.h : %.gmd
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
-
-%.jpg.h	: %.jpg
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
-
-%.h %.c: %.ogg
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
-
-%.h %.c: %.mp3
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
-
-%.h %.c: %.ttf
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
-
-%.h %.c: %.gmd
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
-
-%.h %.c: %.jpg
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
-
-%.h %.c: %.png
-	@echo $(notdir $<)
-	@$(BIN_TO_HEADER) $< $(CURDIR)/source
+$(HFILES) $(ASSET_CFILES):
+	@echo "Auto-converting assets..."
+	@$(BIN_TO_HEADER)
 
 # Compile the generated C files
 source/%_png.o: source/%_png.c
@@ -216,13 +178,6 @@ source/%_gmd.o: source/%_gmd.c
 	@echo $(notdir $<)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-source/%_mp3.o: source/%_mp3.c
-	@echo $(notdir $<)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-source/%_ogg.o: source/%_ogg.c
-	@echo $(notdir $<)
-	$(CC) $(CFLAGS) -c $< -o $@
 
 source/%_ttf.o: source/%_ttf.c
 	@echo $(notdir $<)
@@ -238,7 +193,7 @@ source/all_assets.h:
 
 $(OFILES_SOURCES) : source/all_assets.h
 
-source/ps3_audio.o: source/ps3_audio.cpp
+source/%.o: source/%.cpp
 	@echo $(notdir $<)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 

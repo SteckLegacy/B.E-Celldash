@@ -173,7 +173,16 @@ void menu_go_right(){
 void start_level(){
     gameRoutine = ROUTINE_GAME;
     PS3Audio_StopMusic();
-    PS3Audio_PlaySFX(playSound_01_ogg, playSound_01_ogg_size);
+
+    size_t sfxSize;
+    char sfxPath[278];
+    snprintf(sfxPath, sizeof(sfxPath), "%s/%s/sfx/playSound_01.ogg", launch_dir, RESOURCES_FOLDER);
+    void* sfxData = read_file(sfxPath, &sfxSize);
+    if (sfxData) {
+        PS3Audio_PlaySFX(sfxData, sfxSize);
+        free(sfxData);
+    }
+
     for (int i = 0; i < 90; i++) {
         update_input();
         // VIDEO_WaitVSync();
@@ -528,7 +537,16 @@ int sdcard_levels() {
                 // Start level
                 gameRoutine = ROUTINE_GAME;
                 PS3Audio_StopMusic();
-                PS3Audio_PlaySFX(playSound_01_ogg, playSound_01_ogg_size);
+
+                size_t sfxSize;
+                char sfxPath[278];
+                snprintf(sfxPath, sizeof(sfxPath), "%s/%s/sfx/playSound_01.ogg", launch_dir, RESOURCES_FOLDER);
+                void* sfxData = read_file(sfxPath, &sfxSize);
+                if (sfxData) {
+                    PS3Audio_PlaySFX(sfxData, sfxSize);
+                    free(sfxData);
+                }
+
                 for (int i = 0; i < 90; i++) {
                     update_input();
                     // VIDEO_WaitVSync();

@@ -2568,9 +2568,9 @@ void update_beat() {
         beat_pulse = false;
     }
 
-    // if (PS3Audio_GetAmplitude() < 0.05f) {
-    //     beat_pulse = false;
-    // }
+    if (PS3Audio_GetAmplitude() < 0.05f) {
+        beat_pulse = false;
+    }
 }
 
 void handle_objects() {

@@ -115,8 +115,7 @@ int game_loop() {
             u64 start_physics = gettime();
             state.old_player = state.player;
             if (level_info.custom_song_id >= 0) {
-                // amplitude = CLAMP(PS3Audio_GetAmplitude(), 0.1f, 1.f);
-                amplitude = (beat_pulse ? 1.f : 0.1f);
+                amplitude = CLAMP(PS3Audio_GetAmplitude(), 0.1f, 1.f);
             } else {
                 amplitude = (beat_pulse ? 1.f : 0.1f);
             }
@@ -402,7 +401,15 @@ int handle_wall_cutscene() {
         spawn_particle(END_WALL_COLL_CIRCLE, level_info.wall_x, level_info.wall_y, NULL);
         spawn_particle(END_WALL_COLL_CIRCUNFERENCE, level_info.wall_x, level_info.wall_y, NULL);
         circunferences_spawned++;
-        PS3Audio_PlaySFX(endStart_02_ogg, endStart_02_ogg_size);
+
+        size_t sfxSize;
+        char sfxPath[278];
+        snprintf(sfxPath, sizeof(sfxPath), "%s/%s/sfx/endStart_02.ogg", launch_dir, RESOURCES_FOLDER);
+        void* sfxData = read_file(sfxPath, &sfxSize);
+        if (sfxData) {
+            PS3Audio_PlaySFX(sfxData, sfxSize);
+            free(sfxData);
+        }
     } else if (completion_timer <= 0.2 && circunferences_spawned < 5) {
         spawn_particle(END_WALL_COLL_CIRCUNFERENCE, level_info.wall_x, level_info.wall_y, NULL);
         circunferences_spawned++;

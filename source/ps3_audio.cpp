@@ -15,11 +15,12 @@ static uint32_t audioPort;
 static bool audioRunning = false;
 static sys_ppu_thread_t audioThread;
 static float* audioMixBuffer;
+static float currentAmplitude = 0.0f;
 
 // MultiStream state
 #define MAX_STREAMS 8
 typedef struct {
-    float* pcmData;
+    int16_t* pcmData;
     size_t sampleCount;
     size_t currentSample;
     bool active;
@@ -33,18 +34,30 @@ static void audioThreadFunc(uint64_t arg) {
 
     while (audioRunning) {
         memset(audioMixBuffer, 0, AUDIO_BUFFER_SIZE);
+        float mixSum = 0.0f;
+        int mixCount = 0;
 
         for (int i = 0; i < MAX_STREAMS; i++) {
             if (streams[i].active) {
                 for (int s = 0; s < AUDIO_BLOCK_SAMPLES * AUDIO_PORT_CHANNELS; s++) {
                     if (streams[i].currentSample < streams[i].sampleCount) {
-                        audioMixBuffer[s] += streams[i].pcmData[streams[i].currentSample++] * streams[i].volume;
+                        // Convert int16 to float (-1.0 to 1.0) and mix
+                        float sample = (streams[i].pcmData[streams[i].currentSample++] / 32768.0f) * streams[i].volume;
+                        audioMixBuffer[s] += sample;
+                        mixSum += sample * sample;
+                        mixCount++;
                     } else {
                         streams[i].active = false;
                         break;
                     }
                 }
             }
+        }
+
+        if (mixCount > 0) {
+            currentAmplitude = sqrtf(mixSum / mixCount);
+        } else {
+            currentAmplitude = 0.0f;
         }
 
         // Wait for port to be ready and write
@@ -87,7 +100,7 @@ void PS3Audio_Exit() {
 }
 
 // MP3 Decoding helper using cellMp3Dec
-static float* decodeMP3(const void* data, size_t size, size_t* outSamples) {
+static int16_t* decodeMP3(const void* data, size_t size, size_t* outSamples) {
     CellMp3Handle handle;
     CellMp3ThreadInParam threadIn;
     CellMp3ThreadOutParam threadOut;
@@ -111,7 +124,7 @@ static float* decodeMP3(const void* data, size_t size, size_t* outSamples) {
 
     // Estimate sample count (simplified)
     *outSamples = info.totalSamples * info.numChannels;
-    float* pcmData = (float*)malloc(*outSamples * sizeof(float));
+    int16_t* pcmData = (int16_t*)malloc(*outSamples * sizeof(int16_t));
     if (!pcmData) {
         cellMp3Close(handle);
         cellMp3Destroy(handle);
@@ -141,7 +154,7 @@ static float* decodeMP3(const void* data, size_t size, size_t* outSamples) {
 
 void PS3Audio_PlayMusic(const void* data, size_t size) {
     size_t samples;
-    float* pcm = decodeMP3(data, size, &samples);
+    int16_t* pcm = decodeMP3(data, size, &samples);
     if (!pcm) return;
 
     // Usually music is in stream 0
@@ -165,9 +178,14 @@ void PS3Audio_SetMusicVolume(int volume) {
     streams[0].volume = volume / 255.0f;
 }
 
+float PS3Audio_GetAmplitude() {
+    return currentAmplitude;
+}
+
 void PS3Audio_PlaySFX(const void* data, size_t size) {
+    if (!data || size == 0) return;
     size_t samples;
-    float* pcm = decodeMP3(data, size, &samples);
+    int16_t* pcm = decodeMP3(data, size, &samples);
     if (!pcm) return;
 
     // Find free stream starting from 1

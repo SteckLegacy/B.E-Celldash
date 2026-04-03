@@ -32,8 +32,18 @@ def bin_to_header(bin_file, out_dir):
         f.write(f'}};\n\n')
         f.write(f'const size_t {safe_name}_size = {size};\n')
 
+def main():
+    data_dir = 'data'
+    out_dir = 'source'
+
+    extensions = ('.png', '.gmd', '.ttf', '.jpg')
+
+    for root, dirs, files in os.walk(data_dir):
+        for file in files:
+            if file.lower().endswith(extensions):
+                full_path = os.path.join(root, file)
+                print(f"Processing {full_path}...")
+                bin_to_header(full_path, out_dir)
+
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: python bin_to_header.py <input_bin> <output_dir>")
-        sys.exit(1)
-    bin_to_header(sys.argv[1], sys.argv[2])
+    main()

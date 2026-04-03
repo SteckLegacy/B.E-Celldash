@@ -11,8 +11,6 @@
 
 #include "main.h"
 #include "game.h"
-#include "custom_mp3player.h"
-#include "oggplayer.h"
 
 #include "level_loading.h"
 #include "objects.h"
@@ -279,6 +277,7 @@ int main(int argc, char **argv) {
     
     // PS3 Initialization
     cellPadInit(1);
+    cellPadOpen(0);
 
     int width = 1280; // Defaulting to 720p for now
     int height = 720;
